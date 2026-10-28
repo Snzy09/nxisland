@@ -116,6 +116,8 @@ enum PillCatalog {
               category: .service,   subtitle: String(localized: "Integration"),  source: .n8n),
         .init(id: "integration_notion",  name: "Notion",      color: "#8C8C8C",
               category: .service,   subtitle: String(localized: "Integration"),  source: .n8n),
+        .init(id: "integration_obsidian", name: "Obsidian",   color: "#7C3AED",
+              category: .service,   subtitle: String(localized: "Integration"),  source: .n8n),
         .init(id: "integration_calcom",  name: "Cal.com",     color: "#C9956A",
               category: .service,   subtitle: String(localized: "Integration"),  source: .n8n),
         .init(id: "integration_stripe",  name: "Stripe",      color: "#0570DE",

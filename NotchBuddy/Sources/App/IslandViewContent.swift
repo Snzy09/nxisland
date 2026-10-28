@@ -269,6 +269,10 @@ struct OverviewView: View {
             NSWorkspace.shared.open(URL(string: "https://dashboard.stripe.com/payments")!)
         case "integration_notion":
             NSWorkspace.shared.open(URL(string: "https://notion.so")!)
+        case "integration_obsidian":
+            if let urlStr = KeychainStore.shared.get("obsidian-vault-url"), let url = URL(string: urlStr) {
+                NSWorkspace.shared.open(url)
+            }
         case "integration_calcom":
             NSWorkspace.shared.open(URL(string: "https://app.cal.com/bookings")!)
         case "agent_cursor":
@@ -1991,6 +1995,7 @@ struct IntegrationCardView: View {
         case "integration_github":  return KeychainStore.shared.get("github-token")   != nil
         case "integration_stripe":  return KeychainStore.shared.get("stripe-api-key") != nil
         case "integration_notion":  return KeychainStore.shared.get("notion-api-key") != nil
+        case "integration_obsidian": return KeychainStore.shared.get("obsidian-vault-url") != nil
         case "integration_calcom":  return KeychainStore.shared.get("calcom-api-key") != nil
         default: return false
         }
@@ -2007,6 +2012,7 @@ struct IntegrationCardView: View {
         case "integration_github":  return URL(string: "https://github.com")
         case "integration_stripe":  return URL(string: "https://dashboard.stripe.com/payments")
         case "integration_notion":  return URL(string: "https://notion.so")
+        case "integration_obsidian": return KeychainStore.shared.get("obsidian-vault-url").flatMap(URL.init(string:))
         case "integration_calcom":  return URL(string: "https://app.cal.com/bookings")
         default: return nil
         }
@@ -2058,6 +2064,11 @@ struct IntegrationCardView: View {
     // Notion: show pages as soon as first poll completes
     private var notionHasData: Bool {
         task.id == "integration_notion" && appState.notionLoaded
+    }
+
+    // Obsidian: show file as soon as first poll completes
+    private var obsidianHasData: Bool {
+        task.id == "integration_obsidian" && appState.obsidianLoaded
     }
 
     // Apple Music: show card when a track is loaded (playing or paused) or automation is denied
@@ -2222,6 +2233,9 @@ struct IntegrationCardView: View {
                 .transition(.opacity)
         } else if notionHasData {
             NotionCardView()
+                .transition(.opacity)
+        } else if obsidianHasData {
+            ObsidianCardView()
                 .transition(.opacity)
         } else if musicIsActive {
             #if !APPSTORE

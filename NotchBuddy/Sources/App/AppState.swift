@@ -397,6 +397,12 @@ final class AppState: ObservableObject {
 
     // Notion (populated by NotionPoller)
     @Published var notionPages: [NotionPage] = []
+
+    // Obsidian (populated by ObsidianPoller)
+    @Published var obsidianLoaded: Bool = false
+    @Published var obsidianError: String? = nil
+    @Published var obsidianLastFile: String = ""
+    @Published var obsidianLastSync: Date? = nil
     @Published var notionLoaded: Bool = false
     @Published var notionError: String? = nil
 

@@ -106,6 +106,8 @@ struct SettingsView: View {
     @State private var stripeKey: String    = KeychainStore.shared.get("stripe-api-key")  ?? ""
     @State private var calcomKey: String    = KeychainStore.shared.get("calcom-api-key")  ?? ""
     @State private var notionKey: String    = KeychainStore.shared.get("notion-api-key")  ?? ""
+    @State private var obsidianVaultUrl: String = KeychainStore.shared.get("obsidian-vault-url") ?? ""
+    @State private var obsidianApiToken: String = KeychainStore.shared.get("obsidian-api-token") ?? ""
     @AppStorage(CryptoSettings.exchangeKey)     private var cryptoExchange = CryptoExchange.coinbase.rawValue
     @AppStorage(CryptoSettings.currencyKey)     private var cryptoCurrency = "EUR"
     @AppStorage(CryptoSettings.coinsKey)        private var cryptoCoins = CryptoSettings.defaultCoins
@@ -1331,6 +1333,21 @@ struct SettingsView: View {
                         .textFieldStyle(.roundedBorder)
                 }
 
+                // Obsidian
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack(spacing: 6) {
+                        Circle().fill(Color(hex: "#7C3AED")).frame(width: 8, height: 8)
+                        Text("Obsidian").font(.system(size: 12, weight: .semibold))
+                    }
+                    TextField("Vault URL  (http://127.0.0.1:27123)", text: $obsidianVaultUrl)
+                        .textFieldStyle(.roundedBorder)
+                    SecureField("API token  (from Local REST API plugin)", text: $obsidianApiToken)
+                        .textFieldStyle(.roundedBorder)
+                    Text("Enable the Local REST API community plugin in Obsidian to get a token.")
+                        .font(.system(size: 10))
+                        .foregroundColor(Color(hex: "#8E939C"))
+                }
+
                 // Crypto: public prices, no key. Changes apply at once.
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 6) {
@@ -2101,6 +2118,8 @@ struct SettingsView: View {
         saveKey("stripe-api-key",  value: stripeKey)
         saveKey("calcom-api-key",  value: calcomKey)
         saveKey("notion-api-key",  value: notionKey)
+        saveKey("obsidian-vault-url", value: obsidianVaultUrl)
+        saveKey("obsidian-api-token", value: obsidianApiToken)
         statusMessage = String(localized: "status.integrations-saved")
     }
 
