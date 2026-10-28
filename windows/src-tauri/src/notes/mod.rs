@@ -236,7 +236,7 @@ pub fn toggle(app: &AppHandle) {
         stop(app);
     } else if let Err(err) = start(app) {
         let (text, action) = if err == "models" {
-            (t("Download the voice model first, in Coucou → Settings → Recognition."), Some((t("Open Settings"), "openSettings")))
+            (t("Download the voice model first, in NxIsland → Settings → Recognition."), Some((t("Open Settings"), "openSettings")))
         } else {
             (err, None)
         };
@@ -408,7 +408,7 @@ fn words_in(path: &std::path::Path) -> Result<(Vec<TimedWord>, Vec<f32>), String
         return Ok((Vec::new(), Vec::new()));
     }
     let samples = audio::read_wav(path).map_err(|e| e.to_string())?;
-    let transcript = speech::transcribe(&samples).ok_or_else(|| t("Download the voice model first, in Coucou → Settings → Recognition."))?;
+    let transcript = speech::transcribe(&samples).ok_or_else(|| t("Download the voice model first, in NxIsland → Settings → Recognition."))?;
     Ok((transcript.words, samples))
 }
 
@@ -622,7 +622,7 @@ pub fn notes_state(taker: State<Arc<NoteTaker>>) -> NotesState {
 #[tauri::command]
 pub async fn notes_start(app: AppHandle) -> Result<String, String> {
     tauri::async_runtime::spawn_blocking(move || {
-        start(&app).map_err(|e| if e == "models" { t("Download the voice model first, in Coucou → Settings → Recognition.") } else { e })
+        start(&app).map_err(|e| if e == "models" { t("Download the voice model first, in NxIsland → Settings → Recognition.") } else { e })
     })
     .await
     .map_err(|e| e.to_string())?

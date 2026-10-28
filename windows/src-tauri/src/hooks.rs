@@ -137,7 +137,7 @@ fn merged(existing: &Value) -> Result<Value, String> {
 }
 
 fn unexpected(what: &str) -> String {
-    crate::i18n::tf("settings.json: {what} has an unexpected type — Coucou has not touched it.", &[("what", what)])
+    crate::i18n::tf("settings.json: {what} has an unexpected type — NxIsland has not touched it.", &[("what", what)])
 }
 
 /// Settings with every Coucou entry removed, and nothing else changed.

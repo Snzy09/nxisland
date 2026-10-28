@@ -77,9 +77,9 @@ pub fn parse_json(bytes: Option<&[u8]>, label: &str) -> Result<Value, String> {
     }
     match serde_json::from_slice::<Value>(text) {
         Ok(v) if v.is_object() => Ok(v),
-        Ok(_) => Err(tf("{file} isn't a JSON object — Coucou won't touch it.", &[("file", label)])),
+        Ok(_) => Err(tf("{file} isn't a JSON object — NxIsland won't touch it.", &[("file", label)])),
         Err(err) => Err(tf(
-            "{file} isn't valid JSON ({error}). Fix or move it, then try again — Coucou won't overwrite it.",
+            "{file} isn't valid JSON ({error}). Fix or move it, then try again — NxIsland won't overwrite it.",
             &[("file", label), ("error", &err.to_string())],
         )),
     }
@@ -119,7 +119,7 @@ pub fn text_edit<'a>(
             None => None,
             Some(b) => Some(
                 std::str::from_utf8(b)
-                    .map_err(|_| tf("{file} isn't UTF-8 text — Coucou won't touch it.", &[("file", &label)]))?,
+                    .map_err(|_| tf("{file} isn't UTF-8 text — NxIsland won't touch it.", &[("file", &label)]))?,
             ),
         };
         let after = change(current)?;

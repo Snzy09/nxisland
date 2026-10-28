@@ -103,7 +103,7 @@ pub struct Prefs {
     pub open_at_launch: bool,
     /// « OK Coucou »: listen for it and answer with Claude (needs the Claude key).
     pub voice: bool,
-    /// How Coucou answers out loud: "system", "elevenlabs" or "off".
+    /// How NxIsland answers out loud: "system", "elevenlabs" or "off".
     pub voice_output: String,
     /// The ElevenLabs voice: "female" or "male".
     pub voice_gender: String,

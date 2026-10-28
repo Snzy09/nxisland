@@ -175,7 +175,7 @@ export function whatsappSection(host: WhatsAppSettingsHost): HTMLElement {
     if (kind === "gowa") {
       autoStartBlock.append(h("div", { class: "row" }, h("label", { text: t("Start GOWA automatically") }), autoStartSwitch));
       if (autoStart) {
-        autoStartHint.textContent = t("Coucou runs it on this computer only (127.0.0.1, the URL’s port), without downloading media, and stops it when Coucou quits. Its WhatsApp session stays in {path}.", { path: v.gowaDir });
+        autoStartHint.textContent = t("NxIsland runs it on this computer only (127.0.0.1, the URL’s port), without downloading media, and stops it when NxIsland quits. Its WhatsApp session stays in {path}.", { path: v.gowaDir });
         autoStartBlock.append(h("div", { class: "row" }, h("label", { text: "" }), pathInput), autoStartHint);
       }
     }
@@ -201,7 +201,7 @@ export function whatsappSection(host: WhatsAppSettingsHost): HTMLElement {
     if (v.installed) {
       const update = h("button", { text: t("Update"), onclick: () => void Bridge.whatsappInstall() });
       const text = v.prefs.gowaVersion
-        ? t("Gateway GOWA {version} installed, started by Coucou", { version: v.prefs.gowaVersion })
+        ? t("Gateway GOWA {version} installed, started by NxIsland", { version: v.prefs.gowaVersion })
         : t("Your GOWA gateway is set up");
       out.push(h("div", { class: "row" },
         h("span", { style: `color:${WHATSAPP_GREEN}`, text: "✓" }),
@@ -214,7 +214,7 @@ export function whatsappSection(host: WhatsAppSettingsHost): HTMLElement {
         h("div", { class: "row" }, h("button", {
           class: "primary", text: t("Install WhatsApp"), onclick: () => void Bridge.whatsappInstall(),
         })),
-        h("div", { class: "hint", text: t("Coucou downloads GOWA, the open-source gateway, from its GitHub page (about 15 MB, once), checks it and starts it. Then scan the QR code with your phone. No command line needed.") }),
+        h("div", { class: "hint", text: t("NxIsland downloads GOWA, the open-source gateway, from its GitHub page (about 15 MB, once), checks it and starts it. Then scan the QR code with your phone. No command line needed.") }),
       );
     }
     const failed = installError(v.install);
@@ -277,7 +277,7 @@ export function whatsappSection(host: WhatsAppSettingsHost): HTMLElement {
     h("div", { class: "row" }, h("label", { text: "" }), urlInput),
     h("div", { class: "row" }, h("label", { text: "" }), credentialInput, credentialRemove),
     autoStartBlock,
-    h("div", { class: "row" }, h("label", { text: t("Coucou’s webhook port") }), portInput),
+    h("div", { class: "row" }, h("label", { text: t("NxIsland’s webhook port") }), portInput),
     h("div", { class: "row" }, saveBtn, testBtn),
     testNote,
     saveNote,
@@ -291,7 +291,7 @@ export function whatsappSection(host: WhatsAppSettingsHost): HTMLElement {
     h("div", { class: "subhead", text: t("Ignored chats") }),
     ignoredList,
     h("div", { class: "row" }, ignoreInput, addBtn),
-    h("div", { class: "hint", text: t("Coucou only talks to the gateway on this computer. Messages stay in memory, are never logged or saved, and are forgotten when Coucou quits. No photo or media is ever downloaded.") }),
+    h("div", { class: "hint", text: t("NxIsland only talks to the gateway on this computer. Messages stay in memory, are never logged or saved, and are forgotten when NxIsland quits. No photo or media is ever downloaded.") }),
     h("div", { class: "row" }, advancedBtn),
     advanced,
   );

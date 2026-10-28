@@ -1339,9 +1339,9 @@ struct SettingsView: View {
                         Circle().fill(Color(hex: "#7C3AED")).frame(width: 8, height: 8)
                         Text("Obsidian").font(.system(size: 12, weight: .semibold))
                     }
-                    TextField("Vault URL  (http://127.0.0.1:27123)", text: $obsidianVaultUrl)
+                    TextField("Vault URL (http://127.0.0.1:27123)", text: $obsidianVaultUrl)
                         .textFieldStyle(.roundedBorder)
-                    SecureField("API token  (from Local REST API plugin)", text: $obsidianApiToken)
+                    SecureField("API token (from Local REST API plugin)", text: $obsidianApiToken)
                         .textFieldStyle(.roundedBorder)
                     Text("Enable the Local REST API community plugin in Obsidian to get a token.")
                         .font(.system(size: 10))

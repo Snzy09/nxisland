@@ -16,10 +16,10 @@ val releaseKeyAlias = signingValue("COUCOU_KEY_ALIAS")
 val releaseKeyPassword = signingValue("COUCOU_KEY_PASSWORD") ?: releaseStorePassword
 
 android {
-    namespace = "com.coucou.android"
+    namespace = "com.nxisland.android"
     compileSdk = 35
     defaultConfig {
-        applicationId = "com.coucou.android"
+        applicationId = "com.nxisland.android"
         minSdk = 30
         targetSdk = 35
         versionCode = 3

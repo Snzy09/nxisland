@@ -28,7 +28,7 @@ export async function notesPage(page: HTMLElement, ctx: HubContext) {
     page.append(glowCard(
       "#3B9EFF",
       h("div", { style: "font:700 15px var(--font)", text: t("One download, then offline") }),
-      h("div", { class: "hub-note", style: "color:#b7bbc2", text: t("Coucou writes your calls on this computer with Parakeet, and tells the voices apart with a second small model. Both are downloaded once (about {0} MB), then everything works offline.", { 0: ctx.status.models.downloadMb }) }),
+      h("div", { class: "hub-note", style: "color:#b7bbc2", text: t("NxIsland writes your calls on this computer with Parakeet, and tells the voices apart with a second small model. Both are downloaded once (about {0} MB), then everything works offline.", { 0: ctx.status.models.downloadMb }) }),
       modelsControl(ctx, () => ctx.navigate("notes")),
     ));
   }

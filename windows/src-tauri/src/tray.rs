@@ -34,7 +34,7 @@ struct UpdateItem {
 }
 
 fn update_label(version: &str) -> String {
-    tf("Update Coucou to {version}…", &[("version", version)])
+    tf("Update NxIsland to {version}…", &[("version", version)])
 }
 
 pub fn build(app: &AppHandle) -> tauri::Result<()> {

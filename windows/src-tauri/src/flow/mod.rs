@@ -301,7 +301,7 @@ fn begin(app: &AppHandle, flow: &Arc<Flow>) -> Option<Listening> {
             app,
             "download",
             "#3B9EFF",
-            t("Download the voice model first, in Coucou → Settings → Recognition."),
+            t("Download the voice model first, in NxIsland → Settings → Recognition."),
             Some((t("Open Settings"), "openSettings")),
             10,
         );

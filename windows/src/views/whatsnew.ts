@@ -63,7 +63,7 @@ export function buildWhatsNew(): ViewHost {
     }
     const page = releasePage(Updates.status.platform, release.version);
     stack.append(
-      h("div", { class: "title one-line", text: t("You're on Coucou {version}", { version: release.version }) }),
+      h("div", { class: "title one-line", text: t("You're on NxIsland {version}", { version: release.version }) }),
       grid,
       h("div", { class: "actions" },
         btn(t("Next"), "primary", () => WhatsNew.next()),

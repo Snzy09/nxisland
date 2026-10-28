@@ -269,7 +269,7 @@ export function webhookLine(w: WaWebhook): string {
   switch (w.state) {
     case "registered": return t("Live: new messages arrive at once.");
     case "portBusy": return t("Port {port} is taken: pick another one. Checking every 20 s meanwhile.", { port: w.port });
-    case "refused": return t("The gateway refused Coucou’s address ({detail}). Checking every 20 s instead.", { detail: w.detail });
+    case "refused": return t("The gateway refused NxIsland’s address ({detail}). Checking every 20 s instead.", { detail: w.detail });
     default: return t("Checking for new messages every 20 s.");
   }
 }
