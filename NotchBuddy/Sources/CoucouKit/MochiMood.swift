@@ -79,32 +79,20 @@ extension BotEngine {
         moodTired += ((calmState ? target.tired : 0) - moodTired) * k
         let sleeping = calmState && target.asleep
 
-        updateStress(now: now)
+        // NxIsland: stress hopping disabled (clean geometric design, no mood acting)
+        // updateStress(now: now)
 
-        // Full memory: puffed up.
-        if moodFull > 0.02 {
-            tgSx *= 1 + 0.07 * moodFull
-            tgSy *= 1 - 0.035 * moodFull
-        }
+        // Full memory: puffed up (disabled in new design).
+        // if moodFull > 0.02 {
+        //     tgSx *= 1 + 0.07 * moodFull
+        //     tgSy *= 1 - 0.035 * moodFull
+        // }
 
-        // Sweat: drops thrown from his sides, in bursts while the processor is at full load,
-        // now and then when the Mac is only warm.
-        if now > nextMoodDrop {
-            if moodBusy > 0.4 {
-                throwDrop(now: now)
-                if Double.random(in: 0...1) < 0.35 { throwDrop(now: now) }
-                nextMoodDrop = now + Double.random(in: 0.18...0.4)
-            } else if moodHot > 0.6 {
-                throwDrop(now: now)
-                nextMoodDrop = now + Double.random(in: 0.6...1.1)
-            } else {
-                nextMoodDrop = now + 0.3
-            }
-        }
-        moodDrops.removeAll { drop in
-            let a = CGFloat(now - drop.born)
-            return a > 1.6 || drop.y + drop.vy * a + Self.dropGravity * a * a / 2 > 1.05
-        }
+        // Sweat drops disabled in new design (antislop R-22: no mood particle effects).
+        // moodDrops.removeAll { drop in
+        //     let a = CGFloat(now - drop.born)
+        //     return a > 1.6 || drop.y + drop.vy * a + Self.dropGravity * a * a / 2 > 1.05
+        // }
 
         // Low battery: heavy eyes, the odd yawn; nearly empty: asleep with his z's.
         let ownEye = eyeOverride == nil || eyeOverride == .tired || eyeOverride == .closed

@@ -91,22 +91,9 @@ object MochiPainter {
             val body = bodyPath(e, rx, ry, r)
             drawBody(c, e, body, r, rx, ry)
 
-            val blushVal = max(e.blush, e.tint * 0.5) * (1 - e.morph)
-            if (blushVal > 0.01) {
-                c.save()
-                c.clipPath(body)
-                val yOffset = sin(e.yaw) * rx * 0.8
-                val p = fillPaint(Color(255, 120, 150, (255 * 0.5 * blushVal).toInt().coerceIn(0, 255)))
-                for (sd in intArrayOf(-1, 1)) {
-                    c.drawOval(
-                        Rect(
-                            (sd * rx * 0.55 + yOffset - r * 0.17).toFloat(), (ry * 0.2 - r * 0.1).toFloat(),
-                            (sd * rx * 0.55 + yOffset + r * 0.17).toFloat(), (ry * 0.2 + r * 0.1).toFloat(),
-                        ), p,
-                    )
-                }
-                c.restore()
-            }
+            // NxIsland: blush disabled (clean geometric design)
+            // val blushVal = max(e.blush, e.tint * 0.5) * (1 - e.morph)
+            // if (blushVal > 0.01) { ... }
 
             drawEyes(c, e, nowSec, body, r, rx, ry)
             if (e.morph > 0.05) drawMouth(c, e, body, r)
@@ -259,67 +246,19 @@ object MochiPainter {
 
     private fun drawEyeShape(c: Canvas, e: MochiEngine, nowSec: Double, shape: EyeShape, w: Double, h: Double, sd: Int, ink: Color) {
         val fill = fillPaint(ink)
+        // NxIsland: clean minimal geometric eyes (antislop-ui R-04, R-20)
         when (shape) {
-            EyeShape.WIDE -> drawEyeShape(c, e, nowSec, EyeShape.PILL, w * 1.16, h * 1.12, sd, ink)
-            EyeShape.PILL -> {
-                val hh = max(h * e.open, w * 0.3)
-                roundRect(c, -w / 2, -hh / 2, w, hh, min(w / 2, hh / 2), fill)
+            EyeShape.CLOSED -> {
+                // Minimal blink: clean horizontal line
+                roundRect(c, -w * 0.6, -w * 0.1, w * 1.2, w * 0.2, w * 0.1, fill)
             }
-            EyeShape.DOT -> c.drawCircle(Offset.Zero, (w * 0.45).toFloat(), fill)
-            EyeShape.LINE -> {
-                c.save()
-                c.rotate((-sd * 0.2 * 180 / PI).toFloat())
-                roundRect(c, -w * 0.78, -w * 0.21, w * 1.56, w * 0.42, w * 0.21, fill)
-                c.restore()
+            EyeShape.LINE, EyeShape.FLAT -> {
+                // Focus line: flat line
+                roundRect(c, -w * 0.7, -w * 0.15, w * 1.4, w * 0.3, w * 0.15, fill)
             }
-            EyeShape.FLAT -> roundRect(c, -w * 0.72, -w * 0.2, w * 1.44, w * 0.4, w * 0.2, fill)
-            EyeShape.HAPPY -> arcStroke(c, 0.0, h * 0.18, w * 0.82, PI * 1.12, PI * 1.88, strokePaint(ink, (w * 0.5).toFloat()))
-            EyeShape.CLOSED -> arcStroke(c, 0.0, -h * 0.08, w * 0.78, PI * 0.15, PI * 0.85, strokePaint(ink, (w * 0.36).toFloat()))
-            EyeShape.SPIRAL -> {
-                val path = Path()
-                var a = 0.0
-                var first = true
-                while (a < 4.4 * PI) {
-                    val rad = w * 0.06 + a * w * 0.058
-                    val aa = a + nowSec * 9 * sd
-                    val px = (cos(aa) * rad).toFloat()
-                    val py = (sin(aa) * rad).toFloat()
-                    if (first) { path.moveTo(px, py); first = false } else path.lineTo(px, py)
-                    a += 0.2
-                }
-                c.drawPath(path, strokePaint(ink, (w * 0.22).toFloat()))
-            }
-            EyeShape.HEART -> c.drawPath(heartPath(w * 1.2), fillPaint(Color(0xFF, 0x4D, 0x6D)))
-            EyeShape.STAR -> {
-                c.save()
-                c.rotate((nowSec * 1.5 * sd * 180 / PI).toFloat())
-                c.drawPath(starPath(w * 1.05, w * 0.46), fillPaint(Color(0xF7, 0xB3, 0x2B)))
-                c.restore()
-            }
-            EyeShape.TIRED -> {
-                roundRect(c, -w / 2, -h * 0.02, w, h * 0.38, w / 2, fill)
-                roundRect(c, -w * 0.62, -h * 0.1, w * 1.24, w * 0.22, w * 0.11, fill)
-            }
-            EyeShape.WINK -> if (sd < 0) {
-                val hh = max(h * e.open, w * 0.3)
-                roundRect(c, -w / 2, -hh / 2, w, hh, min(w / 2, hh / 2), fill)
-            } else {
-                arcStroke(c, 0.0, h * 0.18, w * 0.82, PI * 1.12, PI * 1.88, strokePaint(ink, (w * 0.5).toFloat()))
-            }
-            EyeShape.CUP -> {
-                // Flat top, rounded bottom corners (U shape), used while the box is open.
-                val hh = max(h * e.open, w * 0.3)
-                val cr = min(w / 2, hh / 2)
-                val path = Path().apply {
-                    moveTo((-w / 2).toFloat(), (-hh / 2).toFloat())
-                    lineTo((w / 2).toFloat(), (-hh / 2).toFloat())
-                    lineTo((w / 2).toFloat(), (hh / 2 - cr).toFloat())
-                    quadraticBezierTo((w / 2).toFloat(), (hh / 2).toFloat(), (w / 2 - cr).toFloat(), (hh / 2).toFloat())
-                    lineTo((-w / 2 + cr).toFloat(), (hh / 2).toFloat())
-                    quadraticBezierTo((-w / 2).toFloat(), (hh / 2).toFloat(), (-w / 2).toFloat(), (hh / 2 - cr).toFloat())
-                    close()
-                }
-                c.drawPath(path, fill)
+            else -> {
+                // Standard: crisp solid dot (no highlight, no lid)
+                c.drawCircle(Offset.Zero, (w * 0.42).toFloat(), fill)
             }
         }
     }

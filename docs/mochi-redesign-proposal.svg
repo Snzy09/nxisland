@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" font-family="system-ui, -apple-system, sans-serif">
+  <!-- background -->
+  <rect width="900" height="600" fill="#0A0A0C"/>
+
+  <!-- title -->
+  <text x="40" y="48" fill="#F5F6F8" font-size="28" font-weight="700">Mochi Redesign Proposal</text>
+  <text x="40" y="74" fill="#8E939C" font-size="14">NxIsland notch character · antislop + hallmark direction</text>
+
+  <!-- divider -->
+  <line x1="40" y1="92" x2="860" y2="92" stroke="#26262B" stroke-width="1"/>
+
+  <!-- ===== CURRENT ===== -->
+  <text x="40" y="128" fill="#6B7079" font-size="13" letter-spacing="1">CURRENT</text>
+  <g transform="translate(140,260)">
+    <!-- blobby squircle -->
+    <rect x="-70" y="-70" width="140" height="140" rx="46" fill="#F5F6F8"/>
+    <!-- big lidded eyes -->
+    <circle cx="-26" cy="-10" r="18" fill="#15171C"/>
+    <circle cx="26" cy="-10" r="18" fill="#15171C"/>
+    <circle cx="-20" cy="-16" r="5" fill="#F5F6F8"/>
+    <circle cx="32" cy="-16" r="5" fill="#F5F6F8"/>
+    <!-- blush -->
+    <circle cx="-44" cy="20" r="9" fill="#FCA5A5" opacity="0.7"/>
+    <circle cx="44" cy="20" r="9" fill="#FCA5A5" opacity="0.7"/>
+    <!-- small smile -->
+    <path d="M -16 30 Q 0 42 16 30" stroke="#15171C" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- sweat drop -->
+    <path d="M 60 -30 q 8 12 0 20 q -8 -8 0 -20" fill="#38BDF8"/>
+  </g>
+  <text x="140" y="370" fill="#6B7079" font-size="12" text-anchor="middle">organic, mood-acting, cute-AI tell</text>
+
+  <!-- ===== PROPOSED: IDLE ===== -->
+  <text x="330" y="128" fill="#6B7079" font-size="13" letter-spacing="1">PROPOSED · IDLE</text>
+  <g transform="translate(400,250)">
+    <!-- clean circle body -->
+    <circle cx="0" cy="0" r="66" fill="#F5F6F8"/>
+    <!-- inner geometry ring (notch motif) -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#15171C" stroke-width="1.5" opacity="0.12"/>
+    <!-- minimal dot eyes -->
+    <circle cx="-22" cy="-8" r="7" fill="#15171C"/>
+    <circle cx="22" cy="-8" r="7" fill="#15171C"/>
+    <!-- single thin mouth line -->
+    <line x1="-14" y1="22" x2="14" y2="22" stroke="#15171C" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- agent color core dot (signature) -->
+    <circle cx="0" cy="50" r="5" fill="#C084FC"/>
+  </g>
+  <text x="400" y="360" fill="#6B7079" font-size="12" text-anchor="middle">calm, geometric, color = state</text>
+
+  <!-- ===== PROPOSED: WORKING ===== -->
+  <text x="560" y="128" fill="#6B7079" font-size="13" letter-spacing="1">PROPOSED · WORKING</text>
+  <g transform="translate(630,250)">
+    <!-- pulse ring (signature motif) -->
+    <circle cx="0" cy="0" r="78" fill="none" stroke="#C084FC" stroke-width="2" opacity="0.5"/>
+    <circle cx="0" cy="0" r="92" fill="none" stroke="#C084FC" stroke-width="1" opacity="0.25"/>
+    <circle cx="0" cy="0" r="66" fill="#F5F6F8"/>
+    <!-- focused smaller eyes -->
+    <circle cx="-20" cy="-8" r="5" fill="#15171C"/>
+    <circle cx="20" cy="-8" r="5" fill="#15171C"/>
+    <line x1="-14" y1="22" x2="14" y2="22" stroke="#15171C" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="0" cy="50" r="5" fill="#C084FC"/>
+  </g>
+  <text x="630" y="360" fill="#6B7079" font-size="12" text-anchor="middle">pulse ring = active work</text>
+
+  <!-- ===== PROPOSED: ERROR ===== -->
+  <text x="760" y="128" fill="#6B7079" font-size="13" letter-spacing="1">PROPOSED · ERROR</text>
+  <g transform="translate(800,250)">
+    <circle cx="0" cy="0" r="66" fill="#F5F6F8"/>
+    <!-- flat line eyes (x) -->
+    <line x1="-28" y1="-12" x2="-14" y2="2" stroke="#15171C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-14" y1="-12" x2="-28" y2="2" stroke="#15171C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="14" y1="-12" x2="28" y2="2" stroke="#15171C" stroke-width="3" stroke-linecap="round"/>
+    <line x1="28" y1="-12" x2="14" y2="2" stroke="#15171C" stroke-width="3" stroke-linecap="round"/>
+    <!-- straight mouth -->
+    <line x1="-14" y1="26" x2="14" y2="26" stroke="#15171C" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- error color core -->
+    <circle cx="0" cy="50" r="5" fill="#F4505E"/>
+  </g>
+  <text x="800" y="360" fill="#6B7079" font-size="12" text-anchor="middle">flat eyes + red core</text>
+
+  <!-- ===== spec strip ===== -->
+  <line x1="40" y1="430" x2="860" y2="430" stroke="#26262B" stroke-width="1"/>
+  <text x="40" y="466" fill="#F5F6F8" font-size="14" font-weight="600">What changes</text>
+  <text x="40" y="492" fill="#8E939C" font-size="13">Form: round squircle → clean circle + notch-motif inner ring (carries island identity)</text>
+  <text x="40" y="514" fill="#8E939C" font-size="13">Eyes: big lidded → two small high-contrast dots; no blush</text>
+  <text x="40" y="536" fill="#8E939C" font-size="13">Moods removed: sweat, puff, yawn, heat → replaced by 4 state poses (idle/working/ready/error)</text>
+  <text x="40" y="558" fill="#8E939C" font-size="13">Signature: thin "pulse ring" in agent color = active work; color core dot = current integration</text>
+  <text x="40" y="580" fill="#8E939C" font-size="13">Platforms: same geometry Mac (Swift) → iOS → Android (Kotlin painter)</text>
+</svg>
