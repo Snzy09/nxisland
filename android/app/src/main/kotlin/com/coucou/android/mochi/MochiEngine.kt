@@ -57,6 +57,7 @@ class MochiEngine(
     var yaw = 0.0; var pitch = 0.0; var roll = 0.0; var tilt = 0.0; var open = 1.0
     var sx = 1.0; var sy = 1.0; var oy = 0.0; var ox = 0.0
     var tint = 0.0; var morph = 0.0; var hands = 0.0; var blush = 0.0; var es = 1.0; var badgeS = 0.0
+    var moodBusy = 0.0
 
     // Outfit (the main Mochi only: minis never wear one). `outfit` is what is drawn; it changes only once the previous one has left.
     var outfit: Outfit = Outfit.NONE
