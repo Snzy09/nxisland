@@ -1160,6 +1160,11 @@ final class BotEngine: ObservableObject {
         // Eyes
         drawEyes(ctx: &ctx, path: bodyPath, R: R, rx: rx, ry: ry)
 
+        // Pulse ring accent — working state indicator (NxIsland design)
+        if moodBusy > 0.1 {
+            drawPulseRing(ctx: &ctx, R: R, rx: rx, ry: ry, busy: moodBusy)
+        }
+
         // Mouth hole — dark pill cutout inside the box face
         // Spec: left/right margins 0.10R, top margin 0.08R from box top (-0.94R)
         if morph > 0.05 {
@@ -1579,6 +1584,34 @@ final class BotEngine: ObservableObject {
             p.addEllipse(in: CGRect(x: -r, y: -r, width: r*2, height: r*2))
             ctx.fill(p, with: .color(ink))
         }
+    }
+
+    private func drawPulseRing(ctx: inout GraphicsContext, R: CGFloat, rx: CGFloat, ry: CGFloat, busy: CGFloat) {
+        let now = CGFloat(CACurrentMediaTime())
+        
+        // Outer ring: pulsing animation, scales with busy level
+        let outerPhase = (now * 1.8).truncatingRemainder(dividingBy: 1)
+        let outerScale = 1.0 + 0.15 * sin(outerPhase * .pi * 2)
+        let outerR = max(rx, ry) * CGFloat(outerScale) * 1.05
+        
+        var outerRing = Path()
+        outerRing.addEllipse(in: CGRect(x: -outerR, y: -outerR, width: outerR*2, height: outerR*2))
+        
+        let outerAlpha = 0.12 * busy * (0.5 + 0.5 * sin((outerPhase + 0.25) * .pi * 2))
+        ctx.stroke(outerRing, with: .color(Color(red: 0.7, green: 0.5, blue: 1.0).opacity(Double(outerAlpha))),
+                   style: StrokeStyle(lineWidth: 0.8, lineCap: .round))
+        
+        // Inner ring: slower phase, inverse pulse
+        let innerPhase = (now * 1.2).truncatingRemainder(dividingBy: 1)
+        let innerScale = 0.95 + 0.08 * sin(innerPhase * .pi * 2)
+        let innerR = max(rx, ry) * CGFloat(innerScale) * 0.92
+        
+        var innerRing = Path()
+        innerRing.addEllipse(in: CGRect(x: -innerR, y: -innerR, width: innerR*2, height: innerR*2))
+        
+        let innerAlpha = 0.18 * busy * (0.6 + 0.4 * sin((innerPhase + 0.5) * .pi * 2))
+        ctx.stroke(innerRing, with: .color(Color(red: 0.8, green: 0.4, blue: 0.9).opacity(Double(innerAlpha))),
+                   style: StrokeStyle(lineWidth: 0.6, lineCap: .round))
     }
 
     private func drawBadge(context: GraphicsContext, size: CGSize, badge: BadgeType, R: CGFloat, rx: CGFloat, ry: CGFloat, cx: CGFloat, cy: CGFloat) {

@@ -96,6 +96,12 @@ object MochiPainter {
             // if (blushVal > 0.01) { ... }
 
             drawEyes(c, e, nowSec, body, r, rx, ry)
+
+            // Pulse ring accent — working state indicator (NxIsland design)
+            if (e.moodBusy > 0.1) {
+                drawPulseRing(c, e, nowSec, r, rx, ry)
+            }
+
             if (e.morph > 0.05) drawMouth(c, e, body, r)
 
             if (head != null && outfitCtx != null) drawOutfitFront(outfitCtx, e.outfit, head, outfitState)
@@ -261,6 +267,24 @@ object MochiPainter {
                 c.drawCircle(Offset.Zero, (w * 0.42).toFloat(), fill)
             }
         }
+    }
+
+    private fun drawPulseRing(c: Canvas, e: MochiEngine, nowSec: Double, r: Double, rx: Double, ry: Double) {
+        val outerPhase = (nowSec * 1.8).toFloat() % 1f
+        val outerScale = 1.0 + 0.15 * sin(outerPhase * PI * 2)
+        val outerR = (max(rx, ry) * outerScale * 1.05).toFloat()
+
+        val outerAlpha = (0.12 * e.moodBusy * (0.5 + 0.5 * sin((outerPhase + 0.25) * PI * 2))).toFloat().coerceIn(0f, 1f)
+        val outerPaint = strokePaint(Color(178, 128, 255, (outerAlpha * 255).toInt()), 0.8f)
+        c.drawCircle(Offset.Zero, outerR, outerPaint)
+
+        val innerPhase = (nowSec * 1.2).toFloat() % 1f
+        val innerScale = 0.95 + 0.08 * sin(innerPhase * PI * 2)
+        val innerR = (max(rx, ry) * innerScale * 0.92).toFloat()
+
+        val innerAlpha = (0.18 * e.moodBusy * (0.6 + 0.4 * sin((innerPhase + 0.5) * PI * 2))).toFloat().coerceIn(0f, 1f)
+        val innerPaint = strokePaint(Color(204, 102, 230, (innerAlpha * 255).toInt()), 0.6f)
+        c.drawCircle(Offset.Zero, innerR, innerPaint)
     }
 
     /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */
