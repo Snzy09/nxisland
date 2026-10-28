@@ -2,9 +2,10 @@
 // OS-specific release paths (linux/release/ for Linux, windows/release/ for Windows).
 // Used by `npm run pack` and by the release workflows.
 
-import { readFileSync, mkdirSync, copyFileSync, readdirSync, statSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync, statSync } from "node:fs";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = resolve(root, "..");
@@ -27,22 +28,22 @@ const PACKAGES = {
     {
       dir: "nsis",
       suffix: "-setup.exe",
-      names: [`Coucou-Windows-${version}-setup.exe`, "Coucou-Windows-setup.exe"],
+      names: [`NxIsland-Windows-${version}-setup.exe`, "NxIsland-Windows-setup.exe", `Coucou-Windows-${version}-setup.exe`],
     },
     {
       dir: "msi",
       suffix: ".msi",
-      names: [`Coucou-Windows-${version}.msi`, "Coucou-Windows.msi"],
+      names: [`NxIsland-Windows-${version}.msi`, "NxIsland-Windows.msi", `Coucou-Windows-${version}.msi`],
     },
   ],
   linux: [
     {
       dir: "appimage",
       suffix: ".AppImage",
-      names: [`Coucou-Linux-${version}-${arch}.AppImage`, `Coucou-Linux-${arch}.AppImage`],
+      names: [`NxIsland-Linux-${version}-${arch}.AppImage`, `NxIsland-Linux-${arch}.AppImage`, `Coucou-Linux-${version}-${arch}.AppImage`],
     },
-    { dir: "deb", suffix: ".deb", names: [`Coucou-Linux-${version}-${debArch}.deb`] },
-    { dir: "rpm", suffix: ".rpm", names: [`Coucou-Linux-${version}-${arch}.rpm`] },
+    { dir: "deb", suffix: ".deb", names: [`NxIsland-Linux-${version}-${debArch}.deb`, `Coucou-Linux-${version}-${debArch}.deb`] },
+    { dir: "rpm", suffix: ".rpm", names: [`NxIsland-Linux-${version}-${arch}.rpm`, `Coucou-Linux-${version}-${arch}.rpm`] },
   ],
 };
 
@@ -82,6 +83,21 @@ for (const { dir, suffix, names } of packages) {
       copyFileSync(built, dest);
       written.push(dest);
     }
+  }
+}
+
+for (const targetDir of outDirs) {
+  const sums = [];
+  const files = readdirSync(targetDir).filter((f) => !f.startsWith(".") && f !== "SHA256SUMS");
+  for (const f of files) {
+    const full = join(targetDir, f);
+    if (!statSync(full).isFile()) continue;
+    const hash = createHash("sha256").update(readFileSync(full)).digest("hex");
+    sums.push(`${hash}  ${f}`);
+  }
+  if (sums.length > 0) {
+    writeFileSync(join(targetDir, "SHA256SUMS"), sums.join("\n") + "\n");
+    console.log(`  Updated ${join(targetDir, "SHA256SUMS")}`);
   }
 }
 

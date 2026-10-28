@@ -657,7 +657,7 @@ sudo apt install build-essential pkg-config \
   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
 npm install
 npm run tauri dev      # live-reloading development build
-npm run pack           # AppImage, .deb and .rpm in windows/release/
+npm run pack           # AppImage, .deb and .rpm in linux/release/
 ```
 
 On Arch Linux, build and install the package from `linux/arch/`:

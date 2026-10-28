@@ -13,8 +13,8 @@ VERSION="${1:?Usage: $0 <version> [--finish]}"
 MODE="${2:-}"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BUILD_DIR="$REPO_ROOT/NotchBuddy/release"
-APP="$BUILD_DIR/Coucou.app"
-ZIP="$BUILD_DIR/Coucou.zip"
+APP="$BUILD_DIR/NxIsland.app"
+ZIP="$BUILD_DIR/NxIsland.zip"
 COMMIT_FILE="$BUILD_DIR/commit"
 TAG="v$VERSION"
 
@@ -137,9 +137,9 @@ ditto -c -k --keepParent "$APP" "$ZIP"
 echo "Release zip ready: $ZIP"
 
 # ── 6. Tag the built commit + GitHub release ──────────────────────────────────
-NOTES="Coucou $VERSION for macOS 15 or later (Apple silicon and Intel).
+NOTES="NxIsland $VERSION for macOS 15 or later (Apple silicon and Intel).
 
-Signed with a Developer ID and notarized by Apple.
+Signed with Developer ID and notarized by Apple.
 
 ## What's new
 
@@ -147,18 +147,18 @@ $CHANGES
 
 ## Install
 
-1. Download Coucou.zip below and unzip it.
-2. Move Coucou.app to your Applications folder, replacing the old one if you have it.
+1. Download NxIsland.zip below and unzip it.
+2. Move NxIsland.app to your Applications folder, replacing the old one if you have it.
 3. Launch it, and click Open when macOS asks you to confirm.
 
-Linux and Windows: see the [README](https://github.com/Louis-CFM/nxisland#readme)."
+Linux and Windows: see [README](https://github.com/Louis-CFM/nxisland#readme)."
 
 echo
 echo "──────── Release notes ────────"
 echo "$NOTES"
 echo "───────────────────────────────"
 echo
-read -r -p "Tag $(git rev-parse --short "$COMMIT") as $TAG and publish this release? [y/N] " ANSWER
+read -r -p "Tag $(git rev-parse --short "$COMMIT") $TAG and publish this release? [y/N] " ANSWER
 case "$ANSWER" in
   y|Y|yes|oui|o|O) ;;
   *) die "stopped before tagging. Run ./scripts/release.sh $VERSION --finish to publish later." ;;
@@ -169,7 +169,7 @@ git push origin "$TAG"
 
 gh release create "$TAG" "$ZIP" \
   --repo Louis-CFM/nxisland \
-  --title "Coucou $VERSION" \
+  --title "NxIsland $VERSION" \
   --latest \
   --notes "$NOTES"
 

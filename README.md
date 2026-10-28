@@ -303,7 +303,7 @@ sudo apt install build-essential pkg-config \
 git clone https://github.com/Louis-CFM/nxisland.git
 cd nxisland/windows
 npm install
-npm run pack                # AppImage, .deb and .rpm land in windows/release/
+npm run pack                # AppImage, .deb and .rpm land in linux/release/
 ```
 
 **Android** — requirements: JDK 17 and the Android SDK (platform 35).

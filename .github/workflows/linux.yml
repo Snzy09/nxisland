@@ -110,8 +110,7 @@ jobs:
         run: |
           npm run pack
           echo "version=$(node -p "require('./src-tauri/tauri.conf.json').version")" >> "$GITHUB_OUTPUT"
-          cd release
-          sha256sum NxIsland-Linux-* > SHA256SUMS
+          cd ../linux/release
           ls -la
           cat SHA256SUMS
 
@@ -119,7 +118,7 @@ jobs:
         id: gate
         run: echo "publish=${{ github.event_name == 'push' && env.PUBLISH == 'true' && startsWith(github.ref, 'refs/tags/linux-v') }}" >> "$GITHUB_OUTPUT"
 
-      # Upload only on a manual run or when publishing a release, as on Windows.
+      # Upload only on a manual run or when publishing a release, on Windows.
       # The repo is public, so artifacts are downloadable by any signed-in GitHub
       # user; retention-days: 3 limits exposure.
       - uses: actions/upload-artifact@v7
@@ -127,8 +126,8 @@ jobs:
         with:
           name: NxIsland-Linux
           path: |
-            windows/release/NxIsland-Linux-*
-            windows/release/SHA256SUMS
+            linux/release/NxIsland-Linux-*
+            linux/release/SHA256SUMS
           retention-days: 3
 
   publish:
