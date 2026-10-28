@@ -825,21 +825,15 @@ export class BotEngine {
     const body = this.bodyPath(rx, ry, R);
     this.drawBody(x, body, R, rx, ry);
 
-    const blushVal = Math.max(this.blush, this.tint * 0.5) * (1 - this.morph);
-    if (blushVal > 0.01) {
-      x.save();
-      x.clip(body);
-      const yOffset = Math.sin(this.yaw) * rx * 0.8;
-      x.fillStyle = `rgba(255,120,150,${0.5 * blushVal})`;
-      for (const sd of [-1, 1]) {
-        x.beginPath();
-        x.ellipse(sd * rx * 0.55 + yOffset, ry * 0.2, R * 0.17, R * 0.1, 0, 0, Math.PI * 2);
-        x.fill();
-      }
-      x.restore();
-    }
+    // NxIsland: blush disabled (clean geometric design)
 
     this.drawEyes(x, body, R, rx, ry);
+
+    // Pulse ring accent — working state indicator (NxIsland design)
+    if (this.cfg.eye === "pill" && (this.tint > 0.5 || this.badge?.kind === "dots")) {
+      this.drawPulseRing(x, R, rx, ry);
+    }
+
     if (this.morph > 0.05) this.drawMouth(x, body, R);
 
     if (head) drawOutfitFront(x, this.outfit, head, outfitState);
@@ -981,110 +975,57 @@ export class BotEngine {
 
   private drawEyeShape(
     x: CanvasRenderingContext2D, shape: EyeShape,
-    w: number, h: number, sd: number, ink: string,
+    w: number, _h: number, _sd: number, _ink: string,
   ) {
-    const t = now();
+    // NxIsland: clean minimal geometric eyes (antislop-ui R-04, R-20)
     switch (shape) {
-      case "wide":
-        this.drawEyeShape(x, "pill", w * 1.16, h * 1.12, sd, ink);
-        break;
-      case "pill": {
-        const hh = Math.max(h * this.open, w * 0.3);
-        roundRectPath(x, -w / 2, -hh / 2, w, hh, Math.min(w / 2, hh / 2));
-        x.fill();
-        break;
-      }
-      case "dot":
-        x.beginPath();
-        x.arc(0, 0, w * 0.45, 0, Math.PI * 2);
+      case "closed":
+        // Minimal blink: clean horizontal line
+        roundRectPath(x, -w * 0.6, -w * 0.1, w * 1.2, w * 0.2, w * 0.1);
         x.fill();
         break;
       case "line":
-        x.rotate(-sd * 0.2);
-        roundRectPath(x, -w * 0.78, -w * 0.21, w * 1.56, w * 0.42, w * 0.21);
-        x.fill();
-        break;
       case "flat":
-        roundRectPath(x, -w * 0.72, -w * 0.2, w * 1.44, w * 0.4, w * 0.2);
+        // Focus line: flat line
+        roundRectPath(x, -w * 0.7, -w * 0.15, w * 1.4, w * 0.3, w * 0.15);
         x.fill();
         break;
-      case "happy":
-        x.lineWidth = w * 0.5;
-        x.lineCap = "round";
+      default:
+        // Standard: crisp solid dot (no highlight, no lid)
         x.beginPath();
-        x.arc(0, h * 0.18, w * 0.82, Math.PI * 1.12, Math.PI * 1.88);
-        x.stroke();
-        break;
-      case "closed":
-        x.lineWidth = w * 0.36;
-        x.lineCap = "round";
-        x.beginPath();
-        x.arc(0, -h * 0.08, w * 0.78, Math.PI * 0.15, Math.PI * 0.85);
-        x.stroke();
-        break;
-      case "spiral": {
-        x.lineWidth = w * 0.22;
-        x.lineCap = "round";
-        x.beginPath();
-        for (let a = 0; a < 4.4 * Math.PI; a += 0.2) {
-          const r = w * 0.06 + a * w * 0.058;
-          const aa = a + t * 9 * sd;
-          const px = Math.cos(aa) * r;
-          const py = Math.sin(aa) * r;
-          if (a === 0) x.moveTo(px, py);
-          else x.lineTo(px, py);
-        }
-        x.stroke();
-        break;
-      }
-      case "heart":
-        x.fillStyle = "#FF4D6D";
-        heartPath(x, w * 1.2);
-        x.fill();
-        x.fillStyle = ink;
-        break;
-      case "star":
-        x.fillStyle = "#F7B32B";
-        x.rotate(t * 1.5 * sd);
-        starPath(x, w * 1.05, w * 0.46);
-        x.fill();
-        x.fillStyle = ink;
-        break;
-      case "tired":
-        roundRectPath(x, -w / 2, -h * 0.02, w, h * 0.38, w / 2);
-        x.fill();
-        roundRectPath(x, -w * 0.62, -h * 0.1, w * 1.24, w * 0.22, w * 0.11);
+        x.arc(0, 0, w * 0.42, 0, Math.PI * 2);
         x.fill();
         break;
-      case "wink":
-        if (sd < 0) {
-          const hh = Math.max(h * this.open, w * 0.3);
-          roundRectPath(x, -w / 2, -hh / 2, w, hh, Math.min(w / 2, hh / 2));
-          x.fill();
-        } else {
-          x.lineWidth = w * 0.5;
-          x.lineCap = "round";
-          x.beginPath();
-          x.arc(0, h * 0.18, w * 0.82, Math.PI * 1.12, Math.PI * 1.88);
-          x.stroke();
-        }
-        break;
-      case "cup": {
-        // Flat top, rounded bottom corners (U shape) — used while the box is open
-        const hh = Math.max(h * this.open, w * 0.3);
-        const cr = Math.min(w / 2, hh / 2);
-        x.beginPath();
-        x.moveTo(-w / 2, -hh / 2);
-        x.lineTo(w / 2, -hh / 2);
-        x.lineTo(w / 2, hh / 2 - cr);
-        x.quadraticCurveTo(w / 2, hh / 2, w / 2 - cr, hh / 2);
-        x.lineTo(-w / 2 + cr, hh / 2);
-        x.quadraticCurveTo(-w / 2, hh / 2, -w / 2, hh / 2 - cr);
-        x.closePath();
-        x.fill();
-        break;
-      }
     }
+  }
+
+  private drawPulseRing(x: CanvasRenderingContext2D, _R: number, rx: number, ry: number) {
+    const t = now();
+    
+    // Outer ring: pulsing animation
+    const outerPhase = (t * 1.8) % 1;
+    const outerScale = 1.0 + 0.15 * Math.sin(outerPhase * Math.PI * 2);
+    const outerR = Math.max(rx, ry) * outerScale * 1.05;
+
+    const outerAlpha = 0.12 * (0.5 + 0.5 * Math.sin((outerPhase + 0.25) * Math.PI * 2));
+    x.strokeStyle = `rgba(178,128,255,${outerAlpha})`;
+    x.lineWidth = 0.8;
+    x.lineCap = "round";
+    x.beginPath();
+    x.arc(0, 0, outerR, 0, Math.PI * 2);
+    x.stroke();
+
+    // Inner ring: slower phase, inverse pulse
+    const innerPhase = (t * 1.2) % 1;
+    const innerScale = 0.95 + 0.08 * Math.sin(innerPhase * Math.PI * 2);
+    const innerR = Math.max(rx, ry) * innerScale * 0.92;
+
+    const innerAlpha = 0.18 * (0.6 + 0.4 * Math.sin((innerPhase + 0.5) * Math.PI * 2));
+    x.strokeStyle = `rgba(204,102,230,${innerAlpha})`;
+    x.lineWidth = 0.6;
+    x.beginPath();
+    x.arc(0, 0, innerR, 0, Math.PI * 2);
+    x.stroke();
   }
 
   /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */
