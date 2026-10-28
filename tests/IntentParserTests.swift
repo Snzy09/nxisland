@@ -162,7 +162,7 @@ enum IntentParserTests {
         // ── Unknown: non-pill entities / bare trigger words ───────────────────
         check("unknown command xyz",         parse("unknown command xyz"),     .unknown)
         check("empty",                       parse(""),                        .unknown)
-        check("coucou seul",                 parse("coucou"),                  .unknown)
+        check("nxisland seul",                 parse("nxisland"),                  .unknown)
         check("utilise ton cerveau",         parse("utilise ton cerveau", pills: pills), .unknown)
         check("show me",                     parse("show me", pills: pills),   .unknown)
 

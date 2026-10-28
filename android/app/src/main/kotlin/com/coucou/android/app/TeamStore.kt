@@ -1,7 +1,7 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.content.Context
-import com.coucou.android.core.TeamChoice
+import com.nxisland.android.core.TeamChoice
 
 /**
  * Which agents each Team widget shows: one choice per widget id, in this app's private preferences. It stays on the phone (no backup, nothing

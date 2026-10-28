@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Spring
-import com.coucou.android.core.Tracked
-import com.coucou.android.core.closeCurve
-import com.coucou.android.core.cubicBezier
+import com.nxisland.android.core.Spring
+import com.nxisland.android.core.Tracked
+import com.nxisland.android.core.closeCurve
+import com.nxisland.android.core.cubicBezier
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

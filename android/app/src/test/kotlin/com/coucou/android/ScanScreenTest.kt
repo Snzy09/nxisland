@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertFalse
@@ -8,7 +8,7 @@ import org.junit.Test
 /** Source-level guards for scanning the pairing code (the camera and Compose cannot run in a JVM test). */
 class ScanScreenTest {
     private fun file(path: String) = File(path).readText()
-    private fun src(name: String) = file("src/main/kotlin/com/coucou/android/$name")
+    private fun src(name: String) = file("src/main/kotlin/com/nxisland/android/$name")
     private val kotlinFiles get() = File("src/main/kotlin").walkTopDown().filter { it.isFile && it.extension == "kt" }.toList()
 
     @Test fun theCameraIsReleasedWhenTheScreenIsLeftAndAfterAnAcceptedCode() {
@@ -44,8 +44,8 @@ class ScanScreenTest {
         val m = file("src/main/AndroidManifest.xml")
         assertTrue(m.contains("android.permission.CAMERA"))
         assertTrue(Regex("""uses-feature\s+android:name="android.hardware.camera"\s+android:required="false"""").containsMatchIn(m))
-        // the camera app's own scanner opens coucou://pair
-        assertTrue(m.contains("""android:scheme="coucou" android:host="pair""""))
+        // the camera app's own scanner opens nxisland://pair
+        assertTrue(m.contains("""android:scheme="nxisland" android:host="pair""""))
         assertTrue(m.contains("android.intent.category.BROWSABLE") && m.contains("android.intent.action.VIEW"))
     }
 

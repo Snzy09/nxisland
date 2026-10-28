@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertFalse
@@ -6,7 +6,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class ServicesPanelTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
 
     @Test fun theCardsAreReadOnly() {
         val p = src("ui/ServicesPanel.kt")

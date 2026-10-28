@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.IslandSpec
-import com.coucou.android.core.IslandTimeline
-import com.coucou.android.core.IslandTimeline.Phase
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.IslandSpec
+import com.nxisland.android.core.IslandTimeline
+import com.nxisland.android.core.IslandTimeline.Phase
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

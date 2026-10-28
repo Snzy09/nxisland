@@ -9,7 +9,7 @@ enum PhoneSettings {
     static let quietHoursKey = "quietHours"
     static let quietFromKey = "quietFrom"   // minutes after midnight
     static let quietToKey = "quietTo"
-    /// Set by the Coucou Focus filter: only what waits on you notifies.
+    /// Set by the NxIsland Focus filter: only what waits on you notifies.
     static let focusOnlyWaitingKey = "focusOnlyWaiting"
     static var focusOnlyWaiting: Bool { defaults.bool(forKey: focusOnlyWaitingKey) }
 
@@ -178,7 +178,7 @@ enum AgentNotifier {
             // Let iOS take the new category before the notification shows.
             try? await Task.sleep(for: .milliseconds(300))
         }
-        content.threadIdentifier = content.userInfo["pillId"] as? String ?? "coucou"
+        content.threadIdentifier = content.userInfo["pillId"] as? String ?? "nxisland"
         let kind = content.userInfo["kind"] as? String ?? "event"
         let request = UNNotificationRequest(identifier: "\(kind)-\(UUID().uuidString)", content: content, trigger: nil)
         try? await UNUserNotificationCenter.current().add(request)

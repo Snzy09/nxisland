@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,10 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.ServiceCard
+import com.nxisland.android.R
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.ServiceCard
 
 /**
  * The service cards the user allowed on the computer, read-only: the same headline and short lines as the pills

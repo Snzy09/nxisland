@@ -4,7 +4,7 @@ import CryptoKit
 
 // "Install WhatsApp": one click instead of GitHub, a zip, xattr, chmod and a Terminal command.
 // Downloads GOWA's own latest macOS build for this Mac from its GitHub releases, checks its
-// SHA-256 against the checksums GOWA publishes, puts the binary in Coucou's GOWA folder (next
+// SHA-256 against the checksums GOWA publishes, puts the binary in NxIsland's GOWA folder (next
 // to the WhatsApp session it keeps) and turns on "Start GOWA automatically". GitHub build only.
 // The only network call is to GitHub, once, after the click; no message ever goes there.
 
@@ -31,16 +31,16 @@ final class WhatsAppGOWAInstaller: ObservableObject {
         }
     }
 
-    /// GOWA's version once installed by Coucou (not a secret: UserDefaults).
+    /// GOWA's version once installed by NxIsland (not a secret: UserDefaults).
     static var installedVersion: String? {
         get { UserDefaults.standard.string(forKey: "whatsappGOWAVersion") }
         set { UserDefaults.standard.set(newValue, forKey: "whatsappGOWAVersion") }
     }
 
-    /// Where Coucou keeps the binary it installed.
+    /// Where NxIsland keeps the binary it installed.
     static var binaryURL: URL { WhatsAppGOWAProcess.workingDirectory.appendingPathComponent("gowa") }
 
-    /// A gateway Coucou can start: the one it installed, or one the user picked.
+    /// A gateway NxIsland can start: the one it installed, or one the user picked.
     static var isInstalled: Bool {
         let path = (WhatsAppGOWAProcess.binaryPath as NSString).expandingTildeInPath
         return !path.isEmpty && FileManager.default.isExecutableFile(atPath: path)
@@ -135,7 +135,7 @@ final class WhatsAppGOWAInstaller: ObservableObject {
     /// Unzips into a temporary folder, then moves `binaryName` to the GOWA folder as `gowa`.
     nonisolated private static func unpack(zip: URL, binaryName: String) throws {
         let fm = FileManager.default
-        let work = fm.temporaryDirectory.appendingPathComponent("coucou-gowa-\(UUID().uuidString)", isDirectory: true)
+        let work = fm.temporaryDirectory.appendingPathComponent("nxisland-gowa-\(UUID().uuidString)", isDirectory: true)
         try fm.createDirectory(at: work, withIntermediateDirectories: true)
         defer { try? fm.removeItem(at: work); try? fm.removeItem(at: zip) }
 
@@ -155,7 +155,7 @@ final class WhatsAppGOWAInstaller: ObservableObject {
         if fm.fileExists(atPath: dest.path) { try fm.removeItem(at: dest) }
         try fm.moveItem(at: found, to: dest)
         try fm.setAttributes([.posixPermissions: 0o755], ofItemAtPath: dest.path)
-        // Downloaded by Coucou itself, it carries no quarantine; cleared anyway so macOS never
+        // Downloaded by NxIsland itself, it carries no quarantine; cleared anyway so macOS never
         // asks the user to allow it in System Settings.
         removexattr(dest.path, "com.apple.quarantine", 0)
     }

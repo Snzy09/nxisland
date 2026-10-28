@@ -1,8 +1,8 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.link.RelayCrypto.ChannelException
-import com.coucou.android.link.RelayCrypto.Dir
-import com.coucou.android.link.RelayCrypto.Failure
+import com.nxisland.android.link.RelayCrypto.ChannelException
+import com.nxisland.android.link.RelayCrypto.Dir
+import com.nxisland.android.link.RelayCrypto.Failure
 import java.io.File
 import org.json.JSONObject
 import org.junit.Assert.assertArrayEquals
@@ -237,7 +237,7 @@ class RelayCryptoTest {
         val shown = "$key ${RelayCrypto.kAuth(key)} ${receiverOf(Dir.PHONE_TO_HOST)}"
         assertFalse(shown, shown.contains("ab") || shown.contains("171"))
         assertEquals("Session(..)", receiverOf(Dir.PHONE_TO_HOST).toString())
-        val src = File("src/main/kotlin/com/coucou/android/link/RelayCrypto.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/link/RelayCrypto.kt").readText()
         for (bad in listOf("Log.", "println", "System.out", "System.err", "printStackTrace", "File(", "FileOutputStream", "SharedPreferences", "Timber")) {
             assertFalse("RelayCrypto.kt uses $bad", src.contains(bad))
         }

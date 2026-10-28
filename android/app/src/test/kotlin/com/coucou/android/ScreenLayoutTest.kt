@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -12,7 +12,7 @@ import org.junit.Test
  * Louis Raillé's permission requires, which must stay reachable and visible.
  */
 class ScreenLayoutTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
     private val main get() = src("MainActivity.kt")
     private val settings get() = src("ui/SettingsScreens.kt")
     private val homePanel get() = src("ui/HomePanel.kt")
@@ -26,8 +26,8 @@ class ScreenLayoutTest {
 
     @Test fun theNoticeNamesTheOriginalAuthorAndHisRepository() {
         val xml = File("src/main/res/values/strings.xml").readText()
-        assertTrue(xml.contains("Coucou for Android, by Rhytam Biswas. Part of Coucou by Louis Raillé"))
-        assertTrue(xml.contains("github.com/Louis-CFM/coucou"))
+        assertTrue(xml.contains("NxIsland for Android, by Rhytam Biswas. Part of NxIsland by Louis Raillé"))
+        assertTrue(xml.contains("github.com/Louis-CFM/nxisland"))
         assertTrue(xml.contains("© Louis Raillé"))
         assertTrue(xml.contains("MIT License"))
     }

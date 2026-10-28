@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
@@ -17,9 +17,9 @@ import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.IconShape
-import com.coucou.android.core.IconSpec
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.IconShape
+import com.nxisland.android.core.IconSpec
 
 /** Draws an icon from core/IconSpec.kt: stroked, round ends and joins, scaled from the 24 grid to [size]. No icon library. */
 @Composable

@@ -1,8 +1,8 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.PlanUsageLook
-import com.coucou.android.core.UsageRing
-import com.coucou.android.core.UsageTone
+import com.nxisland.android.core.PlanUsageLook
+import com.nxisland.android.core.UsageRing
+import com.nxisland.android.core.UsageTone
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -19,7 +19,7 @@ class PlanUsageLookTest {
     @Test fun theThresholdsAreNamedConstants() {
         assertEquals(75, PlanUsageLook.CLOSE_FROM)
         assertEquals(90, PlanUsageLook.LIMIT_FROM)
-        val src = File("src/main/kotlin/com/coucou/android/core/WidgetData.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/core/WidgetData.kt").readText()
         assertTrue(src.contains("const val CLOSE_FROM = 75") && src.contains("const val LIMIT_FROM = 90"))
     }
 
@@ -124,13 +124,13 @@ class PlanUsageLookTest {
         fun rgb(argb: Int) = intArrayOf((argb shr 16) and 255, (argb shr 8) and 255, argb and 255)
         fun dist(a: IntArray, b: IntArray) = Math.sqrt(a.indices.sumOf { ((a[it] - b[it]) * (a[it] - b[it])).toDouble() })
         for (u in UsageTone.values()) {
-            for (s in com.coucou.android.core.WidgetTone.values()) {
+            for (s in com.nxisland.android.core.WidgetTone.values()) {
                 val d = dist(rgb(u.argb), rgb(s.argb))
                 assertTrue("${u.name} is only ${d.toInt()} from ${s.name}", d >= 40.0)
             }
         }
         // And the three of them are clearly apart from each other, and the yellow is not the waiting orange.
         for (a in UsageTone.values()) for (b in UsageTone.values()) if (a != b) assertTrue("$a $b", dist(rgb(a.argb), rgb(b.argb)) >= 80.0)
-        assertTrue(dist(rgb(UsageTone.CLOSE.argb), rgb(com.coucou.android.core.WidgetTone.ATTENTION.argb)) >= 40.0)
+        assertTrue(dist(rgb(UsageTone.CLOSE.argb), rgb(com.nxisland.android.core.WidgetTone.ATTENTION.argb)) >= 40.0)
     }
 }

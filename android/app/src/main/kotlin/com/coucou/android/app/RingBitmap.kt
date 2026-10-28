@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.graphics.Bitmap
 import androidx.compose.ui.geometry.Offset
@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
-import com.coucou.android.core.UsageRing
+import com.nxisland.android.core.UsageRing
 
 /**
  * The ring of the Usage Ring widget, drawn once into a bitmap: a faint track and an arc in the tone of the usage, starting at

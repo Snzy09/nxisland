@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.os.SystemClock
 import androidx.activity.compose.BackHandler
@@ -50,25 +50,25 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.ApprovalSheetPlan
-import com.coucou.android.core.HomePanel
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.MotionSpec
-import com.coucou.android.core.Pills
-import com.coucou.android.core.QuestionFlow
-import com.coucou.android.link.AskedOption
-import com.coucou.android.link.QuestionRequest
-import com.coucou.android.core.Radii
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.SpokenLabels
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.ApprovalRequest
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiConst
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.ApprovalSheetPlan
+import com.nxisland.android.core.HomePanel
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.MotionSpec
+import com.nxisland.android.core.Pills
+import com.nxisland.android.core.QuestionFlow
+import com.nxisland.android.link.AskedOption
+import com.nxisland.android.link.QuestionRequest
+import com.nxisland.android.core.Radii
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.SpokenLabels
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.ApprovalRequest
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiConst
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
 import kotlinx.coroutines.delay
 
 /**
@@ -118,7 +118,7 @@ private fun agentColour(model: AppModel, pillId: String) =
     (model.sessions.firstOrNull { it.pillId == pillId }?.let { HomePanel.colorHex(it) } ?: Pills.byId(pillId)?.colorHex)?.let { HomePanel.rgb(it) }
 
 @Composable
-private fun SheetMochi(state: BotState, colour: com.coucou.android.mochi.Rgb?) {
+private fun SheetMochi(state: BotState, colour: com.nxisland.android.mochi.Rgb?) {
     val engine = remember { MochiEngine({ SystemClock.elapsedRealtimeNanos() / 1e6 }).apply { setState(state, force = true) } }
     engine.bodyColor = colour
     MochiView(engine, Modifier.size(84.dp))

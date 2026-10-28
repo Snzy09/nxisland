@@ -63,7 +63,7 @@ final class NoteTaker: ObservableObject {
     private var liveTask: Task<Void, Never>?
     /// Between the click and the microphone's permission: a second click starts nothing.
     private var starting = false
-    /// The last app in front other than Coucou: the call app when you click Record in Coucou Flow.
+    /// The last app in front other than NxIsland: the call app when you click Record in NxIsland Flow.
     private var lastApp: String?
     private var appObserver: NSObjectProtocol?
 
@@ -167,7 +167,7 @@ final class NoteTaker: ObservableObject {
         startLiveLoop()
     }
 
-    /// Coucou quits during a call: the recordings are closed properly, and the transcript is
+    /// NxIsland quits during a call: the recordings are closed properly, and the transcript is
     /// written at the next launch.
     func shutdown() {
         guard var note = recording else { return }
@@ -661,7 +661,7 @@ final class NoteTaker: ObservableObject {
         for dir in dirs {
             guard let data = try? Data(contentsOf: dir.appendingPathComponent("note.json")),
                   var note = try? decoder.decode(Note.self, from: data) else { continue }
-            // Coucou quit while recording or writing: the transcript is written again from the audio.
+            // NxIsland quit while recording or writing: the transcript is written again from the audio.
             if note.status == .recording || note.status == .processing {
                 note.end = note.end ?? (try? dir.appendingPathComponent("mic.wav").resourceValues(forKeys: [.contentModificationDateKey]))?.contentModificationDate
                 note.status = .processing

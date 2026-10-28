@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.LaunchScreen
+import com.nxisland.android.core.LaunchScreen
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -12,7 +12,7 @@ import org.junit.Test
  * none approves, denies or sends anything, and each has its own request code, a name and a content description.
  */
 class WidgetButtonsTest {
-    private val main = "src/main/kotlin/com/coucou/android/"
+    private val main = "src/main/kotlin/com/nxisland/android/"
     private val res = "src/main/res/"
     private fun read(path: String) = File(path).readText()
     private val strings: Map<String, String> =

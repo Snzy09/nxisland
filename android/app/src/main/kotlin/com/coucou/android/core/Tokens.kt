@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * The design tokens as plain numbers, so a test can check contrast and the scale without Compose. There are two sets, dark and light

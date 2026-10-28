@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.ReferenceFiles
+import com.nxisland.android.ReferenceFiles
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.concurrent.LinkedBlockingQueue
@@ -362,7 +362,7 @@ class DevDesktopInteropTest {
             assertEquals(setOf("details"), rec.caps.poll(10, TimeUnit.SECONDS))
             val s = claudeSession(rec)
             assertTrue(s.steps.isNotEmpty() && s.steps.first().startsWith("Read"))
-            assertEquals("coucou", s.project)
+            assertEquals("nxisland", s.project)
             assertEquals("#2DD4BF", s.color)
         } finally {
             client.stop()

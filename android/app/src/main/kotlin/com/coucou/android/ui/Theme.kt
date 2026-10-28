@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -18,14 +18,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.coucou.android.core.Palette
-import com.coucou.android.core.StatusPalette
-import com.coucou.android.core.ThemeChoice
-import com.coucou.android.core.ThemePolicy
-import com.coucou.android.core.Tokens
+import com.nxisland.android.core.Palette
+import com.nxisland.android.core.StatusPalette
+import com.nxisland.android.core.ThemeChoice
+import com.nxisland.android.core.ThemePolicy
+import com.nxisland.android.core.Tokens
 
 /**
- * The look of the Coucou website (docs/site.css): a near-black page (or a pale one in the light theme), slightly lighter cards with a
+ * The look of the NxIsland website (docs/site.css): a near-black page (or a pale one in the light theme), slightly lighter cards with a
  * thin border, soft blue accent, rounded corners and pill-shaped buttons. Mochi itself is untouched.
  */
 private fun scheme(p: Palette, t: Tokens): ColorScheme {

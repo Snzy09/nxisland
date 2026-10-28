@@ -111,7 +111,7 @@ private extension Array {
 
 /// The pill at the bottom of the screen, like Wispr Flow's bar. Resting, it is a small see-through
 /// pill; under the pointer it opens into Mochi and three buttons (dictate, record a call, open
-/// Coucou), each with its bubble. When you speak it opens into Mochi and nine dots rising and
+/// NxIsland), each with its bubble. When you speak it opens into Mochi and nine dots rising and
 /// falling with the graves and the aigus of the voice. Messages (a paste that could not happen, a
 /// call's notes ready) grow above it, with a button to act.
 struct FlowPillView: View {

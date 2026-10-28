@@ -139,7 +139,7 @@ struct SettingsView: View {
 
     // Sidebar selection persisted across sessions
     @AppStorage("settingsSection") private var selectedSection: String = "general"
-    /// Shown inside the Coucou Flow window (GitHub build): one section, without this window's
+    /// Shown inside the NxIsland Flow window (GitHub build): one section, without this window's
     /// sidebar, as the window has its own.
     private var embeddedSection: String? = nil
     private var section: String { embeddedSection ?? selectedSection }
@@ -172,7 +172,7 @@ struct SettingsView: View {
                             .resizable()
                             .frame(width: 32, height: 32)
                         VStack(alignment: .leading, spacing: 1) {
-                            Text("Coucou")
+                            Text("NxIsland")
                                 .font(.system(size: 13, weight: .semibold))
                             Text(appVersion)
                                 .font(.system(size: 11))
@@ -488,7 +488,7 @@ struct SettingsView: View {
                     UserDefaults.standard.synchronize()
                 }
                 HStack(spacing: 8) {
-                    Button(String(localized: "Restart Coucou")) {
+                    Button(String(localized: "Restart NxIsland")) {
                         let appPath = Bundle.main.bundleURL.path
                         let pid = ProcessInfo.processInfo.processIdentifier
                         let task = Process()
@@ -549,7 +549,7 @@ struct SettingsView: View {
     @ViewBuilder private var activePillsSection: some View {
         GroupBox {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Choose the tools you use. Coucou only shows what you declare here.")
+                Text("Choose the tools you use. NxIsland only shows what you declare here.")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
 
@@ -603,7 +603,7 @@ struct SettingsView: View {
                     #endif
                 }
                 #if APPSTORE
-                Text("~/.claude/coucou/nb-hook")
+                Text("~/.claude/nxisland/nb-hook")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.secondary)
                 HStack(spacing: 10) {
@@ -758,7 +758,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(copilotHooksInstalled
                      ? String(localized: "hooks.copilot.installed")
-                     : "~/.copilot/hooks/coucou.json")
+                     : "~/.copilot/hooks/nxisland.json")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.secondary)
                 HStack(spacing: 10) {
@@ -824,7 +824,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(openCodePluginInstalled
                      ? String(localized: "plugin.opencode.installed")
-                     : "~/.config/opencode/plugins/coucou.js")
+                     : "~/.config/opencode/plugins/nxisland.js")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.secondary)
                 HStack(spacing: 10) {
@@ -857,7 +857,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(ampPluginInstalled
                      ? String(localized: "plugin.amp.installed")
-                     : "~/.config/amp/plugins/coucou.ts")
+                     : "~/.config/amp/plugins/nxisland.ts")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.secondary)
                 HStack(spacing: 10) {
@@ -890,7 +890,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text(hermesPluginInstalled
                      ? String(localized: "plugin.hermes.installed")
-                     : "~/.hermes/plugins/coucou/__init__.py")
+                     : "~/.hermes/plugins/nxisland/__init__.py")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.secondary)
                 HStack(spacing: 10) {
@@ -1025,7 +1025,7 @@ struct SettingsView: View {
                     }
                 }
                 Divider()
-                Text("Shows your Codex plan usage (weekly limit and free resets left) in the notch header. Coucou asks the Codex CLI (codex app-server) when the pill shows; nothing is installed. Codex must be signed in with ChatGPT.")
+                Text("Shows your Codex plan usage (weekly limit and free resets left) in the notch header. NxIsland asks the Codex CLI (codex app-server) when the pill shows; nothing is installed. Codex must be signed in with ChatGPT.")
                     .font(.system(size: 11))
                     .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -1420,8 +1420,8 @@ struct SettingsView: View {
 
     private func speakVoiceSample() {
         let en = voiceLanguage != "fr"
-        VoiceSpeaker.shared.speak(en ? "Hi, I'm Coucou. Say OK Coucou whenever you need me."
-                                     : "Salut, c'est Coucou. Dis OK Coucou quand tu as besoin de moi.",
+        VoiceSpeaker.shared.speak(en ? "Hi, I'm NxIsland. Say OK NxIsland whenever you need me."
+                                     : "Salut, c'est NxIsland. Dis OK NxIsland quand tu as besoin de moi.",
                                   locale: Locale(identifier: en ? "en-US" : "fr-FR"))
     }
 
@@ -1429,9 +1429,9 @@ struct SettingsView: View {
         // Flow dictation: hold a key anywhere, speak, the words are pasted where you type.
         FlowSettingsBox()
 
-        // Claude is Coucou's brain: no model, language or feature switches any more,
-        // only the wake word, the Anthropic key it needs, and Coucou's voice.
-        GroupBox(String(localized: "«\u{202F}OK Coucou\u{202F}» — voice wake word")) {
+        // Claude is NxIsland's brain: no model, language or feature switches any more,
+        // only the wake word, the Anthropic key it needs, and NxIsland's voice.
+        GroupBox(String(localized: "«\u{202F}OK NxIsland\u{202F}» — voice wake word")) {
             VStack(alignment: .leading, spacing: 10) {
                 Toggle(String(localized: "Enable voice command"), isOn: $voiceEngine.isEnabled)
                     .disabled(!voicePermissionsGranted && !voiceEngine.isEnabled)
@@ -1511,7 +1511,7 @@ struct SettingsView: View {
                     .pickerStyle(.segmented)
                     .frame(maxWidth: 180)
                     .onChange(of: voiceLanguage) { _, _ in
-                        // Chosen by hand: Coucou no longer offers to switch.
+                        // Chosen by hand: NxIsland no longer offers to switch.
                         VoiceSettings.languageOfferDone = true
                         ElevenLabsTTS.shared.reset()
                     }
@@ -2471,7 +2471,7 @@ struct ShortcutRecorderButton: View {
 }
 
 extension SettingsView {
-    /// One section of Settings, for the Coucou Flow window.
+    /// One section of Settings, for the NxIsland Flow window.
     init(embeddedSection: String) {
         self.init()
         self.embeddedSection = embeddedSection

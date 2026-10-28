@@ -15,8 +15,8 @@ enum IslandView: String, CaseIterable {
     case listening    // voice wake detected — "À l'écoute…" with live transcript
     case voiceResult  // voice command executed — "✓ Musique lancée" for ~2 s
     case capture      // a screen capture just taken (⌃⌥X): paste, copy, annotate, ask Claude
-    case update       // a new Coucou is out on GitHub: one click to install it (GitHub build)
-    case whatsNew     // Coucou just updated itself: what the version brings, then your Coucou so far (GitHub build)
+    case update       // a new NxIsland is out on GitHub: one click to install it (GitHub build)
+    case whatsNew     // NxIsland just updated itself: what the version brings, then your NxIsland so far (GitHub build)
 }
 
 // MARK: - Bot State

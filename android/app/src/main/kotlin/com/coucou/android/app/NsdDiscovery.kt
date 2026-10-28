@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.content.Context
 import android.net.nsd.NsdManager
@@ -6,9 +6,9 @@ import android.net.nsd.NsdServiceInfo
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.util.Log
-import com.coucou.android.link.Discovery
-import com.coucou.android.link.DiscoverySource
-import com.coucou.android.link.Found
+import com.nxisland.android.link.Discovery
+import com.nxisland.android.link.DiscoverySource
+import com.nxisland.android.link.Found
 import java.net.Inet4Address
 
 /**
@@ -32,7 +32,7 @@ class NsdDiscovery(context: Context) : DiscoverySource {
         stop()
         this.onFound = onFound
         lock = runCatching {
-            wifi?.createMulticastLock("coucou-discovery")?.apply { setReferenceCounted(false); acquire() }
+            wifi?.createMulticastLock("nxisland-discovery")?.apply { setReferenceCounted(false); acquire() }
         }.getOrNull()
         val l = object : NsdManager.DiscoveryListener {
             override fun onDiscoveryStarted(serviceType: String) { Log.d(TAG, "browsing") }

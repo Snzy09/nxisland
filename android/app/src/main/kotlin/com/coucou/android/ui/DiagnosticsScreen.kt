@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,12 +22,12 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.DiagResult
-import com.coucou.android.link.DiagStep
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.DiagResult
+import com.nxisland.android.link.DiagStep
 
 /**
  * Settings > Computer > "Can't connect?": runs the checks one after another (Wi-Fi, the saved address, discovery, the pinned

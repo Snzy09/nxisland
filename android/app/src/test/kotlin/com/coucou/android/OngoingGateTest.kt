@@ -1,10 +1,10 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Glance
-import com.coucou.android.core.GlanceLine
-import com.coucou.android.core.GlanceTone
-import com.coucou.android.core.OngoingGate
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.Glance
+import com.nxisland.android.core.GlanceLine
+import com.nxisland.android.core.GlanceTone
+import com.nxisland.android.core.OngoingGate
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test

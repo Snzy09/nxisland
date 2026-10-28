@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 import org.json.JSONArray
 import org.json.JSONException

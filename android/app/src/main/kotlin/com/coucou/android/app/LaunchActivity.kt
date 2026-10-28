@@ -1,10 +1,10 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import com.coucou.android.MainActivity
-import com.coucou.android.core.LaunchScreen
+import com.nxisland.android.MainActivity
+import com.nxisland.android.core.LaunchScreen
 
 /**
  * Where our own notification actions, the island's Allow and the widget rows and buttons land. It is not exported, so no other app can start it;

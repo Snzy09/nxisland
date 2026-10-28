@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 import java.time.LocalDate
 import java.time.format.TextStyle
@@ -31,7 +31,7 @@ object RecapText {
     fun permissions(allowed: Int, denied: Int): String = Texts.t("recap_allowed_denied", "%1\$d allowed, %2\$d denied", allowed, denied)
 
     /** The label and value of each stat, in the order of the card. Optional ones are left out when the computer did not send them. */
-    fun stats(r: com.coucou.android.link.Recap): List<Pair<String, String>> = buildList {
+    fun stats(r: com.nxisland.android.link.Recap): List<Pair<String, String>> = buildList {
         add(Texts.t("recap_time", "Time with agents") to duration(r.minutes))
         add(Texts.t("recap_sessions", "Sessions") to r.sessions.toString())
         add(Texts.t("recap_files", "Files changed") to r.files.toString())

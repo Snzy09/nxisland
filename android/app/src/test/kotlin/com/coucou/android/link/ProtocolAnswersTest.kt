@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import org.json.JSONObject
 import org.junit.Assert.assertEquals

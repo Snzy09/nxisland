@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import java.nio.file.Files

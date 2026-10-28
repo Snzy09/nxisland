@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 /**
  * Pending approvals as the phone sees them. A decision can only be sent for a request that is

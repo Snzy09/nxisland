@@ -12,11 +12,11 @@ enum MacUpdateTests {
     static func release(_ tag: String, draft: Bool = false, pre: Bool = false, zip: Bool = true, body: String = "") -> [String: Any] {
         var assets: [[String: Any]] = [["name": "notes.txt", "browser_download_url": "https://github.com/x/notes.txt", "size": 3]]
         if zip {
-            assets.append(["name": "Coucou.zip", "size": 34_000_000,
-                           "browser_download_url": "https://github.com/Louis-CFM/coucou/releases/download/\(tag)/Coucou.zip"])
+            assets.append(["name": "NxIsland.zip", "size": 34_000_000,
+                           "browser_download_url": "https://github.com/Louis-CFM/nxisland/releases/download/\(tag)/NxIsland.zip"])
         }
         return ["tag_name": tag, "draft": draft, "prerelease": pre, "assets": assets, "body": body,
-                "html_url": "https://github.com/Louis-CFM/coucou/releases/tag/\(tag)"]
+                "html_url": "https://github.com/Louis-CFM/nxisland/releases/tag/\(tag)"]
     }
 
     static func json(_ list: [[String: Any]]) -> Data { try! JSONSerialization.data(withJSONObject: list) }
@@ -43,13 +43,13 @@ enum MacUpdateTests {
             let list = [
                 release("windows-v0.6.0"), release("linux-latest"),
                 release("v0.9.0", draft: true), release("v0.8.0", pre: true), release("v0.7.0", zip: false),
-                release("v0.5.1"), release("v0.10.0", body: "Coucou 0.10.0\n\n## What's new\n\n- **One-click update** from the notch.\n- Other\n\n## Install\n- x"),
+                release("v0.5.1"), release("v0.10.0", body: "NxIsland 0.10.0\n\n## What's new\n\n- **One-click update** from the notch.\n- Other\n\n## Install\n- x"),
                 release("v0.6.2"),
             ]
             let r = MacUpdate.latest(json(list))
             check("picks v0.10.0 over 0.6.2 and 0.5.1", r?.version == "0.10.0" && r?.tag == "v0.10.0")
-            check("its Coucou.zip", r?.zipURL.lastPathComponent == "Coucou.zip" && r?.size == 34_000_000)
-            check("its page", r?.pageURL.absoluteString == "https://github.com/Louis-CFM/coucou/releases/tag/v0.10.0")
+            check("its NxIsland.zip", r?.zipURL.lastPathComponent == "NxIsland.zip" && r?.size == 34_000_000)
+            check("its page", r?.pageURL.absoluteString == "https://github.com/Louis-CFM/nxisland/releases/tag/v0.10.0")
             check("headline from the bold part", r?.headline == "One-click update")
             check("nothing for drafts and others only", MacUpdate.latest(json([release("v0.9.0", draft: true), release("windows-v1.0")])) == nil)
             check("garbage", MacUpdate.latest(Data("{\"message\":\"rate limited\"}".utf8)) == nil)
@@ -69,12 +69,12 @@ enum MacUpdateTests {
         check("not github.com.evil.io", !MacUpdate.allowedHost("github.com.evil.io"))
         check("nil", !MacUpdate.allowedHost(nil))
 
-        print("\nWhere Coucou may replace itself")
-        check("/Applications", MacUpdate.canReplace(bundlePath: "/Applications/Coucou.app", home: "/Users/l"))
-        check("~/Applications", MacUpdate.canReplace(bundlePath: "/Users/l/Applications/Coucou.app", home: "/Users/l"))
-        check("not DerivedData", !MacUpdate.canReplace(bundlePath: "/Users/l/Library/Developer/Xcode/DerivedData/x/Build/Products/Debug/Coucou.app", home: "/Users/l"))
-        check("not Downloads", !MacUpdate.canReplace(bundlePath: "/Users/l/Downloads/Coucou.app", home: "/Users/l"))
-        check("not a subfolder of Applications", !MacUpdate.canReplace(bundlePath: "/Applications/Tools/Coucou.app", home: "/Users/l"))
+        print("\nWhere NxIsland may replace itself")
+        check("/Applications", MacUpdate.canReplace(bundlePath: "/Applications/NxIsland.app", home: "/Users/l"))
+        check("~/Applications", MacUpdate.canReplace(bundlePath: "/Users/l/Applications/NxIsland.app", home: "/Users/l"))
+        check("not DerivedData", !MacUpdate.canReplace(bundlePath: "/Users/l/Library/Developer/Xcode/DerivedData/x/Build/Products/Debug/NxIsland.app", home: "/Users/l"))
+        check("not Downloads", !MacUpdate.canReplace(bundlePath: "/Users/l/Downloads/NxIsland.app", home: "/Users/l"))
+        check("not a subfolder of Applications", !MacUpdate.canReplace(bundlePath: "/Applications/Tools/NxIsland.app", home: "/Users/l"))
 
         print("\nWhen to look, when to say it")
         let now = Date(timeIntervalSince1970: 1_800_000_000)

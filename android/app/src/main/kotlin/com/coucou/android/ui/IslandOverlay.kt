@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.content.Context
 import android.graphics.PixelFormat
@@ -17,13 +17,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.MotionPolicy
-import com.coucou.android.core.MotionSpec
-import com.coucou.android.core.MotionState
-import com.coucou.android.core.IslandSurface
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.MotionPolicy
+import com.nxisland.android.core.MotionSpec
+import com.nxisland.android.core.MotionState
+import com.nxisland.android.core.IslandSurface
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -79,17 +79,17 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
-import com.coucou.android.R
-import com.coucou.android.core.IslandBox
-import com.coucou.android.core.IslandGeometry
-import com.coucou.android.core.IslandSpec
-import com.coucou.android.core.IslandTimeline
-import com.coucou.android.core.OverlayPolicy
-import com.coucou.android.core.PxRect
-import com.coucou.android.core.Tracked
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
+import com.nxisland.android.R
+import com.nxisland.android.core.IslandBox
+import com.nxisland.android.core.IslandGeometry
+import com.nxisland.android.core.IslandSpec
+import com.nxisland.android.core.IslandTimeline
+import com.nxisland.android.core.OverlayPolicy
+import com.nxisland.android.core.PxRect
+import com.nxisland.android.core.Tracked
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
 
 /**
  * The notch of the desktop, for the phone: a black island hanging from the top of the screen,
@@ -141,7 +141,7 @@ class IslandOverlay(
         sync()
     }
 
-    /** Close at once, without animation (Coucou came to the front, the switch went off, the link dropped). */
+    /** Close at once, without animation (NxIsland came to the front, the switch went off, the link dropped). */
     fun hide() = safely {
         timeline.dismiss()
         removeView()

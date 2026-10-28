@@ -1,7 +1,7 @@
 #if !APPSTORE
 import SwiftUI
 
-/// Coucou Flow → Statistics: what you dictated, how fast, and where.
+/// NxIsland Flow → Statistics: what you dictated, how fast, and where.
 struct HubInsightsPage: View {
     @ObservedObject private var store = FlowStore.shared
     @State private var period: Period = .month

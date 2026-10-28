@@ -1,4 +1,4 @@
-package com.coucou.android.mochi.outfit
+package com.nxisland.android.mochi.outfit
 
 import java.io.File
 import java.time.LocalDate
@@ -29,7 +29,7 @@ class WardrobeChoiceTest {
     }
 
     // The screens cannot be drawn in a JVM test, so these read the sources.
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
 
     @Test fun theWardrobeIsOneTapFromSettingsAndGoesBackToSettings() {
         assertTrue(src("ui/SettingsScreens.kt").contains("onWardrobe"))

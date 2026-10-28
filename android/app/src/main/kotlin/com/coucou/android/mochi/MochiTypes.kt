@@ -1,4 +1,4 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
 /** Components 0..1, like the TS `RGB` tuple. */
 data class Rgb(val r: Double, val g: Double, val b: Double) {

@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -8,7 +8,7 @@ import org.junit.Test
 
 /** How the link is kept alive while the phone sleeps, checked where a unit test can see it: the wiring and the permissions. */
 class KeepAliveSourceTest {
-    private fun src(path: String) = File("src/main/kotlin/com/coucou/android/$path").readText()
+    private fun src(path: String) = File("src/main/kotlin/com/nxisland/android/$path").readText()
     private val manifest get() = File("src/main/AndroidManifest.xml").readText()
 
     @Test fun theAlarmUsesAllowWhileIdleAndNoExactAlarmPermission() {

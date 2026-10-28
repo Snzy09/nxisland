@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.ToolLabels
+import com.nxisland.android.core.ToolLabels
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Test

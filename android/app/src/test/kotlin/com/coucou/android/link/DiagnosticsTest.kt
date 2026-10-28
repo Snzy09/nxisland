@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.net.ServerSocket
 import org.junit.After
@@ -120,7 +120,7 @@ class DiagnosticsTest {
         val results = Diagnostics.run(env(p.copy(host = "127.0.0.1")).also { }, { _, _ -> })
         val text = Diagnostics.report("0.1.0", "13", "SM-A127F", results, fakeAddress, "relay")
         for (secret in listOf(token, p.certSha256, p.desktopName, "192.168.1.20", "127.0.0.1")) assertFalse("report mentions $secret", text.contains(secret))
-        assertTrue(text.startsWith("Coucou for Android 0.1.0 · Android 13 · SM-A127F"))
+        assertTrue(text.startsWith("NxIsland for Android 0.1.0 · Android 13 · SM-A127F"))
         assertTrue(text.contains("Computer: 192.168.x.x · connected via: relay"))
         assertTrue(text.lines().drop(2).all { it.startsWith("OK ") || it.startsWith("PROBLEM ") || it.startsWith("SKIPPED ") })
     }
@@ -133,7 +133,7 @@ class DiagnosticsTest {
     }
 
     @Test fun theSourceNeverPutsThePairingCodeInAResult() {
-        val src = java.io.File("src/main/kotlin/com/coucou/android/link/Diagnostics.kt").readText()
+        val src = java.io.File("src/main/kotlin/com/nxisland/android/link/Diagnostics.kt").readText()
         // The token is only ever read to build the hello; no result string interpolates it, and nothing logs.
         assertEquals(1, Regex("""p\.token""").findAll(src).count())
         assertFalse(src.contains("Log.") || src.contains("println"))

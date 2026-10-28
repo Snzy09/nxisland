@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Spacing
+import com.nxisland.android.core.Spacing
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -9,7 +9,7 @@ import org.junit.Test
 
 /** TalkBack, touch size and large text: guards on the Compose sources, which cannot run on a JVM. */
 class AccessibilityGuardTest {
-    private val ui = File("src/main/kotlin/com/coucou/android/ui")
+    private val ui = File("src/main/kotlin/com/nxisland/android/ui")
     private fun src(name: String) = File(ui, name).readText()
 
     @Test fun theMinimumTouchTargetIs48dp() = assertEquals(48, Spacing.MIN_TOUCH)

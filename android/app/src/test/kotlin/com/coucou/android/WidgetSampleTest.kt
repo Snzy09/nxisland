@@ -1,11 +1,11 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.UsageTone
-import com.coucou.android.core.PlanUsageLook
-import com.coucou.android.core.WidgetData
-import com.coucou.android.core.WidgetSample
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.UsageTone
+import com.nxisland.android.core.PlanUsageLook
+import com.nxisland.android.core.WidgetData
+import com.nxisland.android.core.WidgetSample
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -48,7 +48,7 @@ class WidgetSampleTest {
         assertEquals(0, c.waiting)
         assertEquals("Claude", c.ring!!.plan)
         assertEquals(42, c.ring!!.pct)
-        assertEquals(com.coucou.android.core.UsageTone.CALM, c.ring!!.tone)
+        assertEquals(com.nxisland.android.core.UsageTone.CALM, c.ring!!.tone)
         assertEquals(3, c.today)
     }
 
@@ -77,7 +77,7 @@ class WidgetSampleTest {
         assertEquals("Claude Code", c.alertSub)
         assertEquals(BotState.APPROVAL, c.mood)
         assertEquals("a request on top, then the others by urgency", listOf("Claude Code", "Codex", "Gemini CLI"), c.tiles.map { it.name })
-        assertEquals(com.coucou.android.core.UsageTone.CLOSE, c.ring!!.tone)
+        assertEquals(com.nxisland.android.core.UsageTone.CLOSE, c.ring!!.tone)
     }
 
     @Test fun done() {

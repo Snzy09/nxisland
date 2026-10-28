@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,11 +12,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.core.RecapText
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.Recap
+import com.nxisland.android.R
+import com.nxisland.android.core.RecapText
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.Recap
 
 /**
  * Last week's numbers, as the computer counted them (its switch is on): time with agents, sessions, files, lines, commands, permissions and

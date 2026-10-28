@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -188,7 +188,7 @@ class WebSocketTest {
     }
 
     @Test fun theRequestCarriesTheHeadersAndRefusesLineBreaks() {
-        val req = String(WsHandshake.request("relay.example.com", "/v1/room/AAAAAAAAAAAAAAAAAAAAAA?role=phone", "KEY", listOf("Authorization" to "Bearer abc", "Sec-WebSocket-Protocol" to "coucou.v1, coucou.join.x")))
+        val req = String(WsHandshake.request("relay.example.com", "/v1/room/AAAAAAAAAAAAAAAAAAAAAA?role=phone", "KEY", listOf("Authorization" to "Bearer abc", "Sec-WebSocket-Protocol" to "nxisland.v1, nxisland.join.x")))
         assertTrue(req.startsWith("GET /v1/room/AAAAAAAAAAAAAAAAAAAAAA?role=phone HTTP/1.1\r\nHost: relay.example.com\r\n"))
         assertTrue(req.contains("Upgrade: websocket\r\n") && req.contains("Sec-WebSocket-Version: 13\r\n") && req.contains("Authorization: Bearer abc\r\n"))
         assertTrue(req.endsWith("\r\n\r\n"))
@@ -198,19 +198,19 @@ class WebSocketTest {
         try { WsHandshake.request("h", "/a b", "k", emptyList()); fail() } catch (_: IllegalArgumentException) {}
     }
 
-    private fun response(status: String = "101 Switching Protocols", key: String = "KEY", extra: String = "", accept: String = WsHandshake.acceptFor("KEY"), protocol: String? = "coucou.v1"): ByteArray =
+    private fun response(status: String = "101 Switching Protocols", key: String = "KEY", extra: String = "", accept: String = WsHandshake.acceptFor("KEY"), protocol: String? = "nxisland.v1"): ByteArray =
         ("HTTP/1.1 $status\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: $accept\r\n" +
             (protocol?.let { "Sec-WebSocket-Protocol: $it\r\n" } ?: "") + extra + "\r\n").toByteArray()
 
     @Test fun aCorrectResponseIsAcceptedAndNoFrameDataIsSwallowed() {
         val after = byteArrayOf(0x81.toByte(), 2, 'o'.code.toByte(), 'k'.code.toByte())
         val input = ByteArrayInputStream(response() + after)
-        assertEquals("coucou.v1", WsHandshake.readResponse(input, "KEY", setOf("coucou.v1")))
+        assertEquals("nxisland.v1", WsHandshake.readResponse(input, "KEY", setOf("nxisland.v1")))
         assertEquals("ok", (message(WsDecoder(input, 100).next()) as WsMessage.Text).text)
     }
 
     @Test fun everyWrongResponseIsRefusedWithItsStatus() {
-        fun status(bytes: ByteArray) = try { WsHandshake.readResponse(ByteArrayInputStream(bytes), "KEY", setOf("coucou.v1")); -1 } catch (e: WsHandshakeException) { e.status }
+        fun status(bytes: ByteArray) = try { WsHandshake.readResponse(ByteArrayInputStream(bytes), "KEY", setOf("nxisland.v1")); -1 } catch (e: WsHandshakeException) { e.status }
         assertEquals(401, status("HTTP/1.1 401 Unauthorized\r\nContent-Length: 0\r\n\r\n".toByteArray()))
         assertEquals(429, status("HTTP/1.1 429 Too Many Requests\r\n\r\n".toByteArray()))
         assertEquals(404, status("HTTP/1.1 404 Not Found\r\n\r\n".toByteArray()))
@@ -218,7 +218,7 @@ class WebSocketTest {
         assertEquals(101, status(response(protocol = "other")))
         assertEquals(101, status(response(protocol = null)))
         assertEquals(101, status(response(extra = "Sec-WebSocket-Extensions: permessage-deflate\r\n")))
-        assertEquals(101, status("HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ${WsHandshake.acceptFor("KEY")}\r\nSec-WebSocket-Protocol: coucou.v1\r\n\r\n".toByteArray()))
+        assertEquals(101, status("HTTP/1.1 101 Switching Protocols\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ${WsHandshake.acceptFor("KEY")}\r\nSec-WebSocket-Protocol: nxisland.v1\r\n\r\n".toByteArray()))
         assertEquals(0, status("garbage\r\n\r\n".toByteArray()))
         assertEquals(0, status("HTTP/1.1 101".toByteArray()))
         assertEquals(0, status(ByteArray(WsHandshake.MAX_HEADER_BYTES + 100) { 'a'.code.toByte() }))

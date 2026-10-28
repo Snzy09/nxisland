@@ -1,7 +1,7 @@
 #if !APPSTORE
 import SwiftUI
 
-// MARK: - Notch card: "Coucou 0.6.0 is out", one click to install it
+// MARK: - Notch card: "NxIsland 0.6.0 is out", one click to install it
 
 struct UpdateCardView: View {
     @ObservedObject private var updater = MacUpdater.shared

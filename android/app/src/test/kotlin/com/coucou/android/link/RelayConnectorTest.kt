@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.ByteArrayOutputStream
 import java.io.EOFException
@@ -155,7 +155,7 @@ class RelayConnectorTest {
                 headers += head.split("\r\n")
                 if (mode == Mode.REFUSE_401) { write("HTTP/1.1 401 Unauthorized\r\nContent-Length: 0\r\n\r\n".toByteArray()); return }
                 val key = head.lines().first { it.startsWith("Sec-WebSocket-Key:") }.substringAfter(":").trim()
-                write(("HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ${WsHandshake.acceptFor(key)}\r\nSec-WebSocket-Protocol: coucou.v1\r\n\r\n").toByteArray())
+                write(("HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ${WsHandshake.acceptFor(key)}\r\nSec-WebSocket-Protocol: nxisland.v1\r\n\r\n").toByteArray())
                 if (mode == Mode.CLOSE_JOIN_PROOF) { sendClose(1008, "join proof"); return }
                 var wrongSent = false
                 while (true) {
@@ -212,7 +212,7 @@ class RelayConnectorTest {
         val head = f.headers.joinToString("\n")
         assertTrue(head, f.headers[0] == "GET /v1/room/$roomId?role=phone HTTP/1.1")
         assertTrue(f.headers.contains("Authorization: Bearer $accessKey"))
-        assertTrue(f.headers.contains("Sec-WebSocket-Protocol: coucou.v1, coucou.join.${RelayCrypto.joinProof(hostKey)}"))
+        assertTrue(f.headers.contains("Sec-WebSocket-Protocol: nxisland.v1, nxisland.join.${RelayCrypto.joinProof(hostKey)}"))
         assertFalse("K itself is never sent", head.contains(pairing.key))
     }
 

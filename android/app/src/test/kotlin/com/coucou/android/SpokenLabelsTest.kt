@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.SpokenLabels
+import com.nxisland.android.core.SpokenLabels
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 
 /**
@@ -8,7 +8,7 @@ package com.coucou.android.core
  * it is answered.
  */
 object OverlayPolicy {
-    /** The pill is for when you are in another app; inside Coucou the screen already shows it. */
+    /** The pill is for when you are in another app; inside NxIsland the screen already shows it. */
     fun shouldShow(enabled: Boolean, permitted: Boolean, appInForeground: Boolean): Boolean =
         blocker(enabled, permitted, appInForeground) == null
 

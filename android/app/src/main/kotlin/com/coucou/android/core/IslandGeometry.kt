@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 import kotlin.math.max
 import kotlin.math.min

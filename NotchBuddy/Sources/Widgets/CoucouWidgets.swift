@@ -1,7 +1,7 @@
 import SwiftUI
 import WidgetKit
 
-// Coucou widgets: Solo, Team and List on the Home Screen, plus the Lock
+// NxIsland widgets: Solo, Team and List on the Home Screen, plus the Lock
 // Screen accessories. They show the sessions the iPhone app last saved to the
 // App Group; the app reloads them whenever a session changes.
 
@@ -90,7 +90,7 @@ struct LockScreenWidget: Widget {
         StaticConfiguration(kind: "CoucouLock", provider: SessionsProvider()) { entry in
             LockScreenView(sessions: entry.sessions)
         }
-        .configurationDisplayName("Coucou")
+        .configurationDisplayName("NxIsland")
         .description("Mochi on your Lock Screen.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
@@ -371,7 +371,7 @@ struct LockScreenView: View {
             .widgetURL(sessions.first.map { SharedSession.url(for: $0.id) })
             .containerBackground(for: .widget) { Color.clear }
         default:
-            Text(sessions.summary.map { "Coucou · \($0)" } ?? "Coucou · all quiet")
+            Text(sessions.summary.map { "NxIsland · \($0)" } ?? "NxIsland · all quiet")
                 .containerBackground(for: .widget) { Color.clear }
         }
     }
@@ -389,7 +389,7 @@ extension SharedSession {
     }
 
     static let samples: [SharedSession] = [
-        SharedSession(id: "integration_claude", title: "coucou", agent: "VS Code", color: "#4A86E8",
+        SharedSession(id: "integration_claude", title: "nxisland", agent: "VS Code", color: "#4A86E8",
                       state: "approval", statusText: "waiting for your OK", tone: .waiting, urgency: 0,
                       stepIndex: 2, stepCount: 7, currentStep: "npm run test", updatedAt: .now),
         SharedSession(id: "agent_codex", title: "site-perso", agent: "Codex", color: "#D9663A",

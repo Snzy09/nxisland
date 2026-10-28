@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * The app's icons as geometry on a 24 x 24 grid, stroked 1.9 wide with round ends and joins (the same

@@ -1,4 +1,4 @@
-package com.coucou.android.sound
+package com.nxisland.android.sound
 
 /** Volume rules from docs/SPEC.md: default 0.12 and the slider never goes above 0.2. */
 object SoundVolume {

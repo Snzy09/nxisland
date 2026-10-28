@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Languages
+import com.nxisland.android.core.Languages
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

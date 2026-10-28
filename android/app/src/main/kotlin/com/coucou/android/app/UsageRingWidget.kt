@@ -1,13 +1,13 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.view.View
 import android.widget.RemoteViews
-import com.coucou.android.R
-import com.coucou.android.core.WidgetContent
-import com.coucou.android.core.WidgetTone
+import com.nxisland.android.R
+import com.nxisland.android.core.WidgetContent
+import com.nxisland.android.core.WidgetTone
 
 /**
  * The Usage Ring widget: a ring drawn to a bitmap for the plan usage the computer sent (its switch is on), with the

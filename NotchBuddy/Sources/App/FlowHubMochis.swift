@@ -9,7 +9,7 @@ private struct HubVisibleKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    /// Whether the Coucou window is on screen: the Mochis rest (no frame drawn) while it is hidden,
+    /// Whether the NxIsland window is on screen: the Mochis rest (no frame drawn) while it is hidden,
     /// minimized or covered.
     var hubVisible: Bool {
         get { self[HubVisibleKey.self] }
@@ -17,7 +17,7 @@ extension EnvironmentValues {
     }
 }
 
-/// Follows the Coucou window's occlusion, for `hubVisible`.
+/// Follows the NxIsland window's occlusion, for `hubVisible`.
 @MainActor
 final class HubWindowState: ObservableObject {
     @Published private(set) var visible = true

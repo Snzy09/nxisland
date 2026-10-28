@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Shortcut Action
 
-/// Every keyboard shortcut Coucou knows about.
+/// Every keyboard shortcut NxIsland knows about.
 /// The first 10 cases are *global* (registered with Carbon and effective from any app).
 /// Island-local shortcuts are documented in `ShortcutLogic.islandShortcuts` but are
 /// not managed here — they are handled by a local NSEvent monitor in IslandWindowController.
@@ -50,7 +50,7 @@ enum ShortcutAction: String, CaseIterable, Sendable {
         case .muteToggle:        return String(localized: "shortcut.mute-toggle")
         case .desktopToggle:     return String(localized: "shortcut.desktop-toggle")
         case .wardrobeToggle:    return String(localized: "shortcut.wardrobe")
-        case .talkToCoucou:      return String(localized: "shortcut.talk-to-coucou")
+        case .talkToCoucou:      return String(localized: "shortcut.talk-to-nxisland")
         case .captureScreen:     return String(localized: "shortcut.capture")
         }
     }
@@ -165,7 +165,7 @@ enum ShortcutLogic {
         return c
     }
 
-    // MARK: - Conflict detection (within Coucou's own shortcuts)
+    // MARK: - Conflict detection (within NxIsland's own shortcuts)
 
     /// Returns the set of actions whose (keyCode, nsFlags) pair is shared with another action.
     static func duplicates(in specs: [ShortcutAction: ShortcutSpec]) -> Set<ShortcutAction> {

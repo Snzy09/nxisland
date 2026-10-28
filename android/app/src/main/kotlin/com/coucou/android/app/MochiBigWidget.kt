@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -7,13 +7,13 @@ import android.content.Context
 import android.util.SizeF
 import android.view.View
 import android.widget.RemoteViews
-import com.coucou.android.R
-import com.coucou.android.core.LaunchScreen
-import com.coucou.android.core.UsageRing
-import com.coucou.android.core.UsageSide
-import com.coucou.android.core.WidgetContent
-import com.coucou.android.core.WidgetSpoken
-import com.coucou.android.core.WidgetTone
+import com.nxisland.android.R
+import com.nxisland.android.core.LaunchScreen
+import com.nxisland.android.core.UsageRing
+import com.nxisland.android.core.UsageSide
+import com.nxisland.android.core.WidgetContent
+import com.nxisland.android.core.WidgetSpoken
+import com.nxisland.android.core.WidgetTone
 
 /**
  * The Mochi Big widget (4x4). The top is in two sides. On the left, Mochi with his glow and his badge, then the agent's name and

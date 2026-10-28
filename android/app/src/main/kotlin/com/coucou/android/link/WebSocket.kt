@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.ByteArrayOutputStream
 import java.io.Closeable

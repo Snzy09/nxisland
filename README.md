@@ -1,16 +1,16 @@
 <div align="center">
 
-<img src="NotchBuddy/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="96" alt="Coucou icon">
+<img src="NotchBuddy/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="96" alt="NxIsland icon">
 
-# Coucou
+# NxIsland
 
 **A tiny friend that lives in your Mac's notch — or at the top of your screen on Windows and Linux — and keeps an eye on your AI coding agent sessions. And now on your phone too: iPhone and Android.**
 
 Approve permissions, watch your agents work, drop a file, chat with Claude — all without leaving what you're doing. Walk away from your Mac and Mochi follows you to your iPhone: Lock Screen, Dynamic Island, widgets, Siri.
 
-**New in 0.4: Coucou is a real Mac app.** Hold a key anywhere, speak, let go: your words are pasted where you type, like Wispr Flow — free, open source, and offline with Parakeet. Record your calls without a bot in the meeting and get the transcript, the summary and the to-dos.
+**New in 0.4: NxIsland is a real Mac app.** Hold a key anywhere, speak, let go: your words are pasted where you type, like Wispr Flow — free, open source, and offline with Parakeet. Record your calls without a bot in the meeting and get the transcript, the summary and the to-dos.
 
-[![Version](https://img.shields.io/github/v/release/Louis-CFM/coucou?filter=v*&label=version&color=0A84FF)](https://github.com/Louis-CFM/coucou/releases)
+[![Version](https://img.shields.io/github/v/release/Louis-CFM/nxisland?filter=v*&label=version&color=0A84FF)](https://github.com/Louis-CFM/nxisland/releases)
 ![macOS 15+](https://img.shields.io/badge/macOS-15%2B-black?logo=apple)
 ![iOS 18+](https://img.shields.io/badge/iOS-18%2B-black?logo=apple)
 ![Android 11+](https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white)
@@ -20,9 +20,9 @@ Approve permissions, watch your agents work, drop a file, chat with Claude — a
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-native-0A84FF)
 ![Tauri 2](https://img.shields.io/badge/Tauri-2-FFC131?logo=tauri&logoColor=black)
 ![Code: MIT](https://img.shields.io/badge/code-MIT-green)
-![GitHub stars](https://img.shields.io/github/stars/Louis-CFM/coucou?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Louis-CFM/nxisland?style=social)
 
-<img src="docs/media/demo.gif" width="760" alt="Coucou in action">
+<img src="docs/media/demo.gif" width="760" alt="NxIsland in action">
 
 </div>
 
@@ -31,23 +31,23 @@ Approve permissions, watch your agents work, drop a file, chat with Claude — a
 ## Why
 
 Some studios showed off gorgeous notch companions… and never let anyone use them.
-**Coucou is the open version.** Every line of code is open source under the MIT License: read it, fork it, learn from it. The Coucou name, Mochi and the sounds stay © Louis Raillé (see [License](#license)).
+**NxIsland is the open version.** Every line of code is open source under the MIT License: read it, fork it, learn from it. The NxIsland name, Mochi and the sounds stay © Louis Raillé (see [License](#license)).
 
 Meet **Mochi**: a soft little squircle with big eyes that pops out of your notch, waves hello, follows your cursor with its eyes, gets annoyed when you poke it (and dizzy if you insist), and tells you the moment Claude Code needs you.
 
-## Coucou on the Mac: dictation, notes, one window
+## NxIsland on the Mac: dictation, notes, one window
 
 <div align="center">
-<img src="docs/media/hub-dictation.png" width="760" alt="The Coucou window: the Dictation page with today's dictations, words dictated, speed and days in a row">
+<img src="docs/media/hub-dictation.png" width="760" alt="The NxIsland window: the Dictation page with today's dictations, words dictated, speed and days in a row">
 </div>
 
-Since 0.4, Coucou has its own window and sits in the Dock. On the left, **Flow** — everything about your voice — and **Notch**, all the settings of the island. *(macOS, GitHub build)*
+Since 0.4, NxIsland has its own window and sits in the Dock. On the left, **Flow** — everything about your voice — and **Notch**, all the settings of the island. *(macOS, GitHub build)*
 
 - 🎙️ **Flow dictation** — hold a key anywhere on the Mac (right ⌥ by default, or fn, right ⌘ or right ⌃), speak, let go: your words are pasted where you type, in any app. Two quick taps for hands-free, Esc to cancel, ⌃⌘V to paste the last one again. Your clipboard gets back what it held.
-- 💊 **The pill** — a small see-through pill at the bottom of the screen (or on its left or right edge). Hover it for a toolbar: dictate, record a call, open Coucou. While you speak, Mochi listens and nine dots follow your voice.
+- 💊 **The pill** — a small see-through pill at the bottom of the screen (or on its left or right edge). Hover it for a toolbar: dictate, record a call, open NxIsland. While you speak, Mochi listens and nine dots follow your voice.
 - 🦜 **Parakeet, offline** — run NVIDIA's Parakeet on your Mac's Neural Engine through [FluidAudio](https://github.com/FluidInference/FluidAudio): more accurate, 25 languages, nothing leaves your Mac. One click to download (about 650 MB), Apple silicon only. Until then the Mac's own recognition is used.
-- ✍️ **Your words, your way** — a dictionary of names Coucou always spells right, replacements, snippets (say a short phrase, paste a whole text), and an optional clean-up by Claude with your own key: as said, natural or polished, per app.
-- 📝 **Notetaker** — click Record a call: Coucou records your microphone and what your Mac plays, no bot joins the call. Then you get the transcript person by person, a summary, the key points and the to-dos, written by Claude with your key or by Apple Intelligence on your Mac. The audio is deleted once the transcript is written. Tell the people in the call that you record.
+- ✍️ **Your words, your way** — a dictionary of names NxIsland always spells right, replacements, snippets (say a short phrase, paste a whole text), and an optional clean-up by Claude with your own key: as said, natural or polished, per app.
+- 📝 **Notetaker** — click Record a call: NxIsland records your microphone and what your Mac plays, no bot joins the call. Then you get the transcript person by person, a summary, the key points and the to-dos, written by Claude with your key or by Apple Intelligence on your Mac. The audio is deleted once the transcript is written. Tell the people in the call that you record.
 - 📊 **Statistics** — words dictated, time saved, words per minute, days in a row and the apps you dictate in. Counted on your Mac, never sent anywhere.
 
 <table>
@@ -81,17 +81,17 @@ Flow dictation and the Notetaker are on the Mac for now; Windows and Linux are n
 - ⌨️ **Keyboard shortcuts** — open the chat, jump to an alert or a terminal, switch pills, mute, send Mochi to the desktop or open the wardrobe from anywhere; all customizable in Settings → Shortcuts.
 - 🎭 **A real character** — idle breathing, blinks, eyes on a sphere that follow your mouse, emotes, 28 handcrafted sounds, a greeting on launch.
 - 🔊 **Your own sounds** *(macOS)* — drop a file named like one of Mochi's sounds (`finish.wav`, `approval.mp3`…) in Settings → General → Sound → **Open sounds folder** to replace it.
-- 🗣️ **« OK Coucou »** *(macOS, GitHub build)* — talk to Mochi like Jarvis. Say « OK Coucou », then ask: « how much did I make on Stripe today? », « swap GitHub for Stripe », « play some Daft Punk », « who won the game last night? », « send an email to Enzo to tell him the image is ready ». Claude is the brain (your own Anthropic API key, set in Settings → Chat); speech recognition runs on your Mac, and only your words and the data Coucou reads to answer go to Anthropic, never audio. Mochi listens, thinks and answers out loud; emails open in the notch and leave only when you click Send. Settings → Voice.
-- 🎙️ **Dictate in the chat** *(macOS, GitHub build)* — click the mic next to the chat field and talk in any of your languages (Coucou picks the one you spoke, or right-click the mic to choose); speech recognition runs on your Mac when it supports it.
+- 🗣️ **« OK NxIsland »** *(macOS, GitHub build)* — talk to Mochi like Jarvis. Say « OK NxIsland », then ask: « how much did I make on Stripe today? », « swap GitHub for Stripe », « play some Daft Punk », « who won the game last night? », « send an email to Enzo to tell him the image is ready ». Claude is the brain (your own Anthropic API key, set in Settings → Chat); speech recognition runs on your Mac, and only your words and the data NxIsland reads to answer go to Anthropic, never audio. Mochi listens, thinks and answers out loud; emails open in the notch and leave only when you click Send. Settings → Voice.
+- 🎙️ **Dictate in the chat** *(macOS, GitHub build)* — click the mic next to the chat field and talk in any of your languages (NxIsland picks the one you spoke, or right-click the mic to choose); speech recognition runs on your Mac when it supports it.
 - 🫥 **Invisible when idle** — hides away when nothing is running, peeks out when you hover the notch (the top edge of the screen on Windows and Linux).
 - 🖥️ **Any Mac, notch or not** — on an iMac, a Mac mini, or a MacBook with its lid closed on an external display, Mochi sits in a small bar at the top of the screen. With several displays, pick his screen in Settings → General, or let him follow your mouse *(macOS)*.
-- 📱 **Coucou on iPhone** — your sessions, approvals and services in your pocket, with Live Activities, widgets and Siri. See [Coucou on iPhone](#coucou-on-iphone).
-- 🤖 **Coucou for Android** — your agents, approvals with your fingerprint, questions, chat and home-screen widgets on an Android phone, linked to Coucou on Windows or Linux over your Wi-Fi. By [@Rhytam23](https://github.com/Rhytam23). See [Coucou for Android](#coucou-for-android).
-- 📅 **Weekly recap** *(macOS)* — every Monday morning Coucou shows a summary of the past week: time coding, sessions, files, lines changed, commands, permissions, top agent and project, busiest day and longest session. Share it as a 1080 × 1920 image with Mochi — project names optional. All local, no sync.
+- 📱 **NxIsland on iPhone** — your sessions, approvals and services in your pocket, with Live Activities, widgets and Siri. See [NxIsland on iPhone](#nxisland-on-iphone).
+- 🤖 **NxIsland for Android** — your agents, approvals with your fingerprint, questions, chat and home-screen widgets on an Android phone, linked to NxIsland on Windows or Linux over your Wi-Fi. By [@Rhytam23](https://github.com/Rhytam23). See [NxIsland for Android](#nxisland-for-android).
+- 📅 **Weekly recap** *(macOS)* — every Monday morning NxIsland shows a summary of the past week: time coding, sessions, files, lines changed, commands, permissions, top agent and project, busiest day and longest session. Share it as a 1080 × 1920 image with Mochi — project names optional. All local, no sync.
 - 🌍 **14 languages** — English, 简体中文, 繁體中文, हिन्दी, Español, العربية, Français, বাংলা, Português, Русский, Bahasa Indonesia, Deutsch, Türkçe, ไทย. Pick one in Settings → General → Language; Traditional Chinese and Thai are on the Mac only for now. Community translations welcome.
 - 🔒 **Private by design** — no telemetry, no account. Keys live in your macOS Keychain, Windows Credential Manager or Linux Secret Service (GNOME Keyring, KWallet). The app only talks to the services you plug in (and, once you agree, to GitHub's releases API to tell you about new versions).
 
-## Coucou on iPhone
+## NxIsland on iPhone
 
 The Mac app does the work; the iPhone app keeps you in the loop when you step away. It goes as far into the Apple ecosystem as a dev tool can:
 
@@ -114,13 +114,13 @@ The Mac app does the work; the iPhone app keeps you in the loop when you step aw
 - 🔎 **Spotlight and Focus** — find past turns in Spotlight; a Focus filter shows only the agents waiting for you.
 - 📊 **Your services up close** — GitHub, Vercel, Stripe, Cal.com, n8n, Notion, Resend: your Mac reads their APIs with the keys in its Keychain and the iPhone shows the figures and lists. Safe actions (re-run CI, redeploy, merge a PR, pause a workflow) behind Face ID; nothing that moves money or sends an email.
 - 🫧 **Liquid Glass, native to the bone** — SwiftUI, tabs, zoom transitions, context menus, swipe actions, alternate icons, Mochi at 120 Hz.
-- 🔒 **Through your own iCloud** — sessions sync through your private CloudKit database; project names, commands and questions are encrypted with your iCloud keys. No Coucou server sees your projects, commands or keys. Turn it on in the Mac app: Settings → General → iPhone.
+- 🔒 **Through your own iCloud** — sessions sync through your private CloudKit database; project names, commands and questions are encrypted with your iCloud keys. No NxIsland server sees your projects, commands or keys. Turn it on in the Mac app: Settings → General → iPhone.
 
-**Get it on your iPhone in 3 steps:** install Coucou on your iPhone ([Join the TestFlight beta](https://testflight.apple.com/join/3GpeHv2b) — free, App Store coming soon), turn on **Settings → General → iPhone** in the Mac app (0.1.9 or later), and use the same Apple Account in iCloud on both. Full guide, troubleshooting and build-it-yourself: [docs/IPHONE.md](docs/IPHONE.md).
+**Get it on your iPhone in 3 steps:** install NxIsland on your iPhone ([Join the TestFlight beta](https://testflight.apple.com/join/3GpeHv2b) — free, App Store coming soon), turn on **Settings → General → iPhone** in the Mac app (0.1.9 or later), and use the same Apple Account in iCloud on both. Full guide, troubleshooting and build-it-yourself: [docs/IPHONE.md](docs/IPHONE.md).
 
-## Coucou for Android
+## NxIsland for Android
 
-**Coucou for Android** brings Mochi to Android phones. It was built by [Rhytam Biswas (@Rhytam23)](https://github.com/Rhytam23) and lives in [`android/`](android/).
+**NxIsland for Android** brings Mochi to Android phones. It was built by [Rhytam Biswas (@Rhytam23)](https://github.com/Rhytam23) and lives in [`android/`](android/).
 
 - 🔐 **Approve from your phone** — a permission request rises over any screen, even on a locked phone; **Allow** needs your fingerprint or screen lock, **Deny** doesn't. A command too long to show in full can only be allowed on the computer.
 - 🧑‍💻 **Your agents at a glance** — the agent that needs you, the others below, plan usage and your services when the computer shares them.
@@ -129,7 +129,7 @@ The Mac app does the work; the iPhone app keeps you in the loop when you step aw
 - 🧩 **Home-screen widgets** — nine of them, from a tiny Mochi to a big card with plan usage and quick buttons. Orange when something waits for you, blue while it works, green when it's done. Read-only: a request is always decided in the app.
 - 🔒 **Local and private** — the phone talks straight to your computer on your Wi-Fi, paired with a QR code and a pinned certificate. The phone link is **off by default**, and nothing listens until you turn it on.
 
-**Status:** tested on a real phone (Android 13) with the Windows app. The phone link is in **Coucou 0.4.0 for Windows and Linux**. Download the signed APK from the [latest Android release](https://github.com/Louis-CFM/coucou/releases/tag/android-v0.3.0). Android needs Coucou on **Windows or Linux** (not the Mac), Android 11 or later, and both on the same Wi-Fi. Full guide: [`android/README.md`](android/README.md).
+**Status:** tested on a real phone (Android 13) with the Windows app. The phone link is in **NxIsland 0.4.0 for Windows and Linux**. Download the signed APK from the [latest Android release](https://github.com/Louis-CFM/nxisland/releases/tag/android-v0.3.0). Android needs NxIsland on **Windows or Linux** (not the Mac), Android 11 or later, and both on the same Wi-Fi. Full guide: [`android/README.md`](android/README.md).
 
 <table>
 <tr>
@@ -148,51 +148,51 @@ macOS releases are published as `v*` tags. See [CHANGELOG.md](CHANGELOG.md) for 
 
 | Version | Date | Highlights |
 |---------|------|------------|
-| [0.5.3](https://github.com/Louis-CFM/coucou/releases/tag/v0.5.3) | Oct 22, 2026 | Mochi turns blue when a new version waits; What's new and your Coucou so far after each update; Buy Mochi a coffee |
-| [0.5.2](https://github.com/Louis-CFM/coucou/releases/tag/v0.5.2) | Oct 20, 2026 | New version in the notch, one click to install it; German, Turkish, Thai, Traditional Chinese; Homebrew; plan approval from the notch |
-| [0.5.1](https://github.com/Louis-CFM/coucou/releases/tag/v0.5.1) | Oct 18, 2026 | WhatsApp in one click: Coucou installs and starts the gateway, no Terminal |
-| [0.5.0](https://github.com/Louis-CFM/coucou/releases/tag/v0.5.0) | Oct 18, 2026 | WhatsApp in the notch (experimental), Mochi feels your Mac, a screen capture for Claude, dictation that writes prompts or translates |
-| [0.4.0](https://github.com/Louis-CFM/coucou/releases/tag/v0.4.0) | Oct 14, 2026 | Coucou becomes an app: Flow dictation anywhere, Parakeet offline, the Notetaker, a window in the Dock |
-| [0.3.0](https://github.com/Louis-CFM/coucou/releases/tag/v0.3.0) | Oct 11, 2026 | « OK Coucou »: talk to Mochi, powered by Claude — pills, music, your services, web search, emails |
-| [0.2.3](https://github.com/Louis-CFM/coucou/releases/tag/v0.2.3) | Oct 8, 2026 | Terminal sessions, Spotify, a colour per Mochi, dictation in any language, open on hover, your own sounds |
-| [0.2.2](https://github.com/Louis-CFM/coucou/releases/tag/v0.2.2) | Oct 8, 2026 | Choose Mochi's screen, Claude Desktop pill, Codex plan usage, full questions, safer settings.json |
-| [0.2.1](https://github.com/Louis-CFM/coucou/releases/tag/v0.2.1) | Oct 7, 2026 | Hermes Agent support |
-| [0.2.0](https://github.com/Louis-CFM/coucou/releases/tag/v0.2.0) | Oct 6, 2026 | Copilot CLI, Muse Code, OpenCode and Amp, weekly recap, 10 languages |
-| [0.1.9](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.9) | Oct 6, 2026 | iPhone services with live details and actions, smarter Live Activity |
-| [0.1.8](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.8) | Oct 5, 2026 | Coucou on iPhone: sessions, widgets, approvals with Face ID, Mochi in the Dynamic Island |
-| [0.1.7](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.7) | Oct 4, 2026 | Keyboard shortcuts |
-| [0.1.6](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.6) | Oct 4, 2026 | Mochi on the desktop |
-| [0.1.5](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.5) | Oct 4, 2026 | Wardrobe and seasonal outfits, new launch greeting |
-| [0.1.4](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.4) | Oct 3, 2026 | Live diffs, GitHub pull requests, CI, reviews and contribution grid |
-| [0.1.3](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.3) | Oct 3, 2026 | Answer Claude's questions from the notch, plan usage, local models, Apple Music |
-| [0.1.2](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.2) | Oct 2, 2026 | Codex and Cursor support, the permission card stays until you answer |
-| [0.1.1](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.1) | Oct 2, 2026 | Gemini and OpenAI chat, Linux build, more agents and pills, security hardening |
-| [0.1.0](https://github.com/Louis-CFM/coucou/releases/tag/v0.1.0) | Sep 27, 2026 | First release: Mochi, Claude Code sessions, chat, file drop, integrations |
+| [0.5.3](https://github.com/Louis-CFM/nxisland/releases/tag/v0.5.3) | Oct 22, 2026 | Mochi turns blue when a new version waits; What's new and your NxIsland so far after each update; Buy Mochi a coffee |
+| [0.5.2](https://github.com/Louis-CFM/nxisland/releases/tag/v0.5.2) | Oct 20, 2026 | New version in the notch, one click to install it; German, Turkish, Thai, Traditional Chinese; Homebrew; plan approval from the notch |
+| [0.5.1](https://github.com/Louis-CFM/nxisland/releases/tag/v0.5.1) | Oct 18, 2026 | WhatsApp in one click: NxIsland installs and starts the gateway, no Terminal |
+| [0.5.0](https://github.com/Louis-CFM/nxisland/releases/tag/v0.5.0) | Oct 18, 2026 | WhatsApp in the notch (experimental), Mochi feels your Mac, a screen capture for Claude, dictation that writes prompts or translates |
+| [0.4.0](https://github.com/Louis-CFM/nxisland/releases/tag/v0.4.0) | Oct 14, 2026 | NxIsland becomes an app: Flow dictation anywhere, Parakeet offline, the Notetaker, a window in the Dock |
+| [0.3.0](https://github.com/Louis-CFM/nxisland/releases/tag/v0.3.0) | Oct 11, 2026 | « OK NxIsland »: talk to Mochi, powered by Claude — pills, music, your services, web search, emails |
+| [0.2.3](https://github.com/Louis-CFM/nxisland/releases/tag/v0.2.3) | Oct 8, 2026 | Terminal sessions, Spotify, a colour per Mochi, dictation in any language, open on hover, your own sounds |
+| [0.2.2](https://github.com/Louis-CFM/nxisland/releases/tag/v0.2.2) | Oct 8, 2026 | Choose Mochi's screen, Claude Desktop pill, Codex plan usage, full questions, safer settings.json |
+| [0.2.1](https://github.com/Louis-CFM/nxisland/releases/tag/v0.2.1) | Oct 7, 2026 | Hermes Agent support |
+| [0.2.0](https://github.com/Louis-CFM/nxisland/releases/tag/v0.2.0) | Oct 6, 2026 | Copilot CLI, Muse Code, OpenCode and Amp, weekly recap, 10 languages |
+| [0.1.9](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.9) | Oct 6, 2026 | iPhone services with live details and actions, smarter Live Activity |
+| [0.1.8](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.8) | Oct 5, 2026 | NxIsland on iPhone: sessions, widgets, approvals with Face ID, Mochi in the Dynamic Island |
+| [0.1.7](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.7) | Oct 4, 2026 | Keyboard shortcuts |
+| [0.1.6](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.6) | Oct 4, 2026 | Mochi on the desktop |
+| [0.1.5](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.5) | Oct 4, 2026 | Wardrobe and seasonal outfits, new launch greeting |
+| [0.1.4](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.4) | Oct 3, 2026 | Live diffs, GitHub pull requests, CI, reviews and contribution grid |
+| [0.1.3](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.3) | Oct 3, 2026 | Answer Claude's questions from the notch, plan usage, local models, Apple Music |
+| [0.1.2](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.2) | Oct 2, 2026 | Codex and Cursor support, the permission card stays until you answer |
+| [0.1.1](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.1) | Oct 2, 2026 | Gemini and OpenAI chat, Linux build, more agents and pills, security hardening |
+| [0.1.0](https://github.com/Louis-CFM/nxisland/releases/tag/v0.1.0) | Sep 27, 2026 | First release: Mochi, Claude Code sessions, chat, file drop, integrations |
 
-Windows and Linux are released together, under the `windows-v*` and `linux-v*` tags. The newest Windows installer is always at [`windows-latest`](https://github.com/Louis-CFM/coucou/releases/tag/windows-latest), the newest Linux AppImage at [`linux-latest`](https://github.com/Louis-CFM/coucou/releases/tag/linux-latest).
+Windows and Linux are released together, under the `windows-v*` and `linux-v*` tags. The newest Windows installer is always at [`windows-latest`](https://github.com/Louis-CFM/nxisland/releases/tag/windows-latest), the newest Linux AppImage at [`linux-latest`](https://github.com/Louis-CFM/nxisland/releases/tag/linux-latest).
 
 | Windows & Linux | Date | Highlights |
 |---------|------|------------|
-| 0.5.3 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.3) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.5.3) | Oct 22, 2026 | WhatsApp in the island (experimental): one-click gateway install, your chats and replies |
-| 0.5.2 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.2) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.5.2) | Oct 22, 2026 | Mochi turns blue when a new version waits, What's new after each update; GitLab and Gitea pills; the weekly recap on Android |
-| 0.5.1 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.1) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.5.1) | Oct 20, 2026 | New version in the island, one click to install it on Windows; German and Turkish; an optional clock; Linux idle CPU fixed |
-| 0.5.0 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.5.0) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.5.0) | Oct 15, 2026 | Catches up with the Mac: the Coucou window, Flow dictation with Parakeet offline (X11 and Wayland), the Notetaker, « OK Coucou » |
-| 0.4.0 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.4.0) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.4.0) | Oct 11, 2026 | Your Android phone: the link for Coucou for Android, by @Rhytam23 — approvals with your fingerprint, answers, chat, off by default |
-| 0.3.0 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.3.0) · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.3.0) | Oct 9, 2026 | Linux catches up: Spotify with Mochi dancing, global shortcuts on Wayland, Open terminal brings the terminal back; open on hover, your own sounds, a colour per Mochi |
-| 0.2.0 · [Windows](https://github.com/Louis-CFM/coucou/releases/tag/windows-v0.2.0) | Oct 8, 2026 | Catches up with the Mac: nine agents with approvals, chat with any AI, plan usage, GitHub, wardrobe, 10 languages |
-| 0.1.1 · [Linux](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.1.1) | Oct 1, 2026 | First Linux build (beta) |
+| 0.5.3 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.5.3) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.5.3) | Oct 22, 2026 | WhatsApp in the island (experimental): one-click gateway install, your chats and replies |
+| 0.5.2 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.5.2) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.5.2) | Oct 22, 2026 | Mochi turns blue when a new version waits, What's new after each update; GitLab and Gitea pills; the weekly recap on Android |
+| 0.5.1 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.5.1) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.5.1) | Oct 20, 2026 | New version in the island, one click to install it on Windows; German and Turkish; an optional clock; Linux idle CPU fixed |
+| 0.5.0 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.5.0) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.5.0) | Oct 15, 2026 | Catches up with the Mac: the NxIsland window, Flow dictation with Parakeet offline (X11 and Wayland), the Notetaker, « OK NxIsland » |
+| 0.4.0 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.4.0) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.4.0) | Oct 11, 2026 | Your Android phone: the link for NxIsland for Android, by @Rhytam23 — approvals with your fingerprint, answers, chat, off by default |
+| 0.3.0 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.3.0) · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.3.0) | Oct 9, 2026 | Linux catches up: Spotify with Mochi dancing, global shortcuts on Wayland, Open terminal brings the terminal back; open on hover, your own sounds, a colour per Mochi |
+| 0.2.0 · [Windows](https://github.com/Louis-CFM/nxisland/releases/tag/windows-v0.2.0) | Oct 8, 2026 | Catches up with the Mac: nine agents with approvals, chat with any AI, plan usage, GitHub, wardrobe, 10 languages |
+| 0.1.1 · [Linux](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.1.1) | Oct 1, 2026 | First Linux build (beta) |
 
-Coucou for Android, by [@Rhytam23](https://github.com/Rhytam23), is released under the `android-v*` tags.
+NxIsland for Android, by [@Rhytam23](https://github.com/Rhytam23), is released under the `android-v*` tags.
 
 | Android | Date | Highlights |
 |---------|------|------------|
-| [0.3.0](https://github.com/Louis-CFM/coucou/releases/tag/android-v0.3.0) | Oct 22, 2026 | A light theme and your phone's colours, nine more languages (Arabic right to left), quick actions, a Team widget, Share to Coucou, the weekly recap, a per-agent mute |
-| [0.2.0](https://github.com/Louis-CFM/coucou/releases/tag/android-v0.2.0) | Oct 13, 2026 | Nine home-screen widgets: Mochi, your agents, plan usage and quick buttons, coloured by state |
-| [0.1.0](https://github.com/Louis-CFM/coucou/releases/tag/android-v0.1.0) | Oct 11, 2026 | First release: your agents, approvals with your fingerprint, answers and chat, linked to Windows or Linux |
+| [0.3.0](https://github.com/Louis-CFM/nxisland/releases/tag/android-v0.3.0) | Oct 22, 2026 | A light theme and your phone's colours, nine more languages (Arabic right to left), quick actions, a Team widget, Share to NxIsland, the weekly recap, a per-agent mute |
+| [0.2.0](https://github.com/Louis-CFM/nxisland/releases/tag/android-v0.2.0) | Oct 13, 2026 | Nine home-screen widgets: Mochi, your agents, plan usage and quick buttons, coloured by state |
+| [0.1.0](https://github.com/Louis-CFM/nxisland/releases/tag/android-v0.1.0) | Oct 11, 2026 | First release: your agents, approvals with your fingerprint, answers and chat, linked to Windows or Linux |
 
 ## Demo mode
 
-No API key, no Claude Code, no setup — open **Settings → General → Demo**, click **Try demo mode**, and Coucou walks through a scripted session: a Claude Code session with live steps and a diff you can read, a permission request, an AskUserQuestion, a parallel Codex session, the GitHub, Stripe, Vercel and other integration pills loaded with sample data, the chat with a streamed response, the weekly recap with a share image you can actually save.
+No API key, no Claude Code, no setup — open **Settings → General → Demo**, click **Try demo mode**, and NxIsland walks through a scripted session: a Claude Code session with live steps and a diff you can read, a permission request, an AskUserQuestion, a parallel Codex session, the GitHub, Stripe, Vercel and other integration pills loaded with sample data, the chat with a streamed response, the weekly recap with a share image you can actually save.
 
 Nothing is written to disk during the demo — no Keychain entries, no hook files, no recap history. Your real sessions and keys are saved and restored exactly as they were when you stop.
 
@@ -200,24 +200,24 @@ Nothing is written to disk during the demo — no Keychain entries, no hook file
 
 ### App Store
 
-Coucou is coming to the **Mac App Store** and the **iPhone App Store**: one click to install, automatic updates, and the iPhone app pairs with your Mac through your iCloud account, with nothing to configure. The links will be here as soon as Apple publishes them.
+NxIsland is coming to the **Mac App Store** and the **iPhone App Store**: one click to install, automatic updates, and the iPhone app pairs with your Mac through your iCloud account, with nothing to configure. The links will be here as soon as Apple publishes them.
 
 The App Store build of the Mac app runs in Apple's sandbox, so a few features stay in the GitHub build: Claude plan usage, the Apple Music pill and attaching the front window to the chat.
 
 ### iPhone
 
-1. **Install Coucou on your iPhone** (iOS 18 or later): install [TestFlight](https://apps.apple.com/app/testflight/id899247664) from the App Store, then [Join the TestFlight beta](https://testflight.apple.com/join/3GpeHv2b). The beta is free; Apple limits it to 10,000 testers. The App Store version is coming soon.
+1. **Install NxIsland on your iPhone** (iOS 18 or later): install [TestFlight](https://apps.apple.com/app/testflight/id899247664) from the App Store, then [Join the TestFlight beta](https://testflight.apple.com/join/3GpeHv2b). The beta is free; Apple limits it to 10,000 testers. The App Store version is coming soon.
    *Apple is reviewing the beta: it opens within a day or two — if the link isn't accepting testers yet, check back soon.*
-2. **On your Mac**, with Coucou 0.1.9 or later: **Settings… → General → iPhone**, turn on **Show my agent sessions on my iPhone**, and **Move Mochi to my iPhone's Dynamic Island when my Mac is locked** for the Lock Screen.
+2. **On your Mac**, with NxIsland 0.1.9 or later: **Settings… → General → iPhone**, turn on **Show my agent sessions on my iPhone**, and **Move Mochi to my iPhone's Dynamic Island when my Mac is locked** for the Lock Screen.
 3. **Same Apple Account** in iCloud on the Mac and the iPhone. That's the whole link: no account, no pairing code.
-4. Open Coucou on the iPhone, allow notifications, and start a Claude Code session on the Mac.
+4. Open NxIsland on the iPhone, allow notifications, and start a Claude Code session on the Mac.
 
 Everything else, troubleshooting included, is in [docs/IPHONE.md](docs/IPHONE.md).
 
 ### Android
 
-1. **Download** `Coucou-Android-0.3.0.apk` from the [release page](https://github.com/Louis-CFM/coucou/releases/tag/android-v0.3.0) on your phone (Android 11 or later) and open it. Android asks once to allow installs from your browser or file manager. You can also [build it from source](#build-from-source).
-2. **On your computer**, install Coucou **0.4.0 or later** for [Windows](#windows) or [Linux](#linux): **Settings → Android phone**, turn on **Phone link**. If Windows asks about the firewall, allow Coucou on private networks.
+1. **Download** `NxIsland-Android-0.3.0.apk` from the [release page](https://github.com/Louis-CFM/nxisland/releases/tag/android-v0.3.0) on your phone (Android 11 or later) and open it. Android asks once to allow installs from your browser or file manager. You can also [build it from source](#build-from-source).
+2. **On your computer**, install NxIsland **0.4.0 or later** for [Windows](#windows) or [Linux](#linux): **Settings → Android phone**, turn on **Phone link**. If Windows asks about the firewall, allow NxIsland on private networks.
 3. **Show pairing code** and scan it with the app. The phone and the computer must be on the same Wi-Fi.
 
 Everything else, troubleshooting included, is in [`android/README.md`](android/README.md).
@@ -225,21 +225,21 @@ Everything else, troubleshooting included, is in [`android/README.md`](android/R
 ### Homebrew (macOS)
 
 ```bash
-brew tap louis-cfm/coucou https://github.com/Louis-CFM/coucou
-brew install --cask coucou
+brew tap louis-cfm/nxisland https://github.com/Louis-CFM/nxisland
+brew install --cask nxisland
 ```
 
-It installs the same signed and notarized GitHub build as the download below. Coucou then updates itself from the notch; `brew upgrade --cask --greedy coucou` works too.
+It installs the same signed and notarized GitHub build as the download below. NxIsland then updates itself from the notch; `brew upgrade --cask --greedy nxisland` works too.
 
 ### Download for macOS
 
-1. Grab the latest `Coucou.zip` from [Releases](https://github.com/Louis-CFM/coucou/releases).
-2. Unzip and move **Coucou.app** to `/Applications`.
-3. Launch it, and click **Open** when macOS asks you to confirm. Updating from 0.1.0? macOS may ask you, once for each key you saved, to let Coucou use it: enter your Mac password and click **Always Allow**.
+1. Grab the latest `NxIsland.zip` from [Releases](https://github.com/Louis-CFM/nxisland/releases).
+2. Unzip and move **NxIsland.app** to `/Applications`.
+3. Launch it, and click **Open** when macOS asks you to confirm. Updating from 0.1.0? macOS may ask you, once for each key you saved, to let NxIsland use it: enter your Mac password and click **Always Allow**.
 
 ### Windows
 
-Download **[Coucou-Windows.msi](https://github.com/Louis-CFM/coucou/releases/download/windows-latest/Coucou-Windows.msi)** or **[Coucou-Windows-setup.exe](https://github.com/Louis-CFM/coucou/releases/download/windows-latest/Coucou-Windows-setup.exe)** (Windows 10/11, always the newest version) and run it. You can also [build it from source](#build-from-source).
+Download **[NxIsland-Windows.msi](https://github.com/Louis-CFM/nxisland/releases/download/windows-latest/NxIsland-Windows.msi)** or **[NxIsland-Windows-setup.exe](https://github.com/Louis-CFM/nxisland/releases/download/windows-latest/NxIsland-Windows-setup.exe)** (Windows 10/11, always the newest version) and run it. You can also [build it from source](#build-from-source).
 
 **Windows will show a warning the first time — that's expected.** The installer isn't code-signed yet, so SmartScreen doesn't know the publisher:
 
@@ -247,23 +247,23 @@ Download **[Coucou-Windows.msi](https://github.com/Louis-CFM/coucou/releases/dow
 2. Click **More info** (*Informations complémentaires* in French). This reveals a **Run anyway** button.
 3. Click **Run anyway** (*Exécuter quand même*). The installer starts normally.
 
-This is only because the app isn't signed with a paid certificate yet. Coucou is open source, and Microsoft Defender scans the installer as clean.
+This is only because the app isn't signed with a paid certificate yet. NxIsland is open source, and Microsoft Defender scans the installer as clean.
 
-**Windows and Linux 0.5.3** bring **WhatsApp** to the island (experimental), with the gateway installed in one click. **0.5.2** turn Mochi blue when a new version waits and show what it brings after the update; they add **GitLab and Gitea** pills. **0.5.1** tell you when a new version is out (once you agree) and, on Windows, install it in one click; they also speak German and Turkish. **0.5.0** caught up with the Mac: Coucou is now an app with its own window in the taskbar, **Flow dictation** anywhere (hold right Ctrl, speak, let go) with Parakeet running offline on your computer, the **Notetaker** for your calls, and **« OK Coucou »** to talk to Mochi, powered by Claude with your key. On Linux, dictation works on X11 and Wayland. 0.4.0 paired with [Coucou for Android](#coucou-for-android): approve, answer and chat from your Android phone (Settings → Android phone, off by default). 0.3.0 added open on hover, your own sounds, a colour of your own for each Mochi and the Mochi-to-desktop shortcut; on Linux, the Spotify pill with Mochi dancing to it, global shortcuts on Wayland and "Open terminal" that brings the terminal forward. 0.2.0 caught up with the Mac: Codex, Copilot CLI, Muse Code and six more agents with approvals from the island, answers to Claude's questions, live diffs, GitHub pull requests and CI, plan usage, local models, the wardrobe, Mochi on the desktop, keyboard shortcuts, the weekly recap and 10 languages. See the [changelog](CHANGELOG.md).
+**Windows and Linux 0.5.3** bring **WhatsApp** to the island (experimental), with the gateway installed in one click. **0.5.2** turn Mochi blue when a new version waits and show what it brings after the update; they add **GitLab and Gitea** pills. **0.5.1** tell you when a new version is out (once you agree) and, on Windows, install it in one click; they also speak German and Turkish. **0.5.0** caught up with the Mac: NxIsland is now an app with its own window in the taskbar, **Flow dictation** anywhere (hold right Ctrl, speak, let go) with Parakeet running offline on your computer, the **Notetaker** for your calls, and **« OK NxIsland »** to talk to Mochi, powered by Claude with your key. On Linux, dictation works on X11 and Wayland. 0.4.0 paired with [NxIsland for Android](#nxisland-for-android): approve, answer and chat from your Android phone (Settings → Android phone, off by default). 0.3.0 added open on hover, your own sounds, a colour of your own for each Mochi and the Mochi-to-desktop shortcut; on Linux, the Spotify pill with Mochi dancing to it, global shortcuts on Wayland and "Open terminal" that brings the terminal forward. 0.2.0 caught up with the Mac: Codex, Copilot CLI, Muse Code and six more agents with approvals from the island, answers to Claude's questions, live diffs, GitHub pull requests and CI, plan usage, local models, the wardrobe, Mochi on the desktop, keyboard shortcuts, the weekly recap and 10 languages. See the [changelog](CHANGELOG.md).
 
 There is no notch on a PC, so the island slides out of the top edge of the screen
 instead of hiding inside one. See [`windows/README.md`](windows/README.md) for the
 rest of the differences.
 
-**New versions.** Once you agree (the island asks once, or Settings → General → Updates), Coucou for Windows and Linux tells you when a new version is out; on Windows, **Update now** downloads the installer you used, checks its SHA-256 against the one GitHub publishes and installs it in one click. See [`windows/README.md`](windows/README.md#new-versions).
+**New versions.** Once you agree (the island asks once, or Settings → General → Updates), NxIsland for Windows and Linux tells you when a new version is out; on Windows, **Update now** downloads the installer you used, checks its SHA-256 against the one GitHub publishes and installs it in one click. See [`windows/README.md`](windows/README.md#new-versions).
 
 ### Linux
 
-**Coucou for Linux 0.5.1** is out (x86_64): [AppImage](https://github.com/Louis-CFM/coucou/releases/download/linux-v0.5.1/Coucou-Linux-0.5.1-x86_64.AppImage) · [.deb](https://github.com/Louis-CFM/coucou/releases/download/linux-v0.5.1/Coucou-Linux-0.5.1-amd64.deb) · [.rpm](https://github.com/Louis-CFM/coucou/releases/download/linux-v0.5.1/Coucou-Linux-0.5.1-x86_64.rpm) · [all files and checksums](https://github.com/Louis-CFM/coucou/releases/tag/linux-v0.5.1). The newest AppImage is always at [`linux-latest`](https://github.com/Louis-CFM/coucou/releases/download/linux-latest/Coucou-Linux-x86_64.AppImage).
+**NxIsland for Linux 0.5.1** is out (x86_64): [AppImage](https://github.com/Louis-CFM/nxisland/releases/download/linux-v0.5.1/NxIsland-Linux-0.5.1-x86_64.AppImage) · [.deb](https://github.com/Louis-CFM/nxisland/releases/download/linux-v0.5.1/NxIsland-Linux-0.5.1-amd64.deb) · [.rpm](https://github.com/Louis-CFM/nxisland/releases/download/linux-v0.5.1/NxIsland-Linux-0.5.1-x86_64.rpm) · [all files and checksums](https://github.com/Louis-CFM/nxisland/releases/tag/linux-v0.5.1). The newest AppImage is always at [`linux-latest`](https://github.com/Louis-CFM/nxisland/releases/download/linux-latest/NxIsland-Linux-x86_64.AppImage).
 
-- **AppImage** (any distribution): `chmod +x Coucou-Linux-*.AppImage`, then run it.
-- **Debian / Ubuntu**: `sudo apt install ./Coucou-Linux-*.deb`
-- **Fedora / openSUSE**: `sudo dnf install ./Coucou-Linux-*.rpm`
+- **AppImage** (any distribution): `chmod +x NxIsland-Linux-*.AppImage`, then run it.
+- **Debian / Ubuntu**: `sudo apt install ./NxIsland-Linux-*.deb`
+- **Fedora / openSUSE**: `sudo dnf install ./NxIsland-Linux-*.rpm`
 
 Check a download with `sha256sum -c SHA256SUMS --ignore-missing`. On Arch Linux, build it with the [PKGBUILD](linux/arch/PKGBUILD).
 
@@ -277,8 +277,8 @@ so there it runs through XWayland as a dock window at the top of the screen. See
 
 ```bash
 brew install xcodegen
-git clone https://github.com/Louis-CFM/coucou.git
-cd coucou/NotchBuddy
+git clone https://github.com/Louis-CFM/nxisland.git
+cd nxisland/NotchBuddy
 xcodegen
 open NotchBuddy.xcodeproj   # then ⌘R
 ```
@@ -286,8 +286,8 @@ open NotchBuddy.xcodeproj   # then ⌘R
 **Windows** — requirements: [Rust](https://rustup.rs), Node 20+, MSVC build tools.
 
 ```powershell
-git clone https://github.com/Louis-CFM/coucou.git
-cd coucou/windows
+git clone https://github.com/Louis-CFM/nxisland.git
+cd nxisland/windows
 npm install
 npm run pack                # installer lands in windows/release/
 ```
@@ -300,8 +300,8 @@ sudo apt install build-essential pkg-config \
   libwebkit2gtk-4.1-dev libgtk-layer-shell-dev libayatana-appindicator3-dev \
   librsvg2-dev libssl-dev libdbus-1-dev patchelf \
   gstreamer1.0-plugins-base gstreamer1.0-plugins-good
-git clone https://github.com/Louis-CFM/coucou.git
-cd coucou/windows
+git clone https://github.com/Louis-CFM/nxisland.git
+cd nxisland/windows
 npm install
 npm run pack                # AppImage, .deb and .rpm land in windows/release/
 ```
@@ -309,18 +309,18 @@ npm run pack                # AppImage, .deb and .rpm land in windows/release/
 **Android** — requirements: JDK 17 and the Android SDK (platform 35).
 
 ```bash
-git clone https://github.com/Louis-CFM/coucou.git
-cd coucou/android
+git clone https://github.com/Louis-CFM/nxisland.git
+cd nxisland/android
 ./gradlew assembleDebug      # the APK lands in app/build/outputs/apk/debug/
 ```
 
 ## Setup
 
-On the Mac, open Coucou from the Dock or the menu bar: its window has every setting under **Notch** (⌘,). On Windows and Linux, click the Coucou icon in the system tray → **Settings…**
+On the Mac, open NxIsland from the Dock or the menu bar: its window has every setting under **Notch** (⌘,). On Windows and Linux, click the NxIsland icon in the system tray → **Settings…**
 
 | What | Why | Where the key goes |
 |---|---|---|
-| **Claude Code hooks** | live sessions and approvals | **Install hooks** — Coucou backs up `~/.claude/settings.json`, merges its hooks and shows you the diff before writing anything |
+| **Claude Code hooks** | live sessions and approvals | **Install hooks** — NxIsland backs up `~/.claude/settings.json`, merges its hooks and shows you the diff before writing anything |
 | **Claude plan** *(macOS, GitHub build)* | Plan usage gauge in the notch header | **Install relay** in Settings → Agents → Plan usage, then enable "Show in the notch" |
 | **Gemini CLI hooks** | Gemini CLI sessions in the island | **Install hooks** in Settings → Gemini CLI — backs up `~/.gemini/settings.json` |
 | **Antigravity (agy) hooks** | agy sessions in the island | **Install hooks** in Settings → Antigravity — backs up `~/.gemini/config/hooks.json` |
@@ -332,28 +332,28 @@ On the Mac, open Coucou from the Dock or the menu bar: its window has every sett
 | **iPhone** *(macOS)* | sessions, approvals, questions and Mochi on your iPhone | Settings → General → iPhone · your private iCloud, see [docs/IPHONE.md](docs/IPHONE.md) |
 | **Android phone** *(Windows, Linux)* | sessions, approvals, questions and chat on your Android phone | Settings → Android phone · off by default, your local network only, see [android/README.md](android/README.md) |
 | **Active pills** *(macOS)* | choose which tools and agents appear in the island | Settings → Active pills |
-| **Flow dictation** *(macOS, GitHub build)* | hold a key, speak, the words are pasted | Coucou → Flow → Settings · the Accessibility and Microphone permissions |
-| **Parakeet** *(macOS, Apple silicon)* | offline dictation, more accurate | Coucou → Flow → Settings → Recognition → **Download** (about 650 MB) |
+| **Flow dictation** *(macOS, GitHub build)* | hold a key, speak, the words are pasted | NxIsland → Flow → Settings · the Accessibility and Microphone permissions |
+| **Parakeet** *(macOS, Apple silicon)* | offline dictation, more accurate | NxIsland → Flow → Settings → Recognition → **Download** (about 650 MB) |
 | Stripe, n8n, GitHub, Vercel, Resend, Notion, Cal.com | the service pills | Keychain / Windows Credential Manager / Secret Service, all optional |
 | **WhatsApp** *(macOS GitHub build, Windows, Linux; experimental)* | your WhatsApp messages in the notch or the island, and replies | Settings → Integrations → WhatsApp · a gateway on your Mac, see [WhatsApp (experimental)](#whatsapp-experimental) |
 
-If Coucou isn't running, the hook exits immediately: **Claude Code is never blocked.**
+If NxIsland isn't running, the hook exits immediately: **Claude Code is never blocked.**
 
 ### WhatsApp (experimental)
 
-*macOS (GitHub build), and Windows and Linux since 0.5.3.* The WhatsApp pill shows your incoming messages in the notch, one row per conversation, and lets you reply without opening WhatsApp. WhatsApp has no API for personal accounts, so Coucou goes through an **unofficial gateway that runs on your Mac** and speaks the WhatsApp Web protocol: [GOWA](https://github.com/aldinokemal/go-whatsapp-web-multidevice) (recommended) or [OpenWA](https://github.com/rmyndharis/OpenWA). Coucou only reads and sends through that gateway.
+*macOS (GitHub build), and Windows and Linux since 0.5.3.* The WhatsApp pill shows your incoming messages in the notch, one row per conversation, and lets you reply without opening WhatsApp. WhatsApp has no API for personal accounts, so NxIsland goes through an **unofficial gateway that runs on your Mac** and speaks the WhatsApp Web protocol: [GOWA](https://github.com/aldinokemal/go-whatsapp-web-multidevice) (recommended) or [OpenWA](https://github.com/rmyndharis/OpenWA). NxIsland only reads and sends through that gateway.
 
-> **Unofficial.** Use it on your own account only. WhatsApp may restrict an account that abuses it (bulk messages, automation). Coucou only replies in a conversation that wrote to you, a few messages a minute at most.
+> **Unofficial.** Use it on your own account only. WhatsApp may restrict an account that abuses it (bulk messages, automation). NxIsland only replies in a conversation that wrote to you, a few messages a minute at most.
 
 **Set it up in three steps, no Terminal:**
 
-1. **Turn it on.** In Coucou: Settings → Integrations → WhatsApp (experimental) → **Show my WhatsApp messages**.
-2. **Click Install WhatsApp.** Coucou downloads [GOWA](https://github.com/aldinokemal/go-whatsapp-web-multidevice), the open-source gateway, from its GitHub releases (the build for your Mac, about 15 MB, once), checks it against the SHA-256 GOWA publishes, and starts it. It starts and stops with Coucou from then on.
+1. **Turn it on.** In NxIsland: Settings → Integrations → WhatsApp (experimental) → **Show my WhatsApp messages**.
+2. **Click Install WhatsApp.** NxIsland downloads [GOWA](https://github.com/aldinokemal/go-whatsapp-web-multidevice), the open-source gateway, from its GitHub releases (the build for your Mac, about 15 MB, once), checks it against the SHA-256 GOWA publishes, and starts it. It starts and stops with NxIsland from then on.
 3. **Scan the QR code** that shows right there: on your phone, WhatsApp → Settings → Linked devices → Link a device. The dot turns green and the pill fills in as messages arrive.
 
-The gateway lives in `~/Library/Application Support/Coucou/GOWA`, next to the WhatsApp session it keeps, so you scan once. **Update** in the same place gets GOWA's latest version. That download is the only time Coucou goes online for WhatsApp, and only when you click. On Windows it lives in `%LOCALAPPDATA%\Coucou\GOWA`, on Linux in `~/.local/share/coucou/GOWA`.
+The gateway lives in `~/Library/Application Support/NxIsland/GOWA`, next to the WhatsApp session it keeps, so you scan once. **Update** in the same place gets GOWA's latest version. That download is the only time NxIsland goes online for WhatsApp, and only when you click. On Windows it lives in `%LOCALAPPDATA%\NxIsland\GOWA`, on Linux in `~/.local/share/nxisland/GOWA`.
 
-Coucou tells the gateway where to post new messages (a small server on `127.0.0.1`, port 47823 by default, never reachable from another machine), with a random secret kept in the Keychain; every delivery is checked against its HMAC-SHA256 signature. If no message comes that way, Coucou checks every 20 seconds instead.
+NxIsland tells the gateway where to post new messages (a small server on `127.0.0.1`, port 47823 by default, never reachable from another machine), with a random secret kept in the Keychain; every delivery is checked against its HMAC-SHA256 signature. If no message comes that way, NxIsland checks every 20 seconds instead.
 
 <details>
 <summary><b>Advanced: run the gateway yourself (GOWA by hand, or OpenWA)</b></summary>
@@ -374,7 +374,7 @@ chmod +x ./darwin-arm64
 ./darwin-arm64 rest --host=127.0.0.1 --port=3000 --auto-download-media=false
 ```
 
-Add `--basic-auth=user:password` to protect it with a password, and put the same `user:password` in Coucou. Keep `http://127.0.0.1:3000`, **Save**, then **Test connection**. The address and the password go to the Keychain.
+Add `--basic-auth=user:password` to protect it with a password, and put the same `user:password` in NxIsland. Keep `http://127.0.0.1:3000`, **Save**, then **Test connection**. The address and the password go to the Keychain.
 
 **OpenWA instead.** Start it with the Baileys engine and allow its webhook to reach your Mac, then pick **OpenWA** with `http://127.0.0.1:2785` and its API key (`data/.api-key` on first start):
 
@@ -389,11 +389,11 @@ ENGINE_TYPE=baileys SSRF_ALLOWED_HOSTS=127.0.0.1 npm run start:prod
 - A new message: Mochi's little happy face, a sound if sounds are on, and the island opens under its usual rules.
 - Click a conversation: its last ten messages and a reply field. Return sends, Shift-Return starts a new line, Esc goes back.
 - Read receipts only when you open a conversation (or, if you turn that off, only when you reply). Never when a message just arrives.
-- Groups stay quiet unless you're mentioned; chats you ignore never show (right-click a row, or Settings); quiet during a macOS Focus when the system lets Coucou read it.
+- Groups stay quiet unless you're mentioned; chats you ignore never show (right-click a row, or Settings); quiet during a macOS Focus when the system lets NxIsland read it.
 
-**Privacy.** Coucou talks only to the gateway on your Mac (and to GitHub when you click Install or Update, to fetch GOWA itself). Messages stay in memory, are never written to disk or to a log, and are forgotten when Coucou quits or WhatsApp is turned off. No profile photo is fetched: they live on WhatsApp's servers, so the pill shows initials.
+**Privacy.** NxIsland talks only to the gateway on your Mac (and to GitHub when you click Install or Update, to fetch GOWA itself). Messages stay in memory, are never written to disk or to a log, and are forgotten when NxIsland quits or WhatsApp is turned off. No profile photo is fetched: they live on WhatsApp's servers, so the pill shows initials.
 
-**Limits.** No profile photos, no voice-message duration (neither gateway gives it), no new conversations from Coucou, no media sending. The gateway must run for messages to arrive. Following a Focus needs Coucou to be signed with Apple's Communication Notifications capability; until then that setting says it's unavailable.
+**Limits.** No profile photos, no voice-message duration (neither gateway gives it), no new conversations from NxIsland, no media sending. The gateway must run for messages to arrive. Following a Focus needs NxIsland to be signed with Apple's Communication Notifications capability; until then that setting says it's unavailable.
 
 ### Supported agents
 
@@ -411,7 +411,7 @@ ENGINE_TYPE=baileys SSRF_ALLOWED_HOSTS=127.0.0.1 npm run start:prod
 | Hermes | Plugin — **Settings → Agents → Hermes → Install** | No |
 | Any other | `--agent <name>` flag; see [`docs/AGENTS.md`](docs/AGENTS.md) | No |
 
-OpenCode, Amp and Hermes use a plugin model rather than a hook command. Coucou installs the plugin file into `~/.config/opencode/plugins/`, `~/.config/amp/plugins/` and `~/.hermes/plugins/coucou/` respectively. On Windows and Linux the plugins start the `coucou-hook` relay directly — see [`windows/README.md`](windows/README.md#supported-agents).
+OpenCode, Amp and Hermes use a plugin model rather than a hook command. NxIsland installs the plugin file into `~/.config/opencode/plugins/`, `~/.config/amp/plugins/` and `~/.hermes/plugins/nxisland/` respectively. On Windows and Linux the plugins start the `nxisland-hook` relay directly — see [`windows/README.md`](windows/README.md#supported-agents).
 
 ## Things to try
 
@@ -425,9 +425,9 @@ OpenCode, Amp and Hermes use a plugin model rather than a hook command. Coucou i
 | Drag a file onto the island | turns into a box and swallows it |
 | Drag Mochi onto a window *(macOS)* | attaches it as context |
 | Click the model name above the chat box *(macOS)* | switch AI provider or model |
-| Say « OK Coucou, play some music » *(macOS)* | listens, thinks, and does it |
+| Say « OK NxIsland, play some music » *(macOS)* | listens, thinks, and does it |
 | Hold right ⌥ and speak, in any app *(macOS)* | Mochi listens in the pill, your words are pasted |
-| Hover the pill at the bottom of the screen *(macOS)* | opens a toolbar: dictate, record a call, open Coucou |
+| Hover the pill at the bottom of the screen *(macOS)* | opens a toolbar: dictate, record a call, open NxIsland |
 
 ## How it works
 
@@ -451,14 +451,14 @@ The macOS app is native Swift 6 / SwiftUI / AppKit with **zero third-party depen
 **Windows**
 
 - A [Tauri 2](https://tauri.app) app (Rust + TypeScript): the island is a transparent, always-on-top window that never steals focus, Mochi is drawn in Canvas 2D with the same shapes, timings and sounds as on the Mac.
-- Claude Code hooks go through a tiny `coucou-hook.exe` and a named pipe; keys live in Windows Credential Manager.
+- Claude Code hooks go through a tiny `nxisland-hook.exe` and a named pipe; keys live in Windows Credential Manager.
 - Details and differences in [`windows/README.md`](windows/README.md).
 
 **Linux**
 
 - The same Tauri app as Windows. On Wayland the island is a gtk-layer-shell
   overlay anchored to the top edge, and click-through is its input region.
-- Claude Code hooks go through the same `coucou-hook`, over a Unix socket in
+- Claude Code hooks go through the same `nxisland-hook`, over a Unix socket in
   `$XDG_RUNTIME_DIR`; keys live in the Secret Service.
 
 **Android**
@@ -474,10 +474,13 @@ Want to add or improve a translation? Open a PR with changes to `NotchBuddy/Reso
 
 ## Credits
 
-Built by [Louis Raillé](https://louisraille.fr) with Claude Code.
-Coucou for Android and the phone link by [Rhytam Biswas (@Rhytam23)](https://github.com/Rhytam23).
-Thanks to everyone who sent a pull request — see [contributors](https://github.com/Louis-CFM/coucou/graphs/contributors).
-Inspired by the notch-companion concepts shared by design studios — this project is independent and not affiliated with any of them.
+**Original project:** [Coucou](https://github.com/Louis-CFM/coucou) by [Louis Raillé](https://louisraille.fr) — Built with Claude Code.
+
+**NxIsland:** This fork maintains the MIT License and credits the original creators.
+- Coucou for Android and the phone link by [Rhytam Biswas (@Rhytam23)](https://github.com/Rhytam23).
+- Mochi character, icon, sounds and media © Louis Raillé.
+- Thanks to everyone who sent a pull request — see [contributors](https://github.com/Louis-CFM/coucou/graphs/contributors).
+- Inspired by the notch-companion concepts shared by design studios — this project is independent and not affiliated with any of them.
 
 ## License
 
@@ -488,6 +491,6 @@ Inspired by the notch-companion concepts shared by design studios — this proje
 
 **If Mochi made you smile, a ⭐ helps a lot.**
 
-[Website](https://louis-cfm.github.io/coucou/) · [Privacy](https://louis-cfm.github.io/coucou/privacy.html) · [Terms](https://louis-cfm.github.io/coucou/terms.html) · [Support](https://louis-cfm.github.io/coucou/support.html)
+[Website](https://louis-cfm.github.io/nxisland/) · [Privacy](https://louis-cfm.github.io/nxisland/privacy.html) · [Terms](https://louis-cfm.github.io/nxisland/terms.html) · [Support](https://louis-cfm.github.io/nxisland/support.html)
 
 </div>

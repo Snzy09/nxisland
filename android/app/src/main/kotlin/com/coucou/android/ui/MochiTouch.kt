@@ -1,14 +1,14 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.os.Handler
 import android.os.Looper
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
-import com.coucou.android.mochi.BotEmote
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.SoundSink
+import com.nxisland.android.mochi.BotEmote
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.SoundSink
 
 /**
  * What a finger does to Mochi, as on the computer: a tap is a slap (three quick ones make him dizzy

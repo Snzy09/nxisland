@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.content.BroadcastReceiver
 import android.content.Context

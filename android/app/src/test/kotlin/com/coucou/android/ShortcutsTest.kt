@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.LaunchScreen
+import com.nxisland.android.core.LaunchScreen
 import java.io.File
 import javax.xml.parsers.DocumentBuilderFactory
 import org.junit.Assert.assertEquals
@@ -43,7 +43,7 @@ class ShortcutsTest {
 
     @Test fun eachOneOpensAScreenOfTheClosedListAndNothingElse() {
         for (s in shortcuts) {
-            assertEquals(s.id, "com.coucou.android.app.LaunchActivity", s.target)
+            assertEquals(s.id, "com.nxisland.android.app.LaunchActivity", s.target)
             assertEquals(s.id, setOf("screen"), s.extras.keys)
             val screen = LaunchScreen.parse(s.extras.getValue("screen"))
             assertTrue("${s.id}: ${s.extras} is not in the closed list", screen != null)

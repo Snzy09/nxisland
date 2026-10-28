@@ -1,4 +1,4 @@
-package com.coucou.android.mochi.outfit
+package com.nxisland.android.mochi.outfit
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect

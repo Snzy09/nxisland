@@ -1,6 +1,6 @@
-package com.coucou.android.mochi.outfit
+package com.nxisland.android.mochi.outfit
 
-import com.coucou.android.core.Ease
+import com.nxisland.android.core.Ease
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

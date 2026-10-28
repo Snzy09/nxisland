@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.IOException
 import java.net.Socket
@@ -98,7 +98,7 @@ class FallbackConnector(
                 }
             } catch (_: InterruptedException) {
             }
-        }, "coucou-lan-probe").apply { isDaemon = true; start() }
+        }, "nxisland-lan-probe").apply { isDaemon = true; start() }
     }
 
     /** One bare attempt at the LAN link (the pinned TLS handshake), closed again at once. */
@@ -118,7 +118,7 @@ class FallbackConnector(
                 policy.lanWorked()
                 runCatching { s.close() } // the link reconnects, and tries the LAN first
             }
-        }, "coucou-lan-check").apply { isDaemon = true; start() }
+        }, "nxisland-lan-check").apply { isDaemon = true; start() }
     }
 
     fun stop() {

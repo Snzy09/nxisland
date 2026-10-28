@@ -1,13 +1,13 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.IslandSurface
-import com.coucou.android.core.MotionSpec
-import com.coucou.android.core.Palette
-import com.coucou.android.core.StatusPalette
-import com.coucou.android.core.Radii
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.core.IslandSurface
+import com.nxisland.android.core.MotionSpec
+import com.nxisland.android.core.Palette
+import com.nxisland.android.core.StatusPalette
+import com.nxisland.android.core.Radii
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

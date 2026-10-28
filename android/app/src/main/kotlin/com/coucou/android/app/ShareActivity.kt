@@ -1,16 +1,16 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.coucou.android.MainActivity
-import com.coucou.android.R
-import com.coucou.android.core.ShareDraft
+import com.nxisland.android.MainActivity
+import com.nxisland.android.R
+import com.nxisland.android.core.ShareDraft
 
 /**
- * "Share to Coucou": a text shared from another app opens the chat with the text in the box. It is exported (that is how the share sheet finds
+ * "Share to NxIsland": a text shared from another app opens the chat with the text in the box. It is exported (that is how the share sheet finds
  * it), so it treats what it gets as plain typed text: one string, cleaned and cut by [ShareDraft.clean], put in the box and never sent. It hands
  * the draft to the app inside the process (the main screen opens on Chat while a draft waits) and opens MainActivity with a plain intent; it does not
  * use the slots of LaunchActivity, which only that private activity may fill. Pictures, files and

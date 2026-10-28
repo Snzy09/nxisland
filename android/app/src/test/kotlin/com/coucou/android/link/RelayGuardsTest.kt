@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.File
 import org.junit.Assert.assertFalse
@@ -7,7 +7,7 @@ import org.junit.Test
 
 /** Rules about the relay code that no behaviour test would notice breaking. */
 class RelayGuardsTest {
-    private fun main(path: String) = File("src/main/kotlin/com/coucou/android/$path").readText()
+    private fun main(path: String) = File("src/main/kotlin/com/nxisland/android/$path").readText()
 
     @Test fun theWebSocketRelayAndTransportCodeNeverLogOrPrint() {
         for (f in listOf("link/WebSocket.kt", "link/RelayLink.kt", "link/Transport.kt", "link/RelayCrypto.kt")) {

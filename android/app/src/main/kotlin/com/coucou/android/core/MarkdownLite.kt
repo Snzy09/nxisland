@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /** A run of text with the few styles a chat answer needs. */
 data class MdSpan(val text: String, val bold: Boolean = false, val code: Boolean = false)

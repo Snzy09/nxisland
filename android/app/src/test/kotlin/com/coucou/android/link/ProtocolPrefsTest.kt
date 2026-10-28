@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.mochi.outfit.Wardrobe
+import com.nxisland.android.mochi.outfit.Wardrobe
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

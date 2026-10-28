@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -21,11 +21,11 @@ class ProtocolDetailsTest {
 
     @Test fun detailsAreReadWhenPresent() {
         val s = session(
-            """{"pillId":"p","state":"finished","steps":["Read · a.rs","Edit · a.rs"],"finalLine":"All done","project":"coucou","color":"#2DD4BF"}""",
+            """{"pillId":"p","state":"finished","steps":["Read · a.rs","Edit · a.rs"],"finalLine":"All done","project":"nxisland","color":"#2DD4BF"}""",
         )
         assertEquals(listOf("Read · a.rs", "Edit · a.rs"), s.steps)
         assertEquals("All done", s.finalLine)
-        assertEquals("coucou", s.project)
+        assertEquals("nxisland", s.project)
         assertEquals("#2DD4BF", s.color)
     }
 

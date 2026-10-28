@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.File
 import java.net.InetAddress
@@ -60,7 +60,7 @@ class PinnedProbeTest {
         return Server(sha, ss)
     }
 
-    private fun dir() = java.nio.file.Files.createTempDirectory("coucou-probe").toFile()
+    private fun dir() = java.nio.file.Files.createTempDirectory("nxisland-probe").toFile()
 
     @Test fun theRealComputerPassesAndALookalikeDoesNot() {
         val d = dir()

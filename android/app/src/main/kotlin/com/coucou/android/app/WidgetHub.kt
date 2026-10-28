@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -10,13 +10,13 @@ import android.content.Intent
 import android.os.Build
 import android.util.SizeF
 import android.widget.RemoteViews
-import com.coucou.android.MainActivity
-import com.coucou.android.R
-import com.coucou.android.core.LaunchScreen
-import com.coucou.android.core.TodayMidnight
-import com.coucou.android.core.UsageTone
-import com.coucou.android.core.WidgetContent
-import com.coucou.android.core.WidgetTone
+import com.nxisland.android.MainActivity
+import com.nxisland.android.R
+import com.nxisland.android.core.LaunchScreen
+import com.nxisland.android.core.TodayMidnight
+import com.nxisland.android.core.UsageTone
+import com.nxisland.android.core.WidgetContent
+import com.nxisland.android.core.WidgetTone
 import kotlin.math.roundToInt
 
 /**
@@ -162,7 +162,7 @@ object WidgetHub {
     }
 
     /** The one alarm of the Widgets: the Today widget's redraw at the next local midnight (see [scheduleMidnight]). */
-    const val ACTION_MIDNIGHT = "com.coucou.android.action.WIDGET_MIDNIGHT"
+    const val ACTION_MIDNIGHT = "com.nxisland.android.action.WIDGET_MIDNIGHT"
 
     private fun midnightIntent(context: Context): PendingIntent =
         PendingIntent.getBroadcast(

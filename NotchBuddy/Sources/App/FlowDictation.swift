@@ -49,7 +49,7 @@ enum FlowKey: String, CaseIterable, Identifiable {
 
 /// Flow dictation, like Wispr Flow (GitHub build): hold a key anywhere on the Mac, speak, let go,
 /// and the words are pasted where you type. A small pill at the bottom of the screen shows that
-/// Coucou listens, its dots moving with the graves and the aigus of your voice.
+/// NxIsland listens, its dots moving with the graves and the aigus of your voice.
 ///
 /// Speech is recognised by the Mac (on-device when it can, see MacDictation); pasting goes
 /// through the clipboard and ⌘V, then the clipboard gets back what it held. Watching the key and
@@ -84,7 +84,7 @@ final class FlowDictation: ObservableObject {
             pill.setEdge(pillEdge)
         }
     }
-    /// Whether macOS lets Coucou watch the key and paste (System Settings → Privacy & Security → Accessibility).
+    /// Whether macOS lets NxIsland watch the key and paste (System Settings → Privacy & Security → Accessibility).
     @Published private(set) var trusted: Bool = AXIsProcessTrusted()
 
     private var logic = FlowKeyLogic()
@@ -151,7 +151,7 @@ final class FlowDictation: ObservableObject {
         trusted = AXIsProcessTrustedWithOptions(options)
     }
 
-    /// Reads the permission again (Settings shows it; a new build of Coucou loses it, see flow.accessibility).
+    /// Reads the permission again (Settings shows it; a new build of NxIsland loses it, see flow.accessibility).
     /// Once it is there, the monitors are reinstalled so the global one starts getting Esc and the other keys.
     func recheckTrust() {
         let now = AXIsProcessTrusted()
@@ -172,7 +172,7 @@ final class FlowDictation: ObservableObject {
     // MARK: - The key
 
     private func installMonitors() {
-        // A global monitor sees the key in other apps, a local one while Coucou itself is in front.
+        // A global monitor sees the key in other apps, a local one while NxIsland itself is in front.
         if let global = NSEvent.addGlobalMonitorForEvents(matching: [.flagsChanged, .keyDown], handler: { [weak self] event in
             let info = (event.type, event.keyCode, event.modifierFlags,
                         event.type == .keyDown ? event.charactersIgnoringModifiers : nil)
@@ -191,7 +191,7 @@ final class FlowDictation: ObservableObject {
         monitors.removeAll()
     }
 
-    /// Until macOS trusts Coucou, the global monitor gets nothing: check again every 2 s and
+    /// Until macOS trusts NxIsland, the global monitor gets nothing: check again every 2 s and
     /// reinstall the monitors once it does.
     private func waitForTrust() {
         trustTask?.cancel()

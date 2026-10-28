@@ -1,6 +1,6 @@
 name: Android release
 
-# A signed APK of Coucou for Android, built here so a release never depends on one machine.
+# A signed APK of NxIsland for Android, built here so a release never depends on one machine.
 #
 # - Run it by hand (Actions → Android release → Run workflow) to get the signed APK as an artifact, without publishing.
 # - Push an `android-v*` tag (for example android-v0.1.0) to publish it in a GitHub release.
@@ -52,7 +52,7 @@ jobs:
         env:
           COUCOU_KEYSTORE_FILE: ${{ runner.temp }}/release.jks
           COUCOU_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          COUCOU_KEY_ALIAS: coucou
+          COUCOU_KEY_ALIAS: nxisland
         run: |
           test -n "$COUCOU_KEYSTORE_PASSWORD" || { echo "ANDROID_KEYSTORE_PASSWORD is not set"; exit 1; }
           node scripts/gen-strings.mjs --check
@@ -65,12 +65,12 @@ jobs:
           "$apksigner" verify --print-certs app/build/outputs/apk/release/app-release.apk
           v="${{ steps.version.outputs.version }}"
           mkdir -p release
-          cp app/build/outputs/apk/release/app-release.apk "release/Coucou-Android-$v.apk"
-          (cd release && sha256sum "Coucou-Android-$v.apk" > SHA256SUMS)
+          cp app/build/outputs/apk/release/app-release.apk "release/NxIsland-Android-$v.apk"
+          (cd release && sha256sum "NxIsland-Android-$v.apk" > SHA256SUMS)
 
       - uses: actions/upload-artifact@v7
         with:
-          name: Coucou-Android-${{ steps.version.outputs.version }}
+          name: NxIsland-Android-${{ steps.version.outputs.version }}
           path: |
             android/release/
             android/app/build/outputs/mapping/release/mapping.txt
@@ -82,18 +82,18 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           v="$VERSION"
-          notes="Coucou for Android $v, by Rhytam Biswas (@Rhytam23): your coding agents on your Android phone.
+          notes="NxIsland for Android $v, by Rhytam Biswas (@Rhytam23): your coding agents on your Android phone.
 
-          1. Download \`Coucou-Android-$v.apk\` on your phone (Android 11 or later) and open it. Android asks once to allow installs from your browser or file manager.
-          2. On your computer, Coucou 0.4.0 or later for Windows or Linux: Settings → Android phone, turn on Phone link, then Show pairing code.
+          1. Download \`NxIsland-Android-$v.apk\` on your phone (Android 11 or later) and open it. Android asks once to allow installs from your browser or file manager.
+          2. On your computer, NxIsland 0.4.0 or later for Windows or Linux: Settings → Android phone, turn on Phone link, then Show pairing code.
           3. Scan the code with the app. The phone and the computer must be on the same Wi-Fi.
 
-          Check the download with \`sha256sum -c SHA256SUMS\`. Guide and troubleshooting: https://github.com/Louis-CFM/coucou/blob/main/android/README.md"
+          Check the download with \`sha256sum -c SHA256SUMS\`. Guide and troubleshooting: https://github.com/Louis-CFM/nxisland/blob/main/android/README.md"
           # --latest=false: the macOS v* releases own the Latest slot, which the site's Download for Mac button points at.
           gh release create "$GITHUB_REF_NAME" \
-            "release/Coucou-Android-$v.apk" \
+            "release/NxIsland-Android-$v.apk" \
             "release/SHA256SUMS" \
             --repo "$GITHUB_REPOSITORY" \
-            --title "Coucou for Android $v" \
+            --title "NxIsland for Android $v" \
             --notes "$notes" \
             --latest=false

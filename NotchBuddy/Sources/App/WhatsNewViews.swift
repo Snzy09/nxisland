@@ -2,7 +2,7 @@
 import AppKit
 import SwiftUI
 
-// MARK: - When: once, after Coucou updated itself
+// MARK: - When: once, after NxIsland updated itself
 
 @MainActor
 final class WhatsNewCenter: ObservableObject {
@@ -10,7 +10,7 @@ final class WhatsNewCenter: ObservableObject {
 
     /// The version's entry, from Resources/whats-new.json; nil once seen (or none for this version).
     @Published private(set) var release: WhatsNew.Release?
-    /// 0: what the version brings. 1: your Coucou so far.
+    /// 0: what the version brings. 1: your NxIsland so far.
     @Published var page = 0
     @Published private(set) var stats = WhatsNew.Stats()
 
@@ -18,7 +18,7 @@ final class WhatsNewCenter: ObservableObject {
     private static let lastSeenKey = "whatsNewLastVersion"
 
     /// First thing at launch, before anything else writes its settings: was this Mac on an older
-    /// Coucou? The version is recorded at once, so the card comes once per version.
+    /// NxIsland? The version is recorded at once, so the card comes once per version.
     func noteLaunch() {
         let d = UserDefaults.standard
         let current = MacUpdater.currentVersion
@@ -32,7 +32,7 @@ final class WhatsNewCenter: ObservableObject {
         tryShow(after: 4, attempts: 12)
     }
 
-    /// Coucou 0.5.2 and earlier kept no version: settings only written once you used Coucou.
+    /// NxIsland 0.5.2 and earlier kept no version: settings only written once you used NxIsland.
     private static func usedBefore() -> Bool {
         let d = UserDefaults.standard
         let keys = ["coucouHooksInstalled", "updateCheckConsent", "activeIntegrations", "recapLastShownWeek",
@@ -154,7 +154,7 @@ struct WhatsNewCardView: View {
         }
     }
 
-    // Step 2: your Coucou so far, and the coffee
+    // Step 2: your NxIsland so far, and the coffee
 
     @ViewBuilder private var soFar: some View {
         let chips = WhatsNew.chips(center.stats)

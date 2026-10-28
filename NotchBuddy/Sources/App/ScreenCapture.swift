@@ -42,7 +42,7 @@ final class ScreenCapture: ObservableObject {
         SoundEngine.shared.play("tick")
         guard CGPreflightScreenCaptureAccess() else {
             appendAppLog("nb.log", "[Capture] no Screen Recording permission: asking")
-            // macOS asks once; then Coucou is to be allowed in Privacy → Screen Recording.
+            // macOS asks once; then NxIsland is to be allowed in Privacy → Screen Recording.
             _ = CGRequestScreenCaptureAccess()
             AppState.shared.noteMessage = String(localized: "capture.permission")
             NotificationCenter.default.post(name: .hookExpand, object: IslandView.note)

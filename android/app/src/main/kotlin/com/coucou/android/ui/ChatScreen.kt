@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -24,9 +24,9 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
@@ -62,24 +62,24 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.ChatMessage
-import com.coucou.android.core.ChatReasons
-import com.coucou.android.core.ChatTab
-import com.coucou.android.core.ChatTabState
-import com.coucou.android.core.Screen
-import com.coucou.android.core.ShareDraft
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
-import com.coucou.android.core.ChatRole
-import com.coucou.android.core.ChatSession
-import com.coucou.android.core.ChatStatus
-import com.coucou.android.core.MarkdownLite
-import com.coucou.android.core.MdBlock
-import com.coucou.android.core.MdSpan
-import com.coucou.android.link.Protocol
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.ChatMessage
+import com.nxisland.android.core.ChatReasons
+import com.nxisland.android.core.ChatTab
+import com.nxisland.android.core.ChatTabState
+import com.nxisland.android.core.Screen
+import com.nxisland.android.core.ShareDraft
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
+import com.nxisland.android.core.ChatRole
+import com.nxisland.android.core.ChatSession
+import com.nxisland.android.core.ChatStatus
+import com.nxisland.android.core.MarkdownLite
+import com.nxisland.android.core.MdBlock
+import com.nxisland.android.core.MdSpan
+import com.nxisland.android.link.Protocol
 
 /** The words for a code the computer (or this app) gives when an answer did not complete. */
 @Composable

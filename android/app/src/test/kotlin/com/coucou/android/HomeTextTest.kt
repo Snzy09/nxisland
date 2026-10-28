@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.HomeText
-import com.coucou.android.core.ToolLabels
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.HomeText
+import com.nxisland.android.core.ToolLabels
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

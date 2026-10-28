@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertFalse
@@ -6,7 +6,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class UsagePanelTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
 
     @Test fun everyBarSaysItsPercentageInWordsAndNotOnlyInColour() {
         val panel = src("ui/UsagePanel.kt")

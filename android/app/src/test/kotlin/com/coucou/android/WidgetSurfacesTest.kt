@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -8,7 +8,7 @@ import org.junit.Test
 
 /** Source guards for the Solo and List widgets (Compose and Android classes only compile in CI), in the style of [GlanceSurfacesTest]. */
 class WidgetSurfacesTest {
-    private val main = "src/main/kotlin/com/coucou/android/"
+    private val main = "src/main/kotlin/com/nxisland/android/"
     private fun read(path: String) = File(path).readText()
     private val manifest get() = read("src/main/AndroidManifest.xml")
 
@@ -176,14 +176,14 @@ class WidgetSurfacesTest {
     // ── The debug preview: it must exist in debug builds and nowhere else ──────────────────────────
 
     @Test fun thePreviewReceiverLivesInTheDebugSourceSetOnly() {
-        assertTrue(File("src/debug/kotlin/com/coucou/android/app/WidgetPreviewReceiver.kt").exists())
+        assertTrue(File("src/debug/kotlin/com/nxisland/android/app/WidgetPreviewReceiver.kt").exists())
         val debugManifest = read("src/debug/AndroidManifest.xml")
         assertTrue(debugManifest.contains(".app.WidgetPreviewReceiver"))
-        assertTrue(debugManifest.contains("com.coucou.android.debug.WIDGET_STATE"))
+        assertTrue(debugManifest.contains("com.nxisland.android.debug.WIDGET_STATE"))
         // Not in the main source set, not in the manifest every build gets.
         assertFalse(File(main + "app/WidgetPreviewReceiver.kt").exists())
         assertFalse(manifest.contains("WidgetPreviewReceiver"))
-        assertFalse(manifest.contains("com.coucou.android.debug"))
+        assertFalse(manifest.contains("com.nxisland.android.debug"))
         assertFalse(File("src/release").exists() && File("src/release").walkTopDown().any { it.readText().contains("WidgetPreviewReceiver") })
         // Nothing in the main code calls it, and nothing outside the debug receiver pins a preview.
         for (f in File(main).walkTopDown().filter { it.extension == "kt" }) {
@@ -195,11 +195,11 @@ class WidgetSurfacesTest {
     }
 
     @Test fun thePreviewReceiverDocumentsEveryCommand() {
-        val src = read("src/debug/kotlin/com/coucou/android/app/WidgetPreviewReceiver.kt")
+        val src = read("src/debug/kotlin/com/nxisland/android/app/WidgetPreviewReceiver.kt")
         for (state in listOf("disconnected", "empty", "working", "waiting", "done", "live")) {
             assertTrue(state, src.contains("--es state $state"))
         }
-        assertTrue(src.contains("adb shell am broadcast -n com.coucou.android/.app.WidgetPreviewReceiver -a com.coucou.android.debug.WIDGET_STATE"))
+        assertTrue(src.contains("adb shell am broadcast -n com.nxisland.android/.app.WidgetPreviewReceiver -a com.nxisland.android.debug.WIDGET_STATE"))
         assertTrue(src.contains("DEBUG BUILDS ONLY"))
         assertTrue(src.contains("--ei usage 92"))
         // It only redraws Widgets with a made-up state.

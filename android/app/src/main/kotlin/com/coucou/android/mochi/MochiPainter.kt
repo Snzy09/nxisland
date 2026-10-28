@@ -1,4 +1,4 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
 import android.graphics.Typeface
 import androidx.compose.ui.geometry.Offset
@@ -14,15 +14,15 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
-import com.coucou.android.mochi.outfit.ComposeGfx
-import com.coucou.android.mochi.outfit.Ctx2D
-import com.coucou.android.mochi.outfit.Outfit
-import com.coucou.android.mochi.outfit.OutfitState
-import com.coucou.android.mochi.outfit.PUMPKIN_BODY
-import com.coucou.android.mochi.outfit.Css
-import com.coucou.android.mochi.outfit.drawOutfitBehind
-import com.coucou.android.mochi.outfit.drawOutfitFront
-import com.coucou.android.mochi.outfit.makeHead
+import com.nxisland.android.mochi.outfit.ComposeGfx
+import com.nxisland.android.mochi.outfit.Ctx2D
+import com.nxisland.android.mochi.outfit.Outfit
+import com.nxisland.android.mochi.outfit.OutfitState
+import com.nxisland.android.mochi.outfit.PUMPKIN_BODY
+import com.nxisland.android.mochi.outfit.Css
+import com.nxisland.android.mochi.outfit.drawOutfitBehind
+import com.nxisland.android.mochi.outfit.drawOutfitFront
+import com.nxisland.android.mochi.outfit.makeHead
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

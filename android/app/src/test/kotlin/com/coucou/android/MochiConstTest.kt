@@ -1,8 +1,8 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.EyeShape
-import com.coucou.android.mochi.MochiConst
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.EyeShape
+import com.nxisland.android.mochi.MochiConst
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test

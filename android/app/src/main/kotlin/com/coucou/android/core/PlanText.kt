@@ -1,6 +1,6 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.PlanWindow
+import com.nxisland.android.link.PlanWindow
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.TextStyle

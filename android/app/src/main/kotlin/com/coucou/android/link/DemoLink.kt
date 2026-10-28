@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.mochi.BotState
 
 /**
  * Offline demo of the desktop link: a few fake sessions and one approval, so the app can be
@@ -40,7 +40,7 @@ class DemoLink(
             try {
                 while (running) { step(); Thread.sleep(stepDelayMs) }
             } catch (_: InterruptedException) { }
-        }, "coucou-demo").apply { isDaemon = true; start() }
+        }, "nxisland-demo").apply { isDaemon = true; start() }
     }
 
     @Synchronized override fun stop() {

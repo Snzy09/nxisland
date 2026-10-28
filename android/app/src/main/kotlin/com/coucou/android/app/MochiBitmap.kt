@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.graphics.Bitmap
 import androidx.compose.ui.geometry.Offset
@@ -11,10 +11,10 @@ import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiPainter.drawMochi
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiPainter.drawMochi
 import kotlin.random.Random
 
 /**

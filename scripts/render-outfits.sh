@@ -1,7 +1,7 @@
 #!/bin/bash
 # render-outfits.sh — compile and run the Mochi outfit planche renderer
 # NOT in CI. Run manually: bash scripts/render-outfits.sh
-# Output: /tmp/coucou-outfits.png
+# Output: /tmp/nxisland-outfits.png
 
 set -e
 cd "$(dirname "$0")/.."
@@ -21,10 +21,10 @@ swiftc \
   scripts/RenderOutfits.swift \
   -framework AppKit \
   -framework SwiftUI \
-  -o /tmp/coucou-render-outfits \
+  -o /tmp/nxisland-render-outfits \
   2>&1
 
 echo "Running renderer..."
-/tmp/coucou-render-outfits
+/tmp/nxisland-render-outfits
 echo "Opening..."
-open /tmp/coucou-outfits.png
+open /tmp/nxisland-outfits.png

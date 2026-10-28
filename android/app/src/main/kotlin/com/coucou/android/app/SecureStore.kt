@@ -1,11 +1,11 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
-import com.coucou.android.link.PairingPayload
-import com.coucou.android.link.PairingCodec
+import com.nxisland.android.link.PairingPayload
+import com.nxisland.android.link.PairingCodec
 import java.security.KeyStore
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator

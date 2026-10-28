@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -11,19 +11,19 @@ import android.content.Intent
 import android.media.AudioAttributes
 import android.net.Uri
 import android.util.Log
-import com.coucou.android.MainActivity
-import com.coucou.android.R
-import com.coucou.android.core.ApprovalChannels
-import com.coucou.android.core.ApprovalSheetPlan
-import com.coucou.android.core.Glance
-import com.coucou.android.core.GlanceTone
-import com.coucou.android.core.OverlayPolicy
-import com.coucou.android.core.OngoingGate
-import com.coucou.android.core.SafeText
-import com.coucou.android.core.ToolLabels
-import com.coucou.android.core.VibrationChoice
-import com.coucou.android.link.ApprovalRequest
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.MainActivity
+import com.nxisland.android.R
+import com.nxisland.android.core.ApprovalChannels
+import com.nxisland.android.core.ApprovalSheetPlan
+import com.nxisland.android.core.Glance
+import com.nxisland.android.core.GlanceTone
+import com.nxisland.android.core.OverlayPolicy
+import com.nxisland.android.core.OngoingGate
+import com.nxisland.android.core.SafeText
+import com.nxisland.android.core.ToolLabels
+import com.nxisland.android.core.VibrationChoice
+import com.nxisland.android.link.ApprovalRequest
+import com.nxisland.android.mochi.BotState
 
 /**
  * Notifications: one quiet ongoing notification for the link, and a loud one per approval.
@@ -178,7 +178,7 @@ class Notifications(private val context: Context) {
             .setVisibility(Notification.VISIBILITY_PRIVATE)
             .setPublicVersion(publicVersion)
             .setAutoCancel(true)
-            .setTimeoutAfter(com.coucou.android.link.Protocol.APPROVAL_TTL_MS)
+            .setTimeoutAfter(com.nxisland.android.link.Protocol.APPROVAL_TTL_MS)
             .setContentIntent(open(r.fingerprint, false, id))
             .addAction(Notification.Action.Builder(null, context.getString(R.string.action_deny), deny).build())
             .apply {
@@ -198,7 +198,7 @@ class Notifications(private val context: Context) {
     private fun wakeScreen() = runCatching {
         val pm = context.getSystemService(android.os.PowerManager::class.java)
         if (pm.isInteractive) return@runCatching
-        pm.newWakeLock(android.os.PowerManager.SCREEN_BRIGHT_WAKE_LOCK or android.os.PowerManager.ACQUIRE_CAUSES_WAKEUP, "coucou:approval")
+        pm.newWakeLock(android.os.PowerManager.SCREEN_BRIGHT_WAKE_LOCK or android.os.PowerManager.ACQUIRE_CAUSES_WAKEUP, "nxisland:approval")
             .acquire(WAKE_MS)
     }
 
@@ -233,7 +233,7 @@ class Notifications(private val context: Context) {
 
     fun cancelStatus(pillId: String) = runCatching { nm.cancel(STATUS_TAG, statusId(pillId)) }
 
-    /** Coucou is on screen: the notices are redundant. */
+    /** NxIsland is on screen: the notices are redundant. */
     fun cancelAllStatus() {
         runCatching { nm.activeNotifications.filter { it.tag == STATUS_TAG }.forEach { nm.cancel(it.tag, it.id) } }
     }
@@ -258,7 +258,7 @@ class Notifications(private val context: Context) {
         const val CH_UPDATES = "updates"
         private const val STATUS_TAG = "status"
         const val ONGOING_ID = 1
-        const val ACTION_DENY = "com.coucou.android.DENY"
+        const val ACTION_DENY = "com.nxisland.android.DENY"
         const val EXTRA_FP = "fingerprint"
         const val EXTRA_ALLOW = "allow"
         /** Even ids for the request, +1 for its Allow action; never collides with ONGOING_ID. */

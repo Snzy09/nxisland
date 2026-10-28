@@ -1,9 +1,9 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.ChatModel
-import com.coucou.android.link.ClientMsg
-import com.coucou.android.link.Protocol
-import com.coucou.android.link.Wire
+import com.nxisland.android.link.ChatModel
+import com.nxisland.android.link.ClientMsg
+import com.nxisland.android.link.Protocol
+import com.nxisland.android.link.Wire
 
 enum class ChatRole { USER, ASSISTANT }
 

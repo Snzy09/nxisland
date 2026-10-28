@@ -1,6 +1,6 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.ApprovalRequest
+import com.nxisland.android.link.ApprovalRequest
 
 /**
  * What the approval sheet shows and when. Pure, so each rule is a unit test.

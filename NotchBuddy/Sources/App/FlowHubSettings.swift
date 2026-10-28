@@ -2,7 +2,7 @@
 import AppKit
 import SwiftUI
 
-/// Coucou Flow → Settings: the key, the permission, the recognition and the history.
+/// NxIsland Flow → Settings: the key, the permission, the recognition and the history.
 struct HubSettingsPage: View {
     @ObservedObject private var flow = FlowDictation.shared
     @ObservedObject private var store = FlowStore.shared

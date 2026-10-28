@@ -1,14 +1,14 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.view.View
 import android.widget.RemoteViews
-import com.coucou.android.R
-import com.coucou.android.core.TeamChoice
-import com.coucou.android.core.WidgetContent
-import com.coucou.android.core.WidgetSpoken
+import com.nxisland.android.R
+import com.nxisland.android.core.TeamChoice
+import com.nxisland.android.core.WidgetContent
+import com.nxisland.android.core.WidgetSpoken
 
 /**
  * The Team widget: up to four agents the user picked (a choice screen opens when it is added and from its long-press menu), two by two,

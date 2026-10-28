@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Decision
-import com.coucou.android.core.HistoryExport
+import com.nxisland.android.core.Decision
+import com.nxisland.android.core.HistoryExport
 import java.io.File
 import java.time.ZoneId
 import org.junit.Assert.assertEquals
@@ -40,9 +40,9 @@ class HistoryExportTest {
     }
 
     @Test fun theTextHasTheHeaderThenOneLinePerDecisionAndNoCommand() {
-        val t = HistoryExport.text(list, "Coucou · recent decisions", zone)
+        val t = HistoryExport.text(list, "NxIsland · recent decisions", zone)
         val lines = t.lines()
-        assertEquals("Coucou · recent decisions", lines[0])
+        assertEquals("NxIsland · recent decisions", lines[0])
         assertEquals("", lines[1])
         assertEquals(5, lines.size)
         assertTrue(lines[2].matches(Regex("""\d{4}-\d{2}-\d{2} \d{2}:\d{2}  You allowed Claude Code to .+""")))
@@ -55,7 +55,7 @@ class HistoryExportTest {
     }
 
     @Test fun exportGoesThroughTheShareSheetAndNothingElse() {
-        val ui = File("src/main/kotlin/com/coucou/android/ui/SettingsScreens.kt").readText()
+        val ui = File("src/main/kotlin/com/nxisland/android/ui/SettingsScreens.kt").readText()
         val block = ui.substringAfter("fun HistoryScreen").substringBefore("private fun RelayCard")
         assertTrue(block.contains("Intent.createChooser("))
         assertTrue(block.contains("Intent.ACTION_SEND"))

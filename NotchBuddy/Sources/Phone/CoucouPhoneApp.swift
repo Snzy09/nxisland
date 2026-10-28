@@ -3,7 +3,7 @@ import UIKit
 import UserNotifications
 import CloudKit
 
-// Coucou on iPhone: the agent sessions your Mac publishes to iCloud
+// NxIsland on iPhone: the agent sessions your Mac publishes to iCloud
 // (SessionPublisher on the Mac, PhoneLink here).
 
 @main

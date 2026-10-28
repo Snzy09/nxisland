@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.BarFit
-import com.coucou.android.core.ChatTab
-import com.coucou.android.core.ChatTabState
-import com.coucou.android.core.Screen
+import com.nxisland.android.core.BarFit
+import com.nxisland.android.core.ChatTab
+import com.nxisland.android.core.ChatTabState
+import com.nxisland.android.core.Screen
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -81,7 +81,7 @@ class BarFitTest {
 
 /** Guards for the Chat tab's screens and the bar (Compose cannot be rendered in a JVM test, so these read the sources). */
 class ChatTabSourceTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
     private val chat get() = src("ui/ChatScreen.kt")
     private val bar get() = src("ui/BottomBar.kt")
     private val strings get() = File("src/main/res/values/strings.xml").readText()
@@ -108,7 +108,7 @@ class ChatTabSourceTest {
         assertTrue(strings.contains("Not connected"))
         assertTrue(strings.contains("Chat is off on your computer"))
         assertTrue(strings.contains("Your computer has no model allowed for the phone yet"))
-        assertTrue(strings.contains("On your computer open Coucou &gt; Settings &gt; Android phone, turn on"))
+        assertTrue(strings.contains("On your computer open NxIsland &gt; Settings &gt; Android phone, turn on"))
         assertTrue(strings.contains("Let the phone chat with my AI providers"))
         assertTrue(strings.contains("tick a model"))
         val body = Regex("""<string name="chat_(off|nomodel)[a-z_]*">([^<]*)</string>""").findAll(strings).map { it.groupValues[2].lowercase() }.toList()

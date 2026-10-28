@@ -1,12 +1,12 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.KeyValueStore
-import com.coucou.android.core.MotionChoice
-import com.coucou.android.core.MotionPolicy
-import com.coucou.android.core.UserSettings
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.SoundSink
+import com.nxisland.android.core.KeyValueStore
+import com.nxisland.android.core.MotionChoice
+import com.nxisland.android.core.MotionPolicy
+import com.nxisland.android.core.UserSettings
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.SoundSink
 import java.io.File
 import kotlin.random.Random
 import org.junit.Assert.assertEquals
@@ -78,11 +78,11 @@ class ReduceMotionTest {
     }
 
     @Test fun settingsOffersTheChoice() {
-        val ui = File("src/main/kotlin/com/coucou/android/ui/SettingsScreens.kt").readText()
+        val ui = File("src/main/kotlin/com/nxisland/android/ui/SettingsScreens.kt").readText()
         assertTrue(ui.contains("MotionChoice.REDUCE") && ui.contains("R.string.settings_motion"))
         // The island and the Mochi view both ask the one policy.
-        assertTrue(File("src/main/kotlin/com/coucou/android/ui/IslandOverlay.kt").readText().contains("MotionPolicy.reduced"))
-        assertTrue(File("src/main/kotlin/com/coucou/android/ui/DesignSystem.kt").readText().contains("MotionPolicy.reduced"))
-        assertTrue(File("src/main/kotlin/com/coucou/android/mochi/MochiView.kt").readText().contains("engine.reduceMotion"))
+        assertTrue(File("src/main/kotlin/com/nxisland/android/ui/IslandOverlay.kt").readText().contains("MotionPolicy.reduced"))
+        assertTrue(File("src/main/kotlin/com/nxisland/android/ui/DesignSystem.kt").readText().contains("MotionPolicy.reduced"))
+        assertTrue(File("src/main/kotlin/com/nxisland/android/mochi/MochiView.kt").readText().contains("engine.reduceMotion"))
     }
 }

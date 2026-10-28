@@ -19,10 +19,10 @@ enum WAGatewayKind: String, CaseIterable, Sendable {
     var signatureHeader: String { self == .gowa ? "x-hub-signature-256" : "x-openwa-signature" }
 }
 
-/// What one webhook delivery holds for Coucou.
+/// What one webhook delivery holds for NxIsland.
 enum WAWebhookEvent: Equatable, Sendable {
     case message(WAMessage)
-    /// A valid delivery Coucou has no use for (receipts, reactions, a test ping…).
+    /// A valid delivery NxIsland has no use for (receipts, reactions, a test ping…).
     case ignored
 }
 
@@ -70,7 +70,7 @@ enum WAWebhook {
         return .message(message)
     }
 
-    /// GOWA puts each media under its own key; only the label matters to Coucou.
+    /// GOWA puts each media under its own key; only the label matters to NxIsland.
     static func gowaMedia(_ p: [String: Any]) -> WAMedia {
         if p["image"] != nil { return .image }
         if p["video"] != nil || p["video_note"] != nil { return .video }
@@ -157,7 +157,7 @@ enum WAGOWA {
     }
 
     /// `GET /devices` → `results: [{id, phone_number, display_name, state, jid, created_at}]`.
-    /// The device Coucou uses: a logged-in one first, else the first one.
+    /// The device NxIsland uses: a logged-in one first, else the first one.
     static func device(_ data: Data) -> (id: String, status: WAStatus)? {
         guard let list = results(data) as? [[String: Any]], !list.isEmpty else { return nil }
         let pick = list.first { $0["state"] as? String == "logged_in" } ?? list[0]
@@ -180,8 +180,8 @@ enum WAGOWA {
         return (url.path, (r["qr_duration"] as? Int) ?? 30)
     }
 
-    /// `./whatsapp rest` for Coucou's "Start GOWA automatically": on this Mac only, on the
-    /// URL's port, and media never downloaded (Coucou shows a label), so GOWA keeps no photo
+    /// `./whatsapp rest` for NxIsland's "Start GOWA automatically": on this Mac only, on the
+    /// URL's port, and media never downloaded (NxIsland shows a label), so GOWA keeps no photo
     /// or voice note on disk.
     static func launchArguments(for url: URL) -> [String] {
         ["rest", "--host=127.0.0.1", "--port=\(url.port ?? 3000)", "--auto-download-media=false"]

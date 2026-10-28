@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.mochi.MochiConst
+import com.nxisland.android.mochi.MochiConst
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -37,7 +37,7 @@ class AssetsTest {
     }
 
     @Test fun soundTableCoversEveryBundledSound() {
-        val src = File("src/main/kotlin/com/coucou/android/sound/SoundPlayer.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/sound/SoundPlayer.kt").readText()
         val mapped = Regex("\"(\\w+)\" to R\\.raw\\.(\\w+)").findAll(src).map { assertEquals(it.groupValues[1], it.groupValues[2]); it.groupValues[1] }.toSet()
         assertEquals(raw.listFiles()!!.map { it.nameWithoutExtension }.toSet(), mapped)
     }

@@ -1,10 +1,10 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.PairingPayload
+import com.nxisland.android.link.PairingPayload
 
 /** What to do with text that came out of the camera. */
 sealed interface ScanDecision {
-    /** A well-formed Coucou pairing link: ask the user to confirm, then pair like a pasted link. */
+    /** A well-formed NxIsland pairing link: ask the user to confirm, then pair like a pasted link. */
     data class Pairing(val link: String) : ScanDecision
 
     /** Anything else (a website, a Wi-Fi code, a shop's QR): ignored, with a short hint. */

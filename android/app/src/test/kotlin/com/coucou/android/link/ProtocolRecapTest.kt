@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -15,7 +15,7 @@ class ProtocolRecapTest {
     }
 
     @Test fun theProjectIsAFolderNameEvenIfAPathWereSent() {
-        assertEquals("coucou", recap(full.replace("}", ""","project":"/home/someone/private/coucou"}"""))!!.project)
+        assertEquals("nxisland", recap(full.replace("}", ""","project":"/home/someone/private/nxisland"}"""))!!.project)
         assertNull(recap(full.replace("}", ""","project":"/"}"""))!!.project)
     }
 

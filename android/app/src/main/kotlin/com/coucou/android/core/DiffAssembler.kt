@@ -1,8 +1,8 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.DiffRow
-import com.coucou.android.link.Protocol
-import com.coucou.android.link.ServerMsg
+import com.nxisland.android.link.DiffRow
+import com.nxisland.android.link.Protocol
+import com.nxisland.android.link.ServerMsg
 
 /** A file's change, whole: what the sheet shows. Held in memory only while the sheet is open. */
 data class FileDiffView(

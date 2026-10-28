@@ -13,7 +13,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-BUILD_DIR="/tmp/coucou-cloud-test"
+BUILD_DIR="/tmp/nxisland-cloud-test"
 APP="$BUILD_DIR/Coucou.app"
 PROFILE_NAME="Coucou Developer ID"
 APP_ID="256AUJ9555.fr.louisraille.NotchBuddy"

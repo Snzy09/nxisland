@@ -1,6 +1,6 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
-import com.coucou.android.core.TextFile
+import com.nxisland.android.core.TextFile
 import java.io.File
 
 /**

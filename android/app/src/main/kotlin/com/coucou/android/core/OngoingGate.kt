@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * Decides when the ongoing notification is posted again. Every push to the surfaces comes here, but the notification shows only a

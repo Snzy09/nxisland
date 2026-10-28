@@ -1,7 +1,7 @@
 #if !APPSTORE
 import AppKit
 
-/// One dictation, kept for the history of the Coucou Flow window.
+/// One dictation, kept for the history of the NxIsland Flow window.
 struct FlowEntry: Codable, Identifiable, Hashable, Sendable {
     var id = UUID()
     var date: Date
@@ -63,7 +63,7 @@ struct FlowAppStyle: Codable, Hashable, Identifiable, Sendable {
     var id: String { bundleID }
 }
 
-/// Everything the Coucou Flow window shows and edits: the history, the numbers, the dictionary,
+/// Everything the NxIsland Flow window shows and edits: the history, the numbers, the dictionary,
 /// the snippets and the styles. Stored as small JSON files in Application Support/NotchBuddy/Flow,
 /// on this Mac only.
 @MainActor

@@ -1,8 +1,8 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Nav
-import com.coucou.android.core.Screen
-import com.coucou.android.core.Tab
+import com.nxisland.android.core.Nav
+import com.nxisland.android.core.Screen
+import com.nxisland.android.core.Tab
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

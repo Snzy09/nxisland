@@ -1,12 +1,12 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.GlanceBuilder
-import com.coucou.android.core.UsageTone
-import com.coucou.android.core.WidgetData
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.link.LinkState
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.GlanceBuilder
+import com.nxisland.android.core.UsageTone
+import com.nxisland.android.core.WidgetData
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.link.LinkState
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -16,7 +16,7 @@ import org.junit.Test
 /** One palette for every Widget: the same state gives the same colour everywhere, nothing picks a colour of its own, and text stays readable. */
 class WidgetPaletteTest {
     private val res = "src/main/res/"
-    private val main = "src/main/kotlin/com/coucou/android/"
+    private val main = "src/main/kotlin/com/nxisland/android/"
     private fun read(p: String) = File(p).readText()
 
     // ── One state, one colour, the most urgent agent wins ───────────────────────────────────────────

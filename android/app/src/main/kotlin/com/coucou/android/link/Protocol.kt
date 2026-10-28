@@ -1,7 +1,7 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.outfit.Wardrobe
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.outfit.Wardrobe
 import java.security.MessageDigest
 import org.json.JSONArray
 import org.json.JSONException
@@ -140,7 +140,7 @@ sealed interface ServerMsg {
     data class Approval(val request: ApprovalRequest) : ServerMsg
     data class ApprovalResolved(val fingerprint: String) : ServerMsg
     data class Question(val request: QuestionRequest) : ServerMsg
-    /** What Mochi wears on the computer: "auto" or an outfit, exactly one of [com.coucou.android.mochi.outfit.Wardrobe.SELECTIONS]. */
+    /** What Mochi wears on the computer: "auto" or an outfit, exactly one of [com.nxisland.android.mochi.outfit.Wardrobe.SELECTIONS]. */
     data class Prefs(val outfit: String) : ServerMsg
     /** The relay's access key was replaced on the computer (only with the `relay` capability). */
     data class RelayAccess(val access: String) : ServerMsg

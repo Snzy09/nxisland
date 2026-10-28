@@ -12,7 +12,7 @@
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen"
     android:widgetFeatures="configuration_optional|reconfigurable"
-    android:configure="com.coucou.android.app.TeamConfigActivity"
+    android:configure="com.nxisland.android.app.TeamConfigActivity"
     android:initialLayout="@layout/widget_team"
     android:previewImage="@drawable/widget_preview_image_team"
     android:previewLayout="@layout/widget_preview_team"

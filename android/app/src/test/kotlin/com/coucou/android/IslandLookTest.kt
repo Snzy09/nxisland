@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.IslandGeometry
-import com.coucou.android.core.PxRect
+import com.nxisland.android.core.IslandGeometry
+import com.nxisland.android.core.PxRect
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

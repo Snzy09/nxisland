@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Activity
 import android.hardware.biometrics.BiometricManager

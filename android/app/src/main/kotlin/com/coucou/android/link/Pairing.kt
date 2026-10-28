@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import android.annotation.SuppressLint
 import java.net.URI
@@ -9,7 +9,7 @@ import java.security.cert.X509Certificate
 import javax.net.ssl.X509TrustManager
 
 /**
- * What the desktop shows as a QR code: coucou://pair?v=1&host=...&port=...&fp=...&token=...&name=...
+ * What the desktop shows as a QR code: nxisland://pair?v=1&host=...&port=...&fp=...&token=...&name=...
  * (and, when its relay is on, &relay=...&room=...&key=...&access=..., see docs/RELAY_LINK.md).
  * `fp` is the SHA-256 (hex) of the desktop's TLS certificate; `token` is the shared pairing secret.
  */
@@ -26,7 +26,7 @@ data class PairingPayload(
         /** Returns null for anything that is not a well-formed v1 pairing link. */
         fun parse(text: String): PairingPayload? {
             val uri = try { URI(text.trim()) } catch (_: Exception) { return null }
-            if (uri.scheme != "coucou" || uri.host != "pair") return null
+            if (uri.scheme != "nxisland" || uri.host != "pair") return null
             val q = (uri.rawQuery ?: return null).split("&").mapNotNull {
                 val i = it.indexOf('=')
                 if (i <= 0) null else it.substring(0, i) to URLDecoder.decode(it.substring(i + 1), "UTF-8")

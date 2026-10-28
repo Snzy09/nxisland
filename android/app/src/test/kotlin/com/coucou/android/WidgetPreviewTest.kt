@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.WidgetTone
+import com.nxisland.android.core.WidgetTone
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -72,7 +72,7 @@ class WidgetPreviewTest {
             assertFalse("$n description spans lines", d.contains("\n") || d.contains("\\n"))
             assertTrue("$n description should end with a full stop", d.endsWith("."))
             assertFalse("$n label is the description", l == d)
-            assertTrue("$n label says Coucou although the picker already shows the app", !l.startsWith("Coucou"))
+            assertTrue("$n label says NxIsland although the picker already shows the app", !l.startsWith("NxIsland"))
             labels += l
         }
         assertEquals("two Widgets with the same name", providers.size, labels.size)
@@ -205,7 +205,7 @@ class WidgetPreviewTest {
         assertFalse(File(res + "drawable/preview_ring_70.xml").exists())
         assertTrue(ring.contains("""android:strokeLineCap="round""""))
         // Plan usage has its own palette: teal under 75%, never a state colour.
-        assertTrue(ring.contains("#" + usageHex(com.coucou.android.core.UsageTone.CALM)))
+        assertTrue(ring.contains("#" + usageHex(com.nxisland.android.core.UsageTone.CALM)))
         assertFalse(ring.contains("#" + hex(WidgetTone.ATTENTION)))
         // 68 % of the circle from the top, clockwise: it ends at 244.8 degrees (x = 50 + 44 sin, y = 50 - 44 cos).
         val end = Regex("""M50,6 A44,44 0 1 1 (?!50,)([\d.]+),([\d.]+)""").find(ring)!!.groupValues
@@ -217,7 +217,7 @@ class WidgetPreviewTest {
         assertTrue(layout.contains("@dimen/widget_text_pct") && !layout.contains("android:textStyle=\"bold\""))
     }
 
-    private fun usageHex(t: com.coucou.android.core.UsageTone) = t.argb.toUInt().toString(16).uppercase().padStart(8, '0').substring(2)
+    private fun usageHex(t: com.nxisland.android.core.UsageTone) = t.argb.toUInt().toString(16).uppercase().padStart(8, '0').substring(2)
 
     @Test fun nothingInThePreviewsIsABitmap() {
         for (dir in File(res).listFiles()!!.filter { it.name.startsWith("drawable") || it.name.startsWith("mipmap") }) {
@@ -246,7 +246,7 @@ class WidgetPreviewTest {
             assertTrue("$n has no starting face", xml.contains("@drawable/preview_mochi_idle") || xml.contains("@drawable/preview_face_idle") || n == "pill")
             if (n != "mood") assertTrue("$n has no starting line", xml.contains("@string/widget_initial_"))
         }
-        assertEquals("Coucou", strings["widget_initial_title"])
+        assertEquals("NxIsland", strings["widget_initial_title"])
         assertEquals("Waiting for your agents", strings["widget_initial_line"])
         // The List starts on its empty state, not on empty rows.
         val list = read(res + "layout/widget_list.xml")

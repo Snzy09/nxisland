@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /** What the user chose for motion: follow Android's "Remove animations" (the default), always reduce it, or always keep it. */
 enum class MotionChoice(val key: String) {

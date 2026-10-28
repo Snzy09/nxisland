@@ -1,8 +1,8 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * "Open the app on Allow for this request", handed from our own notification tap to the main screen inside the
- * process. MainActivity is exported (it is the launcher and takes coucou:// links), so it must never trust extras on
+ * process. MainActivity is exported (it is the launcher and takes nxisland:// links), so it must never trust extras on
  * the intent it is started with: another app could send the same ones and pop the Allow prompt. Only the non-exported
  * LaunchActivity, started by our own PendingIntents, calls [request]; MainActivity only calls [take].
  */

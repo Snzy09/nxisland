@@ -1,4 +1,4 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import com.coucou.android.mochi.MochiPainter.drawMochi
+import com.nxisland.android.mochi.MochiPainter.drawMochi
 
 private const val IDLE_STEP_S = 0.25
 
@@ -22,7 +22,7 @@ private const val IDLE_STEP_S = 0.25
 fun MochiView(engine: MochiEngine, modifier: Modifier = Modifier) {
     val frame = remember { mutableLongStateOf(0L) }
     val lifecycle = LocalLifecycleOwner.current.lifecycle
-    val reduced = com.coucou.android.ui.reducedMotion()
+    val reduced = com.nxisland.android.ui.reducedMotion()
     androidx.compose.runtime.SideEffect { engine.reduceMotion = reduced }
     LaunchedEffect(engine, lifecycle) {
         lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {

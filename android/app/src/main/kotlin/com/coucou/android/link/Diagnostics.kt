@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -70,7 +70,7 @@ object Diagnostics {
      */
     fun report(appVersion: String, androidVersion: String, device: String, results: List<Pair<DiagStep, DiagResult>>, hostMasked: String, via: String): String =
         buildString {
-            appendLine("Coucou for Android $appVersion · Android $androidVersion · $device")
+            appendLine("NxIsland for Android $appVersion · Android $androidVersion · $device")
             appendLine("Computer: $hostMasked · connected via: $via")
             for ((step, r) in results) {
                 appendLine(
@@ -112,7 +112,7 @@ class LanDiagnostics(
         } catch (_: SocketTimeoutException) {
             DiagResult.Problem(
                 "No answer from ${Diagnostics.maskHost(p.host)}",
-                "Is the computer on and Coucou running with the Phone link switched on? Same Wi-Fi? A guest network or client isolation blocks it.",
+                "Is the computer on and NxIsland running with the Phone link switched on? Same Wi-Fi? A guest network or client isolation blocks it.",
             )
         } catch (_: IOException) {
             DiagResult.Problem("Cannot reach ${Diagnostics.maskHost(p.host)}", "The computer may have a new address: see the next line, or type the address in Home.")
@@ -138,12 +138,12 @@ class LanDiagnostics(
         DiagResult.Ok("The computer's certificate is the one you paired with")
     } catch (e: SSLException) {
         if (generateSequence<Throwable>(e) { it.cause }.any { it is java.security.cert.CertificateException }) {
-            DiagResult.Problem("This is not the computer you paired with (its certificate differs)", "Coucou may have been reinstalled, or this is another computer. Pair again.")
+            DiagResult.Problem("This is not the computer you paired with (its certificate differs)", "NxIsland may have been reinstalled, or this is another computer. Pair again.")
         } else {
             DiagResult.Problem("The secure handshake failed", "Try again. If it keeps failing, pair again.")
         }
     } catch (_: IOException) {
-        DiagResult.Problem("The secure connection could not be opened", "The address answers but nothing speaks Coucou there. Is the Phone link switched on?")
+        DiagResult.Problem("The secure connection could not be opened", "The address answers but nothing speaks NxIsland there. Is the Phone link switched on?")
     }
 
     override fun token(): DiagResult {
@@ -159,11 +159,11 @@ class LanDiagnostics(
             when (val m = Wire.decodeServer(line)) {
                 is ServerMsg.Welcome ->
                     if (m.version == Protocol.VERSION) DiagResult.Ok("Pairing code accepted, protocol version ${m.version}")
-                    else DiagResult.Problem("The computer speaks version ${m.version}, this app speaks ${Protocol.VERSION}", "Update Coucou on the computer or the app.")
+                    else DiagResult.Problem("The computer speaks version ${m.version}, this app speaks ${Protocol.VERSION}", "Update NxIsland on the computer or the app.")
                 is ServerMsg.Error ->
                     if (m.code == "auth") DiagResult.Problem("The pairing code was refused", "The computer made a new code (Pair again). Scan its new code.")
                     else DiagResult.Problem("The computer answered with an error (${m.code})", "Try again.")
-                else -> DiagResult.Problem("An unexpected answer to hello", "Update Coucou on the computer and the app.")
+                else -> DiagResult.Problem("An unexpected answer to hello", "Update NxIsland on the computer and the app.")
             }
         } catch (_: SocketTimeoutException) {
             DiagResult.Problem("No answer to hello", "The computer is busy or asleep. Try again.")
@@ -190,7 +190,7 @@ class LanDiagnostics(
 
     companion object {
         /**
-         * The relay answers `GET /` with "Coucou link relay" without a key and without touching any room, so this check can never
+         * The relay answers `GET /` with "NxIsland link relay" without a key and without touching any room, so this check can never
          * replace the phone's live connection (joining a room as the phone would).
          */
         fun relayReachable(relay: RelayPairing, timeoutMs: Int = 5_000): DiagResult {
@@ -201,8 +201,8 @@ class LanDiagnostics(
                 conn.readTimeout = timeoutMs
                 conn.instanceFollowRedirects = false
                 val body = try { conn.inputStream.bufferedReader().readText().take(64) } finally { conn.disconnect() }
-                if (conn.responseCode == 200 && body.startsWith("Coucou link relay")) DiagResult.Ok("The relay at ${url.host} answers")
-                else DiagResult.Problem("${url.host} answers but is not a Coucou relay", "Check the address on the computer (Away from home Wi-Fi).")
+                if (conn.responseCode == 200 && body.startsWith("NxIsland link relay")) DiagResult.Ok("The relay at ${url.host} answers")
+                else DiagResult.Problem("${url.host} answers but is not a NxIsland relay", "Check the address on the computer (Away from home Wi-Fi).")
             } catch (_: IOException) {
                 DiagResult.Problem("Cannot reach the relay at ${url.host}", "Check your internet connection and the relay's address.")
             }

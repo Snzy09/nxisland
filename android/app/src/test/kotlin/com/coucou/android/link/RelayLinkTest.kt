@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -13,7 +13,7 @@ class RelayLinkTest {
     private val key = RelayCrypto.base64UrlEncode(ByteArray(32) { 2 })
     private val access = RelayCrypto.base64UrlEncode(ByteArray(32) { 3 })
     private val fp = "ab".repeat(32)
-    private val lan = "coucou://pair?v=1&host=192.168.1.20&port=47821&fp=$fp&token=tok_en-1234567890abcd&name=PC"
+    private val lan = "nxisland://pair?v=1&host=192.168.1.20&port=47821&fp=$fp&token=tok_en-1234567890abcd&name=PC"
     private val withRelay = "$lan&relay=wss:%2F%2Frelay.example.workers.dev&room=$room&key=$key&access=$access"
 
     @Test fun anOldLinkStillPairsOverTheLanOnly() {
@@ -78,15 +78,15 @@ class RelayLinkTest {
     @Test fun theLongestRealisticLinkIsStillAccepted() {
         val name = java.net.URLEncoder.encode("é".repeat(48), "UTF-8").replace("+", "%20")
         val host = "${"a".repeat(63)}.${"b".repeat(63)}.workers.dev"
-        val link = "coucou://pair?v=1&host=2001:db8:aaaa:bbbb:cccc:dddd:eeee:ffff&port=47821&fp=$fp&token=${"t".repeat(128)}&name=$name" +
+        val link = "nxisland://pair?v=1&host=2001:db8:aaaa:bbbb:cccc:dddd:eeee:ffff&port=47821&fp=$fp&token=${"t".repeat(128)}&name=$name" +
             "&relay=wss:%2F%2F$host:8443&room=$room&key=$key&access=$access"
-        assertTrue("${link.length} characters", link.length < com.coucou.android.core.PairingScan.MAX_LINK)
-        assertTrue(com.coucou.android.core.PairingScan.decide(link) is com.coucou.android.core.ScanDecision.Pairing)
+        assertTrue("${link.length} characters", link.length < com.nxisland.android.core.PairingScan.MAX_LINK)
+        assertTrue(com.nxisland.android.core.PairingScan.decide(link) is com.nxisland.android.core.ScanDecision.Pairing)
         assertEquals(host, PairingPayload.parse(link)!!.relay!!.relayUrl()!!.host)
     }
 
     @Test fun theConfirmationShowsTheRelayHostBeforeAnythingIsStored() {
-        val dialog = java.io.File("src/main/kotlin/com/coucou/android/ui/PairConfirm.kt").readText()
+        val dialog = java.io.File("src/main/kotlin/com/nxisland/android/ui/PairConfirm.kt").readText()
         assertTrue(dialog.contains("p.relay?.relayUrl()?.host"))
         assertTrue(dialog.contains("R.string.pair_confirm_relay"))
     }

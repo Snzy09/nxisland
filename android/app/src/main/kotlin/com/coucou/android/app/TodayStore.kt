@@ -1,7 +1,7 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.content.Context
-import com.coucou.android.core.TodayStorage
+import com.nxisland.android.core.TodayStorage
 
 /** The day's count of finished tasks, in this app's private preferences. It stays on the phone: nothing sends it anywhere. */
 class TodayStore(context: Context) : TodayStorage {

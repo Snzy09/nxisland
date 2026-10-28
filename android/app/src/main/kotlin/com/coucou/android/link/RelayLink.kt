@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.IOException
 import java.io.InputStream
@@ -70,7 +70,7 @@ class RelayConnector(
                 url = url,
                 path = "/v1/room/${relay.room}?role=phone",
                 headers = listOf("Authorization" to "Bearer ${relay.access}"),
-                protocols = listOf(SUBPROTOCOL, "coucou.join.${RelayCrypto.joinProof(key)}"),
+                protocols = listOf(SUBPROTOCOL, "nxisland.join.${RelayCrypto.joinProof(key)}"),
                 connectTimeoutMs = timeoutMs,
                 maxMessage = RelayCrypto.MAX_FRAME + 1024,
                 sockets = sockets,
@@ -162,7 +162,7 @@ class RelayConnector(
     }
 
     companion object {
-        const val SUBPROTOCOL = "coucou.v1"
+        const val SUBPROTOCOL = "nxisland.v1"
     }
 }
 
@@ -192,7 +192,7 @@ class RelayStreamSocket(
     private var pending: ByteArray = EMPTY
     private var pendingAt = 0
 
-    private val reader = Thread({ pump() }, "coucou-relay-reader").apply { isDaemon = true; start() }
+    private val reader = Thread({ pump() }, "nxisland-relay-reader").apply { isDaemon = true; start() }
 
     private fun pump() {
         try {

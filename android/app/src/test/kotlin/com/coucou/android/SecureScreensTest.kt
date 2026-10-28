@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Screen
-import com.coucou.android.core.SecureScreens
+import com.nxisland.android.core.Screen
+import com.nxisland.android.core.SecureScreens
 import java.io.File
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -29,7 +29,7 @@ class SecureScreensTest {
     }
 
     @Test fun theActivityAppliesAndClearsTheFlagFromThatDecision() {
-        val src = File("src/main/kotlin/com/coucou/android/MainActivity.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/MainActivity.kt").readText()
         assertTrue(src.contains("SecureScreens.needed("))
         assertTrue(src.contains("window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)"))
         assertTrue("cleared when the screen is no longer sensitive", src.contains("window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)"))

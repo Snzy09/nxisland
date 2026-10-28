@@ -19,9 +19,9 @@ import CloudKit
 final class CloudProbe {
     static let shared = CloudProbe()
 
-    static let containerID = "iCloud.fr.louisraille.Coucou"
-    static let zoneID = CKRecordZone.ID(zoneName: "Coucou", ownerName: CKCurrentUserDefaultName)
-    private static let subscriptionID = "coucou-zone-mac"
+    static let containerID = "iCloud.fr.louisraille.NxIsland"
+    static let zoneID = CKRecordZone.ID(zoneName: "NxIsland", ownerName: CKCurrentUserDefaultName)
+    private static let subscriptionID = "nxisland-zone-mac"
 
     private let container = CKContainer(identifier: CloudProbe.containerID)
     private var database: CKDatabase { container.privateCloudDatabase }
@@ -138,7 +138,7 @@ final class CloudProbe {
                 return false
             }
             _ = try await database.modifyRecordZones(saving: [CKRecordZone(zoneID: Self.zoneID)], deleting: [])
-            log("zone Coucou ready")
+            log("zone NxIsland ready")
 
             let sub = CKDatabaseSubscription(subscriptionID: Self.subscriptionID)
             let info = CKSubscription.NotificationInfo()
@@ -212,7 +212,7 @@ final class CloudProbe {
         } catch let error as CKError where error.code == .changeTokenExpired {
             changeToken = nil
         } catch let error as CKError where error.code == .zoneNotFound {
-            log("zone Coucou missing, recreating")
+            log("zone NxIsland missing, recreating")
             ready = false
         } catch {
             log("fetch (\(source)) failed: \(error.localizedDescription)")

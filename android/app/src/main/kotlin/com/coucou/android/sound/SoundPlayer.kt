@@ -1,10 +1,10 @@
-package com.coucou.android.sound
+package com.nxisland.android.sound
 
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
-import com.coucou.android.R
-import com.coucou.android.mochi.SoundSink
+import com.nxisland.android.R
+import com.nxisland.android.mochi.SoundSink
 
 /**
  * Plays Mochi's sounds (the .wav files in res/raw, (c) Louis Raillé, used with permission) through a

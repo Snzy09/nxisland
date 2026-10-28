@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * What may be shown about a command or a step on a surface that can be seen without a deliberate tap (Home, the

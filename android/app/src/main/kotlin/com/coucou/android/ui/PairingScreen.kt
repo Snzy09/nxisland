@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.os.SystemClock
 import androidx.compose.foundation.layout.Arrangement
@@ -36,16 +36,16 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.PairingPayload
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.PairingPayload
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
 
 /**
  * The first thing a new user sees: one clear action. A sleeping Mochi, a sentence, "Scan QR code" as the main
@@ -90,7 +90,7 @@ fun PairingScreen(model: AppModel, onScan: () -> Unit, onAbout: () -> Unit) {
     if (pasteOpen) PasteSheet(model, onDismiss = { pasteOpen = false })
 }
 
-/** The pairing link as text, for people who cannot scan. A link that is not a Coucou one is refused here, with the same words as everywhere. */
+/** The pairing link as text, for people who cannot scan. A link that is not a NxIsland one is refused here, with the same words as everywhere. */
 @Composable
 private fun PasteSheet(model: AppModel, onDismiss: () -> Unit) {
     var text by remember { mutableStateOf("") }
@@ -106,7 +106,7 @@ private fun PasteSheet(model: AppModel, onDismiss: () -> Unit) {
         Text(stringResource(R.string.paste_hint), Modifier.padding(top = 4.dp, bottom = 12.dp), style = TypeScale.SECONDARY.style(dim))
         OutlinedTextField(
             text, { text = it; bad = false }, Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(14.dp),
-            placeholder = { Text("coucou://pair?…", color = Color(Tokens.DARK.textFaint)) },
+            placeholder = { Text("nxisland://pair?…", color = Color(Tokens.DARK.textFaint)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedTextColor = white, unfocusedTextColor = white, cursorColor = white,

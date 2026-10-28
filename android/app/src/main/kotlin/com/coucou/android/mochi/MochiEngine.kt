@@ -1,8 +1,8 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
-import com.coucou.android.mochi.outfit.Outfit
-import com.coucou.android.core.Ease
-import com.coucou.android.core.EaseFn
+import com.nxisland.android.mochi.outfit.Outfit
+import com.nxisland.android.core.Ease
+import com.nxisland.android.core.EaseFn
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.max
@@ -240,7 +240,7 @@ class MochiEngine(
         anim(Prop.ROLL, keys(Triple(PI * 2 * turns, durationMs, Ease.inOut))) { roll = 0.0 }
     }
 
-    /** Peek wave, the "coucou". Timings from BotEngine.greet(). */
+    /** Peek wave, the "nxisland". Timings from BotEngine.greet(). */
     fun greet() {
         val t = now()
         val tok = ++greetToken

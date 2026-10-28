@@ -1,6 +1,6 @@
-package com.coucou.android.mochi.outfit
+package com.nxisland.android.mochi.outfit
 
-import com.coucou.android.ReferenceFiles
+import com.nxisland.android.ReferenceFiles
 import java.time.LocalDate
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

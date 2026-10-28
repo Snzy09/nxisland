@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.link.ReconnectPolicy.Action
+import com.nxisland.android.link.ReconnectPolicy.Action
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

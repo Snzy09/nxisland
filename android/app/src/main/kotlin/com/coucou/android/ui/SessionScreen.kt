@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.os.SystemClock
 import androidx.compose.foundation.layout.Arrangement
@@ -10,10 +10,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
-import com.coucou.android.core.HomeText
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.TypeScale
-import com.coucou.android.mochi.MochiConst
+import com.nxisland.android.core.HomeText
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.mochi.MochiConst
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -30,14 +30,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.HomePanel
-import com.coucou.android.core.Pills
-import com.coucou.android.core.ToolLabels
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.HomePanel
+import com.nxisland.android.core.Pills
+import com.nxisland.android.core.ToolLabels
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
 
 /**
  * One agent in detail, from what the computer sends with "Show session details on the phone": the project's

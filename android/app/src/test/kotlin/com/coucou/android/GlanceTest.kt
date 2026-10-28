@@ -1,11 +1,11 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Glance
-import com.coucou.android.core.GlanceBuilder
-import com.coucou.android.core.GlanceTone
-import com.coucou.android.link.LinkState
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.Glance
+import com.nxisland.android.core.GlanceBuilder
+import com.nxisland.android.core.GlanceTone
+import com.nxisland.android.link.LinkState
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

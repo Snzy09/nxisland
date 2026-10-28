@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.ReferenceFiles
+import com.nxisland.android.ReferenceFiles
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.PrintWriter
@@ -42,7 +42,7 @@ class RustDesktopInteropTest {
         val manifest = ReferenceFiles.file("windows/Cargo.toml").absolutePath
         proc = try {
             ProcessBuilder(
-                "cargo", "test", "--manifest-path", manifest, "-p", "coucou", "--lib", "--locked", "--",
+                "cargo", "test", "--manifest-path", manifest, "-p", "nxisland", "--lib", "--locked", "--",
                 "--ignored", "--nocapture", "phone_link::interop::interop_server",
             ).redirectErrorStream(true).start()
         } catch (_: Exception) {
@@ -184,7 +184,7 @@ class RustDesktopInteropTest {
             val req = rec.approvals.poll(10, TimeUnit.SECONDS)!!
             assertTrue(req.truncated)
             assertEquals(500, req.command.length)
-            assertFalse(com.coucou.android.core.ApprovalSheetPlan.canAllowHere(req))
+            assertFalse(com.nxisland.android.core.ApprovalSheetPlan.canAllowHere(req))
             // Even a phone that asks anyway is not obeyed.
             client.decide(req.fingerprint, allow = true)
             assertFalse("the desktop must not apply Allow for a cut command", sawLine("DECISION allow req-long", 2))

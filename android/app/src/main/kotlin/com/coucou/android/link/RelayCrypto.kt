@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.nio.ByteBuffer
 import java.security.GeneralSecurityException
@@ -19,7 +19,7 @@ import javax.crypto.spec.SecretKeySpec
  *  - secrets print as ".." and are wiped on [wipe]; nothing here writes them anywhere.
  */
 object RelayCrypto {
-    const val LABEL = "coucou-relay/v1"
+    const val LABEL = "nxisland-relay/v1"
     const val VER = 1
     const val T_INIT = 1
     const val T_ACCEPT = 2
@@ -112,7 +112,7 @@ object RelayCrypto {
     /** `K_join`: presented to the relay as a join proof; one-way from K. */
     fun kJoin(k: PairingKey): Secret = Secret(derive32(k, "join"))
 
-    /** The join proof for the `coucou.join.<…>` sub-protocol. */
+    /** The join proof for the `nxisland.join.<…>` sub-protocol. */
     fun joinProof(k: PairingKey): String = base64UrlEncode(kJoin(k).bytes)
 
     /** The two session keys, `(phone → host, host → phone)`. */

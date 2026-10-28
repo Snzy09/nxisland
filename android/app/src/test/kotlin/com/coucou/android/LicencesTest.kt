@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Licences
-import com.coucou.android.core.Nav
-import com.coucou.android.core.Screen
-import com.coucou.android.core.Tab
+import com.nxisland.android.core.Licences
+import com.nxisland.android.core.Nav
+import com.nxisland.android.core.Screen
+import com.nxisland.android.core.Tab
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -13,7 +13,7 @@ import org.junit.Test
 /** Settings > About > Licences: the texts that ship are the real ones, every library in the build is covered, and the screen is reachable. */
 class LicencesTest {
     private fun asset(name: String) = File("src/main/assets/licenses/$name").readText()
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
 
     @Test fun theMitTextIsTheRepositorysLicenceFileWord_for_word() {
         assertEquals(ReferenceFiles.file("LICENSE").readText(), asset("MIT.txt"))
@@ -33,8 +33,8 @@ class LicencesTest {
 
     @Test fun theNoticesNameWhoOwnsWhatAndTheArtworkIsNotMit() {
         val n = asset("NOTICES.txt")
-        assertTrue(n.contains("part of Coucou by Louis Raillé"))
-        assertTrue(n.contains("https://github.com/Louis-CFM/coucou"))
+        assertTrue(n.contains("part of NxIsland by Louis Raillé"))
+        assertTrue(n.contains("https://github.com/Louis-CFM/nxisland"))
         assertTrue(n.contains("released under the MIT License"))
         assertTrue(n.contains("NOT covered by the MIT License"))
         assertTrue(n.contains("LICENSE-ASSETS.md"))

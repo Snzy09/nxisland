@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -8,7 +8,7 @@ import org.junit.Test
 
 /** Guards for how the island over other apps is drawn (the window cannot be rendered in a JVM test, so these read the source). */
 class IslandOverlayTest {
-    private val src = File("src/main/kotlin/com/coucou/android/ui/IslandOverlay.kt").readText()
+    private val src = File("src/main/kotlin/com/nxisland/android/ui/IslandOverlay.kt").readText()
 
     @Test fun theRequestCardNamesTheActionAndNeverShowsTheCommand() {
         val card = src.substringAfter("private fun RequestCard").substringBefore("A window outside any activity")

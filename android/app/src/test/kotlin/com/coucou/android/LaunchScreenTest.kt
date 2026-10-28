@@ -1,8 +1,8 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.LaunchScreen
-import com.coucou.android.core.Nav
-import com.coucou.android.core.Screen
+import com.nxisland.android.core.LaunchScreen
+import com.nxisland.android.core.Nav
+import com.nxisland.android.core.Screen
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -25,7 +25,7 @@ class LaunchScreenTest {
     @Test fun anythingElseIsRejected() {
         val bad = listOf(
             null, "", " ", "HOME", "Home", " home", "home ", "ho me", "home\n", "session", "history", "scan", "diagnostics", "licences", "wardrobe",
-            "approve", "allow", "deny", "send", "unpair", "SESSION", "../home", "home;chat", "0", "-1", "HOME,CHAT", "com.coucou.android.MainActivity",
+            "approve", "allow", "deny", "send", "unpair", "SESSION", "../home", "home;chat", "0", "-1", "HOME,CHAT", "com.nxisland.android.MainActivity",
         )
         for (k in bad) assertNull("'$k' must not open anything", LaunchScreen.parse(k))
         // The enum name is not the key: only the key is accepted.
@@ -35,9 +35,9 @@ class LaunchScreenTest {
     @Test fun everyValueIsAScreenThatExistsInTheApp() {
         for (s in LaunchScreen.values()) assertTrue(s.name, s.screen in Screen.values())
         // The three tabs of the bottom bar.
-        assertEquals(Nav.screenOf(com.coucou.android.core.Tab.HOME), LaunchScreen.HOME.screen)
-        assertEquals(Nav.screenOf(com.coucou.android.core.Tab.CHAT), LaunchScreen.CHAT.screen)
-        assertEquals(Nav.screenOf(com.coucou.android.core.Tab.SETTINGS), LaunchScreen.SETTINGS.screen)
+        assertEquals(Nav.screenOf(com.nxisland.android.core.Tab.HOME), LaunchScreen.HOME.screen)
+        assertEquals(Nav.screenOf(com.nxisland.android.core.Tab.CHAT), LaunchScreen.CHAT.screen)
+        assertEquals(Nav.screenOf(com.nxisland.android.core.Tab.SETTINGS), LaunchScreen.SETTINGS.screen)
         // "Recent" is the full list of your own decisions, one level under Settings; "Pair again" is the pairing scan.
         assertEquals(Screen.HISTORY, LaunchScreen.RECENT.screen)
         assertEquals(Screen.SCAN, LaunchScreen.PAIR.screen)
@@ -48,7 +48,7 @@ class LaunchScreenTest {
     }
 
     @Test fun onlyTheKeyTravelsAndOnlyTheNonExportedActivityParsesIt() {
-        val main = "src/main/kotlin/com/coucou/android/"
+        val main = "src/main/kotlin/com/nxisland/android/"
         val launch = File(main + "app/LaunchActivity.kt").readText()
         assertTrue(launch.contains("LaunchScreen.parse(intent.getStringExtra(EXTRA_SCREEN))"))
         val hub = File(main + "app/WidgetHub.kt").readText()

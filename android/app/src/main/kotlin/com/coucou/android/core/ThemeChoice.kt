@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /** Settings > Theme: follow the phone (the default), or always light, or always dark. */
 enum class ThemeChoice(val key: String) {

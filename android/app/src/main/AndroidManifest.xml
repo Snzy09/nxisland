@@ -29,7 +29,7 @@
         android:enableOnBackInvokedCallback="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:theme="@style/Theme.Coucou">
+        android:theme="@style/Theme.NxIsland">
 
         <activity
             android:name=".MainActivity"
@@ -41,12 +41,12 @@
             </intent-filter>
             <!-- Long-press the icon: Chat, Recent decisions, Pair again (res/xml/shortcuts.xml). They start LaunchActivity, not this one. -->
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
-            <!-- Scanning the pairing QR code with the camera app opens coucou://pair?... here. -->
+            <!-- Scanning the pairing QR code with the camera app opens nxisland://pair?... here. -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="coucou" android:host="pair" />
+                <data android:scheme="nxisland" android:host="pair" />
             </intent-filter>
         </activity>
 
@@ -147,7 +147,7 @@
             </intent-filter>
         </activity>
 
-        <!-- "Share to Coucou": text/plain from another app goes into the chat box as a draft, never sent. Exported for the share sheet; it takes one
+        <!-- "Share to NxIsland": text/plain from another app goes into the chat box as a draft, never sent. Exported for the share sheet; it takes one
              string, cleaned and cut, and nothing else. -->
         <activity
             android:name=".app.ShareActivity"
@@ -163,7 +163,7 @@
             </intent-filter>
         </activity>
 
-        <!-- The quick-settings tile: on while the computer is connected; a tap opens Coucou. -->
+        <!-- The quick-settings tile: on while the computer is connected; a tap opens NxIsland. -->
         <service
             android:name=".app.GlanceTile"
             android:exported="true"

@@ -1,6 +1,6 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
-import com.coucou.android.mochi.outfit.Outfit
+import com.nxisland.android.mochi.outfit.Outfit
 import kotlin.random.Random
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

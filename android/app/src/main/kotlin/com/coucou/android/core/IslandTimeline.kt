@@ -1,6 +1,6 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.mochi.BotState
 
 /** What the island shows. [pillId] is the session it is about (or the request's pill). */
 data class IslandSpec(
@@ -56,7 +56,7 @@ class IslandTimeline(private val clockMs: () -> Double) {
         refresh()
     }
 
-    /** Close at once (Coucou came to the front, the switch went off, the link dropped). */
+    /** Close at once (NxIsland came to the front, the switch went off, the link dropped). */
     fun dismiss() {
         active = null
         flash = null

@@ -1,13 +1,13 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.LinkState
-import com.coucou.android.link.PlanUsage
-import com.coucou.android.link.PlanWindow
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.link.UsageSnapshot
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiConst
-import com.coucou.android.mochi.Rgb
+import com.nxisland.android.link.LinkState
+import com.nxisland.android.link.PlanUsage
+import com.nxisland.android.link.PlanWindow
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.link.UsageSnapshot
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiConst
+import com.nxisland.android.mochi.Rgb
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.TextStyle

@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager
@@ -16,8 +16,8 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.coucou.android.ui.CoucouTheme
-import com.coucou.android.ui.TeamConfigScreen
+import com.nxisland.android.ui.CoucouTheme
+import com.nxisland.android.ui.TeamConfigScreen
 
 /**
  * Where the user picks the agents of a Team widget: when the widget is added, and from its long-press menu (reconfigure). The launcher starts

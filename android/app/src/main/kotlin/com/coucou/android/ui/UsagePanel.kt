@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -19,13 +19,13 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.core.PlanText
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.PlanUsage
-import com.coucou.android.link.PlanWindow
-import com.coucou.android.link.UsageSnapshot
+import com.nxisland.android.R
+import com.nxisland.android.core.PlanText
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.PlanUsage
+import com.nxisland.android.link.PlanWindow
+import com.nxisland.android.link.UsageSnapshot
 
 /**
  * How much of the Claude and Codex plans is used and when they reset, as the PC's pills show it. Only what the

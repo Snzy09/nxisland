@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * "Mute this agent's notices": which agents stay quiet when they finish, fail or hit a limit (the sound, the notification and the pill that

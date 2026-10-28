@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.LaunchScreen
-import com.coucou.android.core.PendingLaunch
+import com.nxisland.android.core.LaunchScreen
+import com.nxisland.android.core.PendingLaunch
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -49,7 +49,7 @@ class PendingLaunchTest {
         assertEquals(PendingLaunch.Request("new", false), launch.take())
     }
 
-    private val main = "src/main/kotlin/com/coucou/android/"
+    private val main = "src/main/kotlin/com/nxisland/android/"
     private fun manifest() = File("src/main/AndroidManifest.xml").readText()
 
     @Test fun theExportedActivityNeverReadsTheRequestFromItsIntent() {
@@ -166,7 +166,7 @@ class PendingLaunchTest {
     }
 
     @Test fun theScreenSlotOnlyHoldsAValueOfTheClosedList() {
-        val src = File("src/main/kotlin/com/coucou/android/core/PendingLaunch.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/core/PendingLaunch.kt").readText()
         assertTrue(src.contains("fun requestScreen(which: LaunchScreen?)"))
         assertTrue(src.contains("fun takeScreen(): LaunchScreen?"))
         assertTrue(src.contains("private var screen: LaunchScreen?"))

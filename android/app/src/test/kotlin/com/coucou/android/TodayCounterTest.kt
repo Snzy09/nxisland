@@ -1,8 +1,8 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.TodayCounter
-import com.coucou.android.core.TodayMidnight
-import com.coucou.android.core.TodayStorage
+import com.nxisland.android.core.TodayCounter
+import com.nxisland.android.core.TodayMidnight
+import com.nxisland.android.core.TodayStorage
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -58,7 +58,7 @@ class TodayCounterTest {
     }
 
     @Test fun onlyAPairedComputerCountsNotTheDemo() {
-        val model = File("src/main/kotlin/com/coucou/android/app/AppModel.kt").readText()
+        val model = File("src/main/kotlin/com/nxisland/android/app/AppModel.kt").readText()
         val line = model.lines().first { it.contains("todayCounter.increment()") }
         assertTrue("the demo loops every 20 s and must not add to the day", line.contains("mode == Mode.PAIRED"))
     }
@@ -67,12 +67,12 @@ class TodayCounterTest {
         val manifest = File("src/main/AndroidManifest.xml").readText()
         assertTrue(!manifest.contains("DATE_CHANGED"))
         assertTrue(manifest.contains("android.intent.action.TIME_SET") && manifest.contains("android.intent.action.TIMEZONE_CHANGED"))
-        val widget = File("src/main/kotlin/com/coucou/android/app/TodayWidget.kt").readText()
+        val widget = File("src/main/kotlin/com/nxisland/android/app/TodayWidget.kt").readText()
         assertTrue(widget.contains("WidgetHub.scheduleMidnight") && widget.contains("onDisabled") && widget.contains("ACTION_MIDNIGHT"))
     }
 
     @Test fun itIsKeptOnThePhoneOnly() {
-        val store = File("src/main/kotlin/com/coucou/android/app/TodayStore.kt")
+        val store = File("src/main/kotlin/com/nxisland/android/app/TodayStore.kt")
         if (store.exists()) {
             val src = store.readText()
             assertTrue(src.contains("getSharedPreferences(\"widget_today\""))

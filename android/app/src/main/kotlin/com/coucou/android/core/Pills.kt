@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * Pill catalog, a mirror of windows/src/core/pills.ts (itself PillCatalog.swift).

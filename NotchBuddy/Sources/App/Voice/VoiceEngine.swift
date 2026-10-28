@@ -5,7 +5,7 @@ import Speech
 
 // MARK: - VoiceEngine
 //
-// Coordinator for the «OK Coucou» voice feature.
+// Coordinator for the «OK NxIsland» voice feature.
 //
 // Reliability features:
 // - Backoff: onWakeWindowEnded reopens with WakeWindowBackoff (0.5 → 5 s exp.);
@@ -279,8 +279,8 @@ final class VoiceEngine: ObservableObject {
         a.onVoiceStart = { [weak self] in
             guard let self else { return }
             guard !VoiceSpeaker.shared.isBusy else {
-                // Coucou's own voice. But with music playing the sound never "ends", so
-                // this start would be the last one: open the window once Coucou is quiet.
+                // NxIsland's own voice. But with music playing the sound never "ends", so
+                // this start would be the last one: open the window once NxIsland is quiet.
                 appendAppLog("nb.log", "[Voice] vad start deferred (speaker active)")
                 self.openWindowWhenSpeakerQuiet(audio: a, spotter: s, locale: loc)
                 return
@@ -427,8 +427,8 @@ final class VoiceEngine: ObservableObject {
 
     private var deferredStartWork: DispatchWorkItem?
 
-    /// A voice start swallowed while Coucou was talking: with continuous sound (music on
-    /// the speakers) the VAD never ends and never starts again, so without this Coucou
+    /// A voice start swallowed while NxIsland was talking: with continuous sound (music on
+    /// the speakers) the VAD never ends and never starts again, so without this NxIsland
     /// stayed deaf until the music stopped. Checks every 0.3 s, then opens the window.
     private func openWindowWhenSpeakerQuiet(audio: VoiceAudio, spotter: WakeSpotter, locale: Locale) {
         guard deferredStartWork == nil else { return }
@@ -462,7 +462,7 @@ final class VoiceEngine: ObservableObject {
     private var deafWindows = 0
 
     private static func describe(_ st: WakeSpotter.WindowStats) -> String {
-        "partials=\(st.partials) words=\(st.maxWords) coucou-like=\(st.nearWake ? "yes" : "no")"
+        "partials=\(st.partials) words=\(st.maxWords) nxisland-like=\(st.nearWake ? "yes" : "no")"
     }
 
     private func checkDeafRecognizer(_ st: WakeSpotter.WindowStats, elapsed: TimeInterval) {
@@ -593,7 +593,7 @@ final class VoiceEngine: ObservableObject {
         isListeningForCommand = true
         commandTranscript     = ""
         lastWordCount         = 0
-        // After "OK Coucou", leave time to start the sentence (the island no longer
+        // After "OK NxIsland", leave time to start the sentence (the island no longer
         // opens, the caption shows "Je t'écoute…" instead). 3 s was too short.
         directInitialTimeout  = Self.wakeFirstWordTimeout
         audio?.bypassVAD      = true
@@ -609,12 +609,12 @@ final class VoiceEngine: ObservableObject {
     }
 
     private func commandUpdate(_ command: String) {
-        // Semi-duplex: ignore updates while Coucou is speaking.
+        // Semi-duplex: ignore updates while NxIsland is speaking.
         guard !VoiceSpeaker.shared.isBusy else {
             // Logged once per turn (no words): helps when an answer seems unheard.
             if !loggedDropWhileSpeaking {
                 loggedDropWhileSpeaking = true
-                appendAppLog("nb.log", "[Voice] words heard while Coucou was speaking: ignored")
+                appendAppLog("nb.log", "[Voice] words heard while NxIsland was speaking: ignored")
             }
             return
         }

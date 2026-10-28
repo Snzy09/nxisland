@@ -1,7 +1,7 @@
 import Foundation
 
 // The gateways' payloads, copied verbatim from their own docs (see each fixture's source),
-// through Coucou's parsers.
+// through NxIsland's parsers.
 
 extension WhatsAppTests {
     // GOWA docs/webhook-payload.md — text message
@@ -226,13 +226,13 @@ extension WhatsAppTests {
 
         print("\nREST answers")
         do {
-            let devices = #"{"code":"SUCCESS","message":"List devices","results":[{"id":"coucou","state":"disconnected","created_at":"2024-01-01T00:00:00Z"},{"id":"my-device-id","phone_number":"628123456789","display_name":"John Doe","state":"logged_in","jid":"628123456789@s.whatsapp.net","created_at":"2024-01-01T00:00:00Z"}]}"#
+            let devices = #"{"code":"SUCCESS","message":"List devices","results":[{"id":"nxisland","state":"disconnected","created_at":"2024-01-01T00:00:00Z"},{"id":"my-device-id","phone_number":"628123456789","display_name":"John Doe","state":"logged_in","jid":"628123456789@s.whatsapp.net","created_at":"2024-01-01T00:00:00Z"}]}"#
             let d = WAGOWA.device(Data(devices.utf8))
             check("GOWA: the logged-in device", d?.id == "my-device-id" && d?.status == WAStatus(link: .connected, me: "628123456789@s.whatsapp.net"))
-            let fresh = #"{"code":"SUCCESS","message":"List devices","results":[{"id":"coucou","state":"disconnected","created_at":"2024-01-01T00:00:00Z"}]}"#
+            let fresh = #"{"code":"SUCCESS","message":"List devices","results":[{"id":"nxisland","state":"disconnected","created_at":"2024-01-01T00:00:00Z"}]}"#
             check("GOWA: never logged in → QR", WAGOWA.device(Data(fresh.utf8))?.status.link == .needsQR)
             check("GOWA: no device", WAGOWA.device(Data(#"{"code":"SUCCESS","message":"x","results":[]}"#.utf8)) == nil)
-            let login = #"{"code":"SUCCESS","message":"Success","results":{"device_id":"coucou","qr_duration":30,"qr_link":"http://localhost:3000/statics/qrcode/scan-qr-b0b7bb43-9a22-455a-814f-5a225c743310.png"}}"#
+            let login = #"{"code":"SUCCESS","message":"Success","results":{"device_id":"nxisland","qr_duration":30,"qr_link":"http://localhost:3000/statics/qrcode/scan-qr-b0b7bb43-9a22-455a-814f-5a225c743310.png"}}"#
             let qr = WAGOWA.qrPath(Data(login.utf8))
             check("GOWA: QR path only, fetched from the gateway", qr?.path == "/statics/qrcode/scan-qr-b0b7bb43-9a22-455a-814f-5a225c743310.png" && qr?.seconds == 30)
             check("GOWA launched on this Mac only, no media download",
@@ -247,7 +247,7 @@ extension WhatsAppTests {
             let chats = #"{"code":"SUCCESS","message":"ok","results":{"data":[{"jid":"628123456789@s.whatsapp.net","name":"John","last_message_time":"2025-07-13T11:06:00Z","archived":false}],"pagination":{"limit":25,"offset":0,"total":1}}}"#
             check("GOWA chats", WAGOWA.chats(Data(chats.utf8)).first?.name == "John")
 
-            let session = #"[{"id":"0b5d6c3e-1111-4a2b-9c3d-123456789abc","name":"coucou","status":"ready","phone":"628123456789","pushName":"Me"}]"#
+            let session = #"[{"id":"0b5d6c3e-1111-4a2b-9c3d-123456789abc","name":"nxisland","status":"ready","phone":"628123456789","pushName":"Me"}]"#
             let s = WAOpenWA.firstSession(Data(session.utf8))
             check("OpenWA session", s?.id == "0b5d6c3e-1111-4a2b-9c3d-123456789abc" && s.map(WAOpenWA.status) == WAStatus(link: .connected, me: "628123456789"))
             check("OpenWA QR state", WAOpenWA.status((id: "x", status: "qr_ready", phone: nil)).link == .needsQR)

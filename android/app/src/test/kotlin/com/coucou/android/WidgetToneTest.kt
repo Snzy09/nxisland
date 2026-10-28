@@ -1,14 +1,14 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Glance
-import com.coucou.android.core.GlanceTone
-import com.coucou.android.core.GlanceLine
-import com.coucou.android.core.look
-import com.coucou.android.core.mood
-import com.coucou.android.core.WidgetContent
-import com.coucou.android.core.WidgetTile
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.Glance
+import com.nxisland.android.core.GlanceTone
+import com.nxisland.android.core.GlanceLine
+import com.nxisland.android.core.look
+import com.nxisland.android.core.mood
+import com.nxisland.android.core.WidgetContent
+import com.nxisland.android.core.WidgetTile
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.mochi.BotState
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

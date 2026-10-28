@@ -2,7 +2,7 @@
 import AppKit
 import SwiftUI
 
-/// Coucou Flow → Dictation: hello, today's dictations and the numbers.
+/// NxIsland Flow → Dictation: hello, today's dictations and the numbers.
 struct HubHomePage: View {
     @ObservedObject var router: HubRouter
     @ObservedObject private var store = FlowStore.shared

@@ -1,6 +1,6 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Texts
+import com.nxisland.android.core.Texts
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Test

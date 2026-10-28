@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.RecapText
-import com.coucou.android.link.Recap
+import com.nxisland.android.core.RecapText
+import com.nxisland.android.link.Recap
 import java.io.File
 import java.util.Locale
 import org.junit.Assert.assertEquals
@@ -11,7 +11,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RecapTextTest {
-    private val recap = Recap("2026-10-05", 340, 12, 40, 900, 210, 55, 20, 3, "Claude Code", "coucou")
+    private val recap = Recap("2026-10-05", 340, 12, 40, 900, 210, 55, 20, 3, "Claude Code", "nxisland")
 
     @Test fun durationsReadLikeTheRestOfTheApp() {
         assertEquals("45 min", RecapText.duration(45))
@@ -43,13 +43,13 @@ class RecapTextTest {
     }
 
     @Test fun theCardIsReadOnlyAndHeldInMemory() {
-        val src = File("src/main/kotlin/com/coucou/android/ui/RecapPanel.kt").readText()
+        val src = File("src/main/kotlin/com/nxisland/android/ui/RecapPanel.kt").readText()
         assertFalse(src.contains("clickable") || src.contains("onClick"))
-        val model = File("src/main/kotlin/com/coucou/android/app/AppModel.kt").readText()
+        val model = File("src/main/kotlin/com/nxisland/android/app/AppModel.kt").readText()
         assertTrue(model.contains("var recap by mutableStateOf"))
         assertTrue(model.contains("if (Protocol.CAP_RECAP !in caps) recap = null"))
         // Never written anywhere.
         assertFalse(model.substringAfter("override fun onRecap").substringBefore("}").contains("store"))
-        assertTrue(File("src/main/kotlin/com/coucou/android/MainActivity.kt").readText().contains("RecapPanel(model.recap)"))
+        assertTrue(File("src/main/kotlin/com/nxisland/android/MainActivity.kt").readText().contains("RecapPanel(model.recap)"))
     }
 }

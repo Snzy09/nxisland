@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.spring
@@ -36,7 +36,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.setProgress
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.coucou.android.core.Spacing
+import com.nxisland.android.core.Spacing
 import kotlin.math.roundToInt
 
 private val TRACK_W = 52.dp

@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 /** Things that should make the phone look at its link right away instead of waiting for the next timer. */
 enum class Wake {

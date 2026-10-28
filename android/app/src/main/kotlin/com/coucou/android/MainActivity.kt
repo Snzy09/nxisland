@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import android.Manifest
 import android.content.Context
@@ -70,70 +70,70 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.coucou.android.app.AppModel
-import com.coucou.android.app.BiometricGate
-import com.coucou.android.app.CoucouApp
-import com.coucou.android.app.Mode
-import com.coucou.android.app.Notifications
-import com.coucou.android.core.ApprovalSheetPlan
-import com.coucou.android.core.HomeText
-import com.coucou.android.core.Nav
-import com.coucou.android.core.Pills
-import com.coucou.android.core.Screen
-import com.coucou.android.core.SecureScreens
-import com.coucou.android.link.ApprovalRequest
-import com.coucou.android.link.QuestionRequest
-import com.coucou.android.link.LinkState
-import com.coucou.android.link.PairingPayload
-import com.coucou.android.mochi.BotEmote
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiView
-import com.coucou.android.ui.Panel
-import com.coucou.android.ui.c
-import com.coucou.android.ui.style
-import com.coucou.android.ui.tokens
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.app.BiometricGate
+import com.nxisland.android.app.CoucouApp
+import com.nxisland.android.app.Mode
+import com.nxisland.android.app.Notifications
+import com.nxisland.android.core.ApprovalSheetPlan
+import com.nxisland.android.core.HomeText
+import com.nxisland.android.core.Nav
+import com.nxisland.android.core.Pills
+import com.nxisland.android.core.Screen
+import com.nxisland.android.core.SecureScreens
+import com.nxisland.android.link.ApprovalRequest
+import com.nxisland.android.link.QuestionRequest
+import com.nxisland.android.link.LinkState
+import com.nxisland.android.link.PairingPayload
+import com.nxisland.android.mochi.BotEmote
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiView
+import com.nxisland.android.ui.Panel
+import com.nxisland.android.ui.c
+import com.nxisland.android.ui.style
+import com.nxisland.android.ui.tokens
+import com.nxisland.android.core.TypeScale
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.semantics.Role
-import com.coucou.android.ui.CoucouTheme
-import com.coucou.android.core.HomePanel
-import com.coucou.android.link.DiscoveryState
-import com.coucou.android.ui.AddressSheet
-import com.coucou.android.ui.BatteryCard
-import com.coucou.android.ui.DiagnosticsScreen
-import com.coucou.android.ui.LicencesScreen
-import com.coucou.android.ui.LinkHealthPanel
-import com.coucou.android.ui.AgentRows
-import com.coucou.android.ui.DiscoveryHint
-import com.coucou.android.ui.ApprovalSheet
-import com.coucou.android.ui.MessagePanel
-import com.coucou.android.ui.PairingScreen
-import com.coucou.android.ui.DiffSheet
-import com.coucou.android.ui.QuestionSheet
-import com.coucou.android.ui.ServicesPanel
-import com.coucou.android.ui.UsagePanel
-import com.coucou.android.ui.RecapPanel
-import com.coucou.android.ui.WardrobeScreen
-import com.coucou.android.ui.HeroCard
-import com.coucou.android.ui.RecentPanel
-import com.coucou.android.ui.BarClearance
-import com.coucou.android.ui.BottomBar
-import com.coucou.android.ui.PairConfirm
-import com.coucou.android.ui.ScanScreen
-import com.coucou.android.ui.SessionScreen
-import com.coucou.android.ui.ChatScreen
-import com.coucou.android.ui.MochiTouch
-import com.coucou.android.ui.HistoryScreen
-import com.coucou.android.ui.SettingsScreen
-import com.coucou.android.ui.StatusColors
-import com.coucou.android.ui.Gap
-import com.coucou.android.ui.Gutter
-import com.coucou.android.ui.ScreenTitle
-import com.coucou.android.ui.SectionTitle
-import com.coucou.android.ui.linkDotColor
-import com.coucou.android.ui.linkStatusText
+import com.nxisland.android.ui.CoucouTheme
+import com.nxisland.android.core.HomePanel
+import com.nxisland.android.link.DiscoveryState
+import com.nxisland.android.ui.AddressSheet
+import com.nxisland.android.ui.BatteryCard
+import com.nxisland.android.ui.DiagnosticsScreen
+import com.nxisland.android.ui.LicencesScreen
+import com.nxisland.android.ui.LinkHealthPanel
+import com.nxisland.android.ui.AgentRows
+import com.nxisland.android.ui.DiscoveryHint
+import com.nxisland.android.ui.ApprovalSheet
+import com.nxisland.android.ui.MessagePanel
+import com.nxisland.android.ui.PairingScreen
+import com.nxisland.android.ui.DiffSheet
+import com.nxisland.android.ui.QuestionSheet
+import com.nxisland.android.ui.ServicesPanel
+import com.nxisland.android.ui.UsagePanel
+import com.nxisland.android.ui.RecapPanel
+import com.nxisland.android.ui.WardrobeScreen
+import com.nxisland.android.ui.HeroCard
+import com.nxisland.android.ui.RecentPanel
+import com.nxisland.android.ui.BarClearance
+import com.nxisland.android.ui.BottomBar
+import com.nxisland.android.ui.PairConfirm
+import com.nxisland.android.ui.ScanScreen
+import com.nxisland.android.ui.SessionScreen
+import com.nxisland.android.ui.ChatScreen
+import com.nxisland.android.ui.MochiTouch
+import com.nxisland.android.ui.HistoryScreen
+import com.nxisland.android.ui.SettingsScreen
+import com.nxisland.android.ui.StatusColors
+import com.nxisland.android.ui.Gap
+import com.nxisland.android.ui.Gutter
+import com.nxisland.android.ui.ScreenTitle
+import com.nxisland.android.ui.SectionTitle
+import com.nxisland.android.ui.linkDotColor
+import com.nxisland.android.ui.linkStatusText
 
 class MainActivity : ComponentActivity() {
     private val model get() = (application as CoucouApp).model
@@ -145,12 +145,12 @@ class MainActivity : ComponentActivity() {
     private var questionPill by mutableStateOf<String?>(null)
     private var confirming = false
     override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(com.coucou.android.app.AppLanguage.wrap(newBase))
+        super.attachBaseContext(com.nxisland.android.app.AppLanguage.wrap(newBase))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        model.languageChanged(com.coucou.android.app.AppLanguage.current(this))
+        model.languageChanged(com.nxisland.android.app.AppLanguage.current(this))
         enableEdgeToEdge()
         if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
@@ -258,12 +258,12 @@ class MainActivity : ComponentActivity() {
         handle(intent)
     }
 
-    /** A coucou://pair link (from the camera app or a browser) or a tap on an approval notification. */
+    /** A nxisland://pair link (from the camera app or a browser) or a tap on an approval notification. */
     private fun handle(i: Intent?) {
         i ?: return
         Log.d("CoucouLaunch", "MainActivity intent: action=${i.action} data=${i.data != null}")
         i.data?.let { uri ->
-            if (uri.scheme == "coucou") {
+            if (uri.scheme == "nxisland") {
                 // Opened from the camera app or a browser: never paired without the user's OK.
                 if (!model.requestPairing(uri.toString())) model.message = getString(R.string.msg_bad_link)
                 i.data = null // handled once: a rotation must not ask again
@@ -277,7 +277,7 @@ class MainActivity : ComponentActivity() {
         }
         // A tap on a widget button: a screen of the closed list ([LaunchScreen]), even when the app is locked, not connected or not paired.
         model.launch.takeScreen()?.let { screen = it.screen }
-        // Text shared to Coucou from another app (ShareActivity, which only keeps cleaned text): it waits in the model for the chat box.
+        // Text shared to NxIsland from another app (ShareActivity, which only keeps cleaned text): it waits in the model for the chat box.
         if (model.shareDraft.pending()) screen = Screen.CHAT
         val launch = model.launch.take() ?: return
         val fp = launch.fingerprint

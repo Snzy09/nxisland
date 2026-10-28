@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,11 +20,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
 
 /**
  * Shown on Home when the saved address failed and a search of about 15 seconds found nothing. Calm, with the usual

@@ -1,4 +1,4 @@
-package com.coucou.android.mochi.outfit
+package com.nxisland.android.mochi.outfit
 
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit

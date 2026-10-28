@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * What the agent is doing, in words a person reads. The desktop sends the last step as the agent

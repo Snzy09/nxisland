@@ -2,7 +2,7 @@
 import AppKit
 import SwiftUI
 
-/// Coucou Flow → Notetaker: the calls on the left, the one chosen on the right.
+/// NxIsland Flow → Notetaker: the calls on the left, the one chosen on the right.
 struct HubNotesPage: View {
     @ObservedObject private var taker = NoteTaker.shared
     @ObservedObject private var parakeet = Parakeet.shared

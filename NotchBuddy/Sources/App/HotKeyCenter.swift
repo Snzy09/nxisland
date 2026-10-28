@@ -47,7 +47,7 @@ final class HotKeyCenter {
     static let shared = HotKeyCenter()
     private init() {}
 
-    // "COUC" in big-endian — unique signature for Coucou's hot-key IDs
+    // "COUC" in big-endian — unique signature for NxIsland's hot-key IDs
     private let kSignature = OSType(0x434F5543)
 
     // Live registered refs (action → EventHotKeyRef)

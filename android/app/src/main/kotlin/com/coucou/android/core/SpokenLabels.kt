@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * What TalkBack says for the things that are drawn rather than written (a state dot, a Mochi, a badge), so the state of an agent

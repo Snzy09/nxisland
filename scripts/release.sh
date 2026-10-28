@@ -115,11 +115,11 @@ if [ "$MODE" != "--finish" ]; then
   ditto -c -k --keepParent "$APP" "$ZIP"
   echo
   echo "Sending to Apple for notarization. If you stop the wait (Ctrl+C), Apple keeps going:"
-  echo "  check it with  xcrun notarytool history --keychain-profile coucou-notary"
+  echo "  check it with  xcrun notarytool history --keychain-profile nxisland-notary"
   echo "  once Accepted  ./scripts/release.sh $VERSION --finish"
   echo
-  xcrun notarytool submit "$ZIP" --keychain-profile coucou-notary --wait \
-    || die "notarization failed: see xcrun notarytool log <id> --keychain-profile coucou-notary (the id is printed above)"
+  xcrun notarytool submit "$ZIP" --keychain-profile nxisland-notary --wait \
+    || die "notarization failed: see xcrun notarytool log <id> --keychain-profile nxisland-notary (the id is printed above)"
   cd "$REPO_ROOT"
 else
   [ -d "$APP" ] && [ -f "$COMMIT_FILE" ] || die "nothing to finish in $BUILD_DIR, run ./scripts/release.sh $VERSION first"
@@ -128,7 +128,7 @@ fi
 
 # ── 4. Staple + verify ────────────────────────────────────────────────────────
 xcrun stapler staple "$APP" \
-  || die "stapling failed: Apple has not accepted the build yet. Check xcrun notarytool history --keychain-profile coucou-notary, then run ./scripts/release.sh $VERSION --finish"
+  || die "stapling failed: Apple has not accepted the build yet. Check xcrun notarytool history --keychain-profile nxisland-notary, then run ./scripts/release.sh $VERSION --finish"
 spctl -a -vv "$APP"
 
 # ── 5. Re-zip (with the stapled app) ──────────────────────────────────────────
@@ -151,7 +151,7 @@ $CHANGES
 2. Move Coucou.app to your Applications folder, replacing the old one if you have it.
 3. Launch it, and click Open when macOS asks you to confirm.
 
-Linux and Windows: see the [README](https://github.com/Louis-CFM/coucou#readme)."
+Linux and Windows: see the [README](https://github.com/Louis-CFM/nxisland#readme)."
 
 echo
 echo "──────── Release notes ────────"
@@ -168,16 +168,16 @@ git tag "$TAG" "$COMMIT"
 git push origin "$TAG"
 
 gh release create "$TAG" "$ZIP" \
-  --repo Louis-CFM/coucou \
+  --repo Louis-CFM/nxisland \
   --title "Coucou $VERSION" \
   --latest \
   --notes "$NOTES"
 
-echo "✓ $TAG released: https://github.com/Louis-CFM/coucou/releases/tag/$TAG"
+echo "✓ $TAG released: https://github.com/Louis-CFM/nxisland/releases/tag/$TAG"
 
 # ── 7. Homebrew cask ──────────────────────────────────────────────────────────
-# Casks/coucou.rb points at the zip just published: bump its version and hash.
-CASK="$REPO_ROOT/Casks/coucou.rb"
+# Casks/nxisland.rb points at the zip just published: bump its version and hash.
+CASK="$REPO_ROOT/Casks/nxisland.rb"
 SHA=$(shasum -a 256 "$ZIP" | cut -d' ' -f1)
 sed -i '' -e "s/^  version \".*\"/  version \"$VERSION\"/" -e "s/^  sha256 \".*\"/  sha256 \"$SHA\"/" "$CASK"
 git add "$CASK"

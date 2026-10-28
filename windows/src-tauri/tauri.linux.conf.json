@@ -7,8 +7,8 @@
       "rpm"
     ],
     "resources": {
-      "../target/release/coucou-hook.exe": null,
-      "../target/release/coucou-hook": "coucou-hook"
+      "../target/release/nxisland-hook.exe": null,
+      "../target/release/nxisland-hook": "nxisland-hook"
     },
     "linux": {
       "appimage": {
@@ -32,7 +32,7 @@
     "windows": [
       {
         "label": "island",
-        "title": "Coucou",
+        "title": "NxIsland",
         "url": "index.html",
         "width": 240,
         "height": 6,

@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.IOException
 import java.util.concurrent.CountDownLatch

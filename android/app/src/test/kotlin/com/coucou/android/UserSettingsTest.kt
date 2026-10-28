@@ -1,14 +1,14 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Announce
-import com.coucou.android.core.Decision
-import com.coucou.android.core.DecisionLog
-import com.coucou.android.core.HistoryDays
-import com.coucou.android.core.KeyValueStore
-import com.coucou.android.core.QuietHours
-import com.coucou.android.core.StatusPolicy
-import com.coucou.android.core.UserSettings
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.Announce
+import com.nxisland.android.core.Decision
+import com.nxisland.android.core.DecisionLog
+import com.nxisland.android.core.HistoryDays
+import com.nxisland.android.core.KeyValueStore
+import com.nxisland.android.core.QuietHours
+import com.nxisland.android.core.StatusPolicy
+import com.nxisland.android.core.UserSettings
+import com.nxisland.android.mochi.BotState
 import java.time.ZoneId
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

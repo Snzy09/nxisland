@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.content.Context
 import android.content.Intent
@@ -17,14 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.BatteryHint
-import com.coucou.android.link.LinkHealthText
-import com.coucou.android.link.LinkState
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.BatteryHint
+import com.nxisland.android.link.LinkHealthText
+import com.nxisland.android.link.LinkState
 import kotlinx.coroutines.delay
 
 /**

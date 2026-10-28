@@ -1,7 +1,7 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.AskedQuestion
-import com.coucou.android.link.Protocol
+import com.nxisland.android.link.AskedQuestion
+import com.nxisland.android.link.Protocol
 
 /** Where the user is in answering a question from Claude Code: which question, and what is picked for each. */
 data class QuestionState(val index: Int, val picks: List<List<String>>)

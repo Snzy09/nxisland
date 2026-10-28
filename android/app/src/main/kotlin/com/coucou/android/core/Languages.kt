@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * The languages of the app: the BCP 47 tag, the name in the language itself (so a person can find it whatever the phone speaks) and whether it

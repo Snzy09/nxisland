@@ -1,4 +1,4 @@
-package com.coucou.android.scan
+package com.nxisland.android.scan
 
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.BinaryBitmap

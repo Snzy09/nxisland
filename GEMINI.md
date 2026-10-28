@@ -1,4 +1,4 @@
-# Project Guidelines & Rules — Coucou
+# Project Guidelines & Rules — NxIsland
 
 ## Core Development Rules
 
@@ -7,7 +7,7 @@ Whenever adding a new feature or making an update, **all platforms must be synch
 - **macOS**: `NotchBuddy/Sources/App/` and shared `NotchBuddy/Sources/CoucouKit/`.
 - **iOS (iPhone)**: `NotchBuddy/Sources/Phone/`, `Sources/Widgets/`, `Sources/NotificationContent/`, and `relay/`.
 - **Windows**: `windows/src-tauri/`, `windows/src/`, and `windows/hook/`.
-- **Linux**: `windows/src-tauri/`, `windows/src/`, and `windows/hook/` (Unix domain socket `/run/user/<uid>/coucou.sock`).
+- **Linux**: `windows/src-tauri/`, `windows/src/`, and `windows/hook/` (Unix domain socket `/run/user/<uid>/nxisland.sock`).
 - **Android**: `android/` companion app (Wi-Fi TLS pairing, biometrics, home widgets).
 
 **Key Synchronization Points:**
@@ -18,7 +18,7 @@ Whenever adding a new feature or making an update, **all platforms must be synch
 
 ### 2. Git & GitHub Synchronization
 - After completing any feature update or fix, commit changes with clear semantic messages.
-- Always push commits to the remote repository (`https://github.com/Snzy09/coucou.git`) to keep the remote branch up-to-date.
+- Always push commits to the remote repository (`https://github.com/Snzy09/nxisland.git`) to keep the remote branch up-to-date.
 
 ### 3. Architecture & Code Quality
 - Swift 6, SwiftUI + AppKit for Apple platforms (no 3rd-party dependencies unless strictly required).
@@ -29,9 +29,9 @@ Whenever adding a new feature or making an update, **all platforms must be synch
 
 ### 4. OS-Specific Release Paths
 Every platform build and release script must output packaged release artifacts into its dedicated directory:
-- **macOS**: `NotchBuddy/release/` (`Coucou.app`, `Coucou.zip`)
+- **macOS**: `NotchBuddy/release/` (`NxIsland.app`, `NxIsland.zip`)
 - **iOS**: `NotchBuddy/release/ios/`
-- **Linux**: `linux/release/` (`Coucou-Linux-*.AppImage`, `Coucou-Linux-*.deb`, `Coucou-Linux-*.rpm`, `SHA256SUMS`)
-- **Windows**: `windows/release/` (`Coucou-Windows-*-setup.exe`, `Coucou-Windows-*.msi`)
-- **Android**: `android/release/` (`Coucou-Android-*.apk`, `SHA256SUMS`)
+- **Linux**: `linux/release/` (`NxIsland-Linux-*.AppImage`, `NxIsland-Linux-*.deb`, `NxIsland-Linux-*.rpm`, `SHA256SUMS`)
+- **Windows**: `windows/release/` (`NxIsland-Windows-*-setup.exe`, `NxIsland-Windows-*.msi`)
+- **Android**: `android/release/` (`NxIsland-Android-*.apk`, `SHA256SUMS`)
 All release output directories are excluded from git tracking in `.gitignore`.

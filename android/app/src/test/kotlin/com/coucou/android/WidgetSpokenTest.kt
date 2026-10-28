@@ -1,9 +1,9 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.WidgetData
-import com.coucou.android.core.WidgetSample
-import com.coucou.android.core.WidgetSpoken
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.WidgetData
+import com.nxisland.android.core.WidgetSample
+import com.nxisland.android.core.WidgetSpoken
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

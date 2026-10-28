@@ -1,14 +1,14 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.IslandGeometry
-import com.coucou.android.core.IslandPlan
-import com.coucou.android.core.IslandSpec
-import com.coucou.android.core.PxRect
-import com.coucou.android.core.QuietHours
-import com.coucou.android.core.UserSettings
-import com.coucou.android.link.ApprovalRequest
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.IslandGeometry
+import com.nxisland.android.core.IslandPlan
+import com.nxisland.android.core.IslandSpec
+import com.nxisland.android.core.PxRect
+import com.nxisland.android.core.QuietHours
+import com.nxisland.android.core.UserSettings
+import com.nxisland.android.link.ApprovalRequest
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull

@@ -469,7 +469,7 @@ struct WhatsAppSettingsSection: View {
                         .foregroundColor(Color(hex: "#F4505E"))
                 }
 
-                // One click: Coucou downloads GOWA, checks it and starts it. No Terminal.
+                // One click: NxIsland downloads GOWA, checks it and starts it. No Terminal.
                 if gateway == .gowa { installBlock }
 
                 if showsLinkState { linkState }
@@ -557,7 +557,7 @@ struct WhatsAppSettingsSection: View {
             }
         }
         .onChange(of: installer.step) { _, step in
-            // Installed by Coucou: the fields follow what it set.
+            // Installed by NxIsland: the fields follow what it set.
             if case .done = step {
                 gateway = .gowa
                 url = ""
@@ -669,7 +669,7 @@ struct WhatsAppSettingsSection: View {
         }
     }
 
-    /// Phase 3: Coucou starts the GOWA binary itself (GitHub build: the App Store build is
+    /// Phase 3: NxIsland starts the GOWA binary itself (GitHub build: the App Store build is
     /// sandboxed and never compiles this).
     @ViewBuilder private var autoStartRow: some View {
         Toggle("whatsapp.autostart", isOn: $autoStart)

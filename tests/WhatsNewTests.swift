@@ -46,7 +46,7 @@ enum WhatsNewTests {
         check("every icon has a symbol", WhatsNew.symbols.count == 19)
         check("unknown icon: sparkles", WhatsNew.symbol("rocket") == "sparkles")
 
-        print("\nYour Coucou so far")
+        print("\nYour NxIsland so far")
         check("nothing used: no chips", WhatsNew.chips(WhatsNew.Stats()).isEmpty)
         let s = WhatsNew.Stats(sessions: 42, agentMinutes: 600, linesAdded: 9000, approvals: 120, words: 15000, minutesSaved: 90, notes: 3)
         let chips = WhatsNew.chips(s)
@@ -69,7 +69,7 @@ enum WhatsNewTests {
 
         print("\nLinks")
         check("coffee goes to Stripe", WhatsNew.coffeeURL.host == "buy.stripe.com")
-        check("release page", WhatsNew.releasePage("0.6.0").absoluteString == "https://github.com/Louis-CFM/coucou/releases/tag/v0.6.0")
+        check("release page", WhatsNew.releasePage("0.6.0").absoluteString == "https://github.com/Louis-CFM/nxisland/releases/tag/v0.6.0")
 
         if failures > 0 {
             print("\n\(failures) failure(s)")

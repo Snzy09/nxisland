@@ -70,7 +70,7 @@ enum BadgeType {
     case bang(CGColor)
     case question(CGColor)
     case dot(CGColor)
-    /// A new Coucou is waiting (Mac GitHub build): a white up arrow.
+    /// A new NxIsland is waiting (Mac GitHub build): a white up arrow.
     case arrow(CGColor)
 }
 

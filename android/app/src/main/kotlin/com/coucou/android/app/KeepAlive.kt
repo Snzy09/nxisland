@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.PowerManager
 import android.os.SystemClock
-import com.coucou.android.link.KeepAlivePolicy
+import com.nxisland.android.link.KeepAlivePolicy
 
 /**
  * The heartbeat that works while the phone sleeps. Timers inside the app stop with the CPU, so a ping every 20 seconds cannot run in
@@ -15,7 +15,7 @@ import com.coucou.android.link.KeepAlivePolicy
  * may delay it to a maintenance window). Each time it fires the link is asked for a pong (reconnect if none) and the next alarm is set.
  */
 object KeepAliveAlarm {
-    private const val ACTION = "com.coucou.android.KEEP_ALIVE"
+    private const val ACTION = "com.nxisland.android.KEEP_ALIVE"
 
     private fun pending(context: Context): PendingIntent =
         PendingIntent.getBroadcast(
@@ -44,7 +44,7 @@ class KeepAliveReceiver : BroadcastReceiver() {
         // for a few seconds. A wake lock with a timeout releases itself; it is never held longer than that, and never held between checks.
         runCatching {
             context.getSystemService(PowerManager::class.java)
-                ?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "coucou:keepalive")
+                ?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "nxisland:keepalive")
                 ?.apply { setReferenceCounted(false); acquire(KeepAlivePolicy.WAKE_LOCK_MS) }
         }
         (context.applicationContext as CoucouApp).model.keepAliveTick()

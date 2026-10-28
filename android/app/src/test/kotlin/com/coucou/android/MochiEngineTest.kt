@@ -1,15 +1,15 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Ease
-import com.coucou.android.mochi.BotEmote
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.EyeShape
-import com.coucou.android.mochi.MochiEngine
-import com.coucou.android.mochi.MochiGeometry
-import com.coucou.android.mochi.ParticleType
-import com.coucou.android.mochi.Prop
-import com.coucou.android.mochi.SoundSink
-import com.coucou.android.mochi.TweenKey
+import com.nxisland.android.core.Ease
+import com.nxisland.android.mochi.BotEmote
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.EyeShape
+import com.nxisland.android.mochi.MochiEngine
+import com.nxisland.android.mochi.MochiGeometry
+import com.nxisland.android.mochi.ParticleType
+import com.nxisland.android.mochi.Prop
+import com.nxisland.android.mochi.SoundSink
+import com.nxisland.android.mochi.TweenKey
 import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.random.Random
@@ -81,7 +81,7 @@ class MochiEngineTest {
         assertEquals(0.78, e.tint, 1e-9)
         e.run(clock, 600)
         assertEquals(1.0, e.badgeS, 0.01)
-        assertEquals(com.coucou.android.mochi.BadgeKind.BANG, e.badge?.kind)
+        assertEquals(com.nxisland.android.mochi.BadgeKind.BANG, e.badge?.kind)
     }
 
     @Test fun colourEasesTowardsTheStateColour() {

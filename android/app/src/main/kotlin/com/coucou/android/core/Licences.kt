@@ -1,8 +1,8 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * The licence texts the app shows (Settings > About > Licences). They are files under assets/licenses so the exact words ship in the app:
- * NOTICES (who owns what, and the libraries), then the MIT text of Coucou's code, then the Apache 2.0 text.
+ * NOTICES (who owns what, and the libraries), then the MIT text of NxIsland's code, then the Apache 2.0 text.
  */
 object Licences {
     /** In the order they are shown. */

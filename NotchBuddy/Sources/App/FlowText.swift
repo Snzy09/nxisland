@@ -1,6 +1,6 @@
 import Foundation
 
-/// A word Coucou writes another way: "cloud code" → "Claude Code".
+/// A word NxIsland writes another way: "cloud code" → "Claude Code".
 struct FlowReplacement: Codable, Hashable, Identifiable, Sendable {
     var id = UUID()
     var from: String
@@ -14,7 +14,7 @@ struct FlowSnippet: Codable, Hashable, Identifiable, Sendable {
     var text: String
 }
 
-/// What Coucou does to the words before pasting them, and the numbers of the Statistics page
+/// What NxIsland does to the words before pasting them, and the numbers of the Statistics page
 /// (tests/FlowTextTests.swift). No AppKit here: it runs in the tests as it is.
 enum FlowText {
     /// A dictation ready to paste, its snippets still set aside: each trigger heard became a mark

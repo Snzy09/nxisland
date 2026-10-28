@@ -1,6 +1,6 @@
 import Foundation
 
-// WhatsApp in the notch (GitHub build only): what Coucou keeps of the conversations, in memory
+// WhatsApp in the notch (GitHub build only): what NxIsland keeps of the conversations, in memory
 // only, and the rules that decide what reaches the pill. Pure Foundation, so the parsing and
 // the rules are tested without the app (tests/WhatsAppTests.swift). Nothing here is ever
 // written to disk or to a log.
@@ -204,7 +204,7 @@ struct WAInbox: Equatable, Sendable {
         conversations[WAJID.normalized(chat)]?.name = name
     }
 
-    /// Everything goes (Coucou quits, WhatsApp turned off).
+    /// Everything goes (NxIsland quits, WhatsApp turned off).
     mutating func clear() {
         conversations = [:]
         seenIds = []
@@ -230,7 +230,7 @@ enum WAReply {
     }
 }
 
-/// A few sends a minute at most, whatever is clicked: Coucou is no bulk sender.
+/// A few sends a minute at most, whatever is clicked: NxIsland is no bulk sender.
 struct WARateLimit: Sendable {
     var limit = 6
     var window: TimeInterval = 60

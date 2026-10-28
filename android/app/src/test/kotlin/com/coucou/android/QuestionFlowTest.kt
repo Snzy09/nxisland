@@ -1,10 +1,10 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.QuestionFlow
-import com.coucou.android.core.QuestionState
-import com.coucou.android.link.AskedOption
-import com.coucou.android.link.AskedQuestion
-import com.coucou.android.link.Protocol
+import com.nxisland.android.core.QuestionFlow
+import com.nxisland.android.core.QuestionState
+import com.nxisland.android.link.AskedOption
+import com.nxisland.android.link.AskedQuestion
+import com.nxisland.android.link.Protocol
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

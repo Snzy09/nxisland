@@ -1,7 +1,7 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.RelayIssue
-import com.coucou.android.link.Route
+import com.nxisland.android.link.RelayIssue
+import com.nxisland.android.link.Route
 
 /** What the "Away from home Wi-Fi" card says. One kind per sentence; the screen maps it to a string. */
 enum class RelayLineKind { NO_RELAY_IN_PAIRING, SWITCHED_OFF, DIRECT, VIA_RELAY, WAITING, ACCESS_REFUSED, ROOM_TAKEN, RATE_LIMITED, UNREACHABLE, COMPUTER_AWAY }

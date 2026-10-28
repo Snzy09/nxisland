@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertTrue
@@ -10,7 +10,7 @@ import org.junit.Test
  */
 class JvmNameClashTest {
     @Test fun noFunctionSharesTheNameOfAPropertySetter() {
-        val dir = File("src/main/kotlin/com/coucou/android")
+        val dir = File("src/main/kotlin/com/nxisland/android")
         val bad = ArrayList<String>()
         for (f in dir.walkTopDown().filter { it.extension == "kt" }) {
             val text = f.readText()

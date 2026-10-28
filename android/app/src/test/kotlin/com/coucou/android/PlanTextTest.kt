@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.PlanText
-import com.coucou.android.link.PlanWindow
+import com.nxisland.android.core.PlanText
+import com.nxisland.android.link.PlanWindow
 import java.time.ZoneId
 import java.util.Locale
 import org.junit.Assert.assertEquals

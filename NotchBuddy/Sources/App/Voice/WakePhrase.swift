@@ -21,11 +21,11 @@ enum WakePhrase {
     /// preserving the original casing and punctuation of the command portion.
     ///
     /// Accepted patterns (case-insensitive, after phonetic normalisation):
-    /// - "ok coucou" and variants: "okay coucou", "ok cuckoo", "ok kuku", "ok cou cou" …
-    /// - "hey coucou"
+    /// - "ok nxisland" and variants: "okay nxisland", "ok cuckoo", "ok kuku", "ok cou cou" …
+    /// - "hey nxisland"
     ///
-    /// Word-boundary search means "euh ok coucou add" matches and returns "add".
-    /// Standalone "coucou" never matches (no preceding "ok"/"hey").
+    /// Word-boundary search means "euh ok nxisland add" matches and returns "add".
+    /// Standalone "nxisland" never matches (no preceding "ok"/"hey").
     static func split(_ raw: String) -> SplitResult {
         // Split original into whitespace-separated tokens (punctuation stays attached to words)
         let originalWords = raw.components(separatedBy: .whitespaces).filter { !$0.isEmpty }
@@ -37,9 +37,9 @@ enum WakePhrase {
         // Wake phrase patterns (normalised).
         // "ok cou cou" handled as a 3-token pattern in case the STT splits it.
         let patterns: [[String]] = [
-            ["ok",  "coucou"],
+            ["ok",  "nxisland"],
             ["ok",  "cou", "cou"],
-            ["hey", "coucou"],
+            ["hey", "nxisland"],
             ["hey", "cou", "cou"],
         ]
 
@@ -87,9 +87,9 @@ enum WakePhrase {
     private static func normWord(_ w: String) -> String {
         var t = normalise(w)
         t = t
-            .replacingOccurrences(of: "cuckoo", with: "coucou")
-            .replacingOccurrences(of: "kuku",   with: "coucou")
-            .replacingOccurrences(of: "kucou",  with: "coucou")
+            .replacingOccurrences(of: "cuckoo", with: "nxisland")
+            .replacingOccurrences(of: "kuku",   with: "nxisland")
+            .replacingOccurrences(of: "kucou",  with: "nxisland")
             .replacingOccurrences(of: "okay",   with: "ok")
         return t
     }

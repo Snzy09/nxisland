@@ -1,7 +1,7 @@
 #if !APPSTORE
 import Foundation
 
-// The two local WhatsApp gateways Coucou can talk to. Each call goes to the URL set in
+// The two local WhatsApp gateways NxIsland can talk to. Each call goes to the URL set in
 // Settings (127.0.0.1 by default) and nowhere else: no photo, no media, nothing from
 // WhatsApp's own servers. Endpoints, headers and bodies follow each gateway's docs (see
 // WhatsAppGateway.swift for the references).
@@ -24,7 +24,7 @@ protocol WhatsAppProvider: Sendable {
     /// The QR to scan, as PNG bytes, and how long it stays valid; nil when there is none to
     /// show (already linked, not ready yet).
     func qrCode() async throws -> (png: Data, seconds: Int)?
-    /// Tells the gateway to post new messages to Coucou's local webhook, signed with `secret`.
+    /// Tells the gateway to post new messages to NxIsland's local webhook, signed with `secret`.
     func registerWebhook(url: String, secret: String) async throws
     /// Messages of every chat since `date` (the polling fallback), oldest first.
     func recentMessages(since date: Date, me: String?) async throws -> [WAMessage]
@@ -101,8 +101,8 @@ final class WAHTTP: Sendable {
 // MARK: - GOWA
 
 /// go-whatsapp-web-multidevice, `./whatsapp rest` (port 3000). Auth: HTTP basic `user:pass`
-/// when the gateway was started with `--basic-auth`. Coucou works on one device (the one
-/// already logged in, else a new one named "coucou"), named in `X-Device-Id`.
+/// when the gateway was started with `--basic-auth`. NxIsland works on one device (the one
+/// already logged in, else a new one named "nxisland"), named in `X-Device-Id`.
 actor GOWAProvider: WhatsAppProvider {
     nonisolated let kind = WAGatewayKind.gowa
     private let http: WAHTTP
@@ -124,7 +124,7 @@ actor GOWAProvider: WhatsAppProvider {
         }
     }
 
-    /// The device to work on; created ("coucou") when the gateway has none.
+    /// The device to work on; created ("nxisland") when the gateway has none.
     private func device() async throws -> (id: String, status: WAStatus) {
         let (data, code) = try await http.call("GET", "/devices")
         try check(data, code)
@@ -132,10 +132,10 @@ actor GOWAProvider: WhatsAppProvider {
             deviceId = found.id
             return found
         }
-        let (made, madeCode) = try await http.call("POST", "/devices", json: ["device_id": "coucou"])
+        let (made, madeCode) = try await http.call("POST", "/devices", json: ["device_id": "nxisland"])
         try check(made, madeCode)
-        deviceId = "coucou"
-        return ("coucou", WAStatus(link: .needsQR, me: nil))
+        deviceId = "nxisland"
+        return ("nxisland", WAStatus(link: .needsQR, me: nil))
     }
 
     private func scoped(_ method: String, _ path: String, query: [URLQueryItem] = [], json: [String: any Sendable]? = nil) async throws -> Data {
@@ -223,8 +223,8 @@ actor GOWAProvider: WhatsAppProvider {
 
 // MARK: - OpenWA
 
-/// OpenWA (port 2785, every route under /api). Auth: `X-API-Key`. Coucou works on one session
-/// (the one ready, else one named "coucou", created and started when missing).
+/// OpenWA (port 2785, every route under /api). Auth: `X-API-Key`. NxIsland works on one session
+/// (the one ready, else one named "nxisland", created and started when missing).
 actor OpenWAProvider: WhatsAppProvider {
     nonisolated let kind = WAGatewayKind.openwa
     private let http: WAHTTP
@@ -249,7 +249,7 @@ actor OpenWAProvider: WhatsAppProvider {
         let all = ((try? JSONSerialization.jsonObject(with: data)) as? [Any] ?? []).compactMap(WAOpenWA.session)
         let pick = all.first { $0.status == "ready" }
             ?? all.first { ($0.id == sessionId) }
-            ?? named("coucou", in: data) ?? all.first
+            ?? named("nxisland", in: data) ?? all.first
         if var s = pick {
             sessionId = s.id
             if WAOpenWA.needsStart(s.status) {
@@ -259,7 +259,7 @@ actor OpenWAProvider: WhatsAppProvider {
             }
             return s
         }
-        let (made, madeCode) = try await http.call("POST", "/api/sessions", json: ["name": "coucou"])
+        let (made, madeCode) = try await http.call("POST", "/api/sessions", json: ["name": "nxisland"])
         try check(made, madeCode)
         guard let s = WAOpenWA.session(try? JSONSerialization.jsonObject(with: made)) else { throw WAError.refused("session") }
         sessionId = s.id
@@ -349,7 +349,7 @@ actor OpenWAProvider: WhatsAppProvider {
         return name
     }
 
-    /// OpenWA names people `<number>@c.us` (Coucou keeps the @s.whatsapp.net form inside).
+    /// OpenWA names people `<number>@c.us` (NxIsland keeps the @s.whatsapp.net form inside).
     static func openwaId(_ jid: String) -> String {
         jid.hasSuffix("@s.whatsapp.net") ? jid.replacingOccurrences(of: "@s.whatsapp.net", with: "@c.us") : jid
     }

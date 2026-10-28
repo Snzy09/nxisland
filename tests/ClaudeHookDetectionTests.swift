@@ -8,10 +8,10 @@ enum ClaudeHookDetectionTests {
     }
 
     static func main() {
-        // Installed: the hook Coucou writes, GitHub build
+        // Installed: the hook NxIsland writes, GitHub build
         precondition(coucouHooksPresent(inSettings: settings("""
         {"hooks":{"SessionStart":[{"hooks":[
-          {"type":"command","command":"$HOME/.claude/coucou/nb-hook"}]}]}}
+          {"type":"command","command":"$HOME/.claude/nxisland/nb-hook"}]}]}}
         """)))
 
         // Installed: App Store build names NotchBuddy
@@ -24,7 +24,7 @@ enum ClaudeHookDetectionTests {
         precondition(coucouHooksPresent(inSettings: settings("""
         {"hooks":{"SessionStart":[
           {"hooks":[{"type":"command","command":"/usr/local/bin/other-tool"}]},
-          {"hooks":[{"type":"command","command":"$HOME/.claude/coucou/nb-hook"}]}]}}
+          {"hooks":[{"type":"command","command":"$HOME/.claude/nxisland/nb-hook"}]}]}}
         """)))
 
         // Not installed: other tools only — the case that showed "Key not configured"
@@ -37,7 +37,7 @@ enum ClaudeHookDetectionTests {
         // Not installed: hooks for other events do not count
         precondition(!coucouHooksPresent(inSettings: settings("""
         {"hooks":{"PreToolUse":[{"hooks":[
-          {"type":"command","command":"$HOME/.claude/coucou/nb-hook"}]}]}}
+          {"type":"command","command":"$HOME/.claude/nxisland/nb-hook"}]}]}}
         """)))
 
         // Malformed or empty settings never crash, and never read as installed

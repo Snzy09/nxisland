@@ -1,7 +1,7 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.PillCategory
-import com.coucou.android.core.Pills
+import com.nxisland.android.core.PillCategory
+import com.nxisland.android.core.Pills
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

@@ -1,18 +1,18 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.Glance
-import com.coucou.android.core.GlanceBuilder
-import com.coucou.android.core.GlanceTone
-import com.coucou.android.core.WidgetData
-import com.coucou.android.link.LinkState
-import com.coucou.android.link.PlanUsage
-import com.coucou.android.link.PlanWindow
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.link.UsageSnapshot
-import com.coucou.android.core.PlanUsageLook
-import com.coucou.android.core.UsageRing
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.Glance
+import com.nxisland.android.core.GlanceBuilder
+import com.nxisland.android.core.GlanceTone
+import com.nxisland.android.core.WidgetData
+import com.nxisland.android.link.LinkState
+import com.nxisland.android.link.PlanUsage
+import com.nxisland.android.link.PlanWindow
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.link.UsageSnapshot
+import com.nxisland.android.core.PlanUsageLook
+import com.nxisland.android.core.UsageRing
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -112,8 +112,8 @@ class WidgetDataTest {
 
     @Test fun aTilesDotIsTheToneOfItsState() {
         val t = build(listOf(s("agent_codex", BotState.APPROVAL), s("agent_amp", BotState.FINISHED))).tiles
-        assertEquals(com.coucou.android.core.WidgetTone.ATTENTION, t[0].tone)
-        assertEquals(com.coucou.android.core.WidgetTone.DONE, t[1].tone)
+        assertEquals(com.nxisland.android.core.WidgetTone.ATTENTION, t[0].tone)
+        assertEquals(com.nxisland.android.core.WidgetTone.DONE, t[1].tone)
     }
 
     // ── The alert, the ring and the day's count ──────────────────────────────────
@@ -150,10 +150,10 @@ class WidgetDataTest {
     }
 
     @Test fun theRingIsTealThenYellowThenRedInItsOwnPalette() {
-        assertEquals(com.coucou.android.core.UsageTone.CALM, UsageRing("Claude", "5 h", 49).tone)
-        assertEquals(com.coucou.android.core.UsageTone.CALM, UsageRing("Claude", "5 h", 74).tone)
-        assertEquals(com.coucou.android.core.UsageTone.CLOSE, UsageRing("Claude", "5 h", 75).tone)
-        assertEquals(com.coucou.android.core.UsageTone.LIMIT, UsageRing("Claude", "5 h", 90).tone)
+        assertEquals(com.nxisland.android.core.UsageTone.CALM, UsageRing("Claude", "5 h", 49).tone)
+        assertEquals(com.nxisland.android.core.UsageTone.CALM, UsageRing("Claude", "5 h", 74).tone)
+        assertEquals(com.nxisland.android.core.UsageTone.CLOSE, UsageRing("Claude", "5 h", 75).tone)
+        assertEquals(com.nxisland.android.core.UsageTone.LIMIT, UsageRing("Claude", "5 h", 90).tone)
         assertEquals(0.42f, UsageRing("Claude", "5 h", 42).fraction, 0.0001f)
         assertEquals(1f, UsageRing("Claude", "5 h", 140).fraction, 0f)
         assertEquals(100, UsageRing("Claude", "5 h", 140).shown)

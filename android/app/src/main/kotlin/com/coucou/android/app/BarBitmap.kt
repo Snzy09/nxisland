@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.graphics.Bitmap
 import androidx.compose.ui.geometry.CornerRadius
@@ -11,12 +11,12 @@ import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.drawscope.CanvasDrawScope
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.LayoutDirection
-import com.coucou.android.core.UsageRing
+import com.nxisland.android.core.UsageRing
 import kotlin.math.max
 
 /**
  * The thin bar of a plan-usage row on Mochi Big, drawn once into a bitmap like [RingBitmap] draws the Usage Ring's ring: a faint
- * track and a rounded fill in the colour of the usage (teal, yellow from 75%, red from 90%: [com.coucou.android.core.PlanUsageLook]). A few are kept so a push that changes
+ * track and a rounded fill in the colour of the usage (teal, yellow from 75%, red from 90%: [com.nxisland.android.core.PlanUsageLook]). A few are kept so a push that changes
  * nothing about a bar draws nothing. No timer, no frame loop.
  */
 object BarBitmap {

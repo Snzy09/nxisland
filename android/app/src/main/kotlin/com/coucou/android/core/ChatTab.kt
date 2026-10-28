@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /** What the always-visible Chat tab shows. */
 enum class ChatTabState { NOT_PAIRED, NOT_CONNECTED, CHAT_OFF, NO_MODELS, READY }

@@ -1,6 +1,6 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
-import com.coucou.android.core.Texts
+import com.nxisland.android.core.Texts
 
 /**
  * What the phone knows about the health of the link, in plain terms, so Home can say what happened ("Connection lost 2 min ago,
@@ -42,10 +42,10 @@ object LinkHealthText {
      */
     fun why(reason: LostReason?, wifiUp: Boolean = true) = when (reason) {
         LostReason.SILENT -> Texts.t("lost_silent", "The computer stopped answering. This is usual after the phone slept.")
-        LostReason.CLOSED -> Texts.t("lost_closed", "The computer closed the connection. Coucou may have been closed or restarted there.")
+        LostReason.CLOSED -> Texts.t("lost_closed", "The computer closed the connection. NxIsland may have been closed or restarted there.")
         LostReason.NETWORK ->
             if (!wifiUp) Texts.t("lost_no_wifi", "The phone is not on Wi-Fi. Join the network your computer is on, or use the internet link.")
-            else Texts.t("lost_unreachable", "The phone cannot reach the computer. Coucou may be closed there, its phone link may be off, or it is on another network.")
+            else Texts.t("lost_unreachable", "The phone cannot reach the computer. NxIsland may be closed there, its phone link may be off, or it is on another network.")
         null -> ""
     }
 
@@ -91,8 +91,8 @@ object BatteryHint {
 
     fun steps(samsung: Boolean): List<String> =
         if (samsung) listOf(
-            Texts.t("battery_step_samsung_1", "Open Settings > Apps > Coucou for Android > Battery and choose Unrestricted."),
-            Texts.t("battery_step_samsung_2", "Then Settings > Battery > Background usage limits: make sure Coucou is not in Sleeping apps or Deep sleeping apps (add it to Never sleeping apps)."),
+            Texts.t("battery_step_samsung_1", "Open Settings > Apps > NxIsland for Android > Battery and choose Unrestricted."),
+            Texts.t("battery_step_samsung_2", "Then Settings > Battery > Background usage limits: make sure NxIsland is not in Sleeping apps or Deep sleeping apps (add it to Never sleeping apps)."),
         ) else listOf(
             Texts.t("battery_step_generic", "Open the app's battery setting and choose Unrestricted (or Don't optimise)."),
         )

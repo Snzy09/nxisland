@@ -77,7 +77,7 @@ struct DictationTranscript: Equatable {
         return p[0].lowercased() != n[0].lowercased()
     }
 
-    /// Lowercase letters and digits, single spaces: "Salut, Coucou !" → "salut coucou".
+    /// Lowercase letters and digits, single spaces: "Salut, NxIsland !" → "salut nxisland".
     static func normalized(_ s: String) -> String {
         let kept = s.lowercased().map { $0.isLetter || $0.isNumber ? $0 : " " }
         return String(kept).split(whereSeparator: \.isWhitespace).joined(separator: " ")

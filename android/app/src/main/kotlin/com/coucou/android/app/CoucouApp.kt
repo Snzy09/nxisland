@@ -1,8 +1,8 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.app.Application
 import android.content.Context
-import com.coucou.android.core.Texts
+import com.nxisland.android.core.Texts
 
 class CoucouApp : Application() {
     val model: AppModel by lazy { AppModel(this) }

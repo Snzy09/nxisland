@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * The screens a Widget button may open: a closed list, never a free string. A button carries the [key] of one of these to

@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -16,12 +16,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.core.DiffState
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
-import com.coucou.android.link.DiffRow
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.core.DiffState
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.link.DiffRow
 
 /** What the file-change sheet draws a row in: the colour of its text and of the tint behind it. */
 internal object DiffLook {

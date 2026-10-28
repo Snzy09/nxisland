@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,13 +35,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.coucou.android.core.MotionPolicy
-import com.coucou.android.core.MotionState
-import com.coucou.android.core.Radii
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
-import com.coucou.android.core.TypeStep
+import com.nxisland.android.core.MotionPolicy
+import com.nxisland.android.core.MotionState
+import com.nxisland.android.core.Radii
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.core.TypeStep
 
 // The app's building blocks: panels, pill buttons, the hero panel, the tokens of the (dark) theme.
 

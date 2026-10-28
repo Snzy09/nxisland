@@ -1,6 +1,6 @@
-package com.coucou.android.mochi
+package com.nxisland.android.mochi
 
-import com.coucou.android.core.lerp
+import com.nxisland.android.core.lerp
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos

@@ -1,15 +1,15 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.link.ApprovalRequest
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.link.ApprovalRequest
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 
 /**
  * Which session the island is about, and whether it may show at all. Pure: the same inputs always
  * give the same answer, so every rule is unit-tested.
  */
 object IslandPlan {
-    /** The switch, the system permission and Coucou not being on screen. */
+    /** The switch, the system permission and NxIsland not being on screen. */
     fun allowed(overlayOn: Boolean, permitted: Boolean, appInForeground: Boolean) =
         OverlayPolicy.shouldShow(overlayOn, permitted, appInForeground)
 

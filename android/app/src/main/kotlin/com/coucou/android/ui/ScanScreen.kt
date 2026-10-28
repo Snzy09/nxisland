@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import android.Manifest
 import android.app.Activity
@@ -29,11 +29,11 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.IslandSurface
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.Tokens
-import com.coucou.android.core.TypeScale
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.IslandSurface
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.Tokens
+import com.nxisland.android.core.TypeScale
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -69,9 +69,9 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.coucou.android.R
-import com.coucou.android.core.ScanPermission
-import com.coucou.android.scan.QrDecoder
+import com.nxisland.android.R
+import com.nxisland.android.core.ScanPermission
+import com.nxisland.android.scan.QrDecoder
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlinx.coroutines.delay
@@ -88,7 +88,7 @@ private tailrec fun Context.activity(): Activity? = when (this) {
  * Reads the pairing QR code with the camera. The camera is asked for only here, used only while this screen is
  * showing (it is released when the screen is left, paused, or a code was accepted), and no picture is kept or
  * sent: each frame is looked at for a code and dropped. [onText] gets the text of a code and says whether it was
- * a Coucou pairing code; anything else is ignored with a short hint.
+ * a NxIsland pairing code; anything else is ignored with a short hint.
  */
 @Composable
 fun ScanScreen(onBack: () -> Unit, onText: (String) -> Boolean) {

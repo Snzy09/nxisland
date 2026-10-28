@@ -97,7 +97,7 @@ final class ChannelRecorder: @unchecked Sendable {
         }
     }
 
-    /// Closes the file at once, waiting for what is queued (when Coucou quits).
+    /// Closes the file at once, waiting for what is queued (when NxIsland quits).
     func closeNow() {
         queue.sync { file = nil }
     }
@@ -172,7 +172,7 @@ final class SystemAudioTap: @unchecked Sendable {
     func start(sink: @escaping @Sendable ([Float]) -> Void) throws {
         let description = CATapDescription(stereoGlobalTapButExcludeProcesses: [])
         description.uuid = UUID()
-        description.name = "Coucou Notetaker"
+        description.name = "NxIsland Notetaker"
         description.isPrivate = true
         description.muteBehavior = .unmuted
 
@@ -195,7 +195,7 @@ final class SystemAudioTap: @unchecked Sendable {
 
         let outputUID = try Self.defaultOutputUID()
         let aggregate: [String: Any] = [
-            kAudioAggregateDeviceNameKey: "Coucou Notetaker",
+            kAudioAggregateDeviceNameKey: "NxIsland Notetaker",
             kAudioAggregateDeviceUIDKey: UUID().uuidString,
             kAudioAggregateDeviceMainSubDeviceKey: outputUID,
             kAudioAggregateDeviceIsPrivateKey: true,

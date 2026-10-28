@@ -1,12 +1,12 @@
-package com.coucou.android
+package com.nxisland.android
 
-import com.coucou.android.core.GlanceBuilder
-import com.coucou.android.core.TeamChoice
-import com.coucou.android.core.WidgetData
-import com.coucou.android.core.WidgetTile
-import com.coucou.android.core.WidgetTone
-import com.coucou.android.link.SessionInfo
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.core.GlanceBuilder
+import com.nxisland.android.core.TeamChoice
+import com.nxisland.android.core.WidgetData
+import com.nxisland.android.core.WidgetTile
+import com.nxisland.android.core.WidgetTone
+import com.nxisland.android.link.SessionInfo
+import com.nxisland.android.mochi.BotState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -96,7 +96,7 @@ class TeamChoiceTest {
         // Seven agents run; the one picked is the least urgent. It must not be reported as "not running".
         val sessions = (1..7).map { SessionInfo("agent_$it", "Agent $it", if (it == 7) BotState.IDLE else BotState.WORKING, "", 0, 0, 0L) } +
             SessionInfo("agent_codex", "Codex", BotState.IDLE, "", 0, 0, 0L)
-        val glance = GlanceBuilder.build(true, com.coucou.android.link.LinkState.CONNECTED, "PC", sessions, 0) { it }
+        val glance = GlanceBuilder.build(true, com.nxisland.android.link.LinkState.CONNECTED, "PC", sessions, 0) { it }
         val content = WidgetData.build(glance, sessions, nameOf = { it })
         assertTrue(content.tiles.size <= WidgetData.MAX_ROWS)
         assertTrue(content.roster.any { it.pillId == "agent_codex" })

@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -11,7 +11,7 @@ import org.junit.Test
  * sources). The point of the redesign here: no raw command on screen unless asked for, and nothing about Allow gets weaker.
  */
 class SheetsTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
     private val sheets get() = src("ui/Sheets.kt")
     private val main get() = src("MainActivity.kt")
 

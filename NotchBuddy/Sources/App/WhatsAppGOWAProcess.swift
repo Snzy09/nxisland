@@ -2,10 +2,10 @@
 import Foundation
 
 // GitHub build only (#if !APPSTORE): the App Store build is sandboxed and may not run
-// another program. Starts the GOWA binary the user picked as a child of Coucou, on the
-// address set in Settings, and stops it when Coucou quits.
+// another program. Starts the GOWA binary the user picked as a child of NxIsland, on the
+// address set in Settings, and stops it when NxIsland quits.
 
-/// GOWA launched by Coucou ("Start GOWA automatically" in Settings).
+/// GOWA launched by NxIsland ("Start GOWA automatically" in Settings).
 @MainActor
 final class WhatsAppGOWAProcess {
     static let shared = WhatsAppGOWAProcess()
@@ -26,11 +26,11 @@ final class WhatsAppGOWAProcess {
 
     var isRunning: Bool { process?.isRunning == true }
 
-    /// Where GOWA keeps its own WhatsApp session (its database, not Coucou's): one folder in
+    /// Where GOWA keeps its own WhatsApp session (its database, not NxIsland's): one folder in
     /// Application Support, so the link survives restarts.
     nonisolated static var workingDirectory: URL {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        return base.appendingPathComponent("Coucou/GOWA", isDirectory: true)
+        return base.appendingPathComponent("NxIsland/GOWA", isDirectory: true)
     }
 
     /// What the running GOWA was started with: changed, it is restarted; same, left alone.
@@ -69,7 +69,7 @@ final class WhatsAppGOWAProcess {
         var env = ProcessInfo.processInfo.environment
         // The credential goes through the environment, not the command line (`ps` shows that).
         if credential.contains(":") { env["APP_BASIC_AUTH"] = credential }
-        // GOWA's own web dashboard is not needed (Coucou is the interface): it would fetch
+        // GOWA's own web dashboard is not needed (NxIsland is the interface): it would fetch
         // itself from GitHub at each start.
         env["APP_UI_ENABLED"] = "false"
         p.environment = env
@@ -95,7 +95,7 @@ final class WhatsAppGOWAProcess {
         }
     }
 
-    /// Stops GOWA if Coucou started it, waiting a second at most for it to go (at quit, or
+    /// Stops GOWA if NxIsland started it, waiting a second at most for it to go (at quit, or
     /// before starting it again so two never share its database).
     func stopNow() {
         launchedWith = nil

@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
@@ -11,7 +11,7 @@ import java.security.cert.CertificateException
 class PairingTest {
     private val fp = "ab".repeat(32)
     private val token = "A1b2C3d4E5f6G7h8I9j0"
-    private val good = "coucou://pair?v=1&host=192.168.1.20&port=47821&fp=$fp&token=$token&name=My%20PC"
+    private val good = "nxisland://pair?v=1&host=192.168.1.20&port=47821&fp=$fp&token=$token&name=My%20PC"
 
     @Test fun parsesAWellFormedLink() {
         val p = PairingPayload.parse(good)!!
@@ -28,7 +28,7 @@ class PairingTest {
 
     @Test fun rejectsEverythingElse() {
         val bad = listOf(
-            "", "https://pair?v=1", "coucou://other?v=1&host=h&port=1&fp=$fp&token=$token",
+            "", "https://pair?v=1", "nxisland://other?v=1&host=h&port=1&fp=$fp&token=$token",
             good.replace("v=1", "v=2"), good.replace("port=47821", "port=0"), good.replace("port=47821", "port=70000"),
             good.replace("port=47821", "port=abc"), good.replace("fp=$fp", "fp=short"), good.replace("host=192.168.1.20&", ""),
             good.replace("token=$token", "token=short"), good.replace("token=$token", "token=${"a".repeat(129)}"),

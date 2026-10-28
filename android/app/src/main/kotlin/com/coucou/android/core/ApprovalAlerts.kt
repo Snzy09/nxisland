@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * How a request for permission buzzes the phone. The approval is never muted or hidden by any of these choices: it is always a

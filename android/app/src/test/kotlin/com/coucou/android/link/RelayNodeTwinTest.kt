@@ -1,4 +1,4 @@
-package com.coucou.android.link
+package com.nxisland.android.link
 
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -49,7 +49,7 @@ class RelayNodeTwinTest {
     private inner class Host(k: RelayCrypto.PairingKey = key) : AutoCloseable {
         val ws: WsConnection = WsClient.open(
             RelayUrl.parse("ws://127.0.0.1:$port")!!, "/v1/room/$room?role=pc",
-            listOf("Authorization" to "Bearer $access"), listOf("coucou.v1", "coucou.join.${RelayCrypto.joinProof(k)}"),
+            listOf("Authorization" to "Bearer $access"), listOf("nxisland.v1", "nxisland.join.${RelayCrypto.joinProof(k)}"),
             3_000, RelayCrypto.MAX_FRAME + 1024,
         )
         val lines = LinkedBlockingQueue<String>()

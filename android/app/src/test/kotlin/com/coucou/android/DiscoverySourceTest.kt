@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertEquals
@@ -8,7 +8,7 @@ import org.junit.Test
 
 /** Guards for the Android side of "finding the computer again" (system pieces cannot run in a JVM test, so these read the sources). */
 class DiscoverySourceTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
     private val nsd get() = src("app/NsdDiscovery.kt")
     private val model get() = src("app/AppModel.kt")
     private val discovery get() = src("link/Discovery.kt")

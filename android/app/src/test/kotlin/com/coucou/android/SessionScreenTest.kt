@@ -1,4 +1,4 @@
-package com.coucou.android
+package com.nxisland.android
 
 import java.io.File
 import org.junit.Assert.assertFalse
@@ -7,7 +7,7 @@ import org.junit.Test
 
 /** Source-level guards for the session detail screen (Compose cannot be rendered in a JVM test). */
 class SessionScreenTest {
-    private fun src(name: String) = File("src/main/kotlin/com/coucou/android/$name").readText()
+    private fun src(name: String) = File("src/main/kotlin/com/nxisland/android/$name").readText()
     private val strings get() = File("src/main/res/values/strings.xml").readText()
 
     @Test fun theCardOpensTheDetailsOnlyWhenTheyExist() {

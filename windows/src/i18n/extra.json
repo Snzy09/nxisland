@@ -40,18 +40,18 @@
       "de": "+ Unteragent",
       "tr": "+ alt ajan"
     },
-    "A hook group named \"coucou\" that Coucou did not write is already there — Coucou has not touched it.": {
-      "zh-Hans": "已存在一个并非 Coucou 写入的名为“coucou”的 hook 组 — Coucou 没有修改它。",
-      "hi": "“coucou” नाम का एक hook समूह पहले से है जिसे Coucou ने नहीं लिखा — Coucou ने इसे नहीं छुआ।",
-      "es": "Ya existe un grupo de hooks llamado «coucou» que no escribió Coucou — Coucou no lo ha tocado.",
-      "ar": "توجد بالفعل مجموعة hooks باسم «coucou» لم يكتبها Coucou — لم يمسّها Coucou.",
-      "fr": "Un groupe de hooks nommé « coucou » que Coucou n'a pas écrit existe déjà — Coucou n'y a pas touché.",
-      "bn": "“coucou” নামে একটি hook গ্রুপ আগে থেকেই আছে যা Coucou লেখেনি — Coucou এতে হাত দেয়নি।",
-      "pt-BR": "Já existe um grupo de hooks chamado “coucou” que não foi escrito pelo Coucou — o Coucou não mexeu nele.",
-      "ru": "Уже есть группа хуков «coucou», которую написал не Coucou, — Coucou её не трогал.",
-      "id": "Sudah ada grup hook bernama “coucou” yang tidak ditulis Coucou — Coucou tidak menyentuhnya.",
-      "de": "Eine nicht von Coucou erstellte Hook-Gruppe namens \"coucou\" ist bereits vorhanden — Coucou hat sie nicht verändert.",
-      "tr": "Coucou'nun oluşturmadığı \"coucou\" adlı bir hook grubu zaten var — Coucou bunu değiştirmedi."
+    "A hook group named \"nxisland\" that NxIsland did not write is already there — NxIsland has not touched it.": {
+      "zh-Hans": "已存在一个并非 NxIsland 写入的名为“nxisland”的 hook 组 — NxIsland 没有修改它。",
+      "hi": "“nxisland” नाम का एक hook समूह पहले से है जिसे NxIsland ने नहीं लिखा — NxIsland ने इसे नहीं छुआ।",
+      "es": "Ya existe un grupo de hooks llamado «nxisland» que no escribió NxIsland — NxIsland no lo ha tocado.",
+      "ar": "توجد بالفعل مجموعة hooks باسم «nxisland» لم يكتبها NxIsland — لم يمسّها NxIsland.",
+      "fr": "Un groupe de hooks nommé « nxisland » que NxIsland n'a pas écrit existe déjà — NxIsland n'y a pas touché.",
+      "bn": "“nxisland” নামে একটি hook গ্রুপ আগে থেকেই আছে যা NxIsland লেখেনি — NxIsland এতে হাত দেয়নি।",
+      "pt-BR": "Já existe um grupo de hooks chamado “nxisland” que não foi escrito pelo NxIsland — o NxIsland não mexeu nele.",
+      "ru": "Уже есть группа хуков «nxisland», которую написал не NxIsland, — NxIsland её не трогал.",
+      "id": "Sudah ada grup hook bernama “nxisland” yang tidak ditulis NxIsland — NxIsland tidak menyentuhnya.",
+      "de": "Eine nicht von NxIsland erstellte Hook-Gruppe namens \"nxisland\" ist bereits vorhanden — NxIsland hat sie nicht verändert.",
+      "tr": "NxIsland'nun oluşturmadığı \"nxisland\" adlı bir hook grubu zaten var — NxIsland bunu değiştirmedi."
     },
     "API error {code}": {
       "zh-Hans": "API 错误 {code}",
@@ -547,44 +547,44 @@
       "de": "Bilder können hier nicht kopiert werden — verwende Bild speichern.",
       "tr": "Burada görsel kopyalanamıyor — Görseli kaydet seçeneğini kullan."
     },
-    "Coucou could not list the agents.": {
-      "zh-Hans": "Coucou 无法列出代理。",
-      "hi": "Coucou एजेंटों की सूची नहीं बना सका।",
-      "es": "Coucou no pudo listar los agentes.",
-      "ar": "تعذّر على Coucou سرد الوكلاء.",
-      "fr": "Coucou n'a pas pu lister les agents.",
-      "bn": "Coucou এজেন্টদের তালিকা করতে পারেনি।",
-      "pt-BR": "O Coucou não conseguiu listar os agentes.",
-      "ru": "Coucou не удалось получить список агентов.",
-      "id": "Coucou tidak dapat menampilkan daftar agen.",
-      "de": "Coucou konnte die Agenten nicht auflisten.",
-      "tr": "Coucou ajanları listeleyemedi."
+    "NxIsland could not list the agents.": {
+      "zh-Hans": "NxIsland 无法列出代理。",
+      "hi": "NxIsland एजेंटों की सूची नहीं बना सका।",
+      "es": "NxIsland no pudo listar los agentes.",
+      "ar": "تعذّر على NxIsland سرد الوكلاء.",
+      "fr": "NxIsland n'a pas pu lister les agents.",
+      "bn": "NxIsland এজেন্টদের তালিকা করতে পারেনি।",
+      "pt-BR": "O NxIsland não conseguiu listar os agentes.",
+      "ru": "NxIsland не удалось получить список агентов.",
+      "id": "NxIsland tidak dapat menampilkan daftar agen.",
+      "de": "NxIsland konnte die Agenten nicht auflisten.",
+      "tr": "NxIsland ajanları listeleyemedi."
     },
-    "Coucou counts your agent sessions as they happen — check back next Monday.": {
-      "zh-Hans": "Coucou 会实时统计你的代理会话 — 下周一再来看看吧。",
-      "hi": "Coucou आपके एजेंट सत्रों को होते-होते गिनता है — अगले सोमवार फिर देखें।",
-      "es": "Coucou cuenta tus sesiones de agentes a medida que ocurren — vuelve el próximo lunes.",
-      "ar": "يحسب Coucou جلسات وكلائك أثناء حدوثها — عُد يوم الاثنين القادم.",
-      "fr": "Coucou compte tes sessions d'agents au fil de l'eau — reviens lundi prochain.",
-      "bn": "Coucou আপনার এজেন্ট সেশন ঘটার সঙ্গে সঙ্গে গোনে — পরের সোমবার আবার দেখুন।",
-      "pt-BR": "O Coucou conta suas sessões de agentes conforme acontecem — volte na próxima segunda-feira.",
-      "ru": "Coucou считает ваши сессии агентов по ходу дела — загляните в следующий понедельник.",
-      "id": "Coucou menghitung sesi agen Anda saat berlangsung — cek lagi Senin depan.",
-      "de": "Coucou zählt deine Agentensitzungen mit — schau nächsten Montag wieder vorbei.",
-      "tr": "Coucou ajan oturumlarını gerçekleştiği sırada sayar — gelecek pazartesi tekrar bak."
+    "NxIsland counts your agent sessions as they happen — check back next Monday.": {
+      "zh-Hans": "NxIsland 会实时统计你的代理会话 — 下周一再来看看吧。",
+      "hi": "NxIsland आपके एजेंट सत्रों को होते-होते गिनता है — अगले सोमवार फिर देखें।",
+      "es": "NxIsland cuenta tus sesiones de agentes a medida que ocurren — vuelve el próximo lunes.",
+      "ar": "يحسب NxIsland جلسات وكلائك أثناء حدوثها — عُد يوم الاثنين القادم.",
+      "fr": "NxIsland compte tes sessions d'agents au fil de l'eau — reviens lundi prochain.",
+      "bn": "NxIsland আপনার এজেন্ট সেশন ঘটার সঙ্গে সঙ্গে গোনে — পরের সোমবার আবার দেখুন।",
+      "pt-BR": "O NxIsland conta suas sessões de agentes conforme acontecem — volte na próxima segunda-feira.",
+      "ru": "NxIsland считает ваши сессии агентов по ходу дела — загляните в следующий понедельник.",
+      "id": "NxIsland menghitung sesi agen Anda saat berlangsung — cek lagi Senin depan.",
+      "de": "NxIsland zählt deine Agentensitzungen mit — schau nächsten Montag wieder vorbei.",
+      "tr": "NxIsland ajan oturumlarını gerçekleştiği sırada sayar — gelecek pazartesi tekrar bak."
     },
-    "Coucou is hooked into your Claude Code sessions. Tool calls, questions and permission requests show up in the island, and you can answer them there.": {
-      "zh-Hans": "Coucou 已接入你的 Claude Code 会话。工具调用、问题和权限请求都会显示在岛中，你可以直接在那里回应。",
-      "hi": "Coucou आपके Claude Code सत्रों से जुड़ा है। टूल कॉल, प्रश्न और अनुमति अनुरोध आइलैंड में दिखते हैं, और आप वहीं उनका जवाब दे सकते हैं।",
-      "es": "Coucou está conectado a tus sesiones de Claude Code. Las llamadas a herramientas, las preguntas y las solicitudes de permiso aparecen en la isla y puedes responderlas ahí.",
-      "ar": "Coucou متصل بجلسات Claude Code لديك. تظهر استدعاءات الأدوات والأسئلة وطلبات الإذن في الشريط، ويمكنك الرد عليها من هناك.",
-      "fr": "Coucou est branché sur tes sessions Claude Code. Les appels d'outils, les questions et les demandes de permission s'affichent dans l'île, et tu peux y répondre directement.",
-      "bn": "Coucou আপনার Claude Code সেশনের সঙ্গে যুক্ত। টুল কল, প্রশ্ন আর অনুমতির অনুরোধ আইল্যান্ডে দেখা যায়, এবং আপনি সেখানেই উত্তর দিতে পারেন।",
-      "pt-BR": "O Coucou está conectado às suas sessões do Claude Code. Chamadas de ferramentas, perguntas e pedidos de permissão aparecem na ilha, e você pode respondê-los ali.",
-      "ru": "Coucou подключён к вашим сессиям Claude Code. Вызовы инструментов, вопросы и запросы разрешений появляются в острове, и отвечать можно прямо там.",
-      "id": "Coucou terhubung ke sesi Claude Code Anda. Panggilan alat, pertanyaan, dan permintaan izin muncul di pulau, dan Anda bisa menjawabnya di sana.",
-      "de": "Coucou ist mit deinen Claude Code-Sitzungen verbunden. Werkzeugaufrufe, Fragen und Berechtigungsanfragen erscheinen in der Insel und können dort beantwortet werden.",
-      "tr": "Coucou, Claude Code oturumlarına bağlı. Araç çağrıları, sorular ve izin istekleri adada görünür; bunları oradan yanıtlayabilirsin."
+    "NxIsland is hooked into your Claude Code sessions. Tool calls, questions and permission requests show up in the island, and you can answer them there.": {
+      "zh-Hans": "NxIsland 已接入你的 Claude Code 会话。工具调用、问题和权限请求都会显示在岛中，你可以直接在那里回应。",
+      "hi": "NxIsland आपके Claude Code सत्रों से जुड़ा है। टूल कॉल, प्रश्न और अनुमति अनुरोध आइलैंड में दिखते हैं, और आप वहीं उनका जवाब दे सकते हैं।",
+      "es": "NxIsland está conectado a tus sesiones de Claude Code. Las llamadas a herramientas, las preguntas y las solicitudes de permiso aparecen en la isla y puedes responderlas ahí.",
+      "ar": "NxIsland متصل بجلسات Claude Code لديك. تظهر استدعاءات الأدوات والأسئلة وطلبات الإذن في الشريط، ويمكنك الرد عليها من هناك.",
+      "fr": "NxIsland est branché sur tes sessions Claude Code. Les appels d'outils, les questions et les demandes de permission s'affichent dans l'île, et tu peux y répondre directement.",
+      "bn": "NxIsland আপনার Claude Code সেশনের সঙ্গে যুক্ত। টুল কল, প্রশ্ন আর অনুমতির অনুরোধ আইল্যান্ডে দেখা যায়, এবং আপনি সেখানেই উত্তর দিতে পারেন।",
+      "pt-BR": "O NxIsland está conectado às suas sessões do Claude Code. Chamadas de ferramentas, perguntas e pedidos de permissão aparecem na ilha, e você pode respondê-los ali.",
+      "ru": "NxIsland подключён к вашим сессиям Claude Code. Вызовы инструментов, вопросы и запросы разрешений появляются в острове, и отвечать можно прямо там.",
+      "id": "NxIsland terhubung ke sesi Claude Code Anda. Panggilan alat, pertanyaan, dan permintaan izin muncul di pulau, dan Anda bisa menjawabnya di sana.",
+      "de": "NxIsland ist mit deinen Claude Code-Sitzungen verbunden. Werkzeugaufrufe, Fragen und Berechtigungsanfragen erscheinen in der Insel und können dort beantwortet werden.",
+      "tr": "NxIsland, Claude Code oturumlarına bağlı. Araç çağrıları, sorular ve izin istekleri adada görünür; bunları oradan yanıtlayabilirsin."
     },
     "Could not remove {path}: {error}": {
       "zh-Hans": "无法删除 {path}：{error}",
@@ -2146,44 +2146,44 @@
       "de": "Im Ordner anzeigen",
       "tr": "Klasörde göster"
     },
-    "Show other coding agents in the island. Coucou adds its entries to each agent's own config: you see the exact change and where the backup goes before anything is written, and uninstalling removes only what Coucou added.": {
-      "zh-Hans": "在岛中显示其他编程代理。Coucou 会把自己的条目添加到各代理的配置中：写入之前，你会看到确切的改动和备份位置；卸载只会移除 Coucou 添加的内容。",
-      "hi": "दूसरे कोडिंग एजेंटों को आइलैंड में दिखाएँ। Coucou हर एजेंट की अपनी कॉन्फ़िग में अपनी प्रविष्टियाँ जोड़ता है: कुछ भी लिखे जाने से पहले आप सटीक बदलाव और बैकअप की जगह देखते हैं, और अनइंस्टॉल करने पर केवल वही हटता है जो Coucou ने जोड़ा था।",
-      "es": "Muestra otros agentes de programación en la isla. Coucou añade sus entradas a la configuración de cada agente: ves el cambio exacto y dónde va la copia de seguridad antes de que se escriba nada, y al desinstalar solo se quita lo que añadió Coucou.",
-      "ar": "اعرض وكلاء البرمجة الآخرين في الشريط. يضيف Coucou إدخالاته إلى إعدادات كل وكيل: ترى التغيير بالضبط ومكان النسخة الاحتياطية قبل كتابة أي شيء، وإلغاء التثبيت يزيل فقط ما أضافه Coucou.",
-      "fr": "Affiche les autres agents de code dans l'île. Coucou ajoute ses entrées à la configuration de chaque agent : tu vois la modification exacte et l'emplacement de la sauvegarde avant que quoi que ce soit soit écrit, et la désinstallation ne retire que ce que Coucou a ajouté.",
-      "bn": "অন্যান্য কোডিং এজেন্টকে আইল্যান্ডে দেখান। Coucou প্রতিটি এজেন্টের নিজস্ব কনফিগে তার এন্ট্রি যোগ করে: কিছু লেখার আগে আপনি সঠিক পরিবর্তন এবং ব্যাকআপ কোথায় যাবে তা দেখতে পান, আর আনইনস্টল করলে শুধু Coucou যা যোগ করেছিল তা-ই সরানো হয়।",
-      "pt-BR": "Mostre outros agentes de programação na ilha. O Coucou adiciona as próprias entradas à configuração de cada agente: você vê a alteração exata e para onde vai o backup antes de qualquer gravação, e desinstalar remove só o que o Coucou adicionou.",
-      "ru": "Показывайте другие агенты для кода в острове. Coucou добавляет свои записи в конфигурацию каждого агента: до любой записи вы видите точное изменение и куда пойдёт резервная копия, а удаление убирает только то, что добавил Coucou.",
-      "id": "Tampilkan agen coding lain di pulau. Coucou menambahkan entrinya ke konfigurasi masing-masing agen: Anda melihat perubahan persisnya dan lokasi cadangan sebelum apa pun ditulis, dan mencopot pemasangan hanya menghapus yang ditambahkan Coucou.",
-      "de": "Zeige weitere Programmieragenten in der Insel. Coucou ergänzt Einträge in der jeweiligen Agentenkonfiguration: Du siehst die genaue Änderung und den Backup-Pfad, bevor etwas geschrieben wird. Beim Deinstallieren wird nur entfernt, was Coucou hinzugefügt hat.",
-      "tr": "Diğer kodlama ajanlarını adada göster. Coucou kendi girdilerini her ajanın yapılandırmasına ekler: herhangi bir şey yazılmadan önce tam değişikliği ve yedeğin konumunu görürsün. Kaldırıldığında yalnızca Coucou'nun ekledikleri silinir."
+    "Show other coding agents in the island. NxIsland adds its entries to each agent's own config: you see the exact change and where the backup goes before anything is written, and uninstalling removes only what NxIsland added.": {
+      "zh-Hans": "在岛中显示其他编程代理。NxIsland 会把自己的条目添加到各代理的配置中：写入之前，你会看到确切的改动和备份位置；卸载只会移除 NxIsland 添加的内容。",
+      "hi": "दूसरे कोडिंग एजेंटों को आइलैंड में दिखाएँ। NxIsland हर एजेंट की अपनी कॉन्फ़िग में अपनी प्रविष्टियाँ जोड़ता है: कुछ भी लिखे जाने से पहले आप सटीक बदलाव और बैकअप की जगह देखते हैं, और अनइंस्टॉल करने पर केवल वही हटता है जो NxIsland ने जोड़ा था।",
+      "es": "Muestra otros agentes de programación en la isla. NxIsland añade sus entradas a la configuración de cada agente: ves el cambio exacto y dónde va la copia de seguridad antes de que se escriba nada, y al desinstalar solo se quita lo que añadió NxIsland.",
+      "ar": "اعرض وكلاء البرمجة الآخرين في الشريط. يضيف NxIsland إدخالاته إلى إعدادات كل وكيل: ترى التغيير بالضبط ومكان النسخة الاحتياطية قبل كتابة أي شيء، وإلغاء التثبيت يزيل فقط ما أضافه NxIsland.",
+      "fr": "Affiche les autres agents de code dans l'île. NxIsland ajoute ses entrées à la configuration de chaque agent : tu vois la modification exacte et l'emplacement de la sauvegarde avant que quoi que ce soit soit écrit, et la désinstallation ne retire que ce que NxIsland a ajouté.",
+      "bn": "অন্যান্য কোডিং এজেন্টকে আইল্যান্ডে দেখান। NxIsland প্রতিটি এজেন্টের নিজস্ব কনফিগে তার এন্ট্রি যোগ করে: কিছু লেখার আগে আপনি সঠিক পরিবর্তন এবং ব্যাকআপ কোথায় যাবে তা দেখতে পান, আর আনইনস্টল করলে শুধু NxIsland যা যোগ করেছিল তা-ই সরানো হয়।",
+      "pt-BR": "Mostre outros agentes de programação na ilha. O NxIsland adiciona as próprias entradas à configuração de cada agente: você vê a alteração exata e para onde vai o backup antes de qualquer gravação, e desinstalar remove só o que o NxIsland adicionou.",
+      "ru": "Показывайте другие агенты для кода в острове. NxIsland добавляет свои записи в конфигурацию каждого агента: до любой записи вы видите точное изменение и куда пойдёт резервная копия, а удаление убирает только то, что добавил NxIsland.",
+      "id": "Tampilkan agen coding lain di pulau. NxIsland menambahkan entrinya ke konfigurasi masing-masing agen: Anda melihat perubahan persisnya dan lokasi cadangan sebelum apa pun ditulis, dan mencopot pemasangan hanya menghapus yang ditambahkan NxIsland.",
+      "de": "Zeige weitere Programmieragenten in der Insel. NxIsland ergänzt Einträge in der jeweiligen Agentenkonfiguration: Du siehst die genaue Änderung und den Backup-Pfad, bevor etwas geschrieben wird. Beim Deinstallieren wird nur entfernt, was NxIsland hinzugefügt hat.",
+      "tr": "Diğer kodlama ajanlarını adada göster. NxIsland kendi girdilerini her ajanın yapılandırmasına ekler: herhangi bir şey yazılmadan önce tam değişikliği ve yedeğin konumunu görürsün. Kaldırıldığında yalnızca NxIsland'nun ekledikleri silinir."
     },
-    "Shows your Claude plan usage (5-hour and weekly limits) in the island's header. Coucou adds a status line relay in ~/.claude/settings.json. If you already have a status line, it keeps working as before. Pro and Max plans only.": {
-      "zh-Hans": "在岛的顶栏显示你的 Claude 套餐用量（5 小时和每周限额）。Coucou 会在 ~/.claude/settings.json 中添加一个状态栏中继。如果你已有状态栏，它会照常工作。仅限 Pro 和 Max 套餐。",
-      "hi": "आइलैंड के हेडर में आपके Claude प्लान का उपयोग (5 घंटे और साप्ताहिक सीमा) दिखाता है। Coucou ~/.claude/settings.json में एक स्टेटस लाइन रिले जोड़ता है। अगर आपके पास पहले से स्टेटस लाइन है, तो वह पहले की तरह चलती रहेगी। केवल Pro और Max प्लान।",
-      "es": "Muestra el uso de tu plan de Claude (límites de 5 horas y semanal) en la cabecera de la isla. Coucou añade un relay de línea de estado en ~/.claude/settings.json. Si ya tienes una línea de estado, sigue funcionando como antes. Solo planes Pro y Max.",
-      "ar": "يعرض استخدام خطة Claude (حدّا الخمس ساعات والأسبوع) في رأس الشريط. يضيف Coucou مُرحِّلًا لسطر الحالة في ~/.claude/settings.json. إن كان لديك سطر حالة فسيستمر في العمل كما كان. لخطتَي Pro وMax فقط.",
-      "fr": "Affiche l'utilisation de ton forfait Claude (limites sur 5 heures et à la semaine) dans l'en-tête de l'île. Coucou ajoute un relais de ligne d'état dans ~/.claude/settings.json. Si tu as déjà une ligne d'état, elle continue de fonctionner comme avant. Forfaits Pro et Max uniquement.",
-      "bn": "আইল্যান্ডের হেডারে আপনার Claude প্ল্যানের ব্যবহার (৫ ঘণ্টা ও সাপ্তাহিক সীমা) দেখায়। Coucou ~/.claude/settings.json-এ একটি স্ট্যাটাস লাইন রিলে যোগ করে। আপনার আগে থেকে স্ট্যাটাস লাইন থাকলে সেটি আগের মতোই চলবে। শুধু Pro ও Max প্ল্যান।",
-      "pt-BR": "Mostra o uso do seu plano Claude (limites de 5 horas e semanal) no cabeçalho da ilha. O Coucou adiciona um relay de linha de status em ~/.claude/settings.json. Se você já tem uma linha de status, ela continua funcionando como antes. Apenas planos Pro e Max.",
-      "ru": "Показывает использование тарифа Claude (лимиты на 5 часов и на неделю) в заголовке острова. Coucou добавляет ретранслятор строки состояния в ~/.claude/settings.json. Если у вас уже есть строка состояния, она работает как прежде. Только тарифы Pro и Max.",
-      "id": "Menampilkan pemakaian paket Claude Anda (batas 5 jam dan mingguan) di header pulau. Coucou menambahkan relay baris status di ~/.claude/settings.json. Jika Anda sudah punya baris status, baris itu tetap berjalan seperti biasa. Khusus paket Pro dan Max.",
-      "de": "Zeigt deine Claude-Tarifnutzung (5-Stunden- und Wochenlimits) im Insel-Kopfbereich. Coucou ergänzt einen Statuszeilen-Relay in ~/.claude/settings.json. Eine bestehende Statuszeile funktioniert wie bisher. Nur für Pro- und Max-Tarife.",
-      "tr": "Claude plan kullanımını (5 saatlik ve haftalık sınırlar) adanın başlığında gösterir. Coucou, ~/.claude/settings.json içine bir durum satırı aracısı ekler. Mevcut durum satırın varsa eskisi gibi çalışmaya devam eder. Yalnızca Pro ve Max planları için."
+    "Shows your Claude plan usage (5-hour and weekly limits) in the island's header. NxIsland adds a status line relay in ~/.claude/settings.json. If you already have a status line, it keeps working as before. Pro and Max plans only.": {
+      "zh-Hans": "在岛的顶栏显示你的 Claude 套餐用量（5 小时和每周限额）。NxIsland 会在 ~/.claude/settings.json 中添加一个状态栏中继。如果你已有状态栏，它会照常工作。仅限 Pro 和 Max 套餐。",
+      "hi": "आइलैंड के हेडर में आपके Claude प्लान का उपयोग (5 घंटे और साप्ताहिक सीमा) दिखाता है। NxIsland ~/.claude/settings.json में एक स्टेटस लाइन रिले जोड़ता है। अगर आपके पास पहले से स्टेटस लाइन है, तो वह पहले की तरह चलती रहेगी। केवल Pro और Max प्लान।",
+      "es": "Muestra el uso de tu plan de Claude (límites de 5 horas y semanal) en la cabecera de la isla. NxIsland añade un relay de línea de estado en ~/.claude/settings.json. Si ya tienes una línea de estado, sigue funcionando como antes. Solo planes Pro y Max.",
+      "ar": "يعرض استخدام خطة Claude (حدّا الخمس ساعات والأسبوع) في رأس الشريط. يضيف NxIsland مُرحِّلًا لسطر الحالة في ~/.claude/settings.json. إن كان لديك سطر حالة فسيستمر في العمل كما كان. لخطتَي Pro وMax فقط.",
+      "fr": "Affiche l'utilisation de ton forfait Claude (limites sur 5 heures et à la semaine) dans l'en-tête de l'île. NxIsland ajoute un relais de ligne d'état dans ~/.claude/settings.json. Si tu as déjà une ligne d'état, elle continue de fonctionner comme avant. Forfaits Pro et Max uniquement.",
+      "bn": "আইল্যান্ডের হেডারে আপনার Claude প্ল্যানের ব্যবহার (৫ ঘণ্টা ও সাপ্তাহিক সীমা) দেখায়। NxIsland ~/.claude/settings.json-এ একটি স্ট্যাটাস লাইন রিলে যোগ করে। আপনার আগে থেকে স্ট্যাটাস লাইন থাকলে সেটি আগের মতোই চলবে। শুধু Pro ও Max প্ল্যান।",
+      "pt-BR": "Mostra o uso do seu plano Claude (limites de 5 horas e semanal) no cabeçalho da ilha. O NxIsland adiciona um relay de linha de status em ~/.claude/settings.json. Se você já tem uma linha de status, ela continua funcionando como antes. Apenas planos Pro e Max.",
+      "ru": "Показывает использование тарифа Claude (лимиты на 5 часов и на неделю) в заголовке острова. NxIsland добавляет ретранслятор строки состояния в ~/.claude/settings.json. Если у вас уже есть строка состояния, она работает как прежде. Только тарифы Pro и Max.",
+      "id": "Menampilkan pemakaian paket Claude Anda (batas 5 jam dan mingguan) di header pulau. NxIsland menambahkan relay baris status di ~/.claude/settings.json. Jika Anda sudah punya baris status, baris itu tetap berjalan seperti biasa. Khusus paket Pro dan Max.",
+      "de": "Zeigt deine Claude-Tarifnutzung (5-Stunden- und Wochenlimits) im Insel-Kopfbereich. NxIsland ergänzt einen Statuszeilen-Relay in ~/.claude/settings.json. Eine bestehende Statuszeile funktioniert wie bisher. Nur für Pro- und Max-Tarife.",
+      "tr": "Claude plan kullanımını (5 saatlik ve haftalık sınırlar) adanın başlığında gösterir. NxIsland, ~/.claude/settings.json içine bir durum satırı aracısı ekler. Mevcut durum satırın varsa eskisi gibi çalışmaya devam eder. Yalnızca Pro ve Max planları için."
     },
-    "Shows your Codex plan usage (weekly limit and free resets left) in the island's header. Coucou asks the Codex CLI (codex app-server) when the pill shows; nothing is installed. Codex must be signed in with ChatGPT.": {
-      "zh-Hans": "在岛的顶栏显示你的 Codex 套餐用量（每周限额和剩余的免费重置次数）。标签显示时，Coucou 会询问 Codex CLI（codex app-server），不会安装任何东西。Codex 必须已用 ChatGPT 登录。",
-      "hi": "आइलैंड के हेडर में आपके Codex प्लान का उपयोग (साप्ताहिक सीमा और बचे मुफ़्त रीसेट) दिखाता है। टैब दिखने पर Coucou Codex CLI (codex app-server) से पूछता है; कुछ भी इंस्टॉल नहीं होता। Codex में ChatGPT से साइन इन होना ज़रूरी है।",
-      "es": "Muestra el uso de tu plan de Codex (límite semanal y reinicios gratuitos restantes) en la cabecera de la isla. Coucou consulta a la CLI de Codex (codex app-server) cuando aparece la pestaña; no se instala nada. Codex debe tener la sesión iniciada con ChatGPT.",
-      "ar": "يعرض استخدام خطة Codex (الحد الأسبوعي وإعادات التعيين المجانية المتبقية) في رأس الشريط. يسأل Coucou واجهة Codex CLI (codex app-server) عند ظهور التبويب، ولا يُثبَّت أي شيء. يجب تسجيل الدخول إلى Codex بحساب ChatGPT.",
-      "fr": "Affiche l'utilisation de ton forfait Codex (limite hebdomadaire et réinitialisations gratuites restantes) dans l'en-tête de l'île. Coucou interroge la CLI Codex (codex app-server) quand l'onglet s'affiche ; rien n'est installé. Codex doit être connecté avec ChatGPT.",
-      "bn": "আইল্যান্ডের হেডারে আপনার Codex প্ল্যানের ব্যবহার (সাপ্তাহিক সীমা ও বাকি ফ্রি রিসেট) দেখায়। ট্যাব দেখা গেলে Coucou Codex CLI (codex app-server)-কে জিজ্ঞেস করে; কিছুই ইনস্টল হয় না। Codex-এ ChatGPT দিয়ে সাইন ইন থাকতে হবে।",
-      "pt-BR": "Mostra o uso do seu plano Codex (limite semanal e redefinições grátis restantes) no cabeçalho da ilha. O Coucou consulta a CLI do Codex (codex app-server) quando a aba aparece; nada é instalado. O Codex precisa estar conectado com o ChatGPT.",
-      "ru": "Показывает использование тарифа Codex (недельный лимит и оставшиеся бесплатные сбросы) в заголовке острова. Coucou спрашивает Codex CLI (codex app-server), когда видна вкладка; ничего не устанавливается. В Codex нужно войти через ChatGPT.",
-      "id": "Menampilkan pemakaian paket Codex Anda (batas mingguan dan sisa reset gratis) di header pulau. Coucou menanyakan Codex CLI (codex app-server) saat tab tampil; tidak ada yang dipasang. Codex harus masuk dengan ChatGPT.",
-      "de": "Zeigt deine Codex-Tarifnutzung (Wochenlimit und verbleibende kostenlose Zurücksetzungen) im Insel-Kopfbereich. Coucou fragt die Codex CLI (codex app-server) ab, wenn die Pill angezeigt wird; es wird nichts installiert. Codex muss mit ChatGPT angemeldet sein.",
-      "tr": "Codex plan kullanımını (haftalık sınır ve kalan ücretsiz sıfırlama hakları) adanın başlığında gösterir. Araç göründüğünde Coucou, Codex CLI'a (codex app-server) sorgu gönderir; hiçbir şey kurulmaz. Codex'te ChatGPT ile oturum açılmış olmalı."
+    "Shows your Codex plan usage (weekly limit and free resets left) in the island's header. NxIsland asks the Codex CLI (codex app-server) when the pill shows; nothing is installed. Codex must be signed in with ChatGPT.": {
+      "zh-Hans": "在岛的顶栏显示你的 Codex 套餐用量（每周限额和剩余的免费重置次数）。标签显示时，NxIsland 会询问 Codex CLI（codex app-server），不会安装任何东西。Codex 必须已用 ChatGPT 登录。",
+      "hi": "आइलैंड के हेडर में आपके Codex प्लान का उपयोग (साप्ताहिक सीमा और बचे मुफ़्त रीसेट) दिखाता है। टैब दिखने पर NxIsland Codex CLI (codex app-server) से पूछता है; कुछ भी इंस्टॉल नहीं होता। Codex में ChatGPT से साइन इन होना ज़रूरी है।",
+      "es": "Muestra el uso de tu plan de Codex (límite semanal y reinicios gratuitos restantes) en la cabecera de la isla. NxIsland consulta a la CLI de Codex (codex app-server) cuando aparece la pestaña; no se instala nada. Codex debe tener la sesión iniciada con ChatGPT.",
+      "ar": "يعرض استخدام خطة Codex (الحد الأسبوعي وإعادات التعيين المجانية المتبقية) في رأس الشريط. يسأل NxIsland واجهة Codex CLI (codex app-server) عند ظهور التبويب، ولا يُثبَّت أي شيء. يجب تسجيل الدخول إلى Codex بحساب ChatGPT.",
+      "fr": "Affiche l'utilisation de ton forfait Codex (limite hebdomadaire et réinitialisations gratuites restantes) dans l'en-tête de l'île. NxIsland interroge la CLI Codex (codex app-server) quand l'onglet s'affiche ; rien n'est installé. Codex doit être connecté avec ChatGPT.",
+      "bn": "আইল্যান্ডের হেডারে আপনার Codex প্ল্যানের ব্যবহার (সাপ্তাহিক সীমা ও বাকি ফ্রি রিসেট) দেখায়। ট্যাব দেখা গেলে NxIsland Codex CLI (codex app-server)-কে জিজ্ঞেস করে; কিছুই ইনস্টল হয় না। Codex-এ ChatGPT দিয়ে সাইন ইন থাকতে হবে।",
+      "pt-BR": "Mostra o uso do seu plano Codex (limite semanal e redefinições grátis restantes) no cabeçalho da ilha. O NxIsland consulta a CLI do Codex (codex app-server) quando a aba aparece; nada é instalado. O Codex precisa estar conectado com o ChatGPT.",
+      "ru": "Показывает использование тарифа Codex (недельный лимит и оставшиеся бесплатные сбросы) в заголовке острова. NxIsland спрашивает Codex CLI (codex app-server), когда видна вкладка; ничего не устанавливается. В Codex нужно войти через ChatGPT.",
+      "id": "Menampilkan pemakaian paket Codex Anda (batas mingguan dan sisa reset gratis) di header pulau. NxIsland menanyakan Codex CLI (codex app-server) saat tab tampil; tidak ada yang dipasang. Codex harus masuk dengan ChatGPT.",
+      "de": "Zeigt deine Codex-Tarifnutzung (Wochenlimit und verbleibende kostenlose Zurücksetzungen) im Insel-Kopfbereich. NxIsland fragt die Codex CLI (codex app-server) ab, wenn die Pill angezeigt wird; es wird nichts installiert. Codex muss mit ChatGPT angemeldet sein.",
+      "tr": "Codex plan kullanımını (haftalık sınır ve kalan ücretsiz sıfırlama hakları) adanın başlığında gösterir. Araç göründüğünde NxIsland, Codex CLI'a (codex app-server) sorgu gönderir; hiçbir şey kurulmaz. Codex'te ChatGPT ile oturum açılmış olmalı."
     },
     "Start a new Antigravity conversation to pick the hooks up.": {
       "zh-Hans": "开启新的 Antigravity 对话即可启用 hooks。",
@@ -2367,18 +2367,18 @@
       "de": "Der Relay ist noch nicht installiert.",
       "tr": "Aracı henüz kurulu değil."
     },
-    "The relay isn't installed yet. Restart Coucou.": {
-      "zh-Hans": "中继尚未安装。请重启 Coucou。",
-      "hi": "रिले अभी इंस्टॉल नहीं है। Coucou को फिर से शुरू करें।",
-      "es": "El relay aún no está instalado. Reinicia Coucou.",
-      "ar": "المُرحِّل غير مثبَّت بعد. أعد تشغيل Coucou.",
-      "fr": "Le relais n'est pas encore installé. Redémarre Coucou.",
-      "bn": "রিলে এখনো ইনস্টল হয়নি। Coucou আবার চালু করুন।",
-      "pt-BR": "O relay ainda não está instalado. Reinicie o Coucou.",
-      "ru": "Ретранслятор ещё не установлен. Перезапустите Coucou.",
-      "id": "Relay belum terpasang. Mulai ulang Coucou.",
-      "de": "Der Relay ist noch nicht installiert. Starte Coucou neu.",
-      "tr": "Aracı henüz kurulu değil. Coucou'yu yeniden başlat."
+    "The relay isn't installed yet. Restart NxIsland.": {
+      "zh-Hans": "中继尚未安装。请重启 NxIsland。",
+      "hi": "रिले अभी इंस्टॉल नहीं है। NxIsland को फिर से शुरू करें।",
+      "es": "El relay aún no está instalado. Reinicia NxIsland.",
+      "ar": "المُرحِّل غير مثبَّت بعد. أعد تشغيل NxIsland.",
+      "fr": "Le relais n'est pas encore installé. Redémarre NxIsland.",
+      "bn": "রিলে এখনো ইনস্টল হয়নি। NxIsland আবার চালু করুন।",
+      "pt-BR": "O relay ainda não está instalado. Reinicie o NxIsland.",
+      "ru": "Ретранслятор ещё не установлен. Перезапустите NxIsland.",
+      "id": "Relay belum terpasang. Mulai ulang NxIsland.",
+      "de": "Der Relay ist noch nicht installiert. Starte NxIsland neu.",
+      "tr": "Aracı henüz kurulu değil. NxIsland'yu yeniden başlat."
     },
     "The server refused the key. Check it, then connect again.": {
       "zh-Hans": "服务器拒绝了该密钥。请检查后重新连接。",
@@ -2471,18 +2471,18 @@
       "de": "Dies sind die genauen Änderungen in deiner settings.json. Deine eigenen Hooks bleiben unverändert.",
       "tr": "settings.json dosyanda yapılacak değişiklik tam olarak bu. Kendi hook'ların korunur."
     },
-    "This is exactly what will change: only the status line. If you already have one it keeps working, Coucou's relay runs it for you.": {
-      "zh-Hans": "这正是将发生的改动：只涉及状态栏。如果你已有状态栏，它会照常工作，由 Coucou 的中继替你运行。",
-      "hi": "ठीक यही बदलेगा: केवल स्टेटस लाइन। अगर आपके पास पहले से एक है तो वह चलती रहेगी, Coucou का रिले उसे आपके लिए चलाता है।",
-      "es": "Esto es exactamente lo que cambiará: solo la línea de estado. Si ya tienes una, sigue funcionando: el relay de Coucou la ejecuta por ti.",
-      "ar": "هذا بالضبط ما سيتغيّر: سطر الحالة فقط. إن كان لديك سطر حالة فسيستمر في العمل، إذ يشغّله مُرحِّل Coucou نيابةً عنك.",
-      "fr": "Voici exactement ce qui va changer : seulement la ligne d'état. Si tu en as déjà une, elle continue de fonctionner, le relais de Coucou la lance pour toi.",
-      "bn": "ঠিক এটাই বদলাবে: শুধু স্ট্যাটাস লাইন। আপনার আগে থেকে একটি থাকলে সেটি চলতেই থাকবে, Coucou-র রিলে আপনার হয়ে সেটি চালায়।",
-      "pt-BR": "Isto é exatamente o que vai mudar: apenas a linha de status. Se você já tem uma, ela continua funcionando: o relay do Coucou a executa para você.",
-      "ru": "Вот что именно изменится: только строка состояния. Если она у вас уже есть, она продолжит работать — её запускает ретранслятор Coucou.",
-      "id": "Inilah persisnya yang akan berubah: hanya baris status. Jika Anda sudah punya, baris itu tetap berjalan, relay Coucou menjalankannya untuk Anda.",
+    "This is exactly what will change: only the status line. If you already have one it keeps working, NxIsland's relay runs it for you.": {
+      "zh-Hans": "这正是将发生的改动：只涉及状态栏。如果你已有状态栏，它会照常工作，由 NxIsland 的中继替你运行。",
+      "hi": "ठीक यही बदलेगा: केवल स्टेटस लाइन। अगर आपके पास पहले से एक है तो वह चलती रहेगी, NxIsland का रिले उसे आपके लिए चलाता है।",
+      "es": "Esto es exactamente lo que cambiará: solo la línea de estado. Si ya tienes una, sigue funcionando: el relay de NxIsland la ejecuta por ti.",
+      "ar": "هذا بالضبط ما سيتغيّر: سطر الحالة فقط. إن كان لديك سطر حالة فسيستمر في العمل، إذ يشغّله مُرحِّل NxIsland نيابةً عنك.",
+      "fr": "Voici exactement ce qui va changer : seulement la ligne d'état. Si tu en as déjà une, elle continue de fonctionner, le relais de NxIsland la lance pour toi.",
+      "bn": "ঠিক এটাই বদলাবে: শুধু স্ট্যাটাস লাইন। আপনার আগে থেকে একটি থাকলে সেটি চলতেই থাকবে, NxIsland-র রিলে আপনার হয়ে সেটি চালায়।",
+      "pt-BR": "Isto é exatamente o que vai mudar: apenas a linha de status. Se você já tem uma, ela continua funcionando: o relay do NxIsland a executa para você.",
+      "ru": "Вот что именно изменится: только строка состояния. Если она у вас уже есть, она продолжит работать — её запускает ретранслятор NxIsland.",
+      "id": "Inilah persisnya yang akan berubah: hanya baris status. Jika Anda sudah punya, baris itu tetap berjalan, relay NxIsland menjalankannya untuk Anda.",
       "de": "Dies wird geändert: nur die Statuszeile. Eine vorhandene Statuszeile funktioniert weiterhin; Coucous Relay führt sie für dich aus.",
-      "tr": "Yapılacak değişiklik tam olarak bu: yalnızca durum satırı. Mevcut bir durum satırın varsa çalışmaya devam eder; Coucou'nun aracısı onu senin için çalıştırır."
+      "tr": "Yapılacak değişiklik tam olarak bu: yalnızca durum satırı. Mevcut bir durum satırın varsa çalışmaya devam eder; NxIsland'nun aracısı onu senin için çalıştırır."
     },
     "This puts your previous status line back, or removes the entry if there was none.": {
       "zh-Hans": "这会恢复你之前的状态栏；如果之前没有，则移除该条目。",
@@ -2497,31 +2497,31 @@
       "de": "Stellt deine vorherige Statuszeile wieder her oder entfernt den Eintrag, falls es vorher keinen gab.",
       "tr": "Önceki durum satırını geri yükler veya önceden yoksa girdiyi kaldırır."
     },
-    "This removes Coucou's entries only. Everything else stays.": {
-      "zh-Hans": "这只会移除 Coucou 的条目，其余内容保持不变。",
-      "hi": "यह केवल Coucou की प्रविष्टियाँ हटाता है। बाकी सब वैसा ही रहता है।",
-      "es": "Esto solo quita las entradas de Coucou. Todo lo demás se queda.",
-      "ar": "يزيل هذا إدخالات Coucou فقط. يبقى كل شيء آخر كما هو.",
-      "fr": "Seules les entrées de Coucou sont retirées. Tout le reste est conservé.",
-      "bn": "এটি শুধু Coucou-র এন্ট্রি সরায়। বাকি সব থেকে যায়।",
-      "pt-BR": "Isto remove apenas as entradas do Coucou. O resto continua.",
-      "ru": "Удаляются только записи Coucou. Всё остальное остаётся.",
-      "id": "Ini hanya menghapus entri Coucou. Yang lain tetap ada.",
+    "This removes NxIsland's entries only. Everything else stays.": {
+      "zh-Hans": "这只会移除 NxIsland 的条目，其余内容保持不变。",
+      "hi": "यह केवल NxIsland की प्रविष्टियाँ हटाता है। बाकी सब वैसा ही रहता है।",
+      "es": "Esto solo quita las entradas de NxIsland. Todo lo demás se queda.",
+      "ar": "يزيل هذا إدخالات NxIsland فقط. يبقى كل شيء آخر كما هو.",
+      "fr": "Seules les entrées de NxIsland sont retirées. Tout le reste est conservé.",
+      "bn": "এটি শুধু NxIsland-র এন্ট্রি সরায়। বাকি সব থেকে যায়।",
+      "pt-BR": "Isto remove apenas as entradas do NxIsland. O resto continua.",
+      "ru": "Удаляются только записи NxIsland. Всё остальное остаётся.",
+      "id": "Ini hanya menghapus entri NxIsland. Yang lain tetap ada.",
       "de": "Entfernt nur Coucous Einträge. Alles andere bleibt erhalten.",
-      "tr": "Yalnızca Coucou'nun girdilerini kaldırır. Diğer her şey korunur."
+      "tr": "Yalnızca NxIsland'nun girdilerini kaldırır. Diğer her şey korunur."
     },
-    "This removes Coucou's entries only. Your own hooks are left untouched.": {
-      "zh-Hans": "这只会移除 Coucou 的条目。你自己的 hooks 不会被触碰。",
-      "hi": "यह केवल Coucou की प्रविष्टियाँ हटाता है। आपके अपने hooks नहीं छुए जाते।",
-      "es": "Esto solo quita las entradas de Coucou. Tus propios hooks no se tocan.",
-      "ar": "يزيل هذا إدخالات Coucou فقط. لن تُمسّ hooks الخاصة بك.",
-      "fr": "Seules les entrées de Coucou sont retirées. Tes propres hooks ne sont pas touchés.",
-      "bn": "এটি শুধু Coucou-র এন্ট্রি সরায়। আপনার নিজের hooks-এ হাত দেওয়া হয় না।",
-      "pt-BR": "Isto remove apenas as entradas do Coucou. Seus próprios hooks não são alterados.",
-      "ru": "Удаляются только записи Coucou. Ваши собственные хуки не затрагиваются.",
-      "id": "Ini hanya menghapus entri Coucou. Hooks milik Anda tidak disentuh.",
+    "This removes NxIsland's entries only. Your own hooks are left untouched.": {
+      "zh-Hans": "这只会移除 NxIsland 的条目。你自己的 hooks 不会被触碰。",
+      "hi": "यह केवल NxIsland की प्रविष्टियाँ हटाता है। आपके अपने hooks नहीं छुए जाते।",
+      "es": "Esto solo quita las entradas de NxIsland. Tus propios hooks no se tocan.",
+      "ar": "يزيل هذا إدخالات NxIsland فقط. لن تُمسّ hooks الخاصة بك.",
+      "fr": "Seules les entrées de NxIsland sont retirées. Tes propres hooks ne sont pas touchés.",
+      "bn": "এটি শুধু NxIsland-র এন্ট্রি সরায়। আপনার নিজের hooks-এ হাত দেওয়া হয় না।",
+      "pt-BR": "Isto remove apenas as entradas do NxIsland. Seus próprios hooks não são alterados.",
+      "ru": "Удаляются только записи NxIsland. Ваши собственные хуки не затрагиваются.",
+      "id": "Ini hanya menghapus entri NxIsland. Hooks milik Anda tidak disentuh.",
       "de": "Entfernt nur Coucous Einträge. Deine eigenen Hooks bleiben unverändert.",
-      "tr": "Yalnızca Coucou'nun girdilerini kaldırır. Kendi hook'ların korunur."
+      "tr": "Yalnızca NxIsland'nun girdilerini kaldırır. Kendi hook'ların korunur."
     },
     "Thursday": {
       "zh-Hans": "星期四",
@@ -2588,18 +2588,18 @@
       "de": "Dienstag",
       "tr": "Salı"
     },
-    "Turn it on once with `hermes plugins enable coucou`, then start a new Hermes session.": {
-      "zh-Hans": "先用 `hermes plugins enable coucou` 启用一次，然后开启新的 Hermes 会话。",
-      "hi": "इसे एक बार `hermes plugins enable coucou` से चालू करें, फिर Hermes का नया सत्र शुरू करें।",
-      "es": "Actívalo una vez con `hermes plugins enable coucou` y luego abre una nueva sesión de Hermes.",
-      "ar": "فعّله مرة واحدة بالأمر `hermes plugins enable coucou`، ثم ابدأ جلسة Hermes جديدة.",
-      "fr": "Active-le une fois avec `hermes plugins enable coucou`, puis lance une nouvelle session Hermes.",
-      "bn": "একবার `hermes plugins enable coucou` দিয়ে চালু করুন, তারপর Hermes-এর নতুন সেশন শুরু করুন।",
-      "pt-BR": "Ative uma vez com `hermes plugins enable coucou` e depois inicie uma nova sessão do Hermes.",
-      "ru": "Включите его один раз командой `hermes plugins enable coucou`, затем начните новую сессию Hermes.",
-      "id": "Aktifkan sekali dengan `hermes plugins enable coucou`, lalu mulai sesi Hermes baru.",
-      "de": "Aktiviere es einmal mit `hermes plugins enable coucou` und starte dann eine neue Hermes-Sitzung.",
-      "tr": "Bir kez `hermes plugins enable coucou` ile etkinleştir, ardından yeni bir Hermes oturumu başlat."
+    "Turn it on once with `hermes plugins enable nxisland`, then start a new Hermes session.": {
+      "zh-Hans": "先用 `hermes plugins enable nxisland` 启用一次，然后开启新的 Hermes 会话。",
+      "hi": "इसे एक बार `hermes plugins enable nxisland` से चालू करें, फिर Hermes का नया सत्र शुरू करें।",
+      "es": "Actívalo una vez con `hermes plugins enable nxisland` y luego abre una nueva sesión de Hermes.",
+      "ar": "فعّله مرة واحدة بالأمر `hermes plugins enable nxisland`، ثم ابدأ جلسة Hermes جديدة.",
+      "fr": "Active-le une fois avec `hermes plugins enable nxisland`, puis lance une nouvelle session Hermes.",
+      "bn": "একবার `hermes plugins enable nxisland` দিয়ে চালু করুন, তারপর Hermes-এর নতুন সেশন শুরু করুন।",
+      "pt-BR": "Ative uma vez com `hermes plugins enable nxisland` e depois inicie uma nova sessão do Hermes.",
+      "ru": "Включите его один раз командой `hermes plugins enable nxisland`, затем начните новую сессию Hermes.",
+      "id": "Aktifkan sekali dengan `hermes plugins enable nxisland`, lalu mulai sesi Hermes baru.",
+      "de": "Aktiviere es einmal mit `hermes plugins enable nxisland` und starte dann eine neue Hermes-Sitzung.",
+      "tr": "Bir kez `hermes plugins enable nxisland` ile etkinleştir, ardından yeni bir Hermes oturumu başlat."
     },
     "Types “{char}”": {
       "zh-Hans": "输入“{char}”",
@@ -2900,18 +2900,18 @@
       "de": "alles erfolgreich",
       "tr": "tümü başarılı"
     },
-    "coucou-hook.exe is not in place yet. Restart Coucou; if it still fails, build it with `cargo build -p coucou-hook`.": {
-      "zh-Hans": "coucou-hook.exe 尚未就位。请重启 Coucou；如果仍然失败，请用 `cargo build -p coucou-hook` 构建它。",
-      "hi": "coucou-hook.exe अभी अपनी जगह पर नहीं है। Coucou फिर से शुरू करें; अगर फिर भी न हो, तो इसे `cargo build -p coucou-hook` से बनाएँ।",
-      "es": "coucou-hook.exe aún no está en su sitio. Reinicia Coucou; si sigue fallando, compílalo con `cargo build -p coucou-hook`.",
-      "ar": "coucou-hook.exe ليس في مكانه بعد. أعد تشغيل Coucou؛ وإن استمر الفشل فابنِه بالأمر `cargo build -p coucou-hook`.",
-      "fr": "coucou-hook.exe n'est pas encore en place. Redémarre Coucou ; si ça échoue encore, compile-le avec `cargo build -p coucou-hook`.",
-      "bn": "coucou-hook.exe এখনো জায়গামতো নেই। Coucou আবার চালু করুন; তবুও না হলে `cargo build -p coucou-hook` দিয়ে এটি বানান।",
-      "pt-BR": "O coucou-hook.exe ainda não está no lugar. Reinicie o Coucou; se continuar falhando, compile-o com `cargo build -p coucou-hook`.",
-      "ru": "coucou-hook.exe ещё не на месте. Перезапустите Coucou; если не поможет, соберите его командой `cargo build -p coucou-hook`.",
-      "id": "coucou-hook.exe belum ada di tempatnya. Mulai ulang Coucou; jika masih gagal, build dengan `cargo build -p coucou-hook`.",
-      "de": "coucou-hook.exe ist noch nicht vorhanden. Starte Coucou neu; falls es weiterhin fehlschlägt, erstelle die Datei mit `cargo build -p coucou-hook`.",
-      "tr": "coucou-hook.exe henüz yerinde değil. Coucou'yu yeniden başlat; sorun sürerse `cargo build -p coucou-hook` ile derle."
+    "nxisland-hook.exe is not in place yet. Restart NxIsland; if it still fails, build it with `cargo build -p nxisland-hook`.": {
+      "zh-Hans": "nxisland-hook.exe 尚未就位。请重启 NxIsland；如果仍然失败，请用 `cargo build -p nxisland-hook` 构建它。",
+      "hi": "nxisland-hook.exe अभी अपनी जगह पर नहीं है। NxIsland फिर से शुरू करें; अगर फिर भी न हो, तो इसे `cargo build -p nxisland-hook` से बनाएँ।",
+      "es": "nxisland-hook.exe aún no está en su sitio. Reinicia NxIsland; si sigue fallando, compílalo con `cargo build -p nxisland-hook`.",
+      "ar": "nxisland-hook.exe ليس في مكانه بعد. أعد تشغيل NxIsland؛ وإن استمر الفشل فابنِه بالأمر `cargo build -p nxisland-hook`.",
+      "fr": "nxisland-hook.exe n'est pas encore en place. Redémarre NxIsland ; si ça échoue encore, compile-le avec `cargo build -p nxisland-hook`.",
+      "bn": "nxisland-hook.exe এখনো জায়গামতো নেই। NxIsland আবার চালু করুন; তবুও না হলে `cargo build -p nxisland-hook` দিয়ে এটি বানান।",
+      "pt-BR": "O nxisland-hook.exe ainda não está no lugar. Reinicie o NxIsland; se continuar falhando, compile-o com `cargo build -p nxisland-hook`.",
+      "ru": "nxisland-hook.exe ещё не на месте. Перезапустите NxIsland; если не поможет, соберите его командой `cargo build -p nxisland-hook`.",
+      "id": "nxisland-hook.exe belum ada di tempatnya. Mulai ulang NxIsland; jika masih gagal, build dengan `cargo build -p nxisland-hook`.",
+      "de": "nxisland-hook.exe ist noch nicht vorhanden. Starte NxIsland neu; falls es weiterhin fehlschlägt, erstelle die Datei mit `cargo build -p nxisland-hook`.",
+      "tr": "nxisland-hook.exe henüz yerinde değil. NxIsland'yu yeniden başlat; sorun sürerse `cargo build -p nxisland-hook` ile derle."
     },
     "failing": {
       "zh-Hans": "失败",
@@ -3069,18 +3069,18 @@
       "de": "Sekunden nach dem Verlassen der Insel",
       "tr": "adadan ayrıldıktan sonraki saniye"
     },
-    "settings.json: {what} has an unexpected type — Coucou has not touched it.": {
-      "zh-Hans": "settings.json：{what} 的类型不符合预期 — Coucou 没有修改它。",
-      "hi": "settings.json: {what} का प्रकार अपेक्षित नहीं है — Coucou ने इसे नहीं छुआ।",
-      "es": "settings.json: {what} tiene un tipo inesperado — Coucou no lo ha tocado.",
-      "ar": "settings.json: {what} من نوع غير متوقع — لم يمسّه Coucou.",
-      "fr": "settings.json : {what} a un type inattendu — Coucou n'y a pas touché.",
-      "bn": "settings.json: {what}-এর ধরন অপ্রত্যাশিত — Coucou এতে হাত দেয়নি।",
-      "pt-BR": "settings.json: {what} tem um tipo inesperado — o Coucou não mexeu nele.",
-      "ru": "settings.json: у {what} неожиданный тип — Coucou его не трогал.",
-      "id": "settings.json: {what} bertipe tak terduga — Coucou tidak menyentuhnya.",
-      "de": "settings.json: {what} hat einen unerwarteten Typ — Coucou hat nichts verändert.",
-      "tr": "settings.json: {what} beklenmeyen bir türde — Coucou bunu değiştirmedi."
+    "settings.json: {what} has an unexpected type — NxIsland has not touched it.": {
+      "zh-Hans": "settings.json：{what} 的类型不符合预期 — NxIsland 没有修改它。",
+      "hi": "settings.json: {what} का प्रकार अपेक्षित नहीं है — NxIsland ने इसे नहीं छुआ।",
+      "es": "settings.json: {what} tiene un tipo inesperado — NxIsland no lo ha tocado.",
+      "ar": "settings.json: {what} من نوع غير متوقع — لم يمسّه NxIsland.",
+      "fr": "settings.json : {what} a un type inattendu — NxIsland n'y a pas touché.",
+      "bn": "settings.json: {what}-এর ধরন অপ্রত্যাশিত — NxIsland এতে হাত দেয়নি।",
+      "pt-BR": "settings.json: {what} tem um tipo inesperado — o NxIsland não mexeu nele.",
+      "ru": "settings.json: у {what} неожиданный тип — NxIsland его не трогал.",
+      "id": "settings.json: {what} bertipe tak terduga — NxIsland tidak menyentuhnya.",
+      "de": "settings.json: {what} hat einen unerwarteten Typ — NxIsland hat nichts verändert.",
+      "tr": "settings.json: {what} beklenmeyen bir türde — NxIsland bunu değiştirmedi."
     },
     "unknown": {
       "zh-Hans": "未知",
@@ -3258,44 +3258,44 @@
         "other": "{count} depo"
       }
     },
-    "{file} isn't UTF-8 text — Coucou won't touch it.": {
-      "zh-Hans": "{file} 不是 UTF-8 文本 — Coucou 不会修改它。",
-      "hi": "{file} UTF-8 टेक्स्ट नहीं है — Coucou इसे नहीं छुएगा।",
-      "es": "{file} no es texto UTF-8 — Coucou no lo tocará.",
-      "ar": "{file} ليس نصًا بترميز UTF-8 — لن يمسّه Coucou.",
-      "fr": "{file} n'est pas du texte UTF-8 — Coucou n'y touchera pas.",
-      "bn": "{file} UTF-8 টেক্সট নয় — Coucou এতে হাত দেবে না।",
-      "pt-BR": "{file} não é texto UTF-8 — o Coucou não vai mexer nele.",
-      "ru": "{file} — не текст в UTF-8, Coucou его не тронет.",
-      "id": "{file} bukan teks UTF-8 — Coucou tidak akan menyentuhnya.",
-      "de": "{file} ist kein UTF-8-Text — Coucou verändert die Datei nicht.",
-      "tr": "{file} UTF-8 metni değil — Coucou dosyayı değiştirmeyecek."
+    "{file} isn't UTF-8 text — NxIsland won't touch it.": {
+      "zh-Hans": "{file} 不是 UTF-8 文本 — NxIsland 不会修改它。",
+      "hi": "{file} UTF-8 टेक्स्ट नहीं है — NxIsland इसे नहीं छुएगा।",
+      "es": "{file} no es texto UTF-8 — NxIsland no lo tocará.",
+      "ar": "{file} ليس نصًا بترميز UTF-8 — لن يمسّه NxIsland.",
+      "fr": "{file} n'est pas du texte UTF-8 — NxIsland n'y touchera pas.",
+      "bn": "{file} UTF-8 টেক্সট নয় — NxIsland এতে হাত দেবে না।",
+      "pt-BR": "{file} não é texto UTF-8 — o NxIsland não vai mexer nele.",
+      "ru": "{file} — не текст в UTF-8, NxIsland его не тронет.",
+      "id": "{file} bukan teks UTF-8 — NxIsland tidak akan menyentuhnya.",
+      "de": "{file} ist kein UTF-8-Text — NxIsland verändert die Datei nicht.",
+      "tr": "{file} UTF-8 metni değil — NxIsland dosyayı değiştirmeyecek."
     },
-    "{file} isn't a JSON object — Coucou won't touch it.": {
-      "zh-Hans": "{file} 不是 JSON 对象 — Coucou 不会修改它。",
-      "hi": "{file} JSON ऑब्जेक्ट नहीं है — Coucou इसे नहीं छुएगा।",
-      "es": "{file} no es un objeto JSON — Coucou no lo tocará.",
-      "ar": "{file} ليس كائن JSON — لن يمسّه Coucou.",
-      "fr": "{file} n'est pas un objet JSON — Coucou n'y touchera pas.",
-      "bn": "{file} JSON অবজেক্ট নয় — Coucou এতে হাত দেবে না।",
-      "pt-BR": "{file} não é um objeto JSON — o Coucou não vai mexer nele.",
-      "ru": "{file} — не объект JSON, Coucou его не тронет.",
-      "id": "{file} bukan objek JSON — Coucou tidak akan menyentuhnya.",
-      "de": "{file} ist kein JSON-Objekt — Coucou verändert die Datei nicht.",
-      "tr": "{file} bir JSON nesnesi değil — Coucou dosyayı değiştirmeyecek."
+    "{file} isn't a JSON object — NxIsland won't touch it.": {
+      "zh-Hans": "{file} 不是 JSON 对象 — NxIsland 不会修改它。",
+      "hi": "{file} JSON ऑब्जेक्ट नहीं है — NxIsland इसे नहीं छुएगा।",
+      "es": "{file} no es un objeto JSON — NxIsland no lo tocará.",
+      "ar": "{file} ليس كائن JSON — لن يمسّه NxIsland.",
+      "fr": "{file} n'est pas un objet JSON — NxIsland n'y touchera pas.",
+      "bn": "{file} JSON অবজেক্ট নয় — NxIsland এতে হাত দেবে না।",
+      "pt-BR": "{file} não é um objeto JSON — o NxIsland não vai mexer nele.",
+      "ru": "{file} — не объект JSON, NxIsland его не тронет.",
+      "id": "{file} bukan objek JSON — NxIsland tidak akan menyentuhnya.",
+      "de": "{file} ist kein JSON-Objekt — NxIsland verändert die Datei nicht.",
+      "tr": "{file} bir JSON nesnesi değil — NxIsland dosyayı değiştirmeyecek."
     },
-    "{file} isn't valid JSON ({error}). Fix or move it, then try again — Coucou won't overwrite it.": {
-      "zh-Hans": "{file} 不是有效的 JSON（{error}）。请修复或移走它后重试 — Coucou 不会覆盖它。",
-      "hi": "{file} मान्य JSON नहीं है ({error})। इसे ठीक करें या हटाएँ, फिर दोबारा कोशिश करें — Coucou इसे ओवरराइट नहीं करेगा।",
-      "es": "{file} no es un JSON válido ({error}). Corrígelo o muévelo y vuelve a intentarlo — Coucou no lo sobrescribirá.",
-      "ar": "{file} ليس JSON صالحًا ({error}). أصلحه أو انقله ثم حاول مجددًا — لن يكتب Coucou فوقه.",
-      "fr": "{file} n'est pas un JSON valide ({error}). Corrige-le ou déplace-le, puis réessaie — Coucou ne l'écrasera pas.",
-      "bn": "{file} বৈধ JSON নয় ({error})। এটি ঠিক করুন বা সরান, তারপর আবার চেষ্টা করুন — Coucou এটি ওভাররাইট করবে না।",
-      "pt-BR": "{file} não é um JSON válido ({error}). Corrija ou mova o arquivo e tente de novo — o Coucou não vai sobrescrevê-lo.",
-      "ru": "{file} — некорректный JSON ({error}). Исправьте или переместите его и попробуйте снова — Coucou не будет его перезаписывать.",
-      "id": "{file} bukan JSON yang valid ({error}). Perbaiki atau pindahkan, lalu coba lagi — Coucou tidak akan menimpanya.",
-      "de": "{file} ist kein gültiges JSON ({error}). Korrigiere oder verschiebe die Datei und versuche es erneut — Coucou überschreibt sie nicht.",
-      "tr": "{file} geçerli JSON değil ({error}). Düzelt veya taşı, ardından tekrar dene — Coucou üzerine yazmayacak."
+    "{file} isn't valid JSON ({error}). Fix or move it, then try again — NxIsland won't overwrite it.": {
+      "zh-Hans": "{file} 不是有效的 JSON（{error}）。请修复或移走它后重试 — NxIsland 不会覆盖它。",
+      "hi": "{file} मान्य JSON नहीं है ({error})। इसे ठीक करें या हटाएँ, फिर दोबारा कोशिश करें — NxIsland इसे ओवरराइट नहीं करेगा।",
+      "es": "{file} no es un JSON válido ({error}). Corrígelo o muévelo y vuelve a intentarlo — NxIsland no lo sobrescribirá.",
+      "ar": "{file} ليس JSON صالحًا ({error}). أصلحه أو انقله ثم حاول مجددًا — لن يكتب NxIsland فوقه.",
+      "fr": "{file} n'est pas un JSON valide ({error}). Corrige-le ou déplace-le, puis réessaie — NxIsland ne l'écrasera pas.",
+      "bn": "{file} বৈধ JSON নয় ({error})। এটি ঠিক করুন বা সরান, তারপর আবার চেষ্টা করুন — NxIsland এটি ওভাররাইট করবে না।",
+      "pt-BR": "{file} não é um JSON válido ({error}). Corrija ou mova o arquivo e tente de novo — o NxIsland não vai sobrescrevê-lo.",
+      "ru": "{file} — некорректный JSON ({error}). Исправьте или переместите его и попробуйте снова — NxIsland не будет его перезаписывать.",
+      "id": "{file} bukan JSON yang valid ({error}). Perbaiki atau pindahkan, lalu coba lagi — NxIsland tidak akan menimpanya.",
+      "de": "{file} ist kein gültiges JSON ({error}). Korrigiere oder verschiebe die Datei und versuche es erneut — NxIsland überschreibt sie nicht.",
+      "tr": "{file} geçerli JSON değil ({error}). Düzelt veya taşı, ardından tekrar dene — NxIsland üzerine yazmayacak."
     },
     "{h}h {m}m": {
       "zh-Hans": "{h} 小时 {m} 分钟",
@@ -3375,18 +3375,18 @@
       "de": "{name} hat den API-Schlüssel abgelehnt ({status}). Prüfe ihn in den Einstellungen.",
       "tr": "{name} API anahtarını reddetti ({status}). Ayarlar'dan kontrol et."
     },
-    "{name} wasn't written by Coucou — Coucou has not touched it.": {
-      "zh-Hans": "{name} 不是由 Coucou 写入的 — Coucou 没有修改它。",
-      "hi": "{name} Coucou ने नहीं लिखा था — Coucou ने इसे नहीं छुआ।",
-      "es": "{name} no lo escribió Coucou — Coucou no lo ha tocado.",
-      "ar": "لم يكتب Coucou الملف {name} — لم يمسّه Coucou.",
-      "fr": "{name} n'a pas été écrit par Coucou — Coucou n'y a pas touché.",
-      "bn": "{name} Coucou লেখেনি — Coucou এতে হাত দেয়নি।",
-      "pt-BR": "{name} não foi escrito pelo Coucou — o Coucou não mexeu nele.",
-      "ru": "{name} записан не Coucou — Coucou его не трогал.",
-      "id": "{name} tidak ditulis oleh Coucou — Coucou tidak menyentuhnya.",
-      "de": "{name} wurde nicht von Coucou erstellt — Coucou hat nichts verändert.",
-      "tr": "{name} Coucou tarafından oluşturulmadı — Coucou bunu değiştirmedi."
+    "{name} wasn't written by NxIsland — NxIsland has not touched it.": {
+      "zh-Hans": "{name} 不是由 NxIsland 写入的 — NxIsland 没有修改它。",
+      "hi": "{name} NxIsland ने नहीं लिखा था — NxIsland ने इसे नहीं छुआ।",
+      "es": "{name} no lo escribió NxIsland — NxIsland no lo ha tocado.",
+      "ar": "لم يكتب NxIsland الملف {name} — لم يمسّه NxIsland.",
+      "fr": "{name} n'a pas été écrit par NxIsland — NxIsland n'y a pas touché.",
+      "bn": "{name} NxIsland লেখেনি — NxIsland এতে হাত দেয়নি।",
+      "pt-BR": "{name} não foi escrito pelo NxIsland — o NxIsland não mexeu nele.",
+      "ru": "{name} записан не NxIsland — NxIsland его не трогал.",
+      "id": "{name} tidak ditulis oleh NxIsland — NxIsland tidak menyentuhnya.",
+      "de": "{name} wurde nicht von NxIsland erstellt — NxIsland hat nichts verändert.",
+      "tr": "{name} NxIsland tarafından oluşturulmadı — NxIsland bunu değiştirmedi."
     },
     "{name} — {width}×{height} at {x},{y}": {
       "zh-Hans": "{name} — {width}×{height}，位于 {x},{y}",
@@ -3531,18 +3531,18 @@
       "de": "{used}/{max} Plätze belegt — das Hauptwerkzeug belegt keinen.",
       "tr": "{used}/{max} yuva kullanımda — ana araç yuva kullanmaz."
     },
-    "{what} has an unexpected type — Coucou has not touched it.": {
-      "zh-Hans": "{what} 的类型不符合预期 — Coucou 没有修改它。",
-      "hi": "{what} का प्रकार अपेक्षित नहीं है — Coucou ने इसे नहीं छुआ।",
-      "es": "{what} tiene un tipo inesperado — Coucou no lo ha tocado.",
-      "ar": "{what} من نوع غير متوقع — لم يمسّه Coucou.",
-      "fr": "{what} a un type inattendu — Coucou n'y a pas touché.",
-      "bn": "{what}-এর ধরন অপ্রত্যাশিত — Coucou এতে হাত দেয়নি।",
-      "pt-BR": "{what} tem um tipo inesperado — o Coucou não mexeu nele.",
-      "ru": "У {what} неожиданный тип — Coucou его не трогал.",
-      "id": "{what} bertipe tak terduga — Coucou tidak menyentuhnya.",
-      "de": "{what} hat einen unerwarteten Typ — Coucou hat nichts verändert.",
-      "tr": "{what} beklenmeyen bir türde — Coucou bunu değiştirmedi."
+    "{what} has an unexpected type — NxIsland has not touched it.": {
+      "zh-Hans": "{what} 的类型不符合预期 — NxIsland 没有修改它。",
+      "hi": "{what} का प्रकार अपेक्षित नहीं है — NxIsland ने इसे नहीं छुआ।",
+      "es": "{what} tiene un tipo inesperado — NxIsland no lo ha tocado.",
+      "ar": "{what} من نوع غير متوقع — لم يمسّه NxIsland.",
+      "fr": "{what} a un type inattendu — NxIsland n'y a pas touché.",
+      "bn": "{what}-এর ধরন অপ্রত্যাশিত — NxIsland এতে হাত দেয়নি।",
+      "pt-BR": "{what} tem um tipo inesperado — o NxIsland não mexeu nele.",
+      "ru": "У {what} неожиданный тип — NxIsland его не трогал.",
+      "id": "{what} bertipe tak terduga — NxIsland tidak menyentuhnya.",
+      "de": "{what} hat einen unerwarteten Typ — NxIsland hat nichts verändert.",
+      "tr": "{what} beklenmeyen bir türde — NxIsland bunu değiştirmedi."
     },
     "• subagent done": {
       "zh-Hans": "• 子代理完成",
@@ -3661,18 +3661,18 @@
       "de": "Android-Telefon",
       "tr": "Android telefon"
     },
-    "Send your agents' sessions to Coucou for Android and answer permission requests from the phone. Off by default; it only listens on your local network.": {
-      "zh-Hans": "把你的智能体会话发送到 Coucou for Android，并在手机上回应权限请求。默认关闭；仅在本地网络中监听。",
-      "hi": "अपने एजेंट के सत्र Coucou for Android को भेजें और फ़ोन से अनुमति के अनुरोधों का जवाब दें। डिफ़ॉल्ट रूप से बंद; यह केवल आपके स्थानीय नेटवर्क पर सुनता है।",
-      "es": "Envía las sesiones de tus agentes a Coucou for Android y responde a las solicitudes de permiso desde el teléfono. Desactivado por defecto; solo escucha en tu red local.",
-      "ar": "أرسل جلسات وكلائك إلى Coucou for Android وردّ على طلبات الإذن من الهاتف. معطّل افتراضيًا؛ ويستمع فقط على شبكتك المحلية.",
-      "fr": "Envoie les sessions de tes agents à Coucou for Android et réponds aux demandes d'autorisation depuis le téléphone. Désactivé par défaut ; il n'écoute que sur ton réseau local.",
-      "bn": "আপনার এজেন্টদের সেশন Coucou for Android-এ পাঠান এবং ফোন থেকে অনুমতির অনুরোধের উত্তর দিন। ডিফল্টে বন্ধ; এটি শুধু আপনার লোকাল নেটওয়ার্কে শোনে।",
-      "pt-BR": "Envie as sessões dos seus agentes ao Coucou for Android e responda a pedidos de permissão pelo celular. Desativado por padrão; só escuta na sua rede local.",
-      "ru": "Отправляйте сессии ваших агентов в Coucou for Android и отвечайте на запросы разрешений с телефона. По умолчанию выключено; слушает только в вашей локальной сети.",
-      "id": "Kirim sesi agen Anda ke Coucou for Android dan jawab permintaan izin dari ponsel. Nonaktif secara default; hanya mendengarkan di jaringan lokal Anda.",
-      "de": "Sende die Sitzungen deiner Agenten an Coucou für Android und beantworte Berechtigungsanfragen auf dem Telefon. Standardmäßig aus; lauscht nur im lokalen Netzwerk.",
-      "tr": "Ajanlarının oturumlarını Android için Coucou'ya gönder ve izin isteklerini telefondan yanıtla. Varsayılan olarak kapalıdır; yalnızca yerel ağında dinler."
+    "Send your agents' sessions to NxIsland for Android and answer permission requests from the phone. Off by default; it only listens on your local network.": {
+      "zh-Hans": "把你的智能体会话发送到 NxIsland for Android，并在手机上回应权限请求。默认关闭；仅在本地网络中监听。",
+      "hi": "अपने एजेंट के सत्र NxIsland for Android को भेजें और फ़ोन से अनुमति के अनुरोधों का जवाब दें। डिफ़ॉल्ट रूप से बंद; यह केवल आपके स्थानीय नेटवर्क पर सुनता है।",
+      "es": "Envía las sesiones de tus agentes a NxIsland for Android y responde a las solicitudes de permiso desde el teléfono. Desactivado por defecto; solo escucha en tu red local.",
+      "ar": "أرسل جلسات وكلائك إلى NxIsland for Android وردّ على طلبات الإذن من الهاتف. معطّل افتراضيًا؛ ويستمع فقط على شبكتك المحلية.",
+      "fr": "Envoie les sessions de tes agents à NxIsland for Android et réponds aux demandes d'autorisation depuis le téléphone. Désactivé par défaut ; il n'écoute que sur ton réseau local.",
+      "bn": "আপনার এজেন্টদের সেশন NxIsland for Android-এ পাঠান এবং ফোন থেকে অনুমতির অনুরোধের উত্তর দিন। ডিফল্টে বন্ধ; এটি শুধু আপনার লোকাল নেটওয়ার্কে শোনে।",
+      "pt-BR": "Envie as sessões dos seus agentes ao NxIsland for Android e responda a pedidos de permissão pelo celular. Desativado por padrão; só escuta na sua rede local.",
+      "ru": "Отправляйте сессии ваших агентов в NxIsland for Android и отвечайте на запросы разрешений с телефона. По умолчанию выключено; слушает только в вашей локальной сети.",
+      "id": "Kirim sesi agen Anda ke NxIsland for Android dan jawab permintaan izin dari ponsel. Nonaktif secara default; hanya mendengarkan di jaringan lokal Anda.",
+      "de": "Sende die Sitzungen deiner Agenten an NxIsland für Android und beantworte Berechtigungsanfragen auf dem Telefon. Standardmäßig aus; lauscht nur im lokalen Netzwerk.",
+      "tr": "Ajanlarının oturumlarını Android için NxIsland'ya gönder ve izin isteklerini telefondan yanıtla. Varsayılan olarak kapalıdır; yalnızca yerel ağında dinler."
     },
     "Allow on the phone asks for the fingerprint or the screen lock. Deny does not.": {
       "zh-Hans": "在手机上点“允许”需要指纹或锁屏验证；“拒绝”则不需要。",
@@ -3739,18 +3739,18 @@
       "de": "Verbundene Telefone: {count}",
       "tr": "Bağlı telefonlar: {count}"
     },
-    "In Coucou for Android, scan this code with the camera or paste the link.": {
-      "zh-Hans": "在 Coucou for Android 中，用相机扫描此码，或粘贴链接。",
-      "hi": "Coucou for Android में कैमरे से यह कोड स्कैन करें या लिंक पेस्ट करें।",
-      "es": "En Coucou for Android, escanea este código con la cámara o pega el enlace.",
-      "ar": "في Coucou for Android، امسح هذا الرمز بالكاميرا أو الصق الرابط.",
-      "fr": "Dans Coucou for Android, scanne ce code avec l'appareil photo ou colle le lien.",
-      "bn": "Coucou for Android-এ ক্যামেরা দিয়ে এই কোড স্ক্যান করুন বা লিংক পেস্ট করুন।",
-      "pt-BR": "No Coucou for Android, escaneie este código com a câmera ou cole o link.",
-      "ru": "В Coucou for Android отсканируйте этот код камерой или вставьте ссылку.",
-      "id": "Di Coucou for Android, pindai kode ini dengan kamera atau tempel tautannya.",
-      "de": "Scanne diesen Code in Coucou für Android mit der Kamera oder füge den Link ein.",
-      "tr": "Android için Coucou'da bu kodu kamerayla tara veya bağlantıyı yapıştır."
+    "In NxIsland for Android, scan this code with the camera or paste the link.": {
+      "zh-Hans": "在 NxIsland for Android 中，用相机扫描此码，或粘贴链接。",
+      "hi": "NxIsland for Android में कैमरे से यह कोड स्कैन करें या लिंक पेस्ट करें।",
+      "es": "En NxIsland for Android, escanea este código con la cámara o pega el enlace.",
+      "ar": "في NxIsland for Android، امسح هذا الرمز بالكاميرا أو الصق الرابط.",
+      "fr": "Dans NxIsland for Android, scanne ce code avec l'appareil photo ou colle le lien.",
+      "bn": "NxIsland for Android-এ ক্যামেরা দিয়ে এই কোড স্ক্যান করুন বা লিংক পেস্ট করুন।",
+      "pt-BR": "No NxIsland for Android, escaneie este código com a câmera ou cole o link.",
+      "ru": "В NxIsland for Android отсканируйте этот код камерой или вставьте ссылку.",
+      "id": "Di NxIsland for Android, pindai kode ini dengan kamera atau tempel tautannya.",
+      "de": "Scanne diesen Code in NxIsland für Android mit der Kamera oder füge den Link ein.",
+      "tr": "Android için NxIsland'da bu kodu kamerayla tara veya bağlantıyı yapıştır."
     },
     "Copy link": {
       "zh-Hans": "复制链接",
@@ -3791,18 +3791,18 @@
       "de": "Die Verbindung zum gekoppelten Telefon wird getrennt; es benötigt den neuen Code.",
       "tr": "Eşleştirilmiş telefonun bağlantısı kesilir ve yeni kod gerekir."
     },
-    "If Windows asks about the firewall, allow Coucou on private networks. The phone and this computer must be on the same Wi-Fi.": {
-      "zh-Hans": "如果 Windows 询问防火墙，请允许 Coucou 在专用网络上通信。手机和这台电脑必须连接同一个 Wi-Fi。",
-      "hi": "अगर Windows फ़ायरवॉल के बारे में पूछे, तो Coucou को निजी नेटवर्क पर अनुमति दें। फ़ोन और यह कंप्यूटर एक ही Wi-Fi पर होने चाहिए।",
-      "es": "Si Windows pregunta por el firewall, permite Coucou en redes privadas. El teléfono y este equipo deben estar en la misma Wi-Fi.",
-      "ar": "إذا سأل Windows عن جدار الحماية، فاسمح لـ Coucou على الشبكات الخاصة. يجب أن يكون الهاتف وهذا الكمبيوتر على شبكة Wi-Fi نفسها.",
-      "fr": "Si Windows te interroge sur le pare-feu, autorise Coucou sur les réseaux privés. Le téléphone et cet ordinateur doivent être sur le même Wi-Fi.",
-      "bn": "Windows ফায়ারওয়াল নিয়ে জিজ্ঞেস করলে Coucou-কে প্রাইভেট নেটওয়ার্কে অনুমতি দিন। ফোন ও এই কম্পিউটার একই Wi-Fi-তে থাকতে হবে।",
-      "pt-BR": "Se o Windows perguntar sobre o firewall, permita o Coucou em redes privadas. O celular e este computador precisam estar no mesmo Wi-Fi.",
-      "ru": "Если Windows спросит про брандмауэр, разрешите Coucou в частных сетях. Телефон и этот компьютер должны быть в одной сети Wi-Fi.",
-      "id": "Jika Windows menanyakan firewall, izinkan Coucou di jaringan pribadi. Ponsel dan komputer ini harus berada di Wi-Fi yang sama.",
-      "de": "Wenn Windows nach der Firewall fragt, erlaube Coucou in privaten Netzwerken. Telefon und Computer müssen im selben WLAN sein.",
-      "tr": "Windows güvenlik duvarını sorarsa özel ağlarda Coucou'ya izin ver. Telefon ve bu bilgisayar aynı Wi-Fi ağında olmalıdır."
+    "If Windows asks about the firewall, allow NxIsland on private networks. The phone and this computer must be on the same Wi-Fi.": {
+      "zh-Hans": "如果 Windows 询问防火墙，请允许 NxIsland 在专用网络上通信。手机和这台电脑必须连接同一个 Wi-Fi。",
+      "hi": "अगर Windows फ़ायरवॉल के बारे में पूछे, तो NxIsland को निजी नेटवर्क पर अनुमति दें। फ़ोन और यह कंप्यूटर एक ही Wi-Fi पर होने चाहिए।",
+      "es": "Si Windows pregunta por el firewall, permite NxIsland en redes privadas. El teléfono y este equipo deben estar en la misma Wi-Fi.",
+      "ar": "إذا سأل Windows عن جدار الحماية، فاسمح لـ NxIsland على الشبكات الخاصة. يجب أن يكون الهاتف وهذا الكمبيوتر على شبكة Wi-Fi نفسها.",
+      "fr": "Si Windows te interroge sur le pare-feu, autorise NxIsland sur les réseaux privés. Le téléphone et cet ordinateur doivent être sur le même Wi-Fi.",
+      "bn": "Windows ফায়ারওয়াল নিয়ে জিজ্ঞেস করলে NxIsland-কে প্রাইভেট নেটওয়ার্কে অনুমতি দিন। ফোন ও এই কম্পিউটার একই Wi-Fi-তে থাকতে হবে।",
+      "pt-BR": "Se o Windows perguntar sobre o firewall, permita o NxIsland em redes privadas. O celular e este computador precisam estar no mesmo Wi-Fi.",
+      "ru": "Если Windows спросит про брандмауэр, разрешите NxIsland в частных сетях. Телефон и этот компьютер должны быть в одной сети Wi-Fi.",
+      "id": "Jika Windows menanyakan firewall, izinkan NxIsland di jaringan pribadi. Ponsel dan komputer ini harus berada di Wi-Fi yang sama.",
+      "de": "Wenn Windows nach der Firewall fragt, erlaube NxIsland in privaten Netzwerken. Telefon und Computer müssen im selben WLAN sein.",
+      "tr": "Windows güvenlik duvarını sorarsa özel ağlarda NxIsland'ya izin ver. Telefon ve bu bilgisayar aynı Wi-Fi ağında olmalıdır."
     },
     "The phone connects to {address}": {
       "zh-Hans": "手机连接的地址：{address}",
@@ -4337,18 +4337,18 @@
       "de": "Erneut einfügen",
       "tr": "Yeniden yapıştır"
     },
-    "Coucou can't watch the keyboard here: use the pill's microphone to dictate.": {
-      "zh-Hans": "Coucou 在这里无法监听键盘：请用胶囊上的麦克风听写。",
-      "hi": "Coucou यहाँ कीबोर्ड नहीं देख सकता: बोलकर लिखने के लिए पिल का माइक्रोफ़ोन इस्तेमाल करें।",
-      "es": "Coucou no puede vigilar el teclado aquí: usa el micrófono de la píldora para dictar.",
-      "ar": "لا يستطيع Coucou مراقبة لوحة المفاتيح هنا: استخدم ميكروفون الكبسولة للإملاء.",
-      "fr": "Coucou ne peut pas surveiller le clavier ici : utilise le micro de la pilule pour dicter.",
-      "bn": "Coucou এখানে কিবোর্ড দেখতে পারে না: ডিক্টেট করতে পিলের মাইক্রোফোন ব্যবহার করুন।",
-      "pt-BR": "O Coucou não consegue observar o teclado aqui: use o microfone da pílula para ditar.",
-      "ru": "Здесь Coucou не может следить за клавиатурой: диктуйте через микрофон на пилюле.",
-      "id": "Coucou tidak bisa memantau keyboard di sini: gunakan mikrofon pil untuk mendikte.",
-      "de": "Coucou kann hier die Tastatur nicht überwachen: Nutze zum Diktieren das Mikrofon der Kapsel.",
-      "tr": "Coucou burada klavyeyi izleyemiyor: dikte etmek için aracın mikrofonunu kullan."
+    "NxIsland can't watch the keyboard here: use the pill's microphone to dictate.": {
+      "zh-Hans": "NxIsland 在这里无法监听键盘：请用胶囊上的麦克风听写。",
+      "hi": "NxIsland यहाँ कीबोर्ड नहीं देख सकता: बोलकर लिखने के लिए पिल का माइक्रोफ़ोन इस्तेमाल करें।",
+      "es": "NxIsland no puede vigilar el teclado aquí: usa el micrófono de la píldora para dictar.",
+      "ar": "لا يستطيع NxIsland مراقبة لوحة المفاتيح هنا: استخدم ميكروفون الكبسولة للإملاء.",
+      "fr": "NxIsland ne peut pas surveiller le clavier ici : utilise le micro de la pilule pour dicter.",
+      "bn": "NxIsland এখানে কিবোর্ড দেখতে পারে না: ডিক্টেট করতে পিলের মাইক্রোফোন ব্যবহার করুন।",
+      "pt-BR": "O NxIsland não consegue observar o teclado aqui: use o microfone da pílula para ditar.",
+      "ru": "Здесь NxIsland не может следить за клавиатурой: диктуйте через микрофон на пилюле.",
+      "id": "NxIsland tidak bisa memantau keyboard di sini: gunakan mikrofon pil untuk mendikte.",
+      "de": "NxIsland kann hier die Tastatur nicht überwachen: Nutze zum Diktieren das Mikrofon der Kapsel.",
+      "tr": "NxIsland burada klavyeyi izleyemiyor: dikte etmek için aracın mikrofonunu kullan."
     },
     "Microphone": {
       "zh-Hans": "麦克风",
@@ -4376,18 +4376,18 @@
       "de": "Systemstandard",
       "tr": "Sistem varsayılanı"
     },
-    "The one Coucou listens to for dictation and calls.": {
-      "zh-Hans": "Coucou 听写和录制通话时使用的麦克风。",
-      "hi": "वह जिसे Coucou डिक्टेशन और कॉल के लिए सुनता है।",
-      "es": "El que Coucou escucha para dictar y para las llamadas.",
-      "ar": "الذي يستمع إليه Coucou للإملاء والمكالمات.",
-      "fr": "Celui que Coucou écoute pour la dictée et les appels.",
-      "bn": "যেটি Coucou ডিক্টেশন ও কলের জন্য শোনে।",
-      "pt-BR": "O que o Coucou escuta para ditados e chamadas.",
-      "ru": "Тот, который Coucou слушает для диктовки и звонков.",
-      "id": "Yang didengarkan Coucou untuk dikte dan panggilan.",
-      "de": "Das Mikrofon, das Coucou für Diktate und Gespräche verwendet.",
-      "tr": "Coucou'nun dikte ve görüşmeler için dinlediği mikrofon."
+    "The one NxIsland listens to for dictation and calls.": {
+      "zh-Hans": "NxIsland 听写和录制通话时使用的麦克风。",
+      "hi": "वह जिसे NxIsland डिक्टेशन और कॉल के लिए सुनता है।",
+      "es": "El que NxIsland escucha para dictar y para las llamadas.",
+      "ar": "الذي يستمع إليه NxIsland للإملاء والمكالمات.",
+      "fr": "Celui que NxIsland écoute pour la dictée et les appels.",
+      "bn": "যেটি NxIsland ডিক্টেশন ও কলের জন্য শোনে।",
+      "pt-BR": "O que o NxIsland escuta para ditados e chamadas.",
+      "ru": "Тот, который NxIsland слушает для диктовки и звонков.",
+      "id": "Yang didengarkan NxIsland untuk dikte dan panggilan.",
+      "de": "Das Mikrofon, das NxIsland für Diktate und Gespräche verwendet.",
+      "tr": "NxIsland'nun dikte ve görüşmeler için dinlediği mikrofon."
     },
     "Your voice never leaves this computer: Parakeet turns it into text here, and the recording is dropped as soon as it is pasted.": {
       "zh-Hans": "你的声音不会离开这台电脑：Parakeet 在本机把它转成文字，粘贴后录音即被丢弃。",
@@ -4428,31 +4428,31 @@
       "de": "Alles bleibt auf diesem Computer. Informiere die Gesprächsteilnehmer über die Aufnahme.",
       "tr": "Her şey bu bilgisayarda kalır. Görüşmedeki kişilere kayıt yaptığını söyle."
     },
-    "Not when Coucou starts with the computer.": {
-      "zh-Hans": "Coucou 随电脑启动时不会打开。",
-      "hi": "जब Coucou कंप्यूटर के साथ शुरू होता है तब नहीं।",
-      "es": "No cuando Coucou se inicia con el ordenador.",
-      "ar": "ليس عندما يبدأ Coucou مع الحاسوب.",
-      "fr": "Pas quand Coucou démarre avec l'ordinateur.",
-      "bn": "Coucou কম্পিউটারের সাথে চালু হলে নয়।",
-      "pt-BR": "Não quando o Coucou inicia com o computador.",
-      "ru": "Не при запуске Coucou вместе с компьютером.",
-      "id": "Tidak saat Coucou mulai bersama komputer.",
-      "de": "Nicht, wenn Coucou mit dem Computer startet.",
-      "tr": "Coucou bilgisayarla birlikte başlatıldığında geçerli değildir."
+    "Not when NxIsland starts with the computer.": {
+      "zh-Hans": "NxIsland 随电脑启动时不会打开。",
+      "hi": "जब NxIsland कंप्यूटर के साथ शुरू होता है तब नहीं।",
+      "es": "No cuando NxIsland se inicia con el ordenador.",
+      "ar": "ليس عندما يبدأ NxIsland مع الحاسوب.",
+      "fr": "Pas quand NxIsland démarre avec l'ordinateur.",
+      "bn": "NxIsland কম্পিউটারের সাথে চালু হলে নয়।",
+      "pt-BR": "Não quando o NxIsland inicia com o computador.",
+      "ru": "Не при запуске NxIsland вместе с компьютером.",
+      "id": "Tidak saat NxIsland mulai bersama komputer.",
+      "de": "Nicht, wenn NxIsland mit dem Computer startet.",
+      "tr": "NxIsland bilgisayarla birlikte başlatıldığında geçerli değildir."
     },
-    "The history, the statistics and your notes stay on this computer, in Coucou's folder. Dictations are never saved as audio; a call's audio is deleted as soon as its transcript is written.": {
-      "zh-Hans": "历史记录、统计数据和你的笔记都留在这台电脑上的 Coucou 文件夹中。听写从不保存为音频；通话的音频在文字记录写好后立即删除。",
-      "hi": "इतिहास, आँकड़े और आपके नोट्स इसी कंप्यूटर पर Coucou के फ़ोल्डर में रहते हैं। डिक्टेशन कभी ऑडियो के रूप में सेव नहीं होते; कॉल का ऑडियो ट्रांसक्रिप्ट लिखे जाते ही हटा दिया जाता है।",
-      "es": "El historial, las estadísticas y tus notas se quedan en este ordenador, en la carpeta de Coucou. Los dictados nunca se guardan como audio; el audio de una llamada se borra en cuanto se escribe su transcripción.",
-      "ar": "يبقى السجل والإحصاءات وملاحظاتك على هذا الحاسوب، في مجلد Coucou. لا تُحفظ الإملاءات أبدًا كصوت؛ ويُحذف صوت المكالمة فور كتابة نصها.",
-      "fr": "L'historique, les statistiques et tes notes restent sur cet ordinateur, dans le dossier de Coucou. Les dictées ne sont jamais gardées en audio ; l'audio d'un appel est supprimé dès que sa transcription est écrite.",
-      "bn": "ইতিহাস, পরিসংখ্যান আর আপনার নোট এই কম্পিউটারে Coucou-র ফোল্ডারেই থাকে। ডিক্টেশন কখনো অডিও হিসেবে সংরক্ষিত হয় না; কলের অডিও ট্রান্সক্রিপ্ট লেখা হলেই মুছে যায়।",
-      "pt-BR": "O histórico, as estatísticas e suas notas ficam neste computador, na pasta do Coucou. Os ditados nunca são salvos como áudio; o áudio de uma chamada é apagado assim que a transcrição é escrita.",
-      "ru": "История, статистика и ваши заметки остаются на этом компьютере, в папке Coucou. Диктовки никогда не сохраняются как звук; звук звонка удаляется сразу после записи расшифровки.",
-      "id": "Riwayat, statistik, dan catatanmu tetap di komputer ini, di folder Coucou. Dikte tidak pernah disimpan sebagai audio; audio panggilan dihapus begitu transkripnya ditulis.",
-      "de": "Verlauf, Statistik und Notizen bleiben auf diesem Computer im Coucou-Ordner. Diktate werden nie als Audio gespeichert; die Gesprächsaufnahme wird gelöscht, sobald das Transkript geschrieben ist.",
-      "tr": "Geçmiş, istatistikler ve notların bu bilgisayarda, Coucou klasöründe kalır. Dikteler asla ses olarak kaydedilmez; görüşmenin sesi, dökümü yazılır yazılmaz silinir."
+    "The history, the statistics and your notes stay on this computer, in NxIsland's folder. Dictations are never saved as audio; a call's audio is deleted as soon as its transcript is written.": {
+      "zh-Hans": "历史记录、统计数据和你的笔记都留在这台电脑上的 NxIsland 文件夹中。听写从不保存为音频；通话的音频在文字记录写好后立即删除。",
+      "hi": "इतिहास, आँकड़े और आपके नोट्स इसी कंप्यूटर पर NxIsland के फ़ोल्डर में रहते हैं। डिक्टेशन कभी ऑडियो के रूप में सेव नहीं होते; कॉल का ऑडियो ट्रांसक्रिप्ट लिखे जाते ही हटा दिया जाता है।",
+      "es": "El historial, las estadísticas y tus notas se quedan en este ordenador, en la carpeta de NxIsland. Los dictados nunca se guardan como audio; el audio de una llamada se borra en cuanto se escribe su transcripción.",
+      "ar": "يبقى السجل والإحصاءات وملاحظاتك على هذا الحاسوب، في مجلد NxIsland. لا تُحفظ الإملاءات أبدًا كصوت؛ ويُحذف صوت المكالمة فور كتابة نصها.",
+      "fr": "L'historique, les statistiques et tes notes restent sur cet ordinateur, dans le dossier de NxIsland. Les dictées ne sont jamais gardées en audio ; l'audio d'un appel est supprimé dès que sa transcription est écrite.",
+      "bn": "ইতিহাস, পরিসংখ্যান আর আপনার নোট এই কম্পিউটারে NxIsland-র ফোল্ডারেই থাকে। ডিক্টেশন কখনো অডিও হিসেবে সংরক্ষিত হয় না; কলের অডিও ট্রান্সক্রিপ্ট লেখা হলেই মুছে যায়।",
+      "pt-BR": "O histórico, as estatísticas e suas notas ficam neste computador, na pasta do NxIsland. Os ditados nunca são salvos como áudio; o áudio de uma chamada é apagado assim que a transcrição é escrita.",
+      "ru": "История, статистика и ваши заметки остаются на этом компьютере, в папке NxIsland. Диктовки никогда не сохраняются как звук; звук звонка удаляется сразу после записи расшифровки.",
+      "id": "Riwayat, statistik, dan catatanmu tetap di komputer ini, di folder NxIsland. Dikte tidak pernah disimpan sebagai audio; audio panggilan dihapus begitu transkripnya ditulis.",
+      "de": "Verlauf, Statistik und Notizen bleiben auf diesem Computer im NxIsland-Ordner. Diktate werden nie als Audio gespeichert; die Gesprächsaufnahme wird gelöscht, sobald das Transkript geschrieben ist.",
+      "tr": "Geçmiş, istatistikler ve notların bu bilgisayarda, NxIsland klasöründe kalır. Dikteler asla ses olarak kaydedilmez; görüşmenin sesi, dökümü yazılır yazılmaz silinir."
     },
     "{0} h {1}": {
       "zh-Hans": "{0} 小时 {1}",
@@ -4480,18 +4480,18 @@
       "de": "Wird auf diesem Computer erfasst und nirgendwohin gesendet.",
       "tr": "Bu bilgisayarda hesaplanır, hiçbir yere gönderilmez."
     },
-    "Coucou writes your calls on this computer with Parakeet, and tells the voices apart with a second small model. Both are downloaded once (about {0} MB), then everything works offline.": {
-      "zh-Hans": "Coucou 用 Parakeet 在这台电脑上转写你的通话，并用另一个小模型区分不同的声音。两者只需下载一次（约 {0} MB），之后一切都可离线运行。",
-      "hi": "Coucou आपकी कॉल इसी कंप्यूटर पर Parakeet से लिखता है, और एक दूसरे छोटे मॉडल से आवाज़ें अलग पहचानता है। दोनों एक बार डाउनलोड होते हैं (लगभग {0} MB), फिर सब ऑफ़लाइन चलता है।",
-      "es": "Coucou escribe tus llamadas en este ordenador con Parakeet y distingue las voces con un segundo modelo pequeño. Ambos se descargan una vez (unos {0} MB) y luego todo funciona sin conexión.",
-      "ar": "يكتب Coucou مكالماتك على هذا الحاسوب باستخدام Parakeet، ويميّز الأصوات بنموذج صغير ثانٍ. يُنزَّل كلاهما مرة واحدة (نحو {0} ميغابايت)، ثم يعمل كل شيء دون اتصال.",
-      "fr": "Coucou écrit tes appels sur cet ordinateur avec Parakeet, et distingue les voix avec un second petit modèle. Les deux se téléchargent une fois (environ {0} Mo), puis tout marche hors ligne.",
-      "bn": "Coucou এই কম্পিউটারে Parakeet দিয়ে আপনার কল লেখে, আর দ্বিতীয় একটি ছোট মডেল দিয়ে কণ্ঠগুলো আলাদা করে। দুটোই একবার ডাউনলোড হয় (প্রায় {0} MB), তারপর সবকিছু অফলাইনে চলে।",
-      "pt-BR": "O Coucou escreve suas chamadas neste computador com o Parakeet e distingue as vozes com um segundo modelo pequeno. Os dois são baixados uma vez (cerca de {0} MB) e depois tudo funciona offline.",
-      "ru": "Coucou записывает ваши звонки на этом компьютере с помощью Parakeet и различает голоса второй небольшой моделью. Обе скачиваются один раз (около {0} МБ), дальше всё работает офлайн.",
-      "id": "Coucou menulis panggilanmu di komputer ini dengan Parakeet, dan membedakan suara dengan model kecil kedua. Keduanya diunduh sekali (sekitar {0} MB), lalu semuanya bekerja offline.",
-      "de": "Coucou transkribiert deine Gespräche auf diesem Computer mit Parakeet und unterscheidet die Stimmen mit einem zweiten kleinen Modell. Beide werden einmal heruntergeladen (etwa {0} MB), danach läuft alles offline.",
-      "tr": "Coucou görüşmelerini bu bilgisayarda Parakeet ile yazıya döker ve ikinci küçük bir modelle sesleri ayırt eder. İkisi de bir kez indirilir (yaklaşık {0} MB), sonra her şey çevrimdışı çalışır."
+    "NxIsland writes your calls on this computer with Parakeet, and tells the voices apart with a second small model. Both are downloaded once (about {0} MB), then everything works offline.": {
+      "zh-Hans": "NxIsland 用 Parakeet 在这台电脑上转写你的通话，并用另一个小模型区分不同的声音。两者只需下载一次（约 {0} MB），之后一切都可离线运行。",
+      "hi": "NxIsland आपकी कॉल इसी कंप्यूटर पर Parakeet से लिखता है, और एक दूसरे छोटे मॉडल से आवाज़ें अलग पहचानता है। दोनों एक बार डाउनलोड होते हैं (लगभग {0} MB), फिर सब ऑफ़लाइन चलता है।",
+      "es": "NxIsland escribe tus llamadas en este ordenador con Parakeet y distingue las voces con un segundo modelo pequeño. Ambos se descargan una vez (unos {0} MB) y luego todo funciona sin conexión.",
+      "ar": "يكتب NxIsland مكالماتك على هذا الحاسوب باستخدام Parakeet، ويميّز الأصوات بنموذج صغير ثانٍ. يُنزَّل كلاهما مرة واحدة (نحو {0} ميغابايت)، ثم يعمل كل شيء دون اتصال.",
+      "fr": "NxIsland écrit tes appels sur cet ordinateur avec Parakeet, et distingue les voix avec un second petit modèle. Les deux se téléchargent une fois (environ {0} Mo), puis tout marche hors ligne.",
+      "bn": "NxIsland এই কম্পিউটারে Parakeet দিয়ে আপনার কল লেখে, আর দ্বিতীয় একটি ছোট মডেল দিয়ে কণ্ঠগুলো আলাদা করে। দুটোই একবার ডাউনলোড হয় (প্রায় {0} MB), তারপর সবকিছু অফলাইনে চলে।",
+      "pt-BR": "O NxIsland escreve suas chamadas neste computador com o Parakeet e distingue as vozes com um segundo modelo pequeno. Os dois são baixados uma vez (cerca de {0} MB) e depois tudo funciona offline.",
+      "ru": "NxIsland записывает ваши звонки на этом компьютере с помощью Parakeet и различает голоса второй небольшой моделью. Обе скачиваются один раз (около {0} МБ), дальше всё работает офлайн.",
+      "id": "NxIsland menulis panggilanmu di komputer ini dengan Parakeet, dan membedakan suara dengan model kecil kedua. Keduanya diunduh sekali (sekitar {0} MB), lalu semuanya bekerja offline.",
+      "de": "NxIsland transkribiert deine Gespräche auf diesem Computer mit Parakeet und unterscheidet die Stimmen mit einem zweiten kleinen Modell. Beide werden einmal heruntergeladen (etwa {0} MB), danach läuft alles offline.",
+      "tr": "NxIsland görüşmelerini bu bilgisayarda Parakeet ile yazıya döker ve ikinci küçük bir modelle sesleri ayırt eder. İkisi de bir kez indirilir (yaklaşık {0} MB), sonra her şey çevrimdışı çalışır."
     },
     "The clean-up uses your Claude key. Add it in Notch → Chat.": {
       "zh-Hans": "清理功能使用你的 Claude 密钥。请在“Notch → 聊天”中添加。",
@@ -4636,18 +4636,18 @@
       "de": "Kopiert · zum Einfügen Ctrl+V drücken",
       "tr": "Kopyalandı · yapıştırmak için Ctrl+V tuşlarına bas"
     },
-    "Download the voice model first, in Coucou → Settings → Recognition.": {
-      "zh-Hans": "请先在“Coucou → 设置 → 识别”中下载语音模型。",
-      "hi": "पहले Coucou → सेटिंग्स → पहचान में वॉइस मॉडल डाउनलोड करें।",
-      "es": "Descarga primero el modelo de voz, en Coucou → Ajustes → Reconocimiento.",
-      "ar": "نزّل نموذج الصوت أولًا، في Coucou ← الإعدادات ← التعرّف.",
-      "fr": "Télécharge d'abord le modèle de voix, dans Coucou → Réglages → Reconnaissance.",
-      "bn": "আগে Coucou → সেটিংস → রিকগনিশন-এ ভয়েস মডেল ডাউনলোড করুন।",
-      "pt-BR": "Baixe primeiro o modelo de voz, em Coucou → Ajustes → Reconhecimento.",
-      "ru": "Сначала скачайте голосовую модель: Coucou → Настройки → Распознавание.",
-      "id": "Unduh model suara dulu, di Coucou → Pengaturan → Pengenalan.",
-      "de": "Lade zuerst das Sprachmodell unter Coucou → Einstellungen → Erkennung herunter.",
-      "tr": "Önce Coucou → Ayarlar → Tanıma bölümünden ses modelini indir."
+    "Download the voice model first, in NxIsland → Settings → Recognition.": {
+      "zh-Hans": "请先在“NxIsland → 设置 → 识别”中下载语音模型。",
+      "hi": "पहले NxIsland → सेटिंग्स → पहचान में वॉइस मॉडल डाउनलोड करें।",
+      "es": "Descarga primero el modelo de voz, en NxIsland → Ajustes → Reconocimiento.",
+      "ar": "نزّل نموذج الصوت أولًا، في NxIsland ← الإعدادات ← التعرّف.",
+      "fr": "Télécharge d'abord le modèle de voix, dans NxIsland → Réglages → Reconnaissance.",
+      "bn": "আগে NxIsland → সেটিংস → রিকগনিশন-এ ভয়েস মডেল ডাউনলোড করুন।",
+      "pt-BR": "Baixe primeiro o modelo de voz, em NxIsland → Ajustes → Reconhecimento.",
+      "ru": "Сначала скачайте голосовую модель: NxIsland → Настройки → Распознавание.",
+      "id": "Unduh model suara dulu, di NxIsland → Pengaturan → Pengenalan.",
+      "de": "Lade zuerst das Sprachmodell unter NxIsland → Einstellungen → Erkennung herunter.",
+      "tr": "Önce NxIsland → Ayarlar → Tanıma bölümünden ses modelini indir."
     },
     "Your words are copied: click where you want them and press Ctrl+V.": {
       "zh-Hans": "你的文字已复制：点击想放的位置，然后按 Ctrl+V。",
@@ -4662,18 +4662,18 @@
       "de": "Deine Worte wurden kopiert: Klicke auf die gewünschte Stelle und drücke Ctrl+V.",
       "tr": "Sözlerin kopyalandı: istediğin yere tıkla ve Ctrl+V tuşlarına bas."
     },
-    "On Wayland, the desktop holds the dictation key for Coucou: Ctrl+Alt+V, or the keys you picked when it asked. The first paste asks once to let Coucou type for you.": {
-      "zh-Hans": "在 Wayland 上，桌面会替 Coucou 管理听写按键：Ctrl+Alt+V，或者它询问时你选的按键。第一次粘贴时会询问一次，是否允许 Coucou 替你输入。",
-      "hi": "Wayland पर डेस्कटॉप Coucou के लिए डिक्टेशन कुंजी संभालता है: Ctrl+Alt+V, या वे कुंजियाँ जो आपने पूछे जाने पर चुनी थीं। पहली बार पेस्ट करते समय यह एक बार पूछता है कि क्या Coucou आपके लिए टाइप कर सकता है।",
-      "es": "En Wayland, el escritorio gestiona la tecla de dictado por Coucou: Ctrl+Alt+V, o las teclas que elegiste cuando te lo preguntó. La primera vez que pegues, te preguntará una sola vez si Coucou puede escribir por ti.",
-      "ar": "على Wayland، يتولى سطح المكتب مفتاح الإملاء نيابةً عن Coucou: ‏Ctrl+Alt+V، أو المفاتيح التي اخترتها عندما سألك. عند أول لصق يسألك مرة واحدة للسماح لـ Coucou بالكتابة نيابةً عنك.",
-      "fr": "Sous Wayland, c'est le bureau qui gère la touche de dictée pour Coucou : Ctrl+Alt+V, ou les touches que tu as choisies quand il te l'a demandé. Au premier collage, il te demande une seule fois de laisser Coucou écrire pour toi.",
-      "bn": "Wayland-এ ডেস্কটপ Coucou-র হয়ে ডিক্টেশন কী সামলায়: Ctrl+Alt+V, অথবা জিজ্ঞেস করার সময় আপনি যে কীগুলো বেছে নিয়েছিলেন। প্রথমবার পেস্ট করার সময় একবার জিজ্ঞেস করা হয় Coucou-কে আপনার হয়ে টাইপ করতে দেবেন কি না।",
-      "pt-BR": "No Wayland, a área de trabalho cuida da tecla de ditado para o Coucou: Ctrl+Alt+V, ou as teclas que você escolheu quando ela perguntou. Na primeira vez que colar, ela pergunta uma única vez se o Coucou pode digitar por você.",
-      "ru": "В Wayland клавишей диктовки для Coucou управляет рабочий стол: Ctrl+Alt+V или клавиши, которые вы выбрали, когда он спросил. При первой вставке он один раз спросит, разрешить ли Coucou печатать за вас.",
-      "id": "Di Wayland, desktop yang memegang tombol dikte untuk Coucou: Ctrl+Alt+V, atau tombol yang kamu pilih saat ditanya. Saat menempel pertama kali, desktop akan bertanya sekali apakah Coucou boleh mengetik untukmu.",
-      "de": "Unter Wayland verwaltet der Desktop die Diktiertaste für Coucou: Ctrl+Alt+V oder die bei der Abfrage gewählten Tasten. Beim ersten Einfügen wirst du einmal gefragt, ob Coucou für dich tippen darf.",
-      "tr": "Wayland'da masaüstü, Coucou için dikte tuşunu yönetir: Ctrl+Alt+V veya sorulduğunda seçtiğin tuşlar. İlk yapıştırmada Coucou'nun senin için yazmasına bir kez izin vermen istenir."
+    "On Wayland, the desktop holds the dictation key for NxIsland: Ctrl+Alt+V, or the keys you picked when it asked. The first paste asks once to let NxIsland type for you.": {
+      "zh-Hans": "在 Wayland 上，桌面会替 NxIsland 管理听写按键：Ctrl+Alt+V，或者它询问时你选的按键。第一次粘贴时会询问一次，是否允许 NxIsland 替你输入。",
+      "hi": "Wayland पर डेस्कटॉप NxIsland के लिए डिक्टेशन कुंजी संभालता है: Ctrl+Alt+V, या वे कुंजियाँ जो आपने पूछे जाने पर चुनी थीं। पहली बार पेस्ट करते समय यह एक बार पूछता है कि क्या NxIsland आपके लिए टाइप कर सकता है।",
+      "es": "En Wayland, el escritorio gestiona la tecla de dictado por NxIsland: Ctrl+Alt+V, o las teclas que elegiste cuando te lo preguntó. La primera vez que pegues, te preguntará una sola vez si NxIsland puede escribir por ti.",
+      "ar": "على Wayland، يتولى سطح المكتب مفتاح الإملاء نيابةً عن NxIsland: ‏Ctrl+Alt+V، أو المفاتيح التي اخترتها عندما سألك. عند أول لصق يسألك مرة واحدة للسماح لـ NxIsland بالكتابة نيابةً عنك.",
+      "fr": "Sous Wayland, c'est le bureau qui gère la touche de dictée pour NxIsland : Ctrl+Alt+V, ou les touches que tu as choisies quand il te l'a demandé. Au premier collage, il te demande une seule fois de laisser NxIsland écrire pour toi.",
+      "bn": "Wayland-এ ডেস্কটপ NxIsland-র হয়ে ডিক্টেশন কী সামলায়: Ctrl+Alt+V, অথবা জিজ্ঞেস করার সময় আপনি যে কীগুলো বেছে নিয়েছিলেন। প্রথমবার পেস্ট করার সময় একবার জিজ্ঞেস করা হয় NxIsland-কে আপনার হয়ে টাইপ করতে দেবেন কি না।",
+      "pt-BR": "No Wayland, a área de trabalho cuida da tecla de ditado para o NxIsland: Ctrl+Alt+V, ou as teclas que você escolheu quando ela perguntou. Na primeira vez que colar, ela pergunta uma única vez se o NxIsland pode digitar por você.",
+      "ru": "В Wayland клавишей диктовки для NxIsland управляет рабочий стол: Ctrl+Alt+V или клавиши, которые вы выбрали, когда он спросил. При первой вставке он один раз спросит, разрешить ли NxIsland печатать за вас.",
+      "id": "Di Wayland, desktop yang memegang tombol dikte untuk NxIsland: Ctrl+Alt+V, atau tombol yang kamu pilih saat ditanya. Saat menempel pertama kali, desktop akan bertanya sekali apakah NxIsland boleh mengetik untukmu.",
+      "de": "Unter Wayland verwaltet der Desktop die Diktiertaste für NxIsland: Ctrl+Alt+V oder die bei der Abfrage gewählten Tasten. Beim ersten Einfügen wirst du einmal gefragt, ob NxIsland für dich tippen darf.",
+      "tr": "Wayland'da masaüstü, NxIsland için dikte tuşunu yönetir: Ctrl+Alt+V veya sorulduğunda seçtiğin tuşlar. İlk yapıştırmada NxIsland'nun senin için yazmasına bir kez izin vermen istenir."
     },
     "ElevenLabs key": {
       "zh-Hans": "ElevenLabs 密钥",
@@ -4688,18 +4688,18 @@
       "de": "ElevenLabs-Schlüssel",
       "tr": "ElevenLabs anahtarı"
     },
-    "Say « OK Coucou », then ask anything: add a pill, play music, the weather, an email to prepare.": {
-      "zh-Hans": "说「OK Coucou」，然后随便问：添加一个胶囊、播放音乐、天气、准备一封邮件。",
-      "hi": "« OK Coucou » कहें, फिर कुछ भी पूछें: एक पिल जोड़ें, संगीत चलाएँ, मौसम, कोई ईमेल तैयार करें।",
-      "es": "Di « OK Coucou » y pide lo que quieras: añadir una píldora, poner música, el tiempo, un correo por preparar.",
-      "ar": "قل « OK Coucou »، ثم اطلب أي شيء: إضافة كبسولة، تشغيل الموسيقى، الطقس، بريد إلكتروني لتجهيزه.",
-      "fr": "Dis « OK Coucou », puis demande ce que tu veux : ajouter une pilule, lancer de la musique, la météo, un e-mail à préparer.",
-      "bn": "« OK Coucou » বলুন, তারপর যা খুশি জিজ্ঞেস করুন: একটি পিল যোগ করা, গান চালানো, আবহাওয়া, একটি ইমেল তৈরি করা।",
-      "pt-BR": "Diga « OK Coucou » e peça o que quiser: adicionar uma pílula, tocar música, o clima, um e-mail para preparar.",
-      "ru": "Скажите « OK Coucou » и просите что угодно: добавить плашку, включить музыку, погоду, подготовить письмо.",
-      "id": "Ucapkan « OK Coucou », lalu minta apa saja: tambah pil, putar musik, cuaca, email yang perlu disiapkan.",
-      "de": "Sage « OK Coucou » und frage dann nach Belieben: eine Kapsel hinzufügen, Musik abspielen, das Wetter oder eine E-Mail vorbereiten.",
-      "tr": "« OK Coucou » de, sonra istediğini sor: araç ekleme, müzik çalma, hava durumu veya hazırlanacak bir e-posta."
+    "Say « OK NxIsland », then ask anything: add a pill, play music, the weather, an email to prepare.": {
+      "zh-Hans": "说「OK NxIsland」，然后随便问：添加一个胶囊、播放音乐、天气、准备一封邮件。",
+      "hi": "« OK NxIsland » कहें, फिर कुछ भी पूछें: एक पिल जोड़ें, संगीत चलाएँ, मौसम, कोई ईमेल तैयार करें।",
+      "es": "Di « OK NxIsland » y pide lo que quieras: añadir una píldora, poner música, el tiempo, un correo por preparar.",
+      "ar": "قل « OK NxIsland »، ثم اطلب أي شيء: إضافة كبسولة، تشغيل الموسيقى، الطقس، بريد إلكتروني لتجهيزه.",
+      "fr": "Dis « OK NxIsland », puis demande ce que tu veux : ajouter une pilule, lancer de la musique, la météo, un e-mail à préparer.",
+      "bn": "« OK NxIsland » বলুন, তারপর যা খুশি জিজ্ঞেস করুন: একটি পিল যোগ করা, গান চালানো, আবহাওয়া, একটি ইমেল তৈরি করা।",
+      "pt-BR": "Diga « OK NxIsland » e peça o que quiser: adicionar uma pílula, tocar música, o clima, um e-mail para preparar.",
+      "ru": "Скажите « OK NxIsland » и просите что угодно: добавить плашку, включить музыку, погоду, подготовить письмо.",
+      "id": "Ucapkan « OK NxIsland », lalu minta apa saja: tambah pil, putar musik, cuaca, email yang perlu disiapkan.",
+      "de": "Sage « OK NxIsland » und frage dann nach Belieben: eine Kapsel hinzufügen, Musik abspielen, das Wetter oder eine E-Mail vorbereiten.",
+      "tr": "« OK NxIsland » de, sonra istediğini sor: araç ekleme, müzik çalma, hava durumu veya hazırlanacak bir e-posta."
     },
     "Listening": {
       "zh-Hans": "聆听",
@@ -4714,70 +4714,70 @@
       "de": "Hört zu",
       "tr": "Dinleniyor"
     },
-    "Listen for « OK Coucou »": {
-      "zh-Hans": "聆听「OK Coucou」",
-      "hi": "« OK Coucou » के लिए सुनें",
-      "es": "Escuchar « OK Coucou »",
-      "ar": "الاستماع إلى « OK Coucou »",
-      "fr": "Écouter « OK Coucou »",
-      "bn": "« OK Coucou »-এর জন্য শুনুন",
-      "pt-BR": "Escutar « OK Coucou »",
-      "ru": "Слушать « OK Coucou »",
-      "id": "Dengarkan « OK Coucou »",
-      "de": "Auf « OK Coucou » hören",
-      "tr": "« OK Coucou » ifadesini dinle"
+    "Listen for « OK NxIsland »": {
+      "zh-Hans": "聆听「OK NxIsland」",
+      "hi": "« OK NxIsland » के लिए सुनें",
+      "es": "Escuchar « OK NxIsland »",
+      "ar": "الاستماع إلى « OK NxIsland »",
+      "fr": "Écouter « OK NxIsland »",
+      "bn": "« OK NxIsland »-এর জন্য শুনুন",
+      "pt-BR": "Escutar « OK NxIsland »",
+      "ru": "Слушать « OK NxIsland »",
+      "id": "Dengarkan « OK NxIsland »",
+      "de": "Auf « OK NxIsland » hören",
+      "tr": "« OK NxIsland » ifadesini dinle"
     },
-    "The microphone stays open; only what follows « OK Coucou » goes further.": {
-      "zh-Hans": "麦克风保持开启；只有「OK Coucou」之后的内容才会被进一步处理。",
-      "hi": "माइक्रोफ़ोन खुला रहता है; केवल « OK Coucou » के बाद कही गई बात ही आगे जाती है।",
-      "es": "El micrófono sigue abierto; solo lo que va después de « OK Coucou » llega más lejos.",
-      "ar": "يبقى الميكروفون مفتوحًا؛ ولا يتجاوز الحاسوب إلا ما يأتي بعد « OK Coucou ».",
-      "fr": "Le micro reste ouvert ; seul ce qui suit « OK Coucou » va plus loin.",
-      "bn": "মাইক্রোফোন খোলা থাকে; কেবল « OK Coucou »-এর পরে যা বলা হয় সেটুকুই আরও এগোয়।",
-      "pt-BR": "O microfone fica aberto; só o que vem depois de « OK Coucou » vai adiante.",
-      "ru": "Микрофон остаётся включённым; дальше уходит только то, что сказано после « OK Coucou ».",
-      "id": "Mikrofon tetap terbuka; hanya yang diucapkan setelah « OK Coucou » yang diteruskan.",
-      "de": "Das Mikrofon bleibt offen; nur das nach « OK Coucou » Gesagte wird weiterverarbeitet.",
-      "tr": "Mikrofon açık kalır; yalnızca « OK Coucou » sonrasında söylediklerin işlenmeye devam eder."
+    "The microphone stays open; only what follows « OK NxIsland » goes further.": {
+      "zh-Hans": "麦克风保持开启；只有「OK NxIsland」之后的内容才会被进一步处理。",
+      "hi": "माइक्रोफ़ोन खुला रहता है; केवल « OK NxIsland » के बाद कही गई बात ही आगे जाती है।",
+      "es": "El micrófono sigue abierto; solo lo que va después de « OK NxIsland » llega más lejos.",
+      "ar": "يبقى الميكروفون مفتوحًا؛ ولا يتجاوز الحاسوب إلا ما يأتي بعد « OK NxIsland ».",
+      "fr": "Le micro reste ouvert ; seul ce qui suit « OK NxIsland » va plus loin.",
+      "bn": "মাইক্রোফোন খোলা থাকে; কেবল « OK NxIsland »-এর পরে যা বলা হয় সেটুকুই আরও এগোয়।",
+      "pt-BR": "O microfone fica aberto; só o que vem depois de « OK NxIsland » vai adiante.",
+      "ru": "Микрофон остаётся включённым; дальше уходит только то, что сказано после « OK NxIsland ».",
+      "id": "Mikrofon tetap terbuka; hanya yang diucapkan setelah « OK NxIsland » yang diteruskan.",
+      "de": "Das Mikrofon bleibt offen; nur das nach « OK NxIsland » Gesagte wird weiterverarbeitet.",
+      "tr": "Mikrofon açık kalır; yalnızca « OK NxIsland » sonrasında söylediklerin işlenmeye devam eder."
     },
-    "Hears « OK Coucou » here, without the internet.": {
-      "zh-Hans": "在这台电脑上听到「OK Coucou」，无需联网。",
-      "hi": "« OK Coucou » यहीं सुनता है, इंटरनेट के बिना।",
-      "es": "Oye « OK Coucou » aquí, sin internet.",
-      "ar": "يسمع « OK Coucou » هنا، دون إنترنت.",
-      "fr": "Entend « OK Coucou » ici, sans internet.",
-      "bn": "« OK Coucou » এখানেই শোনে, ইন্টারনেট ছাড়াই।",
-      "pt-BR": "Ouve « OK Coucou » aqui, sem internet.",
-      "ru": "Слышит « OK Coucou » прямо здесь, без интернета.",
-      "id": "Mendengar « OK Coucou » di sini, tanpa internet.",
-      "de": "Erkennt « OK Coucou » hier, ohne Internet.",
-      "tr": "« OK Coucou » ifadesini burada, internet olmadan duyar."
+    "Hears « OK NxIsland » here, without the internet.": {
+      "zh-Hans": "在这台电脑上听到「OK NxIsland」，无需联网。",
+      "hi": "« OK NxIsland » यहीं सुनता है, इंटरनेट के बिना।",
+      "es": "Oye « OK NxIsland » aquí, sin internet.",
+      "ar": "يسمع « OK NxIsland » هنا، دون إنترنت.",
+      "fr": "Entend « OK NxIsland » ici, sans internet.",
+      "bn": "« OK NxIsland » এখানেই শোনে, ইন্টারনেট ছাড়াই।",
+      "pt-BR": "Ouve « OK NxIsland » aqui, sem internet.",
+      "ru": "Слышит « OK NxIsland » прямо здесь, без интернета.",
+      "id": "Mendengar « OK NxIsland » di sini, tanpa internet.",
+      "de": "Erkennt « OK NxIsland » hier, ohne Internet.",
+      "tr": "« OK NxIsland » ifadesini burada, internet olmadan duyar."
     },
-    "Coucou answers with Claude: add your Claude key in Notch → Chat.": {
-      "zh-Hans": "Coucou 用 Claude 回答：请在 Notch → 聊天 中添加你的 Claude 密钥。",
-      "hi": "Coucou Claude से जवाब देता है: Notch → चैट में अपनी Claude कुंजी जोड़ें।",
-      "es": "Coucou responde con Claude: añade tu clave de Claude en Notch → Chat.",
-      "ar": "يجيب Coucou باستخدام Claude: أضف مفتاح Claude الخاص بك في Notch ← الدردشة.",
-      "fr": "Coucou répond avec Claude : ajoute ta clé Claude dans Notch → Chat.",
-      "bn": "Coucou Claude দিয়ে উত্তর দেয়: Notch → চ্যাট-এ আপনার Claude কী যোগ করুন।",
-      "pt-BR": "O Coucou responde com o Claude: adicione sua chave do Claude em Notch → Chat.",
-      "ru": "Coucou отвечает с помощью Claude: добавьте свой ключ Claude в Notch → Чат.",
-      "id": "Coucou menjawab dengan Claude: tambahkan kunci Claude-mu di Notch → Obrolan.",
-      "de": "Coucou antwortet mit Claude: Füge deinen Claude-Schlüssel unter Notch → Chat hinzu.",
-      "tr": "Coucou, Claude ile yanıt verir: Çentik → Sohbet bölümünden Claude anahtarını ekle."
+    "NxIsland answers with Claude: add your Claude key in Notch → Chat.": {
+      "zh-Hans": "NxIsland 用 Claude 回答：请在 Notch → 聊天 中添加你的 Claude 密钥。",
+      "hi": "NxIsland Claude से जवाब देता है: Notch → चैट में अपनी Claude कुंजी जोड़ें।",
+      "es": "NxIsland responde con Claude: añade tu clave de Claude en Notch → Chat.",
+      "ar": "يجيب NxIsland باستخدام Claude: أضف مفتاح Claude الخاص بك في Notch ← الدردشة.",
+      "fr": "NxIsland répond avec Claude : ajoute ta clé Claude dans Notch → Chat.",
+      "bn": "NxIsland Claude দিয়ে উত্তর দেয়: Notch → চ্যাট-এ আপনার Claude কী যোগ করুন।",
+      "pt-BR": "O NxIsland responde com o Claude: adicione sua chave do Claude em Notch → Chat.",
+      "ru": "NxIsland отвечает с помощью Claude: добавьте свой ключ Claude в Notch → Чат.",
+      "id": "NxIsland menjawab dengan Claude: tambahkan kunci Claude-mu di Notch → Obrolan.",
+      "de": "NxIsland antwortet mit Claude: Füge deinen Claude-Schlüssel unter Notch → Chat hinzu.",
+      "tr": "NxIsland, Claude ile yanıt verir: Çentik → Sohbet bölümünden Claude anahtarını ekle."
     },
-    "Download the voice model so Coucou can hear you.": {
-      "zh-Hans": "下载语音模型，Coucou 才能听到你。",
-      "hi": "आवाज़ मॉडल डाउनलोड करें ताकि Coucou आपको सुन सके।",
-      "es": "Descarga el modelo de voz para que Coucou pueda oírte.",
-      "ar": "نزّل نموذج الصوت حتى يتمكن Coucou من سماعك.",
-      "fr": "Télécharge le modèle vocal pour que Coucou puisse t'entendre.",
-      "bn": "ভয়েস মডেল ডাউনলোড করুন যাতে Coucou আপনাকে শুনতে পায়।",
-      "pt-BR": "Baixe o modelo de voz para o Coucou poder ouvir você.",
-      "ru": "Скачайте голосовую модель, чтобы Coucou мог вас слышать.",
-      "id": "Unduh model suara agar Coucou bisa mendengarmu.",
-      "de": "Lade das Sprachmodell herunter, damit Coucou dich hören kann.",
-      "tr": "Coucou'nun seni duyabilmesi için ses modelini indir."
+    "Download the voice model so NxIsland can hear you.": {
+      "zh-Hans": "下载语音模型，NxIsland 才能听到你。",
+      "hi": "आवाज़ मॉडल डाउनलोड करें ताकि NxIsland आपको सुन सके।",
+      "es": "Descarga el modelo de voz para que NxIsland pueda oírte.",
+      "ar": "نزّل نموذج الصوت حتى يتمكن NxIsland من سماعك.",
+      "fr": "Télécharge le modèle vocal pour que NxIsland puisse t'entendre.",
+      "bn": "ভয়েস মডেল ডাউনলোড করুন যাতে NxIsland আপনাকে শুনতে পায়।",
+      "pt-BR": "Baixe o modelo de voz para o NxIsland poder ouvir você.",
+      "ru": "Скачайте голосовую модель, чтобы NxIsland мог вас слышать.",
+      "id": "Unduh model suara agar NxIsland bisa mendengarmu.",
+      "de": "Lade das Sprachmodell herunter, damit NxIsland dich hören kann.",
+      "tr": "NxIsland'nun seni duyabilmesi için ses modelini indir."
     },
     "Answers": {
       "zh-Hans": "回答",
@@ -4818,18 +4818,18 @@
       "de": "Nur Text",
       "tr": "Yalnızca metin"
     },
-    "Coucou answers out loud": {
-      "zh-Hans": "Coucou 大声回答",
-      "hi": "Coucou ज़ोर से जवाब देता है",
-      "es": "Coucou responde en voz alta",
-      "ar": "يجيب Coucou بصوت عالٍ",
-      "fr": "Coucou répond à voix haute",
-      "bn": "Coucou জোরে উত্তর দেয়",
-      "pt-BR": "O Coucou responde em voz alta",
-      "ru": "Coucou отвечает вслух",
-      "id": "Coucou menjawab dengan suara",
-      "de": "Coucou antwortet laut",
-      "tr": "Coucou sesli yanıt verir"
+    "NxIsland answers out loud": {
+      "zh-Hans": "NxIsland 大声回答",
+      "hi": "NxIsland ज़ोर से जवाब देता है",
+      "es": "NxIsland responde en voz alta",
+      "ar": "يجيب NxIsland بصوت عالٍ",
+      "fr": "NxIsland répond à voix haute",
+      "bn": "NxIsland জোরে উত্তর দেয়",
+      "pt-BR": "O NxIsland responde em voz alta",
+      "ru": "NxIsland отвечает вслух",
+      "id": "NxIsland menjawab dengan suara",
+      "de": "NxIsland antwortet laut",
+      "tr": "NxIsland sesli yanıt verir"
     },
     "Female": {
       "zh-Hans": "女声",
@@ -4857,44 +4857,44 @@
       "de": "Männlich",
       "tr": "Erkek"
     },
-    "Your voice never leaves this computer: Parakeet turns it into text here. Only the words after « OK Coucou » go to Anthropic with your Claude key, and to ElevenLabs if you picked it for the answers.": {
-      "zh-Hans": "你的声音永远不会离开这台电脑：Parakeet 在本机把它转成文字。只有「OK Coucou」之后的文字会用你的 Claude 密钥发送给 Anthropic；如果你选了 ElevenLabs 来朗读回答，也会发送给 ElevenLabs。",
-      "hi": "आपकी आवाज़ कभी इस कंप्यूटर से बाहर नहीं जाती: Parakeet उसे यहीं टेक्स्ट में बदलता है। केवल « OK Coucou » के बाद के शब्द आपकी Claude कुंजी के साथ Anthropic को जाते हैं, और अगर आपने जवाबों के लिए ElevenLabs चुना है तो ElevenLabs को भी।",
-      "es": "Tu voz nunca sale de este ordenador: Parakeet la convierte en texto aquí. Solo las palabras después de « OK Coucou » van a Anthropic con tu clave de Claude, y a ElevenLabs si lo elegiste para las respuestas.",
-      "ar": "لا يغادر صوتك هذا الحاسوب أبدًا: يحوّله Parakeet إلى نص هنا. لا تذهب إلا الكلمات التي تلي « OK Coucou » إلى Anthropic بمفتاح Claude الخاص بك، وإلى ElevenLabs إن اخترته للإجابات.",
-      "fr": "Ta voix ne quitte jamais cet ordinateur : Parakeet la transforme en texte ici. Seuls les mots qui suivent « OK Coucou » partent chez Anthropic avec ta clé Claude, et chez ElevenLabs si tu l'as choisi pour les réponses.",
-      "bn": "আপনার কণ্ঠ কখনো এই কম্পিউটার ছেড়ে যায় না: Parakeet এখানেই একে টেক্সটে রূপান্তর করে। কেবল « OK Coucou »-এর পরের শব্দগুলো আপনার Claude কী দিয়ে Anthropic-এ যায়, আর উত্তরের জন্য ElevenLabs বেছে নিলে ElevenLabs-এও।",
-      "pt-BR": "Sua voz nunca sai deste computador: o Parakeet a transforma em texto aqui. Só as palavras depois de « OK Coucou » vão para a Anthropic com sua chave do Claude, e para a ElevenLabs se você a escolheu para as respostas.",
-      "ru": "Ваш голос никогда не покидает этот компьютер: Parakeet превращает его в текст здесь. Только слова после « OK Coucou » уходят в Anthropic с вашим ключом Claude и в ElevenLabs, если вы выбрали его для ответов.",
-      "id": "Suaramu tidak pernah keluar dari komputer ini: Parakeet mengubahnya menjadi teks di sini. Hanya kata-kata setelah « OK Coucou » yang dikirim ke Anthropic dengan kunci Claude-mu, dan ke ElevenLabs jika kamu memilihnya untuk jawaban.",
-      "de": "Deine Stimme verlässt diesen Computer nie: Parakeet wandelt sie hier in Text um. Nur die Wörter nach « OK Coucou » werden mit deinem Claude-Schlüssel an Anthropic gesendet und an ElevenLabs, falls du es für Antworten ausgewählt hast.",
-      "tr": "Sesin bu bilgisayardan asla dışarı çıkmaz: Parakeet burada metne dönüştürür. Yalnızca « OK Coucou » sonrasındaki sözcükler Claude anahtarınla Anthropic'e; yanıtlar için ElevenLabs'i seçtiysen ona da gönderilir."
+    "Your voice never leaves this computer: Parakeet turns it into text here. Only the words after « OK NxIsland » go to Anthropic with your Claude key, and to ElevenLabs if you picked it for the answers.": {
+      "zh-Hans": "你的声音永远不会离开这台电脑：Parakeet 在本机把它转成文字。只有「OK NxIsland」之后的文字会用你的 Claude 密钥发送给 Anthropic；如果你选了 ElevenLabs 来朗读回答，也会发送给 ElevenLabs。",
+      "hi": "आपकी आवाज़ कभी इस कंप्यूटर से बाहर नहीं जाती: Parakeet उसे यहीं टेक्स्ट में बदलता है। केवल « OK NxIsland » के बाद के शब्द आपकी Claude कुंजी के साथ Anthropic को जाते हैं, और अगर आपने जवाबों के लिए ElevenLabs चुना है तो ElevenLabs को भी।",
+      "es": "Tu voz nunca sale de este ordenador: Parakeet la convierte en texto aquí. Solo las palabras después de « OK NxIsland » van a Anthropic con tu clave de Claude, y a ElevenLabs si lo elegiste para las respuestas.",
+      "ar": "لا يغادر صوتك هذا الحاسوب أبدًا: يحوّله Parakeet إلى نص هنا. لا تذهب إلا الكلمات التي تلي « OK NxIsland » إلى Anthropic بمفتاح Claude الخاص بك، وإلى ElevenLabs إن اخترته للإجابات.",
+      "fr": "Ta voix ne quitte jamais cet ordinateur : Parakeet la transforme en texte ici. Seuls les mots qui suivent « OK NxIsland » partent chez Anthropic avec ta clé Claude, et chez ElevenLabs si tu l'as choisi pour les réponses.",
+      "bn": "আপনার কণ্ঠ কখনো এই কম্পিউটার ছেড়ে যায় না: Parakeet এখানেই একে টেক্সটে রূপান্তর করে। কেবল « OK NxIsland »-এর পরের শব্দগুলো আপনার Claude কী দিয়ে Anthropic-এ যায়, আর উত্তরের জন্য ElevenLabs বেছে নিলে ElevenLabs-এও।",
+      "pt-BR": "Sua voz nunca sai deste computador: o Parakeet a transforma em texto aqui. Só as palavras depois de « OK NxIsland » vão para a Anthropic com sua chave do Claude, e para a ElevenLabs se você a escolheu para as respostas.",
+      "ru": "Ваш голос никогда не покидает этот компьютер: Parakeet превращает его в текст здесь. Только слова после « OK NxIsland » уходят в Anthropic с вашим ключом Claude и в ElevenLabs, если вы выбрали его для ответов.",
+      "id": "Suaramu tidak pernah keluar dari komputer ini: Parakeet mengubahnya menjadi teks di sini. Hanya kata-kata setelah « OK NxIsland » yang dikirim ke Anthropic dengan kunci Claude-mu, dan ke ElevenLabs jika kamu memilihnya untuk jawaban.",
+      "de": "Deine Stimme verlässt diesen Computer nie: Parakeet wandelt sie hier in Text um. Nur die Wörter nach « OK NxIsland » werden mit deinem Claude-Schlüssel an Anthropic gesendet und an ElevenLabs, falls du es für Antworten ausgewählt hast.",
+      "tr": "Sesin bu bilgisayardan asla dışarı çıkmaz: Parakeet burada metne dönüştürür. Yalnızca « OK NxIsland » sonrasındaki sözcükler Claude anahtarınla Anthropic'e; yanıtlar için ElevenLabs'i seçtiysen ona da gönderilir."
     },
-    "An email is never sent by Coucou: your mail app opens with it written, and you send it.": {
-      "zh-Hans": "Coucou 从不发送邮件：你的邮件应用会打开并填好内容，由你来发送。",
-      "hi": "Coucou कभी ईमेल नहीं भेजता: आपका मेल ऐप उसे लिखा हुआ खोलता है, और भेजते आप हैं।",
-      "es": "Coucou nunca envía un correo: tu app de correo se abre con él escrito, y lo envías tú.",
-      "ar": "لا يرسل Coucou أي بريد إلكتروني أبدًا: يُفتح تطبيق البريد لديك والرسالة مكتوبة، وأنت من يرسلها.",
-      "fr": "Coucou n'envoie jamais d'e-mail : ton app de mail s'ouvre avec le message écrit, et c'est toi qui l'envoies.",
-      "bn": "Coucou কখনো ইমেল পাঠায় না: আপনার মেল অ্যাপ লেখা ইমেলসহ খোলে, আর পাঠান আপনি।",
-      "pt-BR": "O Coucou nunca envia um e-mail: seu app de e-mail abre com ele escrito, e quem envia é você.",
-      "ru": "Coucou никогда не отправляет письма: ваше почтовое приложение откроется с готовым текстом, а отправите его вы.",
-      "id": "Coucou tidak pernah mengirim email: aplikasi email-mu terbuka dengan email yang sudah ditulis, dan kamu yang mengirimnya.",
-      "de": "Coucou sendet niemals eine E-Mail: Deine Mail-App öffnet sich mit dem vorbereiteten Text und du sendest ihn.",
-      "tr": "Coucou asla e-posta göndermez: posta uygulaman yazılmış e-postayla açılır ve sen gönderirsin."
+    "An email is never sent by NxIsland: your mail app opens with it written, and you send it.": {
+      "zh-Hans": "NxIsland 从不发送邮件：你的邮件应用会打开并填好内容，由你来发送。",
+      "hi": "NxIsland कभी ईमेल नहीं भेजता: आपका मेल ऐप उसे लिखा हुआ खोलता है, और भेजते आप हैं।",
+      "es": "NxIsland nunca envía un correo: tu app de correo se abre con él escrito, y lo envías tú.",
+      "ar": "لا يرسل NxIsland أي بريد إلكتروني أبدًا: يُفتح تطبيق البريد لديك والرسالة مكتوبة، وأنت من يرسلها.",
+      "fr": "NxIsland n'envoie jamais d'e-mail : ton app de mail s'ouvre avec le message écrit, et c'est toi qui l'envoies.",
+      "bn": "NxIsland কখনো ইমেল পাঠায় না: আপনার মেল অ্যাপ লেখা ইমেলসহ খোলে, আর পাঠান আপনি।",
+      "pt-BR": "O NxIsland nunca envia um e-mail: seu app de e-mail abre com ele escrito, e quem envia é você.",
+      "ru": "NxIsland никогда не отправляет письма: ваше почтовое приложение откроется с готовым текстом, а отправите его вы.",
+      "id": "NxIsland tidak pernah mengirim email: aplikasi email-mu terbuka dengan email yang sudah ditulis, dan kamu yang mengirimnya.",
+      "de": "NxIsland sendet niemals eine E-Mail: Deine Mail-App öffnet sich mit dem vorbereiteten Text und du sendest ihn.",
+      "tr": "NxIsland asla e-posta göndermez: posta uygulaman yazılmış e-postayla açılır ve sen gönderirsin."
     },
-    "Coucou couldn't answer: check your Claude key in Notch → Chat.": {
-      "zh-Hans": "Coucou 无法回答：请检查 Notch → 聊天 中的 Claude 密钥。",
-      "hi": "Coucou जवाब नहीं दे सका: Notch → चैट में अपनी Claude कुंजी जाँचें।",
-      "es": "Coucou no pudo responder: revisa tu clave de Claude en Notch → Chat.",
-      "ar": "تعذّر على Coucou الإجابة: تحقّق من مفتاح Claude في Notch ← الدردشة.",
-      "fr": "Coucou n'a pas pu répondre : vérifie ta clé Claude dans Notch → Chat.",
-      "bn": "Coucou উত্তর দিতে পারেনি: Notch → চ্যাট-এ আপনার Claude কী যাচাই করুন।",
-      "pt-BR": "O Coucou não conseguiu responder: verifique sua chave do Claude em Notch → Chat.",
-      "ru": "Coucou не смог ответить: проверьте ключ Claude в Notch → Чат.",
-      "id": "Coucou tidak bisa menjawab: periksa kunci Claude-mu di Notch → Obrolan.",
-      "de": "Coucou konnte nicht antworten: Prüfe deinen Claude-Schlüssel unter Notch → Chat.",
-      "tr": "Coucou yanıt veremedi: Çentik → Sohbet bölümündeki Claude anahtarını kontrol et."
+    "NxIsland couldn't answer: check your Claude key in Notch → Chat.": {
+      "zh-Hans": "NxIsland 无法回答：请检查 Notch → 聊天 中的 Claude 密钥。",
+      "hi": "NxIsland जवाब नहीं दे सका: Notch → चैट में अपनी Claude कुंजी जाँचें।",
+      "es": "NxIsland no pudo responder: revisa tu clave de Claude en Notch → Chat.",
+      "ar": "تعذّر على NxIsland الإجابة: تحقّق من مفتاح Claude في Notch ← الدردشة.",
+      "fr": "NxIsland n'a pas pu répondre : vérifie ta clé Claude dans Notch → Chat.",
+      "bn": "NxIsland উত্তর দিতে পারেনি: Notch → চ্যাট-এ আপনার Claude কী যাচাই করুন।",
+      "pt-BR": "O NxIsland não conseguiu responder: verifique sua chave do Claude em Notch → Chat.",
+      "ru": "NxIsland не смог ответить: проверьте ключ Claude в Notch → Чат.",
+      "id": "NxIsland tidak bisa menjawab: periksa kunci Claude-mu di Notch → Obrolan.",
+      "de": "NxIsland konnte nicht antworten: Prüfe deinen Claude-Schlüssel unter Notch → Chat.",
+      "tr": "NxIsland yanıt veremedi: Çentik → Sohbet bölümündeki Claude anahtarını kontrol et."
     },
     "Show clock in the island": {
       "zh-Hans": "在灵动岛中显示时钟",
@@ -4935,31 +4935,31 @@
       "de": "Neue Versionen direkt in der Insel?",
       "tr": "Yeni sürümler adada görünsün mü?"
     },
-    "Mochi checks Coucou's releases on GitHub a few times a day and tells you when one is out. Nothing about you is sent.": {
-      "zh-Hans": "Mochi 每天会在 GitHub 上查看几次 Coucou 的版本，有新版本时告诉你。不会发送任何关于你的信息。",
-      "hi": "Mochi दिन में कुछ बार GitHub पर Coucou के रिलीज़ देखता है और नया आने पर बताता है। आपके बारे में कुछ नहीं भेजा जाता।",
-      "es": "Mochi revisa las versiones de Coucou en GitHub unas veces al día y te avisa cuando sale una. No se envía nada sobre ti.",
-      "ar": "يتحقق Mochi من إصدارات Coucou على GitHub بضع مرات يوميًا ويخبرك عند صدور إصدار جديد. لا يُرسَل أي شيء عنك.",
-      "fr": "Mochi regarde les versions de Coucou sur GitHub quelques fois par jour et te prévient quand il y en a une. Rien sur toi n’est envoyé.",
-      "bn": "Mochi দিনে কয়েকবার GitHub-এ Coucou-র রিলিজ দেখে এবং নতুন এলে জানায়। আপনার সম্পর্কে কিছুই পাঠানো হয় না।",
-      "pt-BR": "O Mochi verifica as versões do Coucou no GitHub algumas vezes por dia e avisa quando sai uma. Nada sobre você é enviado.",
-      "ru": "Mochi несколько раз в день проверяет релизы Coucou на GitHub и сообщает о новых. О вас ничего не отправляется.",
-      "id": "Mochi memeriksa rilis Coucou di GitHub beberapa kali sehari dan memberi tahu saat ada yang baru. Tidak ada data tentangmu yang dikirim.",
+    "Mochi checks NxIsland's releases on GitHub a few times a day and tells you when one is out. Nothing about you is sent.": {
+      "zh-Hans": "Mochi 每天会在 GitHub 上查看几次 NxIsland 的版本，有新版本时告诉你。不会发送任何关于你的信息。",
+      "hi": "Mochi दिन में कुछ बार GitHub पर NxIsland के रिलीज़ देखता है और नया आने पर बताता है। आपके बारे में कुछ नहीं भेजा जाता।",
+      "es": "Mochi revisa las versiones de NxIsland en GitHub unas veces al día y te avisa cuando sale una. No se envía nada sobre ti.",
+      "ar": "يتحقق Mochi من إصدارات NxIsland على GitHub بضع مرات يوميًا ويخبرك عند صدور إصدار جديد. لا يُرسَل أي شيء عنك.",
+      "fr": "Mochi regarde les versions de NxIsland sur GitHub quelques fois par jour et te prévient quand il y en a une. Rien sur toi n’est envoyé.",
+      "bn": "Mochi দিনে কয়েকবার GitHub-এ NxIsland-র রিলিজ দেখে এবং নতুন এলে জানায়। আপনার সম্পর্কে কিছুই পাঠানো হয় না।",
+      "pt-BR": "O Mochi verifica as versões do NxIsland no GitHub algumas vezes por dia e avisa quando sai uma. Nada sobre você é enviado.",
+      "ru": "Mochi несколько раз в день проверяет релизы NxIsland на GitHub и сообщает о новых. О вас ничего не отправляется.",
+      "id": "Mochi memeriksa rilis NxIsland di GitHub beberapa kali sehari dan memberi tahu saat ada yang baru. Tidak ada data tentangmu yang dikirim.",
       "de": "Mochi schaut ein paar Mal am Tag nach Coucous Releases auf GitHub und sagt dir, wenn eine neue da ist. Über dich wird nichts gesendet.",
-      "tr": "Mochi, Coucou'nun GitHub'daki sürümlerine günde birkaç kez bakar ve yenisi çıkınca sana söyler. Seninle ilgili hiçbir şey gönderilmez."
+      "tr": "Mochi, NxIsland'nun GitHub'daki sürümlerine günde birkaç kez bakar ve yenisi çıkınca sana söyler. Seninle ilgili hiçbir şey gönderilmez."
     },
-    "Coucou {version} is out": {
-      "zh-Hans": "Coucou {version} 已发布",
-      "hi": "Coucou {version} आ गया है",
-      "es": "Ya salió Coucou {version}",
-      "ar": "صدر Coucou {version}",
-      "fr": "Coucou {version} est sorti",
-      "bn": "Coucou {version} এসে গেছে",
-      "pt-BR": "Saiu o Coucou {version}",
-      "ru": "Вышел Coucou {version}",
-      "id": "Coucou {version} sudah rilis",
-      "de": "Coucou {version} ist da",
-      "tr": "Coucou {version} çıktı"
+    "NxIsland {version} is out": {
+      "zh-Hans": "NxIsland {version} 已发布",
+      "hi": "NxIsland {version} आ गया है",
+      "es": "Ya salió NxIsland {version}",
+      "ar": "صدر NxIsland {version}",
+      "fr": "NxIsland {version} est sorti",
+      "bn": "NxIsland {version} এসে গেছে",
+      "pt-BR": "Saiu o NxIsland {version}",
+      "ru": "Вышел NxIsland {version}",
+      "id": "NxIsland {version} sudah rilis",
+      "de": "NxIsland {version} ist da",
+      "tr": "NxIsland {version} çıktı"
     },
     "You have {version}": {
       "zh-Hans": "当前版本 {version}",
@@ -5000,18 +5000,18 @@
       "de": "Wird von GitHub geladen… {percent} %",
       "tr": "GitHub'dan indiriliyor… %{percent}"
     },
-    "Installing… Coucou closes and comes back by itself.": {
-      "zh-Hans": "正在安装… Coucou 会关闭并自动重新打开。",
-      "hi": "इंस्टॉल हो रहा है… Coucou बंद होकर अपने आप फिर खुल जाएगा।",
-      "es": "Instalando… Coucou se cierra y vuelve a abrirse solo.",
-      "ar": "جارٍ التثبيت… سيُغلق Coucou ثم يعود من تلقاء نفسه.",
-      "fr": "Installation… Coucou se ferme et revient tout seul.",
-      "bn": "ইনস্টল হচ্ছে… Coucou বন্ধ হয়ে নিজে থেকেই আবার খুলবে।",
-      "pt-BR": "Instalando… O Coucou fecha e volta sozinho.",
-      "ru": "Установка… Coucou закроется и сам откроется снова.",
-      "id": "Memasang… Coucou akan menutup lalu terbuka lagi dengan sendirinya.",
-      "de": "Wird installiert… Coucou schließt sich und kommt von selbst wieder.",
-      "tr": "Yükleniyor… Coucou kapanır ve kendiliğinden geri gelir."
+    "Installing… NxIsland closes and comes back by itself.": {
+      "zh-Hans": "正在安装… NxIsland 会关闭并自动重新打开。",
+      "hi": "इंस्टॉल हो रहा है… NxIsland बंद होकर अपने आप फिर खुल जाएगा।",
+      "es": "Instalando… NxIsland se cierra y vuelve a abrirse solo.",
+      "ar": "جارٍ التثبيت… سيُغلق NxIsland ثم يعود من تلقاء نفسه.",
+      "fr": "Installation… NxIsland se ferme et revient tout seul.",
+      "bn": "ইনস্টল হচ্ছে… NxIsland বন্ধ হয়ে নিজে থেকেই আবার খুলবে।",
+      "pt-BR": "Instalando… O NxIsland fecha e volta sozinho.",
+      "ru": "Установка… NxIsland закроется и сам откроется снова.",
+      "id": "Memasang… NxIsland akan menutup lalu terbuka lagi dengan sendirinya.",
+      "de": "Wird installiert… NxIsland schließt sich und kommt von selbst wieder.",
+      "tr": "Yükleniyor… NxIsland kapanır ve kendiliğinden geri gelir."
     },
     "The update didn't go through": {
       "zh-Hans": "更新未完成",
@@ -5065,31 +5065,31 @@
       "de": "GitHub nicht erreichbar",
       "tr": "GitHub'a ulaşılamadı"
     },
-    "Coucou looks at its own releases on GitHub a few times a day. An update is installed only after your click, once its SHA-256 matches the one GitHub publishes.": {
-      "zh-Hans": "Coucou 每天会在 GitHub 上查看几次自己的版本。只有在你点击后，并且其 SHA-256 与 GitHub 公布的一致时，才会安装更新。",
-      "hi": "Coucou दिन में कुछ बार GitHub पर अपने रिलीज़ देखता है। अपडेट आपके क्लिक के बाद ही इंस्टॉल होता है, और तभी जब उसका SHA-256 GitHub के प्रकाशित SHA-256 से मेल खाए।",
-      "es": "Coucou revisa sus propias versiones en GitHub unas veces al día. Una actualización solo se instala después de tu clic, una vez que su SHA-256 coincide con el que publica GitHub.",
-      "ar": "يتحقق Coucou من إصداراته على GitHub بضع مرات يوميًا. لا يُثبَّت أي تحديث إلا بعد نقرتك، وبعد مطابقة SHA-256 الخاص به مع الذي ينشره GitHub.",
-      "fr": "Coucou regarde ses propres versions sur GitHub quelques fois par jour. Une mise à jour ne s'installe qu'après ton clic, une fois son SHA-256 vérifié avec celui que publie GitHub.",
-      "bn": "Coucou দিনে কয়েকবার GitHub-এ নিজের রিলিজ দেখে। আপনার ক্লিকের পরেই আপডেট ইনস্টল হয়, তাও কেবল যখন এর SHA-256 GitHub-এর প্রকাশিত SHA-256-এর সঙ্গে মেলে।",
-      "pt-BR": "O Coucou verifica as próprias versões no GitHub algumas vezes por dia. Uma atualização só é instalada depois do seu clique, quando o SHA-256 dela bate com o que o GitHub publica.",
-      "ru": "Coucou несколько раз в день проверяет свои релизы на GitHub. Обновление устанавливается только после вашего нажатия и только если его SHA-256 совпадает с тем, что публикует GitHub.",
-      "id": "Coucou memeriksa rilisnya sendiri di GitHub beberapa kali sehari. Pembaruan hanya dipasang setelah kamu mengeklik, dan setelah SHA-256-nya cocok dengan yang diterbitkan GitHub.",
-      "de": "Coucou schaut ein paar Mal am Tag nach seinen eigenen Releases auf GitHub. Ein Update wird erst nach deinem Klick installiert, wenn seine SHA-256 mit der von GitHub veröffentlichten übereinstimmt.",
-      "tr": "Coucou günde birkaç kez GitHub'daki kendi sürümlerine bakar. Güncelleme yalnızca sen tıkladıktan sonra, SHA-256 değeri GitHub'ın yayımladığıyla eşleştiğinde yüklenir."
+    "NxIsland looks at its own releases on GitHub a few times a day. An update is installed only after your click, once its SHA-256 matches the one GitHub publishes.": {
+      "zh-Hans": "NxIsland 每天会在 GitHub 上查看几次自己的版本。只有在你点击后，并且其 SHA-256 与 GitHub 公布的一致时，才会安装更新。",
+      "hi": "NxIsland दिन में कुछ बार GitHub पर अपने रिलीज़ देखता है। अपडेट आपके क्लिक के बाद ही इंस्टॉल होता है, और तभी जब उसका SHA-256 GitHub के प्रकाशित SHA-256 से मेल खाए।",
+      "es": "NxIsland revisa sus propias versiones en GitHub unas veces al día. Una actualización solo se instala después de tu clic, una vez que su SHA-256 coincide con el que publica GitHub.",
+      "ar": "يتحقق NxIsland من إصداراته على GitHub بضع مرات يوميًا. لا يُثبَّت أي تحديث إلا بعد نقرتك، وبعد مطابقة SHA-256 الخاص به مع الذي ينشره GitHub.",
+      "fr": "NxIsland regarde ses propres versions sur GitHub quelques fois par jour. Une mise à jour ne s'installe qu'après ton clic, une fois son SHA-256 vérifié avec celui que publie GitHub.",
+      "bn": "NxIsland দিনে কয়েকবার GitHub-এ নিজের রিলিজ দেখে। আপনার ক্লিকের পরেই আপডেট ইনস্টল হয়, তাও কেবল যখন এর SHA-256 GitHub-এর প্রকাশিত SHA-256-এর সঙ্গে মেলে।",
+      "pt-BR": "O NxIsland verifica as próprias versões no GitHub algumas vezes por dia. Uma atualização só é instalada depois do seu clique, quando o SHA-256 dela bate com o que o GitHub publica.",
+      "ru": "NxIsland несколько раз в день проверяет свои релизы на GitHub. Обновление устанавливается только после вашего нажатия и только если его SHA-256 совпадает с тем, что публикует GitHub.",
+      "id": "NxIsland memeriksa rilisnya sendiri di GitHub beberapa kali sehari. Pembaruan hanya dipasang setelah kamu mengeklik, dan setelah SHA-256-nya cocok dengan yang diterbitkan GitHub.",
+      "de": "NxIsland schaut ein paar Mal am Tag nach seinen eigenen Releases auf GitHub. Ein Update wird erst nach deinem Klick installiert, wenn seine SHA-256 mit der von GitHub veröffentlichten übereinstimmt.",
+      "tr": "NxIsland günde birkaç kez GitHub'daki kendi sürümlerine bakar. Güncelleme yalnızca sen tıkladıktan sonra, SHA-256 değeri GitHub'ın yayımladığıyla eşleştiğinde yüklenir."
     },
-    "Coucou looks at its own releases on GitHub a few times a day and tells you when one is out. Update it the way you installed it: AppImage, .deb, .rpm or your package manager.": {
-      "zh-Hans": "Coucou 每天会在 GitHub 上查看几次自己的版本，有新版本时告诉你。请用你安装它的方式更新：AppImage、.deb、.rpm 或你的包管理器。",
-      "hi": "Coucou दिन में कुछ बार GitHub पर अपने रिलीज़ देखता है और नया आने पर बताता है। इसे उसी तरह अपडेट करें जैसे आपने इंस्टॉल किया था: AppImage, .deb, .rpm या आपका पैकेज मैनेजर।",
-      "es": "Coucou revisa sus propias versiones en GitHub unas veces al día y te avisa cuando sale una. Actualízalo como lo instalaste: AppImage, .deb, .rpm o tu gestor de paquetes.",
-      "ar": "يتحقق Coucou من إصداراته على GitHub بضع مرات يوميًا ويخبرك عند صدور إصدار جديد. حدّثه بالطريقة التي ثبّته بها: AppImage أو ‎.deb أو ‎.rpm أو مدير الحزم لديك.",
-      "fr": "Coucou regarde ses propres versions sur GitHub quelques fois par jour et te prévient quand il y en a une. Mets-le à jour comme tu l'as installé : AppImage, .deb, .rpm ou ton gestionnaire de paquets.",
-      "bn": "Coucou দিনে কয়েকবার GitHub-এ নিজের রিলিজ দেখে এবং নতুন এলে জানায়। যেভাবে ইনস্টল করেছিলেন সেভাবেই আপডেট করুন: AppImage, .deb, .rpm বা আপনার প্যাকেজ ম্যানেজার।",
-      "pt-BR": "O Coucou verifica as próprias versões no GitHub algumas vezes por dia e avisa quando sai uma. Atualize do jeito que você instalou: AppImage, .deb, .rpm ou seu gerenciador de pacotes.",
-      "ru": "Coucou несколько раз в день проверяет свои релизы на GitHub и сообщает о новых. Обновляйте его так же, как устанавливали: AppImage, .deb, .rpm или менеджер пакетов.",
-      "id": "Coucou memeriksa rilisnya sendiri di GitHub beberapa kali sehari dan memberi tahu saat ada yang baru. Perbarui dengan cara kamu memasangnya: AppImage, .deb, .rpm, atau manajer paketmu.",
-      "de": "Coucou schaut ein paar Mal am Tag nach seinen eigenen Releases auf GitHub und sagt dir, wenn eine neue da ist. Aktualisiere es so, wie du es installiert hast: AppImage, .deb, .rpm oder dein Paketmanager.",
-      "tr": "Coucou günde birkaç kez GitHub'daki kendi sürümlerine bakar ve yenisi çıkınca sana söyler. Onu nasıl yüklediysen öyle güncelle: AppImage, .deb, .rpm ya da paket yöneticin."
+    "NxIsland looks at its own releases on GitHub a few times a day and tells you when one is out. Update it the way you installed it: AppImage, .deb, .rpm or your package manager.": {
+      "zh-Hans": "NxIsland 每天会在 GitHub 上查看几次自己的版本，有新版本时告诉你。请用你安装它的方式更新：AppImage、.deb、.rpm 或你的包管理器。",
+      "hi": "NxIsland दिन में कुछ बार GitHub पर अपने रिलीज़ देखता है और नया आने पर बताता है। इसे उसी तरह अपडेट करें जैसे आपने इंस्टॉल किया था: AppImage, .deb, .rpm या आपका पैकेज मैनेजर।",
+      "es": "NxIsland revisa sus propias versiones en GitHub unas veces al día y te avisa cuando sale una. Actualízalo como lo instalaste: AppImage, .deb, .rpm o tu gestor de paquetes.",
+      "ar": "يتحقق NxIsland من إصداراته على GitHub بضع مرات يوميًا ويخبرك عند صدور إصدار جديد. حدّثه بالطريقة التي ثبّته بها: AppImage أو ‎.deb أو ‎.rpm أو مدير الحزم لديك.",
+      "fr": "NxIsland regarde ses propres versions sur GitHub quelques fois par jour et te prévient quand il y en a une. Mets-le à jour comme tu l'as installé : AppImage, .deb, .rpm ou ton gestionnaire de paquets.",
+      "bn": "NxIsland দিনে কয়েকবার GitHub-এ নিজের রিলিজ দেখে এবং নতুন এলে জানায়। যেভাবে ইনস্টল করেছিলেন সেভাবেই আপডেট করুন: AppImage, .deb, .rpm বা আপনার প্যাকেজ ম্যানেজার।",
+      "pt-BR": "O NxIsland verifica as próprias versões no GitHub algumas vezes por dia e avisa quando sai uma. Atualize do jeito que você instalou: AppImage, .deb, .rpm ou seu gerenciador de pacotes.",
+      "ru": "NxIsland несколько раз в день проверяет свои релизы на GitHub и сообщает о новых. Обновляйте его так же, как устанавливали: AppImage, .deb, .rpm или менеджер пакетов.",
+      "id": "NxIsland memeriksa rilisnya sendiri di GitHub beberapa kali sehari dan memberi tahu saat ada yang baru. Perbarui dengan cara kamu memasangnya: AppImage, .deb, .rpm, atau manajer paketmu.",
+      "de": "NxIsland schaut ein paar Mal am Tag nach seinen eigenen Releases auf GitHub und sagt dir, wenn eine neue da ist. Aktualisiere es so, wie du es installiert hast: AppImage, .deb, .rpm oder dein Paketmanager.",
+      "tr": "NxIsland günde birkaç kez GitHub'daki kendi sürümlerine bakar ve yenisi çıkınca sana söyler. Onu nasıl yüklediysen öyle güncelle: AppImage, .deb, .rpm ya da paket yöneticin."
     },
     "The download failed. Try again, or get the new version on GitHub.": {
       "zh-Hans": "下载失败。请重试，或前往 GitHub 获取新版本。",
@@ -5143,31 +5143,31 @@
       "de": "Windows hat das Installationsprogramm blockiert. Hol dir die neue Version stattdessen von der Release-Seite.",
       "tr": "Windows yükleyiciyi engelledi. Yeni sürümü bunun yerine sürüm sayfasından al."
     },
-    "Update Coucou to {version}…": {
-      "zh-Hans": "将 Coucou 更新到 {version}…",
-      "hi": "Coucou को {version} पर अपडेट करें…",
-      "es": "Actualizar Coucou a la {version}…",
-      "ar": "تحديث Coucou إلى {version}…",
-      "fr": "Mettre à jour Coucou vers la {version}…",
-      "bn": "Coucou {version}-এ আপডেট করুন…",
-      "pt-BR": "Atualizar o Coucou para a {version}…",
-      "ru": "Обновить Coucou до {version}…",
-      "id": "Perbarui Coucou ke {version}…",
-      "de": "Coucou auf {version} aktualisieren…",
-      "tr": "Coucou'yu {version} sürümüne güncelle…"
+    "Update NxIsland to {version}…": {
+      "zh-Hans": "将 NxIsland 更新到 {version}…",
+      "hi": "NxIsland को {version} पर अपडेट करें…",
+      "es": "Actualizar NxIsland a la {version}…",
+      "ar": "تحديث NxIsland إلى {version}…",
+      "fr": "Mettre à jour NxIsland vers la {version}…",
+      "bn": "NxIsland {version}-এ আপডেট করুন…",
+      "pt-BR": "Atualizar o NxIsland para a {version}…",
+      "ru": "Обновить NxIsland до {version}…",
+      "id": "Perbarui NxIsland ke {version}…",
+      "de": "NxIsland auf {version} aktualisieren…",
+      "tr": "NxIsland'yu {version} sürümüne güncelle…"
     },
-    "You're on Coucou {version}": {
-      "zh-Hans": "你已在使用 Coucou {version}",
-      "hi": "अब आप Coucou {version} पर हैं",
-      "es": "Ya tienes Coucou {version}",
-      "ar": "أنت الآن على Coucou {version}",
-      "fr": "Tu es sur Coucou {version}",
-      "bn": "আপনি এখন Coucou {version}-এ",
-      "pt-BR": "Você está no Coucou {version}",
-      "ru": "У вас Coucou {version}",
-      "id": "Kamu sekarang di Coucou {version}",
-      "de": "Du hast jetzt Coucou {version}",
-      "tr": "Artık Coucou {version} sürümündesin"
+    "You're on NxIsland {version}": {
+      "zh-Hans": "你已在使用 NxIsland {version}",
+      "hi": "अब आप NxIsland {version} पर हैं",
+      "es": "Ya tienes NxIsland {version}",
+      "ar": "أنت الآن على NxIsland {version}",
+      "fr": "Tu es sur NxIsland {version}",
+      "bn": "আপনি এখন NxIsland {version}-এ",
+      "pt-BR": "Você está no NxIsland {version}",
+      "ru": "У вас NxIsland {version}",
+      "id": "Kamu sekarang di NxIsland {version}",
+      "de": "Du hast jetzt NxIsland {version}",
+      "tr": "Artık NxIsland {version} sürümündesin"
     },
     "agent session": {
       "zh-Hans": "次智能体会话",
@@ -5624,18 +5624,18 @@
       "de": "Port {port} ist belegt: Wähle einen anderen. Bis dahin wird alle 20 s nachgesehen.",
       "tr": "{port} numaralı bağlantı noktası kullanımda: başka birini seç. Bu arada her 20 sn’de bir kontrol ediliyor."
     },
-    "The gateway refused Coucou’s address ({detail}). Checking every 20 s instead.": {
-      "zh-Hans": "网关拒绝了 Coucou 的地址（{detail}）。改为每 20 秒检查一次。",
-      "hi": "गेटवे ने Coucou का पता अस्वीकार किया ({detail})। इसके बजाय हर 20 सेकंड में जाँच।",
-      "es": "La pasarela rechazó la dirección de Coucou ({detail}). Se comprueba cada 20 s en su lugar.",
-      "ar": "رفضت البوابة عنوان Coucou ‏({detail}). يتم التحقق كل 20 ث بدلًا من ذلك.",
-      "fr": "La passerelle a refusé l’adresse de Coucou ({detail}). Vérification toutes les 20 s à la place.",
-      "bn": "গেটওয়ে Coucou-র ঠিকানা প্রত্যাখ্যান করেছে ({detail})। এর বদলে প্রতি ২০ সেকেন্ডে দেখা হচ্ছে।",
-      "pt-BR": "O gateway recusou o endereço do Coucou ({detail}). Verificando a cada 20 s no lugar.",
-      "ru": "Шлюз отклонил адрес Coucou ({detail}). Вместо этого проверка каждые 20 с.",
-      "id": "Gateway menolak alamat Coucou ({detail}). Sebagai gantinya diperiksa setiap 20 dtk.",
-      "de": "Das Gateway hat die Adresse von Coucou abgelehnt ({detail}). Stattdessen wird alle 20 s nachgesehen.",
-      "tr": "Ağ geçidi Coucou’nun adresini reddetti ({detail}). Bunun yerine her 20 sn’de bir kontrol ediliyor."
+    "The gateway refused NxIsland’s address ({detail}). Checking every 20 s instead.": {
+      "zh-Hans": "网关拒绝了 NxIsland 的地址（{detail}）。改为每 20 秒检查一次。",
+      "hi": "गेटवे ने NxIsland का पता अस्वीकार किया ({detail})। इसके बजाय हर 20 सेकंड में जाँच।",
+      "es": "La pasarela rechazó la dirección de NxIsland ({detail}). Se comprueba cada 20 s en su lugar.",
+      "ar": "رفضت البوابة عنوان NxIsland ‏({detail}). يتم التحقق كل 20 ث بدلًا من ذلك.",
+      "fr": "La passerelle a refusé l’adresse de NxIsland ({detail}). Vérification toutes les 20 s à la place.",
+      "bn": "গেটওয়ে NxIsland-র ঠিকানা প্রত্যাখ্যান করেছে ({detail})। এর বদলে প্রতি ২০ সেকেন্ডে দেখা হচ্ছে।",
+      "pt-BR": "O gateway recusou o endereço do NxIsland ({detail}). Verificando a cada 20 s no lugar.",
+      "ru": "Шлюз отклонил адрес NxIsland ({detail}). Вместо этого проверка каждые 20 с.",
+      "id": "Gateway menolak alamat NxIsland ({detail}). Sebagai gantinya diperiksa setiap 20 dtk.",
+      "de": "Das Gateway hat die Adresse von NxIsland abgelehnt ({detail}). Stattdessen wird alle 20 s nachgesehen.",
+      "tr": "Ağ geçidi NxIsland’nun adresini reddetti ({detail}). Bunun yerine her 20 sn’de bir kontrol ediliyor."
     },
     "Checking for new messages every 20 s.": {
       "zh-Hans": "每 20 秒检查一次新消息。",
@@ -5806,18 +5806,18 @@
       "de": "Aktualisieren",
       "tr": "Güncelle"
     },
-    "Gateway GOWA {version} installed, started by Coucou": {
-      "zh-Hans": "GOWA {version} 网关已安装，由 Coucou 启动",
-      "hi": "GOWA {version} गेटवे इंस्टॉल है, Coucou इसे चलाता है",
-      "es": "Pasarela GOWA {version} instalada, iniciada por Coucou",
-      "ar": "بوابة GOWA {version} مثبّتة ويشغّلها Coucou",
-      "fr": "Passerelle GOWA {version} installée, lancée par Coucou",
-      "bn": "GOWA {version} গেটওয়ে ইনস্টল, Coucou চালায়",
-      "pt-BR": "Gateway GOWA {version} instalado, iniciado pelo Coucou",
-      "ru": "Шлюз GOWA {version} установлен, запускается Coucou",
-      "id": "Gateway GOWA {version} terpasang, dijalankan oleh Coucou",
-      "de": "Gateway GOWA {version} installiert, von Coucou gestartet",
-      "tr": "GOWA {version} ağ geçidi kuruldu, Coucou tarafından başlatıldı"
+    "Gateway GOWA {version} installed, started by NxIsland": {
+      "zh-Hans": "GOWA {version} 网关已安装，由 NxIsland 启动",
+      "hi": "GOWA {version} गेटवे इंस्टॉल है, NxIsland इसे चलाता है",
+      "es": "Pasarela GOWA {version} instalada, iniciada por NxIsland",
+      "ar": "بوابة GOWA {version} مثبّتة ويشغّلها NxIsland",
+      "fr": "Passerelle GOWA {version} installée, lancée par NxIsland",
+      "bn": "GOWA {version} গেটওয়ে ইনস্টল, NxIsland চালায়",
+      "pt-BR": "Gateway GOWA {version} instalado, iniciado pelo NxIsland",
+      "ru": "Шлюз GOWA {version} установлен, запускается NxIsland",
+      "id": "Gateway GOWA {version} terpasang, dijalankan oleh NxIsland",
+      "de": "Gateway GOWA {version} installiert, von NxIsland gestartet",
+      "tr": "GOWA {version} ağ geçidi kuruldu, NxIsland tarafından başlatıldı"
     },
     "Your GOWA gateway is set up": {
       "zh-Hans": "你的 GOWA 网关已设置",
@@ -5884,18 +5884,18 @@
       "de": "Gateway",
       "tr": "Ağ geçidi"
     },
-    "Coucou’s webhook port": {
-      "zh-Hans": "Coucou 的 Webhook 端口",
-      "hi": "Coucou का वेबहुक पोर्ट",
-      "es": "Puerto del webhook de Coucou",
-      "ar": "منفذ webhook في Coucou",
-      "fr": "Port du webhook de Coucou",
-      "bn": "Coucou-র ওয়েবহুক পোর্ট",
-      "pt-BR": "Porta do webhook do Coucou",
-      "ru": "Порт вебхука Coucou",
-      "id": "Port webhook Coucou",
-      "de": "Webhook-Port von Coucou",
-      "tr": "Coucou’nun webhook bağlantı noktası"
+    "NxIsland’s webhook port": {
+      "zh-Hans": "NxIsland 的 Webhook 端口",
+      "hi": "NxIsland का वेबहुक पोर्ट",
+      "es": "Puerto del webhook de NxIsland",
+      "ar": "منفذ webhook في NxIsland",
+      "fr": "Port du webhook de NxIsland",
+      "bn": "NxIsland-র ওয়েবহুক পোর্ট",
+      "pt-BR": "Porta do webhook do NxIsland",
+      "ru": "Порт вебхука NxIsland",
+      "id": "Port webhook NxIsland",
+      "de": "Webhook-Port von NxIsland",
+      "tr": "NxIsland’nun webhook bağlantı noktası"
     },
     "Mute groups (unless I’m mentioned)": {
       "zh-Hans": "群组静音（除非提到我）",
@@ -6014,44 +6014,44 @@
       "de": "Auf GitHub gibt es keine GOWA-Version für diesen Computer. Versuche es später noch einmal oder richte unter „Erweitert“ dein eigenes Gateway ein.",
       "tr": "GitHub’da bu bilgisayar için GOWA sürümü bulunamadı. Daha sonra tekrar dene ya da Gelişmiş bölümünden kendi ağ geçidini ayarla."
     },
-    "Coucou runs it on this computer only (127.0.0.1, the URL’s port), without downloading media, and stops it when Coucou quits. Its WhatsApp session stays in {path}.": {
-      "zh-Hans": "Coucou 仅在这台电脑上运行它（127.0.0.1，使用地址中的端口），不下载媒体，并在 Coucou 退出时停止它。其 WhatsApp 会话保存在 {path}。",
-      "hi": "Coucou इसे सिर्फ़ इस कंप्यूटर पर चलाता है (127.0.0.1, URL का पोर्ट), मीडिया डाउनलोड किए बिना, और Coucou बंद होने पर रोक देता है। इसका WhatsApp सेशन {path} में रहता है।",
-      "es": "Coucou lo ejecuta solo en este ordenador (127.0.0.1, el puerto de la URL), sin descargar archivos, y lo detiene al cerrar Coucou. Su sesión de WhatsApp queda en {path}.",
-      "ar": "يشغّله Coucou على هذا الحاسوب فقط (127.0.0.1، منفذ العنوان)، دون تنزيل الوسائط، ويوقفه عند إغلاق Coucou. تبقى جلسة واتساب في {path}.",
-      "fr": "Coucou le lance sur cet ordinateur uniquement (127.0.0.1, le port de l’URL), sans télécharger les médias, et l’arrête quand Coucou quitte. Sa session WhatsApp reste dans {path}.",
-      "bn": "Coucou এটি শুধু এই কম্পিউটারে চালায় (127.0.0.1, URL-এর পোর্ট), মিডিয়া ডাউনলোড ছাড়াই, এবং Coucou বন্ধ হলে থামিয়ে দেয়। এর WhatsApp সেশন থাকে {path}-তে।",
-      "pt-BR": "O Coucou o executa só neste computador (127.0.0.1, a porta da URL), sem baixar mídias, e o encerra quando o Coucou fecha. A sessão do WhatsApp fica em {path}.",
-      "ru": "Coucou запускает его только на этом компьютере (127.0.0.1, порт из адреса), без загрузки медиа, и останавливает при выходе. Сессия WhatsApp хранится в {path}.",
-      "id": "Coucou menjalankannya hanya di komputer ini (127.0.0.1, port dari URL), tanpa mengunduh media, dan menghentikannya saat Coucou ditutup. Sesi WhatsApp-nya ada di {path}.",
-      "de": "Coucou startet es nur auf diesem Computer (127.0.0.1, der Port der Adresse), ohne Medien zu laden, und beendet es, wenn Coucou beendet wird. Seine WhatsApp-Sitzung bleibt in {path}.",
-      "tr": "Coucou onu yalnızca bu bilgisayarda (127.0.0.1, adresteki bağlantı noktası), medya indirmeden çalıştırır ve Coucou kapanınca durdurur. WhatsApp oturumu {path} içinde kalır."
+    "NxIsland runs it on this computer only (127.0.0.1, the URL’s port), without downloading media, and stops it when NxIsland quits. Its WhatsApp session stays in {path}.": {
+      "zh-Hans": "NxIsland 仅在这台电脑上运行它（127.0.0.1，使用地址中的端口），不下载媒体，并在 NxIsland 退出时停止它。其 WhatsApp 会话保存在 {path}。",
+      "hi": "NxIsland इसे सिर्फ़ इस कंप्यूटर पर चलाता है (127.0.0.1, URL का पोर्ट), मीडिया डाउनलोड किए बिना, और NxIsland बंद होने पर रोक देता है। इसका WhatsApp सेशन {path} में रहता है।",
+      "es": "NxIsland lo ejecuta solo en este ordenador (127.0.0.1, el puerto de la URL), sin descargar archivos, y lo detiene al cerrar NxIsland. Su sesión de WhatsApp queda en {path}.",
+      "ar": "يشغّله NxIsland على هذا الحاسوب فقط (127.0.0.1، منفذ العنوان)، دون تنزيل الوسائط، ويوقفه عند إغلاق NxIsland. تبقى جلسة واتساب في {path}.",
+      "fr": "NxIsland le lance sur cet ordinateur uniquement (127.0.0.1, le port de l’URL), sans télécharger les médias, et l’arrête quand NxIsland quitte. Sa session WhatsApp reste dans {path}.",
+      "bn": "NxIsland এটি শুধু এই কম্পিউটারে চালায় (127.0.0.1, URL-এর পোর্ট), মিডিয়া ডাউনলোড ছাড়াই, এবং NxIsland বন্ধ হলে থামিয়ে দেয়। এর WhatsApp সেশন থাকে {path}-তে।",
+      "pt-BR": "O NxIsland o executa só neste computador (127.0.0.1, a porta da URL), sem baixar mídias, e o encerra quando o NxIsland fecha. A sessão do WhatsApp fica em {path}.",
+      "ru": "NxIsland запускает его только на этом компьютере (127.0.0.1, порт из адреса), без загрузки медиа, и останавливает при выходе. Сессия WhatsApp хранится в {path}.",
+      "id": "NxIsland menjalankannya hanya di komputer ini (127.0.0.1, port dari URL), tanpa mengunduh media, dan menghentikannya saat NxIsland ditutup. Sesi WhatsApp-nya ada di {path}.",
+      "de": "NxIsland startet es nur auf diesem Computer (127.0.0.1, der Port der Adresse), ohne Medien zu laden, und beendet es, wenn NxIsland beendet wird. Seine WhatsApp-Sitzung bleibt in {path}.",
+      "tr": "NxIsland onu yalnızca bu bilgisayarda (127.0.0.1, adresteki bağlantı noktası), medya indirmeden çalıştırır ve NxIsland kapanınca durdurur. WhatsApp oturumu {path} içinde kalır."
     },
-    "Coucou downloads GOWA, the open-source gateway, from its GitHub page (about 15 MB, once), checks it and starts it. Then scan the QR code with your phone. No command line needed.": {
-      "zh-Hans": "Coucou 会从 GitHub 页面下载开源网关 GOWA（约 15 MB，仅一次），校验后启动。然后用手机扫描二维码即可。无需命令行。",
-      "hi": "Coucou ओपन-सोर्स गेटवे GOWA को उसके GitHub पेज से डाउनलोड करता है (लगभग 15 MB, सिर्फ़ एक बार), जाँचता है और चालू करता है। फिर फ़ोन से QR कोड स्कैन करें। कमांड लाइन की ज़रूरत नहीं।",
-      "es": "Coucou descarga GOWA, la pasarela de código abierto, desde su página de GitHub (unos 15 MB, una sola vez), la comprueba y la inicia. Luego escanea el código QR con tu teléfono. Sin línea de comandos.",
-      "ar": "يُنزّل Coucou بوابة GOWA مفتوحة المصدر من صفحتها على GitHub (نحو 15 ميغابايت، مرة واحدة)، ويتحقق منها ويشغّلها. ثم امسح رمز QR بهاتفك. لا حاجة إلى سطر الأوامر.",
-      "fr": "Coucou télécharge GOWA, la passerelle open source, depuis sa page GitHub (environ 15 Mo, une seule fois), la vérifie et la lance. Ensuite, scanne le QR code avec ton téléphone. Pas besoin de ligne de commande.",
-      "bn": "Coucou ওপেন-সোর্স গেটওয়ে GOWA তার GitHub পেজ থেকে ডাউনলোড করে (প্রায় ১৫ MB, একবারই), যাচাই করে চালু করে। তারপর ফোন দিয়ে QR কোড স্ক্যান করুন। কমান্ড লাইন লাগবে না।",
-      "pt-BR": "O Coucou baixa o GOWA, o gateway de código aberto, da página dele no GitHub (cerca de 15 MB, uma única vez), verifica e inicia. Depois, escaneie o QR code com o celular. Sem linha de comando.",
-      "ru": "Coucou скачивает GOWA, шлюз с открытым кодом, с его страницы на GitHub (около 15 МБ, один раз), проверяет и запускает. Затем отсканируйте QR-код телефоном. Командная строка не нужна.",
-      "id": "Coucou mengunduh GOWA, gateway open source, dari halaman GitHub-nya (sekitar 15 MB, sekali saja), memeriksanya lalu menjalankannya. Lalu pindai kode QR dengan ponselmu. Tanpa baris perintah.",
-      "de": "Coucou lädt GOWA, das Open-Source-Gateway, von seiner GitHub-Seite (etwa 15 MB, einmalig), prüft es und startet es. Danach scannst du den QR-Code mit deinem Handy. Keine Kommandozeile nötig.",
-      "tr": "Coucou, açık kaynaklı ağ geçidi GOWA’yı GitHub sayfasından indirir (yaklaşık 15 MB, bir kez), doğrular ve başlatır. Ardından QR kodunu telefonunla tara. Komut satırına gerek yok."
+    "NxIsland downloads GOWA, the open-source gateway, from its GitHub page (about 15 MB, once), checks it and starts it. Then scan the QR code with your phone. No command line needed.": {
+      "zh-Hans": "NxIsland 会从 GitHub 页面下载开源网关 GOWA（约 15 MB，仅一次），校验后启动。然后用手机扫描二维码即可。无需命令行。",
+      "hi": "NxIsland ओपन-सोर्स गेटवे GOWA को उसके GitHub पेज से डाउनलोड करता है (लगभग 15 MB, सिर्फ़ एक बार), जाँचता है और चालू करता है। फिर फ़ोन से QR कोड स्कैन करें। कमांड लाइन की ज़रूरत नहीं।",
+      "es": "NxIsland descarga GOWA, la pasarela de código abierto, desde su página de GitHub (unos 15 MB, una sola vez), la comprueba y la inicia. Luego escanea el código QR con tu teléfono. Sin línea de comandos.",
+      "ar": "يُنزّل NxIsland بوابة GOWA مفتوحة المصدر من صفحتها على GitHub (نحو 15 ميغابايت، مرة واحدة)، ويتحقق منها ويشغّلها. ثم امسح رمز QR بهاتفك. لا حاجة إلى سطر الأوامر.",
+      "fr": "NxIsland télécharge GOWA, la passerelle open source, depuis sa page GitHub (environ 15 Mo, une seule fois), la vérifie et la lance. Ensuite, scanne le QR code avec ton téléphone. Pas besoin de ligne de commande.",
+      "bn": "NxIsland ওপেন-সোর্স গেটওয়ে GOWA তার GitHub পেজ থেকে ডাউনলোড করে (প্রায় ১৫ MB, একবারই), যাচাই করে চালু করে। তারপর ফোন দিয়ে QR কোড স্ক্যান করুন। কমান্ড লাইন লাগবে না।",
+      "pt-BR": "O NxIsland baixa o GOWA, o gateway de código aberto, da página dele no GitHub (cerca de 15 MB, uma única vez), verifica e inicia. Depois, escaneie o QR code com o celular. Sem linha de comando.",
+      "ru": "NxIsland скачивает GOWA, шлюз с открытым кодом, с его страницы на GitHub (около 15 МБ, один раз), проверяет и запускает. Затем отсканируйте QR-код телефоном. Командная строка не нужна.",
+      "id": "NxIsland mengunduh GOWA, gateway open source, dari halaman GitHub-nya (sekitar 15 MB, sekali saja), memeriksanya lalu menjalankannya. Lalu pindai kode QR dengan ponselmu. Tanpa baris perintah.",
+      "de": "NxIsland lädt GOWA, das Open-Source-Gateway, von seiner GitHub-Seite (etwa 15 MB, einmalig), prüft es und startet es. Danach scannst du den QR-Code mit deinem Handy. Keine Kommandozeile nötig.",
+      "tr": "NxIsland, açık kaynaklı ağ geçidi GOWA’yı GitHub sayfasından indirir (yaklaşık 15 MB, bir kez), doğrular ve başlatır. Ardından QR kodunu telefonunla tara. Komut satırına gerek yok."
     },
-    "Coucou only talks to the gateway on this computer. Messages stay in memory, are never logged or saved, and are forgotten when Coucou quits. No photo or media is ever downloaded.": {
-      "zh-Hans": "Coucou 只与这台电脑上的网关通信。消息只保存在内存中，从不记录或保存，退出 Coucou 时即被清除。从不下载任何照片或媒体。",
-      "hi": "Coucou सिर्फ़ इस कंप्यूटर पर चल रहे गेटवे से बात करता है। संदेश मेमोरी में रहते हैं, कभी लॉग या सेव नहीं होते, और Coucou बंद होने पर भुला दिए जाते हैं। कोई फ़ोटो या मीडिया डाउनलोड नहीं होता।",
-      "es": "Coucou solo habla con la pasarela de este ordenador. Los mensajes se quedan en memoria, nunca se registran ni se guardan, y se olvidan al cerrar Coucou. Nunca se descarga ninguna foto ni archivo.",
-      "ar": "يتواصل Coucou فقط مع البوابة على هذا الحاسوب. تبقى الرسائل في الذاكرة، ولا تُسجَّل ولا تُحفَظ أبدًا، وتُنسى عند إغلاق Coucou. لا تُنزَّل أي صورة أو وسائط.",
-      "fr": "Coucou ne parle qu’à la passerelle sur cet ordinateur. Les messages restent en mémoire, ne sont jamais journalisés ni enregistrés, et sont oubliés quand Coucou quitte. Aucune photo ni aucun média n’est téléchargé.",
-      "bn": "Coucou শুধু এই কম্পিউটারের গেটওয়ের সঙ্গে কথা বলে। বার্তা মেমরিতে থাকে, কখনও লগ বা সেভ হয় না, এবং Coucou বন্ধ হলে মুছে যায়। কোনো ছবি বা মিডিয়া ডাউনলোড হয় না।",
-      "pt-BR": "O Coucou só fala com o gateway neste computador. As mensagens ficam na memória, nunca são registradas nem salvas e são esquecidas quando o Coucou fecha. Nenhuma foto ou mídia é baixada.",
-      "ru": "Coucou общается только со шлюзом на этом компьютере. Сообщения хранятся в памяти, никогда не пишутся в журнал и не сохраняются, и забываются при выходе из Coucou. Фото и медиа не загружаются.",
-      "id": "Coucou hanya berbicara dengan gateway di komputer ini. Pesan tetap di memori, tidak pernah dicatat atau disimpan, dan dilupakan saat Coucou ditutup. Tidak ada foto atau media yang diunduh.",
-      "de": "Coucou spricht nur mit dem Gateway auf diesem Computer. Nachrichten bleiben im Arbeitsspeicher, werden nie protokolliert oder gespeichert und beim Beenden von Coucou vergessen. Es werden nie Fotos oder Medien geladen.",
-      "tr": "Coucou yalnızca bu bilgisayardaki ağ geçidiyle konuşur. Mesajlar bellekte kalır, asla günlüğe yazılmaz veya kaydedilmez ve Coucou kapanınca unutulur. Hiçbir fotoğraf veya medya indirilmez."
+    "NxIsland only talks to the gateway on this computer. Messages stay in memory, are never logged or saved, and are forgotten when NxIsland quits. No photo or media is ever downloaded.": {
+      "zh-Hans": "NxIsland 只与这台电脑上的网关通信。消息只保存在内存中，从不记录或保存，退出 NxIsland 时即被清除。从不下载任何照片或媒体。",
+      "hi": "NxIsland सिर्फ़ इस कंप्यूटर पर चल रहे गेटवे से बात करता है। संदेश मेमोरी में रहते हैं, कभी लॉग या सेव नहीं होते, और NxIsland बंद होने पर भुला दिए जाते हैं। कोई फ़ोटो या मीडिया डाउनलोड नहीं होता।",
+      "es": "NxIsland solo habla con la pasarela de este ordenador. Los mensajes se quedan en memoria, nunca se registran ni se guardan, y se olvidan al cerrar NxIsland. Nunca se descarga ninguna foto ni archivo.",
+      "ar": "يتواصل NxIsland فقط مع البوابة على هذا الحاسوب. تبقى الرسائل في الذاكرة، ولا تُسجَّل ولا تُحفَظ أبدًا، وتُنسى عند إغلاق NxIsland. لا تُنزَّل أي صورة أو وسائط.",
+      "fr": "NxIsland ne parle qu’à la passerelle sur cet ordinateur. Les messages restent en mémoire, ne sont jamais journalisés ni enregistrés, et sont oubliés quand NxIsland quitte. Aucune photo ni aucun média n’est téléchargé.",
+      "bn": "NxIsland শুধু এই কম্পিউটারের গেটওয়ের সঙ্গে কথা বলে। বার্তা মেমরিতে থাকে, কখনও লগ বা সেভ হয় না, এবং NxIsland বন্ধ হলে মুছে যায়। কোনো ছবি বা মিডিয়া ডাউনলোড হয় না।",
+      "pt-BR": "O NxIsland só fala com o gateway neste computador. As mensagens ficam na memória, nunca são registradas nem salvas e são esquecidas quando o NxIsland fecha. Nenhuma foto ou mídia é baixada.",
+      "ru": "NxIsland общается только со шлюзом на этом компьютере. Сообщения хранятся в памяти, никогда не пишутся в журнал и не сохраняются, и забываются при выходе из NxIsland. Фото и медиа не загружаются.",
+      "id": "NxIsland hanya berbicara dengan gateway di komputer ini. Pesan tetap di memori, tidak pernah dicatat atau disimpan, dan dilupakan saat NxIsland ditutup. Tidak ada foto atau media yang diunduh.",
+      "de": "NxIsland spricht nur mit dem Gateway auf diesem Computer. Nachrichten bleiben im Arbeitsspeicher, werden nie protokolliert oder gespeichert und beim Beenden von NxIsland vergessen. Es werden nie Fotos oder Medien geladen.",
+      "tr": "NxIsland yalnızca bu bilgisayardaki ağ geçidiyle konuşur. Mesajlar bellekte kalır, asla günlüğe yazılmaz veya kaydedilmez ve NxIsland kapanınca unutulur. Hiçbir fotoğraf veya medya indirilmez."
     },
     "Unofficial integration: it goes through a gateway you run on this computer. Use it on your own account only. WhatsApp may restrict accounts that abuse it.": {
       "zh-Hans": "非官方集成：通过你在这台电脑上运行的网关工作。仅限用于你自己的账号。滥用时 WhatsApp 可能会限制账号。",

@@ -1,4 +1,4 @@
-package com.coucou.android.app
+package com.nxisland.android.app
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -6,9 +6,9 @@ import android.content.Context
 import android.util.SizeF
 import android.view.View
 import android.widget.RemoteViews
-import com.coucou.android.R
-import com.coucou.android.core.LaunchScreen
-import com.coucou.android.core.WidgetContent
+import com.nxisland.android.R
+import com.nxisland.android.core.LaunchScreen
+import com.nxisland.android.core.WidgetContent
 
 /**
  * The Status Pill widget: one slim line. On the left a dot in the state's tone, the name of the most urgent agent and its state

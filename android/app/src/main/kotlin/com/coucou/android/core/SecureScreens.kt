@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 /**
  * Which screens hide from screenshots, screen recording and the recent-apps card (FLAG_SECURE): the ones that show the

@@ -1,5 +1,5 @@
 {
-  "about": "What's new, shown once in the notch after Coucou updates itself (WhatsNew.swift). Every Mac release adds its entry here, in the 14 languages, before release.sh: 1 to 4 items, a short title and one line each, an icon from scripts/test-whats-new.py. python3 scripts/test-whats-new.py checks it.",
+  "about": "What's new, shown once in the notch after NxIsland updates itself (WhatsNew.swift). Every Mac release adds its entry here, in the 14 languages, before release.sh: 1 to 4 items, a short title and one line each, an icon from scripts/test-whats-new.py. python3 scripts/test-whats-new.py checks it.",
   "releases": [
     {
       "version": "0.5.3",
@@ -23,20 +23,20 @@
             "zh-Hant": "有更新時 Mochi 變藍"
           },
           "detail": {
-            "en": "A new Coucou turns him blue, in the notch and the menu bar. One click installs it.",
-            "fr": "Un nouveau Coucou le rend bleu, dans le notch et la barre des menus. Un clic l’installe.",
-            "es": "Un Coucou nuevo lo vuelve azul, en el notch y la barra de menús. Un clic lo instala.",
-            "pt-BR": "Um Coucou novo o deixa azul, no notch e na barra de menus. Um clique instala.",
-            "ru": "Новый Coucou делает его синим — в вырезе и в строке меню. Один клик — и готово.",
-            "zh-Hans": "有新版 Coucou 时，刘海和菜单栏中的它会变蓝，一键安装。",
-            "hi": "नया Coucou आने पर वह नॉच और मेन्यू बार में नीला हो जाता है। एक क्लिक में इंस्टॉल।",
-            "ar": "عند صدور Coucou جديد يصبح أزرق في النوتش وشريط القوائم. نقرة واحدة تثبّته.",
-            "bn": "নতুন Coucou এলে নচ ও মেনু বারে সে নীল হয়। এক ক্লিকে ইনস্টল।",
-            "id": "Coucou baru membuatnya biru, di notch dan bilah menu. Sekali klik untuk memasang.",
-            "de": "Ein neues Coucou macht ihn blau, in der Notch und der Menüleiste. Ein Klick installiert es.",
-            "tr": "Yeni Coucou onu çentikte ve menü çubuğunda maviye çevirir. Tek tıkla kurulur.",
-            "th": "เมื่อมี Coucou ใหม่ เขาจะเป็นสีฟ้าในรอยบากและแถบเมนู คลิกเดียวติดตั้ง",
-            "zh-Hant": "有新版 Coucou 時，瀏海和選單列中的它會變藍，一鍵安裝。"
+            "en": "A new NxIsland turns him blue, in the notch and the menu bar. One click installs it.",
+            "fr": "Un nouveau NxIsland le rend bleu, dans le notch et la barre des menus. Un clic l’installe.",
+            "es": "Un NxIsland nuevo lo vuelve azul, en el notch y la barra de menús. Un clic lo instala.",
+            "pt-BR": "Um NxIsland novo o deixa azul, no notch e na barra de menus. Um clique instala.",
+            "ru": "Новый NxIsland делает его синим — в вырезе и в строке меню. Один клик — и готово.",
+            "zh-Hans": "有新版 NxIsland 时，刘海和菜单栏中的它会变蓝，一键安装。",
+            "hi": "नया NxIsland आने पर वह नॉच और मेन्यू बार में नीला हो जाता है। एक क्लिक में इंस्टॉल।",
+            "ar": "عند صدور NxIsland جديد يصبح أزرق في النوتش وشريط القوائم. نقرة واحدة تثبّته.",
+            "bn": "নতুন NxIsland এলে নচ ও মেনু বারে সে নীল হয়। এক ক্লিকে ইনস্টল।",
+            "id": "NxIsland baru membuatnya biru, di notch dan bilah menu. Sekali klik untuk memasang.",
+            "de": "Ein neues NxIsland macht ihn blau, in der Notch und der Menüleiste. Ein Klick installiert es.",
+            "tr": "Yeni NxIsland onu çentikte ve menü çubuğunda maviye çevirir. Tek tıkla kurulur.",
+            "th": "เมื่อมี NxIsland ใหม่ เขาจะเป็นสีฟ้าในรอยบากและแถบเมนู คลิกเดียวติดตั้ง",
+            "zh-Hant": "有新版 NxIsland 時，瀏海和選單列中的它會變藍，一鍵安裝。"
           }
         },
         {
@@ -58,20 +58,20 @@
             "zh-Hant": "更新內容，就在這裡"
           },
           "detail": {
-            "en": "After each update: what it brings, then your Coucou so far.",
-            "fr": "Après chaque mise à jour : ce qu’elle apporte, puis ton Coucou jusqu’ici.",
-            "es": "Tras cada actualización: lo que trae y luego tu Coucou hasta ahora.",
-            "pt-BR": "Após cada atualização: o que ela traz e depois seu Coucou até agora.",
-            "ru": "После каждого обновления — что нового, а затем ваш Coucou на сегодня.",
-            "zh-Hans": "每次更新后：先看新内容，再看你的 Coucou 至今。",
-            "hi": "हर अपडेट के बाद: उसमें क्या नया है, फिर अब तक आपका Coucou।",
-            "ar": "بعد كل تحديث: ما الجديد فيه، ثم Coucou الخاص بك حتى الآن.",
-            "bn": "প্রতিটি আপডেটের পর: কী নতুন, তারপর এ পর্যন্ত আপনার Coucou।",
-            "id": "Setelah tiap pembaruan: isinya, lalu Coucou-mu sejauh ini.",
-            "de": "Nach jedem Update: was es bringt, dann dein Coucou bisher.",
-            "tr": "Her güncellemeden sonra: getirdikleri, ardından şimdiye kadar Coucou’n.",
-            "th": "หลังอัปเดตแต่ละครั้ง: ดูของใหม่ แล้วดู Coucou ของคุณจนถึงตอนนี้",
-            "zh-Hant": "每次更新後：先看新內容，再看你的 Coucou 至今。"
+            "en": "After each update: what it brings, then your NxIsland so far.",
+            "fr": "Après chaque mise à jour : ce qu’elle apporte, puis ton NxIsland jusqu’ici.",
+            "es": "Tras cada actualización: lo que trae y luego tu NxIsland hasta ahora.",
+            "pt-BR": "Após cada atualização: o que ela traz e depois seu NxIsland até agora.",
+            "ru": "После каждого обновления — что нового, а затем ваш NxIsland на сегодня.",
+            "zh-Hans": "每次更新后：先看新内容，再看你的 NxIsland 至今。",
+            "hi": "हर अपडेट के बाद: उसमें क्या नया है, फिर अब तक आपका NxIsland।",
+            "ar": "بعد كل تحديث: ما الجديد فيه، ثم NxIsland الخاص بك حتى الآن.",
+            "bn": "প্রতিটি আপডেটের পর: কী নতুন, তারপর এ পর্যন্ত আপনার NxIsland।",
+            "id": "Setelah tiap pembaruan: isinya, lalu NxIsland-mu sejauh ini.",
+            "de": "Nach jedem Update: was es bringt, dann dein NxIsland bisher.",
+            "tr": "Her güncellemeden sonra: getirdikleri, ardından şimdiye kadar NxIsland’n.",
+            "th": "หลังอัปเดตแต่ละครั้ง: ดูของใหม่ แล้วดู NxIsland ของคุณจนถึงตอนนี้",
+            "zh-Hant": "每次更新後：先看新內容，再看你的 NxIsland 至今。"
           }
         },
         {
@@ -93,20 +93,20 @@
             "zh-Hant": "請 Mochi 喝咖啡"
           },
           "detail": {
-            "en": "Coucou stays free and open source. If it saves you time, a coffee says thanks.",
-            "fr": "Coucou reste gratuit et open source. S’il te fait gagner du temps, un café dit merci.",
-            "es": "Coucou sigue siendo gratis y abierto. Si te ahorra tiempo, un café es un gracias.",
-            "pt-BR": "O Coucou continua gratuito e aberto. Se economiza seu tempo, um café diz obrigado.",
-            "ru": "Coucou остаётся бесплатным и открытым. Экономит время? Кофе — лучшее спасибо.",
-            "zh-Hans": "Coucou 依然免费开源。如果它帮你省了时间，一杯咖啡就是感谢。",
-            "hi": "Coucou मुफ़्त और ओपन सोर्स ही रहेगा। समय बचे तो एक कॉफ़ी से शुक्रिया कहें।",
-            "ar": "يبقى Coucou مجانيًا ومفتوح المصدر. إن وفّر وقتك، فالقهوة شكر جميل.",
-            "bn": "Coucou বিনামূল্যে ও ওপেন সোর্সই থাকবে। সময় বাঁচালে এক কাপ কফিতে ধন্যবাদ।",
-            "id": "Coucou tetap gratis dan open source. Kalau menghemat waktumu, kopi jadi tanda terima kasih.",
-            "de": "Coucou bleibt kostenlos und Open Source. Spart es dir Zeit, sagt ein Kaffee Danke.",
-            "tr": "Coucou ücretsiz ve açık kaynak kalıyor. Zaman kazandırıyorsa bir kahve teşekkür olur.",
-            "th": "Coucou ยังฟรีและเป็นโอเพนซอร์ส ถ้าช่วยประหยัดเวลา กาแฟสักแก้วคือคำขอบคุณ",
-            "zh-Hant": "Coucou 依然免費開源。如果它幫你省了時間，一杯咖啡就是感謝。"
+            "en": "NxIsland stays free and open source. If it saves you time, a coffee says thanks.",
+            "fr": "NxIsland reste gratuit et open source. S’il te fait gagner du temps, un café dit merci.",
+            "es": "NxIsland sigue siendo gratis y abierto. Si te ahorra tiempo, un café es un gracias.",
+            "pt-BR": "O NxIsland continua gratuito e aberto. Se economiza seu tempo, um café diz obrigado.",
+            "ru": "NxIsland остаётся бесплатным и открытым. Экономит время? Кофе — лучшее спасибо.",
+            "zh-Hans": "NxIsland 依然免费开源。如果它帮你省了时间，一杯咖啡就是感谢。",
+            "hi": "NxIsland मुफ़्त और ओपन सोर्स ही रहेगा। समय बचे तो एक कॉफ़ी से शुक्रिया कहें।",
+            "ar": "يبقى NxIsland مجانيًا ومفتوح المصدر. إن وفّر وقتك، فالقهوة شكر جميل.",
+            "bn": "NxIsland বিনামূল্যে ও ওপেন সোর্সই থাকবে। সময় বাঁচালে এক কাপ কফিতে ধন্যবাদ।",
+            "id": "NxIsland tetap gratis dan open source. Kalau menghemat waktumu, kopi jadi tanda terima kasih.",
+            "de": "NxIsland bleibt kostenlos und Open Source. Spart es dir Zeit, sagt ein Kaffee Danke.",
+            "tr": "NxIsland ücretsiz ve açık kaynak kalıyor. Zaman kazandırıyorsa bir kahve teşekkür olur.",
+            "th": "NxIsland ยังฟรีและเป็นโอเพนซอร์ส ถ้าช่วยประหยัดเวลา กาแฟสักแก้วคือคำขอบคุณ",
+            "zh-Hant": "NxIsland 依然免費開源。如果它幫你省了時間，一杯咖啡就是感謝。"
           }
         }
       ]
@@ -133,20 +133,20 @@
             "zh-Hant": "瀏海中的新版本"
           },
           "detail": {
-            "en": "Mochi tells you when a new Coucou is out. One click installs it.",
-            "fr": "Mochi te prévient quand un nouveau Coucou sort. Un clic l'installe.",
-            "es": "Mochi te avisa cuando sale un nuevo Coucou. Un clic lo instala.",
-            "pt-BR": "O Mochi avisa quando sai um novo Coucou. Um clique instala.",
-            "ru": "Mochi сообщит о новом Coucou. Один клик — и он установлен.",
-            "zh-Hans": "有新版 Coucou 时 Mochi 会告诉你，一键即可安装。",
-            "hi": "नया Coucou आने पर Mochi बताता है। एक क्लिक में इंस्टॉल।",
-            "ar": "يخبرك Mochi بصدور Coucou جديد. نقرة واحدة تثبّته.",
-            "bn": "নতুন Coucou এলে Mochi জানায়। এক ক্লিকে ইনস্টল।",
-            "id": "Mochi memberi tahu saat Coucou baru keluar. Sekali klik untuk memasang.",
-            "de": "Mochi sagt dir, wenn ein neues Coucou da ist. Ein Klick installiert es.",
-            "tr": "Yeni Coucou çıkınca Mochi haber verir. Tek tıkla kurulur.",
-            "th": "Mochi บอกเมื่อมี Coucou ใหม่ คลิกเดียวก็ติดตั้งได้",
-            "zh-Hant": "有新版 Coucou 時 Mochi 會告訴你，一鍵即可安裝。"
+            "en": "Mochi tells you when a new NxIsland is out. One click installs it.",
+            "fr": "Mochi te prévient quand un nouveau NxIsland sort. Un clic l'installe.",
+            "es": "Mochi te avisa cuando sale un nuevo NxIsland. Un clic lo instala.",
+            "pt-BR": "O Mochi avisa quando sai um novo NxIsland. Um clique instala.",
+            "ru": "Mochi сообщит о новом NxIsland. Один клик — и он установлен.",
+            "zh-Hans": "有新版 NxIsland 时 Mochi 会告诉你，一键即可安装。",
+            "hi": "नया NxIsland आने पर Mochi बताता है। एक क्लिक में इंस्टॉल।",
+            "ar": "يخبرك Mochi بصدور NxIsland جديد. نقرة واحدة تثبّته.",
+            "bn": "নতুন NxIsland এলে Mochi জানায়। এক ক্লিকে ইনস্টল।",
+            "id": "Mochi memberi tahu saat NxIsland baru keluar. Sekali klik untuk memasang.",
+            "de": "Mochi sagt dir, wenn ein neues NxIsland da ist. Ein Klick installiert es.",
+            "tr": "Yeni NxIsland çıkınca Mochi haber verir. Tek tıkla kurulur.",
+            "th": "Mochi บอกเมื่อมี NxIsland ใหม่ คลิกเดียวก็ติดตั้งได้",
+            "zh-Hant": "有新版 NxIsland 時 Mochi 會告訴你，一鍵即可安裝。"
           }
         },
         {

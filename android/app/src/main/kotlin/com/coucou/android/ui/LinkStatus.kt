@@ -1,13 +1,13 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import com.coucou.android.R
-import com.coucou.android.app.AppModel
-import com.coucou.android.app.Mode
-import com.coucou.android.link.DiscoveryState
-import com.coucou.android.link.LinkState
+import com.nxisland.android.R
+import com.nxisland.android.app.AppModel
+import com.nxisland.android.app.Mode
+import com.nxisland.android.link.DiscoveryState
+import com.nxisland.android.link.LinkState
 
 /** The line under the title ("Connected · My PC") and the colour of its dot, shared by Home and Settings. */
 @Composable

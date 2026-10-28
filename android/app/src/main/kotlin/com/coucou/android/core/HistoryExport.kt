@@ -1,4 +1,4 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
 import java.time.Instant
 import java.time.ZoneId

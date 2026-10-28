@@ -1,4 +1,4 @@
-package com.coucou.android.ui
+package com.nxisland.android.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,15 +26,15 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.coucou.android.R
-import com.coucou.android.core.BarFit
-import com.coucou.android.core.IconKind
-import com.coucou.android.core.Spacing
-import com.coucou.android.core.SpokenLabels
-import com.coucou.android.core.Tab
-import com.coucou.android.core.TypeScale
-import com.coucou.android.mochi.BotState
-import com.coucou.android.mochi.MochiConst
+import com.nxisland.android.R
+import com.nxisland.android.core.BarFit
+import com.nxisland.android.core.IconKind
+import com.nxisland.android.core.Spacing
+import com.nxisland.android.core.SpokenLabels
+import com.nxisland.android.core.Tab
+import com.nxisland.android.core.TypeScale
+import com.nxisland.android.mochi.BotState
+import com.nxisland.android.mochi.MochiConst
 
 private fun Tab.icon() = when (this) {
     Tab.HOME -> IconKind.HOME

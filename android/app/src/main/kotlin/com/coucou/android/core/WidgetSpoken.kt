@@ -1,6 +1,6 @@
-package com.coucou.android.core
+package com.nxisland.android.core
 
-import com.coucou.android.mochi.BotState
+import com.nxisland.android.mochi.BotState
 
 /**
  * What TalkBack says for a Widget: whole sentences for the parts that are tapped, built from the same words the Widget shows (agent
