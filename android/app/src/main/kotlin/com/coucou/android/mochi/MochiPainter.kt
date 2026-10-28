@@ -97,9 +97,18 @@ object MochiPainter {
 
             drawEyes(c, e, nowSec, body, r, rx, ry)
 
+            // Inner geometry ring (notch motif)
+            val innerR = (min(rx, ry) * 0.76).toFloat()
+            val innerPaint = strokePaint(Color(21, 23, 28, 30), 1.2f)
+            c.drawCircle(Offset.Zero, innerR, innerPaint)
+
+            // Core dot indicator (signature motif)
+            drawCoreDot(c, e, r, ry)
+
             // Pulse ring accent — working state indicator (NxIsland design)
-            if (e.moodBusy > 0.1) {
-                drawPulseRing(c, e, nowSec, r, rx, ry)
+            val busyVal = max(e.moodBusy.toDouble(), if (e.state == BotState.WORKING || e.state == BotState.THINKING || e.state == BotState.SEARCHING) 1.0 else 0.0)
+            if (busyVal > 0.05) {
+                drawPulseRing(c, e, nowSec, r, rx, ry, busyVal)
             }
 
             if (e.morph > 0.05) drawMouth(c, e, body, r)
@@ -258,9 +267,16 @@ object MochiPainter {
                 // Minimal blink: clean horizontal line
                 roundRect(c, -w * 0.6, -w * 0.1, w * 1.2, w * 0.2, w * 0.1, fill)
             }
-            EyeShape.LINE, EyeShape.FLAT -> {
+            EyeShape.LINE -> {
                 // Focus line: flat line
                 roundRect(c, -w * 0.7, -w * 0.15, w * 1.4, w * 0.3, w * 0.15, fill)
+            }
+            EyeShape.FLAT -> {
+                // Error cross (x) eyes
+                val s = (w * 0.42).toFloat()
+                val sp = strokePaint(ink, (w * 0.24).toFloat())
+                c.drawLine(Offset(-s, -s), Offset(s, s), sp)
+                c.drawLine(Offset(s, -s), Offset(-s, s), sp)
             }
             else -> {
                 // Standard: crisp solid dot (no highlight, no lid)
@@ -269,22 +285,36 @@ object MochiPainter {
         }
     }
 
-    private fun drawPulseRing(c: Canvas, e: MochiEngine, nowSec: Double, r: Double, rx: Double, ry: Double) {
-        val outerPhase = (nowSec * 1.8).toFloat() % 1f
-        val outerScale = 1.0 + 0.15 * sin(outerPhase * PI * 2)
-        val outerR = (max(rx, ry) * outerScale * 1.05).toFloat()
+    private fun drawPulseRing(c: Canvas, e: MochiEngine, nowSec: Double, r: Double, rx: Double, ry: Double, busy: Double) {
+        val maxR = max(rx, ry)
 
-        val outerAlpha = (0.12 * e.moodBusy * (0.5 + 0.5 * sin((outerPhase + 0.25) * PI * 2))).toFloat().coerceIn(0f, 1f)
-        val outerPaint = strokePaint(Color(178, 128, 255, (outerAlpha * 255).toInt()), 0.8f)
-        c.drawCircle(Offset.Zero, outerR, outerPaint)
+        // Two concentric expanding waves offset by half-cycle (NxIsland design)
+        for (i in 0..1) {
+            val offset = i * 0.5
+            val phase = (((nowSec * 0.85 + offset) % 1.0 + 1.0) % 1.0).toFloat()
+            val scale = 1.04f + 0.36f * phase
+            val ringR = (maxR * scale).toFloat()
 
-        val innerPhase = (nowSec * 1.2).toFloat() % 1f
-        val innerScale = 0.95 + 0.08 * sin(innerPhase * PI * 2)
-        val innerR = (max(rx, ry) * innerScale * 0.92).toFloat()
+            // Bell-curve opacity: eases in from 0, peaks mid-expansion, fades at outer boundary
+            val alpha = (0.42 * busy * sin(phase * PI)).toFloat().coerceIn(0f, 1f)
+            val strokeW = 1.4f * (1.0f - 0.3f * phase)
 
-        val innerAlpha = (0.18 * e.moodBusy * (0.6 + 0.4 * sin((innerPhase + 0.5) * PI * 2))).toFloat().coerceIn(0f, 1f)
-        val innerPaint = strokePaint(Color(204, 102, 230, (innerAlpha * 255).toInt()), 0.6f)
-        c.drawCircle(Offset.Zero, innerR, innerPaint)
+            // Signature agent purple (#C084FC)
+            val paint = strokePaint(Color(192, 132, 252, (alpha * 255).toInt()), strokeW)
+            c.drawCircle(Offset.Zero, ringR, paint)
+        }
+    }
+
+    private fun drawCoreDot(c: Canvas, e: MochiEngine, r: Double, ry: Double) {
+        if (e.isMini) return
+        val dotR = max(3.0, r * 0.075).toFloat()
+        val dotY = (ry * 0.72).toFloat()
+        val coreColor = when {
+            e.state == BotState.ERROR -> Color(244, 80, 94)
+            e.tint > 0.1 -> e.cfg.color.color()
+            else -> Color(192, 132, 252)
+        }
+        c.drawCircle(Offset(0f, dotY), dotR, fillPaint(coreColor))
     }
 
     /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */

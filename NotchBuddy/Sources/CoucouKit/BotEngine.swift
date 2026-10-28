@@ -1160,9 +1160,20 @@ final class BotEngine: ObservableObject {
         // Eyes
         drawEyes(ctx: &ctx, path: bodyPath, R: R, rx: rx, ry: ry)
 
+        // Inner geometry ring (notch motif)
+        let innerR = min(rx, ry) * 0.76
+        var innerRing = Path()
+        innerRing.addEllipse(in: CGRect(x: -innerR, y: -innerR, width: innerR * 2, height: innerR * 2))
+        ctx.stroke(innerRing, with: .color(Color(red: 0.082, green: 0.090, blue: 0.110).opacity(0.12)),
+                   style: StrokeStyle(lineWidth: 1.2))
+
+        // Core dot indicator (signature motif)
+        drawCoreDot(ctx: &ctx, R: R, ry: ry)
+
         // Pulse ring accent — working state indicator (NxIsland design)
-        if moodBusy > 0.1 {
-            drawPulseRing(ctx: &ctx, R: R, rx: rx, ry: ry, busy: moodBusy)
+        let busyVal = max(moodBusy, (state == .working || state == .thinking || state == .searching) ? 1.0 : 0.0)
+        if busyVal > 0.05 {
+            drawPulseRing(ctx: &ctx, R: R, rx: rx, ry: ry, busy: busyVal)
         }
 
         // Mouth hole — dark pill cutout inside the box face
@@ -1570,12 +1581,24 @@ final class BotEngine: ObservableObject {
                              cornerSize: CGSize(width: w*0.1, height: w*0.1))
             ctx.fill(p, with: .color(ink))
 
-        case .line, .flat:
+        case .line:
             // Focus line: flat line
             var p = Path()
             p.addRoundedRect(in: CGRect(x: -w*0.7, y: -w*0.15, width: w*1.4, height: w*0.3),
                              cornerSize: CGSize(width: w*0.15, height: w*0.15))
             ctx.fill(p, with: .color(ink))
+
+        case .flat:
+            // Error cross (x) eyes
+            let s = w * 0.42
+            var p1 = Path()
+            p1.move(to: CGPoint(x: -s, y: -s))
+            p1.addLine(to: CGPoint(x: s, y: s))
+            ctx.stroke(p1, with: .color(ink), style: StrokeStyle(lineWidth: w * 0.24, lineCap: .round))
+            var p2 = Path()
+            p2.move(to: CGPoint(x: s, y: -s))
+            p2.addLine(to: CGPoint(x: -s, y: s))
+            ctx.stroke(p2, with: .color(ink), style: StrokeStyle(lineWidth: w * 0.24, lineCap: .round))
 
         default:
             // Standard: crisp solid dot (no highlight, no lid)
@@ -1588,30 +1611,45 @@ final class BotEngine: ObservableObject {
 
     private func drawPulseRing(ctx: inout GraphicsContext, R: CGFloat, rx: CGFloat, ry: CGFloat, busy: CGFloat) {
         let now = CGFloat(CACurrentMediaTime())
-        
-        // Outer ring: pulsing animation, scales with busy level
-        let outerPhase = (now * 1.8).truncatingRemainder(dividingBy: 1)
-        let outerScale = 1.0 + 0.15 * sin(outerPhase * .pi * 2)
-        let outerR = max(rx, ry) * CGFloat(outerScale) * 1.05
-        
-        var outerRing = Path()
-        outerRing.addEllipse(in: CGRect(x: -outerR, y: -outerR, width: outerR*2, height: outerR*2))
-        
-        let outerAlpha = 0.12 * busy * (0.5 + 0.5 * sin((outerPhase + 0.25) * .pi * 2))
-        ctx.stroke(outerRing, with: .color(Color(red: 0.7, green: 0.5, blue: 1.0).opacity(Double(outerAlpha))),
-                   style: StrokeStyle(lineWidth: 0.8, lineCap: .round))
-        
-        // Inner ring: slower phase, inverse pulse
-        let innerPhase = (now * 1.2).truncatingRemainder(dividingBy: 1)
-        let innerScale = 0.95 + 0.08 * sin(innerPhase * .pi * 2)
-        let innerR = max(rx, ry) * CGFloat(innerScale) * 0.92
-        
-        var innerRing = Path()
-        innerRing.addEllipse(in: CGRect(x: -innerR, y: -innerR, width: innerR*2, height: innerR*2))
-        
-        let innerAlpha = 0.18 * busy * (0.6 + 0.4 * sin((innerPhase + 0.5) * .pi * 2))
-        ctx.stroke(innerRing, with: .color(Color(red: 0.8, green: 0.4, blue: 0.9).opacity(Double(innerAlpha))),
-                   style: StrokeStyle(lineWidth: 0.6, lineCap: .round))
+        let maxR = max(rx, ry)
+
+        // Two concentric expanding waves offset by half-cycle (NxIsland design)
+        for i in 0..<2 {
+            let offset = CGFloat(i) * 0.5
+            let phase = ((now * 0.85 + offset).truncatingRemainder(dividingBy: 1) + 1).truncatingRemainder(dividingBy: 1)
+            let scale = 1.04 + 0.36 * phase
+            let ringR = maxR * scale
+
+            var ring = Path()
+            ring.addEllipse(in: CGRect(x: -ringR, y: -ringR, width: ringR * 2, height: ringR * 2))
+
+            // Bell-curve opacity: eases in from 0, peaks mid-expansion, fades at outer boundary
+            let alpha = Double(0.42 * busy * sin(phase * .pi))
+            let strokeWidth = 1.4 * (1.0 - 0.3 * phase)
+
+            // Signature agent purple (#C084FC)
+            let ringColor = Color(red: 0.753, green: 0.518, blue: 0.988).opacity(alpha)
+            ctx.stroke(ring, with: .color(ringColor), style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
+        }
+    }
+
+    private func drawCoreDot(ctx: inout GraphicsContext, R: CGFloat, ry: CGFloat) {
+        guard !isMini else { return }
+        let dotR = max(3.0, R * 0.075)
+        let dotY = ry * 0.72
+        var p = Path()
+        p.addEllipse(in: CGRect(x: -dotR, y: dotY - dotR, width: dotR * 2, height: dotR * 2))
+
+        let effectiveTint = tint * (1 - morph)
+        let coreColor: Color
+        if state == .error {
+            coreColor = Color(red: 0.957, green: 0.314, blue: 0.369)
+        } else if effectiveTint > 0.1 {
+            coreColor = colorFromTuple(col)
+        } else {
+            coreColor = Color(red: 0.753, green: 0.518, blue: 0.988)
+        }
+        ctx.fill(p, with: .color(coreColor))
     }
 
     private func drawBadge(context: GraphicsContext, size: CGSize, badge: BadgeType, R: CGFloat, rx: CGFloat, ry: CGFloat, cx: CGFloat, cy: CGFloat) {

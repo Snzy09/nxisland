@@ -829,8 +829,20 @@ export class BotEngine {
 
     this.drawEyes(x, body, R, rx, ry);
 
+    // Inner geometry ring (notch motif)
+    const innerR = Math.min(rx, ry) * 0.76;
+    x.strokeStyle = "rgba(21,23,28,0.12)";
+    x.lineWidth = 1.2;
+    x.beginPath();
+    x.arc(0, 0, innerR, 0, Math.PI * 2);
+    x.stroke();
+
+    // Core dot indicator (signature motif)
+    this.drawCoreDot(x, R, ry);
+
     // Pulse ring accent — working state indicator (NxIsland design)
-    if (this.cfg.eye === "pill" && (this.tint > 0.5 || this.badge?.kind === "dots")) {
+    const isWorking = this.state === "working" || this.state === "thinking" || this.state === "searching" || (this.cfg.eye === "pill" && (this.tint > 0.5 || this.badge?.kind === "dots"));
+    if (isWorking) {
       this.drawPulseRing(x, R, rx, ry);
     }
 
@@ -985,11 +997,24 @@ export class BotEngine {
         x.fill();
         break;
       case "line":
-      case "flat":
         // Focus line: flat line
         roundRectPath(x, -w * 0.7, -w * 0.15, w * 1.4, w * 0.3, w * 0.15);
         x.fill();
         break;
+      case "flat": {
+        // Error cross (x) eyes
+        const s = w * 0.42;
+        x.strokeStyle = _ink;
+        x.lineWidth = w * 0.24;
+        x.lineCap = "round";
+        x.beginPath();
+        x.moveTo(-s, -s);
+        x.lineTo(s, s);
+        x.moveTo(s, -s);
+        x.lineTo(-s, s);
+        x.stroke();
+        break;
+      }
       default:
         // Standard: crisp solid dot (no highlight, no lid)
         x.beginPath();
@@ -1001,31 +1026,44 @@ export class BotEngine {
 
   private drawPulseRing(x: CanvasRenderingContext2D, _R: number, rx: number, ry: number) {
     const t = now();
-    
-    // Outer ring: pulsing animation
-    const outerPhase = (t * 1.8) % 1;
-    const outerScale = 1.0 + 0.15 * Math.sin(outerPhase * Math.PI * 2);
-    const outerR = Math.max(rx, ry) * outerScale * 1.05;
+    const maxR = Math.max(rx, ry);
 
-    const outerAlpha = 0.12 * (0.5 + 0.5 * Math.sin((outerPhase + 0.25) * Math.PI * 2));
-    x.strokeStyle = `rgba(178,128,255,${outerAlpha})`;
-    x.lineWidth = 0.8;
-    x.lineCap = "round";
+    // Two concentric expanding waves offset by half-cycle (NxIsland design)
+    for (let i = 0; i < 2; i++) {
+      const offset = i * 0.5;
+      const phase = (((t * 0.85 + offset) % 1.0) + 1.0) % 1.0;
+      const scale = 1.04 + 0.36 * phase;
+      const ringR = maxR * scale;
+
+      // Bell-curve opacity: eases in from 0, peaks mid-expansion, fades at outer boundary
+      const alpha = 0.42 * Math.sin(phase * Math.PI);
+      const strokeW = 1.4 * (1.0 - 0.3 * phase);
+
+      // Signature agent purple (#C084FC)
+      x.strokeStyle = `rgba(192,132,252,${alpha})`;
+      x.lineWidth = strokeW;
+      x.lineCap = "round";
+      x.beginPath();
+      x.arc(0, 0, ringR, 0, Math.PI * 2);
+      x.stroke();
+    }
+  }
+
+  private drawCoreDot(x: CanvasRenderingContext2D, R: number, ry: number) {
+    if (this.isMini) return;
+    const dotR = Math.max(3, R * 0.075);
+    const dotY = ry * 0.72;
+    let color = "#C084FC";
+    if (this.state === "error") {
+      color = "#F4505E";
+    } else if (this.tint > 0.1 && this.cfg.color) {
+      const c = this.cfg.color;
+      color = `rgb(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)})`;
+    }
+    x.fillStyle = color;
     x.beginPath();
-    x.arc(0, 0, outerR, 0, Math.PI * 2);
-    x.stroke();
-
-    // Inner ring: slower phase, inverse pulse
-    const innerPhase = (t * 1.2) % 1;
-    const innerScale = 0.95 + 0.08 * Math.sin(innerPhase * Math.PI * 2);
-    const innerR = Math.max(rx, ry) * innerScale * 0.92;
-
-    const innerAlpha = 0.18 * (0.6 + 0.4 * Math.sin((innerPhase + 0.5) * Math.PI * 2));
-    x.strokeStyle = `rgba(204,102,230,${innerAlpha})`;
-    x.lineWidth = 0.6;
-    x.beginPath();
-    x.arc(0, 0, innerR, 0, Math.PI * 2);
-    x.stroke();
+    x.arc(0, dotY, dotR, 0, Math.PI * 2);
+    x.fill();
   }
 
   /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */
