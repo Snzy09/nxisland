@@ -298,13 +298,7 @@ pub fn setup(app: &AppHandle) {
     }
 }
 
-fn page_url(app: &AppHandle) -> WebviewUrl {
-    #[cfg(dev)]
-    if let Some(mut base) = app.config().build.dev_url.clone() {
-        base.set_path("/mochi.html");
-        return WebviewUrl::External(base);
-    }
-    let _ = app;
+fn page_url(_app: &AppHandle) -> WebviewUrl {
     WebviewUrl::App("mochi.html".into())
 }
 

@@ -673,13 +673,7 @@ pub(crate) const BROWSER_ARGS: &str = "--disable-features=msWebOOUI,msPdfOOUI,ms
 
 /// In a dev build the pages are served by Vite, so the second window needs the
 /// absolute dev URL; a bundled build resolves it inside the app bundle.
-fn settings_page_url(app: &AppHandle) -> WebviewUrl {
-    #[cfg(dev)]
-    if let Some(mut base) = app.config().build.dev_url.clone() {
-        base.set_path("/settings.html");
-        return WebviewUrl::External(base);
-    }
-    let _ = app;
+fn settings_page_url(_app: &AppHandle) -> WebviewUrl {
     WebviewUrl::App("settings.html".into())
 }
 
