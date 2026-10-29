@@ -1274,7 +1274,7 @@ mod tests {
         std::fs::write(&file, "export const Mine = async () => ({});\n").unwrap();
         for install in [true, false] {
             let err = config_file::preview(&Agent::OpenCode.edits(&home, &linux(), install)).unwrap_err();
-            assert!(err.contains("wasn't written by Coucou"), "{err}");
+            assert!(err.contains("wasn't written by NxIsland"), "{err}");
         }
         assert_eq!(std::fs::read_to_string(&file).unwrap(), "export const Mine = async () => ({});\n");
         let _ = std::fs::remove_dir_all(home);
