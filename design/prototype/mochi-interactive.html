@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NxIsland · Mochi 3D Interactive Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Tone.js for Robot Audio FX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --notch-w: 196px;
+            --notch-h: 32px;
+            --accent-glow: #c084fc;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(120% 90% at 50% 18%, #31180d 0%, #150d09 46%, #090504 100%);
+            color: #f8fafc;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        #canvas-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            z-index: 1;
+        }
+
+        #canvas-container:active {
+            cursor: grabbing;
+        }
+
+        /* HUD Layer */
+        .hud-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+        }
+
+        @media (min-width: 768px) {
+            .hud-layer {
+                padding: 1.25rem 2rem;
+            }
+        }
+
+        /* Physical MacBook Notch Simulation */
+        #macbook-notch {
+            pointer-events: auto;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--notch-w);
+            height: var(--notch-h);
+            background: #000000;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            z-index: 30;
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
+        #macbook-notch:hover {
+            box-shadow: 0 12px 30px rgba(192, 132, 252, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.18);
+        }
+
+        #macbook-notch.docked-open {
+            width: 320px;
+            height: 44px;
+            border-bottom-left-radius: 22px;
+            border-bottom-right-radius: 22px;
+            background: rgba(10, 10, 12, 0.94);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Tactile Non-Flat Glassmorphic Panels */
+        .tactile-glass {
+            background: linear-gradient(135deg, rgba(32, 25, 22, 0.82) 0%, rgba(18, 14, 12, 0.92) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow:
+                0 24px 48px -12px rgba(0, 0, 0, 0.75),
+                0 6px 16px rgba(0, 0, 0, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.22),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Tactile Embossed Buttons */
+        .tactile-btn {
+            background: linear-gradient(180deg, rgba(46, 38, 33, 0.85) 0%, rgba(26, 20, 17, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+            transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .tactile-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow:
+                0 6px 16px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                0 0 12px rgba(251, 191, 36, 0.2);
+        }
+
+        .tactile-btn:active {
+            transform: translateY(1px);
+            box-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.6),
+                inset 0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Emotion Dock Buttons */
+        .emotion-btn {
+            position: relative;
+            background: linear-gradient(180deg, rgba(38, 30, 26, 0.88) 0%, rgba(20, 15, 13, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.14);
+            transition: all 0.26s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .emotion-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .emotion-btn:active {
+            transform: translateY(1px) scale(0.97);
+        }
+
+        .emotion-btn.active {
+            border-color: var(--pill-color, #c084fc);
+            background: linear-gradient(180deg, rgba(54, 40, 36, 0.95) 0%, rgba(28, 20, 18, 0.98) 100%);
+            box-shadow:
+                0 0 24px var(--pill-glow, rgba(192, 132, 252, 0.45)),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35),
+                0 4px 12px rgba(0, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        /* Dynamic Tooltip */
+        #bot-tooltip {
+            position: absolute;
+            pointer-events: none;
+            z-index: 25;
+            transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: translate(-50%, -110%) scale(0.92);
+        }
+
+        #bot-tooltip.visible {
+            opacity: 1;
+            transform: translate(-50%, -125%) scale(1);
+        }
+
+        /* Drawer Transition */
+        #specs-drawer {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: top left;
+        }
+
+        #specs-drawer.drawer-closed {
+            opacity: 0;
+            transform: scale(0.9) translateY(-12px);
+            pointer-events: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Ambient Pulsing Aura */
+        @keyframes pulseAura {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.65; transform: scale(1.08); }
+        }
+
+        .pulse-aura {
+            animation: pulseAura 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="w-screen h-screen relative overflow-hidden">
+
+    <!-- 3D Viewport Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Physical MacBook Notch Simulation (Click to toggle Docked / Stage view) -->
+    <div id="macbook-notch" onclick="toggleNotchDock()" title="Click to Dock / Float Mochi in Notch">
+        <!-- Notch Camera Dot & Sensor -->
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#050508] border border-white/20 shadow-inner flex items-center justify-center">
+                <span class="w-1 h-1 rounded-full bg-blue-500/40"></span>
+            </span>
+            <span id="camera-led" class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] transition-opacity"></span>
+        </div>
+
+        <!-- Dock Status Pill -->
+        <div id="notch-status" class="flex items-center gap-1.5">
+            <span class="text-[11px] font-display font-semibold tracking-wide text-purple-200">MOCHI · NOTCH</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+        </div>
+
+        <div class="flex items-center gap-1 text-stone-400 text-xs">
+            <i class="ph-bold ph-caret-down" id="notch-arrow"></i>
+        </div>
+    </div>
+
+    <!-- Dynamic 3D Hover Tooltip -->
+    <div id="bot-tooltip" class="tactile-glass px-3.5 py-1.5 rounded-xl flex items-center gap-2.5 border border-purple-400/40">
+        <span id="tooltip-dot" class="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_#c084fc]"></span>
+        <span id="tooltip-name" class="font-display font-bold text-xs text-white tracking-wide">MOCHI</span>
+        <span id="tooltip-role" class="text-[10px] text-purple-200/90 bg-white/10 px-1.5 py-0.5 rounded-md font-mono">Drag to Squish</span>
+    </div>
+
+    <!-- HUD Layer -->
+    <div class="hud-layer">
+
+        <!-- Top Controls Header -->
+        <div class="flex flex-col gap-2.5">
+            <header class="flex flex-wrap items-center justify-between gap-3">
+                <!-- Branding & Inspector Trigger -->
+                <div class="flex items-center gap-2.5 pointer-events-auto">
+                    <div class="tactile-glass px-4 py-2.5 rounded-2xl flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 via-indigo-600 to-amber-500 flex items-center justify-center shadow-lg shadow-purple-500/30 border border-white/25">
+                            <i class="ph-fill ph-sparkle text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h1 class="font-display font-bold text-base md:text-lg tracking-wide text-white leading-none">NXISLAND · MOCHI</h1>
+                                <span class="text-[9px] font-mono font-semibold uppercase px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/30">3D v3.0</span>
+                            </div>
+                            <p class="text-[11px] text-stone-400 hidden sm:block mt-0.5">Dual Purple Pulse • Jelly Spring Physics • Multi-OS Notch Rig</p>
+                        </div>
+                    </div>
+
+                    <!-- Telemetry Inspector Toggle -->
+                    <button onclick="toggleSpecsDrawer()" id="specs-btn" class="tactile-glass px-3.5 py-2.5 rounded-2xl flex items-center gap-2 text-xs font-display font-semibold text-stone-200 hover:text-white transition" title="Toggle System Telemetry">
+                        <i class="ph-fill ph-faders text-purple-400 text-base"></i>
+                        <span class="hidden md:inline">Inspector</span>
+                    </button>
+                </div>
+
+                <!-- Right Quick Actions -->
+                <div class="flex items-center flex-wrap gap-2 pointer-events-auto">
+                    <!-- Outfits Switcher Dropdown Button -->
+                    <div class="relative">
+                        <button onclick="cycleOutfit()" class="tactile-btn px-3 py-2 rounded-2xl flex items-center gap-1.5 text-xs font-display font-semibold text-purple-200 hover:text-white" title="Change Mochi Outfit">
+                            <i class="ph-fill ph-t-shirt text-purple-400 text-base"></i>
+                            <span id="outfit-label">Outfit: Halo</span>
+                        </button>
+                    </div>
+
+                    <!-- Party Hop Button -->
+                    <button onclick="triggerGroupJump()" class="tactile-btn px-3 py-2 rounded-2xl flex items-center gap-1.5 text-xs font-display font-semibold text-pink-200 hover:text-white" title="Synchronized Joy Hop">
+                        <i class="ph-fill ph-shooting-star text-pink-400 text-base"></i>
+                        <span class="hidden sm:inline">Hop & Spin!</span>
+                    </button>
+
+                    <!-- Toggle Trio -->
+                    <button onclick="toggleTrio()" id="trio-btn" class="tactile-btn px-3 py-2 rounded-2xl flex items-center gap-1.5 text-xs font-display font-semibold text-amber-200 hover:text-white" title="Toggle Companion Siblings">
+                        <i class="ph-fill ph-users-three text-base text-amber-400"></i>
+                        <span id="trio-label">Trio: ON</span>
+                    </button>
+
+                    <!-- Color Finish Selector -->
+                    <div class="tactile-glass p-1.5 rounded-2xl flex items-center gap-1.5" title="Material Palette">
+                        <button onclick="setRobotTheme('pearl')" class="w-6 h-6 rounded-lg bg-[#f8fafc] border-2 border-purple-400 shadow-inner transition hover:scale-110" title="Pearl Mochi"></button>
+                        <button onclick="setRobotTheme('sakura')" class="w-6 h-6 rounded-lg bg-[#fbcfe8] border-2 border-transparent hover:border-white transition hover:scale-110" title="Sakura Blossom"></button>
+                        <button onclick="setRobotTheme('cyber')" class="w-6 h-6 rounded-lg bg-[#1e1b2e] border-2 border-transparent hover:border-white transition hover:scale-110" title="Obsidian Midnight"></button>
+                        <button onclick="setRobotTheme('matcha')" class="w-6 h-6 rounded-lg bg-[#a7f3d0] border-2 border-transparent hover:border-white transition hover:scale-110" title="Matcha Cream"></button>
+                    </div>
+
+                    <!-- Sound Toggle -->
+                    <button id="sound-btn" onclick="toggleSound()" class="tactile-btn w-9 h-9 rounded-xl flex items-center justify-center text-slate-200 hover:text-white" title="Audio Synth SFX">
+                        <i id="sound-icon" class="ph-fill ph-speaker-high text-lg text-purple-300"></i>
+                    </button>
+
+                    <!-- Reset Camera -->
+                    <button onclick="resetCamera()" class="tactile-btn w-9 h-9 rounded-xl flex items-center justify-center text-slate-200 hover:text-white" title="Reset View">
+                        <i class="ph-bold ph-arrows-in-cardinal text-lg"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Collapsible Telemetry Inspector Panel -->
+            <div class="relative">
+                <aside id="specs-drawer" class="drawer-closed absolute left-0 top-0 w-72 tactile-glass p-4 rounded-3xl pointer-events-auto flex flex-col gap-3">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping" id="status-dot"></span>
+                            <span id="state-readout" class="font-display font-semibold text-xs text-purple-300 tracking-wide uppercase">IDLE / COZY</span>
+                        </div>
+                        <button onclick="toggleSpecsDrawer()" class="text-stone-400 hover:text-white p-1">
+                            <i class="ph-bold ph-x text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Interactive Meters -->
+                    <div class="space-y-2.5 text-[11px]">
+                        <div>
+                            <div class="flex justify-between text-stone-300 mb-1">
+                                <span>Dual-Pulse `#C084FC`</span>
+                                <span id="telemetry-pulse" class="text-purple-300 font-mono">Active (1.40x)</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-black/50 rounded-full overflow-hidden p-0.5 border border-white/5">
+                                <div id="telemetry-pulse-bar" class="w-2/3 h-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full transition-all duration-300"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-stone-300 mb-1">
+                                <span>Jelly Damping Ratio</span>
+                                <span id="telemetry-damping" class="text-emerald-300 font-mono">0.72 Critical</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-black/50 rounded-full overflow-hidden p-0.5 border border-white/5">
+                                <div id="telemetry-damping-bar" class="w-4/5 h-full bg-emerald-400 rounded-full transition-all duration-300"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-stone-300 mb-1">
+                                <span>Core Inner Ring</span>
+                                <span class="text-amber-300 font-mono">0.76 scale / 0.12 op</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/40 rounded-2xl p-3 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+                        <span class="text-white font-semibold block mb-0.5" id="telemetry-title">Next-Gen Mochi 3D</span>
+                        <span id="telemetry-desc">Direct squishy drag deformation, specular eye gleam, dual-wave notch pulse rings, and macOS notch docking.</span>
+                    </div>
+
+                    <button onclick="triggerHeadpat()" class="w-full py-2.5 rounded-2xl bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-amber-500/30 hover:from-purple-500/50 hover:to-amber-500/50 border border-purple-400/40 text-purple-200 font-display text-xs font-semibold flex items-center justify-center gap-2 transition active:scale-95 shadow-lg">
+                        <i class="ph-fill ph-heart text-pink-400 text-sm"></i> Boop & Squish All!
+                    </button>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Bottom Tactile Emotion Dock -->
+        <footer class="flex flex-col items-center gap-2.5">
+            <!-- Non-flat Interactive Tip Chip -->
+            <div class="tactile-glass px-4 py-1.5 rounded-full text-[11px] text-stone-300 flex items-center gap-2 pointer-events-auto shadow-xl">
+                <i class="ph-fill ph-hand-pointing text-purple-400 text-sm"></i>
+                <span><strong class="text-white">Click & Pull</strong> Mochi to stretch • <strong class="text-amber-300">Double-Click</strong> to spin • <strong class="text-purple-300">Click Top Notch</strong> to dock</span>
+            </div>
+
+            <div class="tactile-glass p-2 md:p-2.5 rounded-3xl pointer-events-auto max-w-full overflow-x-auto no-scrollbar flex items-center gap-2">
+                <!-- Happy -->
+                <button onclick="setEmotion('happy')" id="btn-happy" style="--pill-color: #38bdf8; --pill-glow: rgba(56, 189, 248, 0.45)" class="emotion-btn active flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-smiley"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Happy</div>
+                        <div class="text-[9px] text-stone-400 hidden sm:block">Gentle Bounce</div>
+                    </div>
+                </button>
+
+                <!-- Thinking (NxIsland Pulse Signature!) -->
+                <button onclick="setEmotion('think')" id="btn-think" style="--pill-color: #c084fc; --pill-glow: rgba(192, 132, 252, 0.55)" class="emotion-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-lightbulb-filament"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Thinking</div>
+                        <div class="text-[9px] text-purple-300/80 hidden sm:block">Dual Pulse Wave</div>
+                    </div>
+                </button>
+
+                <!-- Busy / Coding -->
+                <button onclick="setEmotion('busy')" id="btn-busy" style="--pill-color: #f59e0b; --pill-glow: rgba(245, 158, 11, 0.5)" class="emotion-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-cpu"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Working</div>
+                        <div class="text-[9px] text-stone-400 hidden sm:block">Agent Active</div>
+                    </div>
+                </button>
+
+                <!-- Confused -->
+                <button onclick="setEmotion('confuse')" id="btn-confuse" style="--pill-color: #f43f5e; --pill-glow: rgba(244, 63, 94, 0.45)" class="emotion-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-rose-500/20 border border-rose-400/30 flex items-center justify-center text-rose-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-question"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Puzzled</div>
+                        <div class="text-[9px] text-stone-400 hidden sm:block">Inquisitive Tilt</div>
+                    </div>
+                </button>
+
+                <!-- Reading -->
+                <button onclick="setEmotion('read')" id="btn-read" style="--pill-color: #34d399; --pill-glow: rgba(52, 211, 153, 0.45)" class="emotion-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-book-open-text"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Reading</div>
+                        <div class="text-[9px] text-stone-400 hidden sm:block">Holo Diff</div>
+                    </div>
+                </button>
+
+                <!-- Sleeping -->
+                <button onclick="setEmotion('sleep')" id="btn-sleep" style="--pill-color: #818cf8; --pill-glow: rgba(129, 140, 248, 0.45)" class="emotion-btn flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl text-left shrink-0">
+                    <div class="w-8 h-8 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-indigo-300 text-lg shadow-sm">
+                        <i class="ph-fill ph-moon-stars"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-semibold text-xs text-white leading-tight">Sleeping</div>
+                        <div class="text-[9px] text-stone-400 hidden sm:block">Melted Loaf</div>
+                    </div>
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // ====================================================================
+        // 1. TACTILE AUDIO SYNTHESIZER (Polyphonic FM Chords & Bubble Pops)
+        // ====================================================================
+        let soundEnabled = true;
+        let synthInitialized = false;
+        let polySynth = null;
+        let popSynth = null;
+
+        function initAudio() {
+            if (synthInitialized) return;
+            try {
+                Tone.start();
+                polySynth = new Tone.PolySynth(Tone.FMSynth, {
+                    harmonicity: 2,
+                    modulationIndex: 1.5,
+                    oscillator: { type: "sine" },
+                    envelope: { attack: 0.015, decay: 0.18, sustain: 0.08, release: 0.28 },
+                    modulation: { type: "triangle" }
+                }).toDestination();
+                polySynth.volume.value = -8;
+
+                popSynth = new Tone.MembraneSynth({
+                    pitchDecay: 0.04,
+                    octaves: 3,
+                    oscillator: { type: "sine" },
+                    envelope: { attack: 0.001, decay: 0.12, sustain: 0.01, release: 0.1 }
+                }).toDestination();
+                popSynth.volume.value = -6;
+
+                synthInitialized = true;
+            } catch (e) {
+                console.warn("Audio unavailable:", e);
+            }
+        }
+
+        function playSound(type) {
+            if (!soundEnabled) return;
+            initAudio();
+            if (!polySynth || !popSynth) return;
+
+            const now = Tone.now();
+            try {
+                switch (type) {
+                    case 'happy':
+                        polySynth.triggerAttackRelease(["C5", "E5", "G5"], "16n", now);
+                        polySynth.triggerAttackRelease(["E5", "G5", "C6"], "16n", now + 0.1);
+                        break;
+                    case 'think':
+                        polySynth.triggerAttackRelease(["A4", "D5", "F#5"], "32n", now);
+                        polySynth.triggerAttackRelease(["C5", "E5", "A5"], "16n", now + 0.12);
+                        break;
+                    case 'busy':
+                        popSynth.triggerAttackRelease("G4", "32n", now);
+                        popSynth.triggerAttackRelease("C5", "32n", now + 0.06);
+                        popSynth.triggerAttackRelease("E5", "16n", now + 0.12);
+                        break;
+                    case 'confuse':
+                        polySynth.triggerAttackRelease(["D5", "Ab5"], "16n", now);
+                        polySynth.triggerAttackRelease(["C#5", "G5"], "16n", now + 0.12);
+                        break;
+                    case 'read':
+                        polySynth.triggerAttackRelease(["G4", "B4", "D5"], "16n", now);
+                        break;
+                    case 'sleep':
+                        polySynth.triggerAttackRelease(["F4", "A4", "C5"], "8n", now);
+                        polySynth.triggerAttackRelease(["C4", "E4", "G4"], "4n", now + 0.25);
+                        break;
+                    case 'pop':
+                    case 'boop':
+                        popSynth.triggerAttackRelease("C6", "32n", now);
+                        break;
+                    case 'stretch':
+                        popSynth.triggerAttackRelease("A3", "16n", now);
+                        break;
+                }
+            } catch (e) {}
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('sound-icon');
+            if (soundEnabled) {
+                icon.className = 'ph-fill ph-speaker-high text-lg text-purple-300';
+                playSound('pop');
+            } else {
+                icon.className = 'ph-fill ph-speaker-slash text-lg text-stone-400';
+            }
+        }
+
+        // ====================================================================
+        // 2. DYNAMIC VISOR & EYE CANVAS TEXTURE (With NxIsland Parity)
+        // ====================================================================
+        const faceCanvas = document.createElement('canvas');
+        faceCanvas.width = 512;
+        faceCanvas.height = 384;
+        const fCtx = faceCanvas.getContext('2d');
+        const faceTexture = new THREE.CanvasTexture(faceCanvas);
+        faceTexture.anisotropy = 4;
+
+        let currentEyeColor = '#16141a';
+        let pointerLook = { x: 0, y: 0 };
+        let smoothLook = { x: 0, y: 0 };
+        let smoothBlink = 0;
+
+        function drawFace(emotion, t, blink, isBooped) {
+            fCtx.clearRect(0, 0, 512, 384);
+            fCtx.save();
+
+            const lookX = smoothLook.x * 28;
+            const lookY = smoothLook.y * 18;
+
+            const lx = 188 + lookX;
+            const rx = 324 + lookX;
+            const cy = 226 + lookY;
+
+            fCtx.fillStyle = currentEyeColor;
+            fCtx.strokeStyle = currentEyeColor;
+            fCtx.lineCap = 'round';
+            fCtx.lineJoin = 'round';
+
+            if (isBooped) {
+                // Happy curved arcs ^ ^ + blushing cheeks
+                fCtx.lineWidth = 18;
+                fCtx.beginPath();
+                fCtx.arc(lx, cy + 10, 28, Math.PI * 1.15, Math.PI * 1.85);
+                fCtx.stroke();
+                fCtx.beginPath();
+                fCtx.arc(rx, cy + 10, 28, Math.PI * 1.15, Math.PI * 1.85);
+                fCtx.stroke();
+
+                // Blush
+                fCtx.fillStyle = 'rgba(244, 114, 182, 0.65)';
+                fCtx.beginPath();
+                fCtx.ellipse(lx - 55, cy + 28, 26, 14, 0, 0, Math.PI * 2);
+                fCtx.ellipse(rx + 55, cy + 28, 26, 14, 0, 0, Math.PI * 2);
+                fCtx.fill();
+
+                fCtx.restore();
+                faceTexture.needsUpdate = true;
+                return;
+            }
+
+            switch (emotion) {
+                case 'happy': {
+                    const eyeH = Math.max(6, 68 * (1 - blink));
+                    fCtx.beginPath();
+                    fCtx.ellipse(lx, cy, 26, eyeH / 2, 0, 0, Math.PI * 2);
+                    fCtx.ellipse(rx, cy, 26, eyeH / 2, 0, 0, Math.PI * 2);
+                    fCtx.fill();
+
+                    // Specular Glints in Eyes
+                    if (blink < 0.35) {
+                        fCtx.fillStyle = '#ffffff';
+                        fCtx.beginPath();
+                        fCtx.arc(lx - 8 + lookX * 0.2, cy - 12 + lookY * 0.2, 7, 0, Math.PI * 2);
+                        fCtx.arc(rx - 8 + lookX * 0.2, cy - 12 + lookY * 0.2, 7, 0, Math.PI * 2);
+                        fCtx.fill();
+                    }
+
+                    // Soft Peach Blush
+                    fCtx.fillStyle = 'rgba(251, 146, 60, 0.28)';
+                    fCtx.beginPath();
+                    fCtx.ellipse(lx - 52, cy + 32, 22, 11, 0, 0, Math.PI * 2);
+                    fCtx.ellipse(rx + 52, cy + 32, 22, 11, 0, 0, Math.PI * 2);
+                    fCtx.fill();
+                    break;
+                }
+
+                case 'think':
+                case 'busy': {
+                    // Focused eyes tracking upwards
+                    const upY = -22;
+                    const scanX = Math.sin(t * 3.5) * 8;
+                    fCtx.beginPath();
+                    fCtx.ellipse(lx + scanX, cy + upY, 24, 28, 0, 0, Math.PI * 2);
+                    fCtx.ellipse(rx + scanX, cy + upY, 24, 28, 0, 0, Math.PI * 2);
+                    fCtx.fill();
+
+                    // Thinking dots
+                    for (let i = 0; i < 3; i++) {
+                        const alpha = 0.3 + Math.max(0, Math.sin(t * 7 - i * 0.8)) * 0.7;
+                        fCtx.fillStyle = `rgba(192, 132, 252, ${alpha})`;
+                        fCtx.beginPath();
+                        fCtx.arc(232 + i * 24, 268, 6, 0, Math.PI * 2);
+                        fCtx.fill();
+                    }
+                    break;
+                }
+
+                case 'confuse': {
+                    // Asymmetric wide & tiny dot eyes
+                    fCtx.beginPath();
+                    fCtx.ellipse(lx, cy - 10, 32, 38, 0, 0, Math.PI * 2);
+                    fCtx.fill();
+
+                    const b = Math.sin(t * 5) * 6;
+                    fCtx.beginPath();
+                    fCtx.arc(rx, cy + b, 14, 0, Math.PI * 2);
+                    fCtx.fill();
+                    break;
+                }
+
+                case 'read': {
+                    const scan = Math.sin(t * 3.2) * 22;
+                    fCtx.beginPath();
+                    fCtx.ellipse(lx + scan, cy, 22, 26, 0, 0, Math.PI * 2);
+                    fCtx.ellipse(rx + scan, cy, 22, 26, 0, 0, Math.PI * 2);
+                    fCtx.fill();
+
+                    // Minimalist Reading Specs
+                    fCtx.lineWidth = 6;
+                    fCtx.strokeStyle = '#c084fc';
+                    fCtx.beginPath();
+                    fCtx.arc(lx, cy, 42, 0, Math.PI * 2);
+                    fCtx.arc(rx, cy, 42, 0, Math.PI * 2);
+                    fCtx.stroke();
+                    fCtx.beginPath();
+                    fCtx.moveTo(lx + 42, cy);
+                    fCtx.lineTo(rx - 42, cy);
+                    fCtx.stroke();
+                    break;
+                }
+
+                case 'sleep': {
+                    fCtx.lineWidth = 14;
+                    fCtx.beginPath();
+                    fCtx.arc(lx, cy - 6, 26, 0.15 * Math.PI, 0.85 * Math.PI);
+                    fCtx.arc(rx, cy - 6, 26, 0.15 * Math.PI, 0.85 * Math.PI);
+                    fCtx.stroke();
+                    break;
+                }
+            }
+
+            fCtx.restore();
+            faceTexture.needsUpdate = true;
+        }
+
+        // ====================================================================
+        // 3. THREE.JS 3D SCENE & SQUIRCLE GEOMETRY GENERATOR
+        // ====================================================================
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(36, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0.7, 7.4);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.05;
+        container.appendChild(renderer.domElement);
+
+        // Studio Lights
+        const ambientLight = new THREE.AmbientLight(0xfff6ed, 0.9);
+        scene.add(ambientLight);
+
+        const keyLight = new THREE.DirectionalLight(0xfffaed, 1.15);
+        keyLight.position.set(4.5, 8.5, 6.5);
+        keyLight.castShadow = true;
+        keyLight.shadow.mapSize.set(2048, 2048);
+        keyLight.shadow.camera.near = 0.5;
+        keyLight.shadow.camera.far = 25;
+        keyLight.shadow.bias = -0.0004;
+        scene.add(keyLight);
+
+        // Purple Rim Light for high-tech contour
+        const rimPurple = new THREE.DirectionalLight(0xc084fc, 1.25);
+        rimPurple.position.set(-6, 3, -4);
+        scene.add(rimPurple);
+
+        // Warm Amber Fill Light
+        const fillAmber = new THREE.PointLight(0xf59e0b, 0.75, 12);
+        fillAmber.position.set(2, -1, 3.5);
+        scene.add(fillAmber);
+
+        // Dynamic Cursor Spotlight
+        const cursorSpot = new THREE.PointLight(0xfde047, 0.85, 6);
+        cursorSpot.position.set(0, 1, 2.8);
+        scene.add(cursorSpot);
+
+        // Squircle Mochi Geometry Generator
+        function createSquircle(w, h, d, segs = 48) {
+            const geo = new THREE.SphereGeometry(1, segs, segs);
+            const pos = geo.attributes.position;
+            const v = new THREE.Vector3();
+            for (let i = 0; i < pos.count; i++) {
+                v.fromBufferAttribute(pos, i);
+                const sx = Math.sign(v.x) * Math.pow(Math.abs(v.x), 0.72);
+                const sy = Math.sign(v.y) * Math.pow(Math.abs(v.y), 0.68);
+                const sz = Math.sign(v.z) * Math.pow(Math.abs(v.z), 0.74);
+
+                const mx = THREE.MathUtils.lerp(v.x, sx, 0.68) * w;
+                const my = THREE.MathUtils.lerp(v.y, sy, 0.68) * h;
+                const mz = THREE.MathUtils.lerp(v.z, sz, 0.68) * d;
+                const flatY = my < -h * 0.55 ? THREE.MathUtils.lerp(my, -h * 0.72, 0.45) : my;
+                pos.setXYZ(i, mx, flatY, mz);
+            }
+            geo.computeVertexNormals();
+            return geo;
+        }
+
+        // Soft Radial Shadow Texture
+        function createShadowMap() {
+            const c = document.createElement('canvas');
+            c.width = 128; c.height = 128;
+            const ctx = c.getContext('2d');
+            const g = ctx.createRadialGradient(64, 64, 8, 64, 64, 60);
+            g.addColorStop(0, 'rgba(8, 4, 3, 0.72)');
+            g.addColorStop(0.5, 'rgba(8, 4, 3, 0.28)');
+            g.addColorStop(1, 'rgba(8, 4, 3, 0)');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, 128, 128);
+            return new THREE.CanvasTexture(c);
+        }
+        const shadowTex = createShadowMap();
+
+        // Materials
+        const bodyMat = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.52, metalness: 0.05 });
+        const eyeMat = new THREE.MeshStandardMaterial({ color: 0x16141a, roughness: 0.4, metalness: 0.15 });
+        const glowPurpleMat = new THREE.MeshStandardMaterial({
+            color: 0xc084fc, emissive: 0xa855f7, emissiveIntensity: 1.1, roughness: 0.2
+        });
+
+        const stageGroup = new THREE.Group();
+        stageGroup.position.y = -0.12;
+        scene.add(stageGroup);
+
+        // ====================================================================
+        // 4. NXISLAND MOCHI BOT (KORO) & DUAL-WAVE PULSE RINGS
+        // ====================================================================
+        const robotRoot = new THREE.Group();
+        robotRoot.position.set(-0.95, 0, 0.2);
+        robotRoot.userData = { botId: 'koro', name: 'MOCHI', role: 'Leader · Drag to Squish' };
+        stageGroup.add(robotRoot);
+
+        // Dynamic Floor Shadow
+        const dropShadow = new THREE.Mesh(
+            new THREE.PlaneGeometry(2.4, 1.6),
+            new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false })
+        );
+        dropShadow.rotation.x = -Math.PI / 2;
+        dropShadow.position.set(-0.95, -0.78, 0.2);
+        stageGroup.add(dropShadow);
+
+        const headGroup = new THREE.Group();
+        robotRoot.add(headGroup);
+
+        // Main Mochi Body Mesh
+        const heroGeo = createSquircle(1.14, 0.86, 0.94, 56);
+        const headMesh = new THREE.Mesh(heroGeo, bodyMat);
+        headMesh.castShadow = true;
+        headMesh.receiveShadow = true;
+        headGroup.add(headMesh);
+
+        // Visor Decal Layer for Dynamic Expressions
+        const faceGeo = createSquircle(1.148, 0.866, 0.948, 56);
+        const faceMat = new THREE.MeshBasicMaterial({ map: faceTexture, transparent: true, depthWrite: false });
+        const uv = faceGeo.attributes.uv;
+        const pos = faceGeo.attributes.position;
+        for (let i = 0; i < pos.count; i++) {
+            const vz = pos.getZ(i);
+            if (vz > 0.1) {
+                const u = 0.5 + (pos.getX(i) / 1.68);
+                const v = 0.52 + (pos.getY(i) / 1.38);
+                uv.setXY(i, THREE.MathUtils.clamp(u, 0, 1), THREE.MathUtils.clamp(v, 0, 1));
+            } else {
+                uv.setXY(i, 0, 0);
+            }
+        }
+        const screenMesh = new THREE.Mesh(faceGeo, faceMat);
+        headGroup.add(screenMesh);
+
+        // ── NXISLAND PARITY 1: Dual-Wave Purple `#C084FC` Pulse Rings ───────
+        const pulseRingsGroup = new THREE.Group();
+        headGroup.add(pulseRingsGroup);
+
+        function createPulseRingMesh() {
+            const geo = new THREE.TorusGeometry(1.22, 0.038, 16, 64);
+            geo.rotateX(Math.PI / 2);
+            const mat = new THREE.MeshBasicMaterial({
+                color: 0xc084fc,
+                transparent: true,
+                opacity: 0,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+            return new THREE.Mesh(geo, mat);
+        }
+
+        const pulseRing1 = createPulseRingMesh();
+        const pulseRing2 = createPulseRingMesh();
+        pulseRingsGroup.add(pulseRing1, pulseRing2);
+
+        // ── NXISLAND PARITY 2: Inner Geometry Ring (0.76 scale) ──────────────
+        const innerRingGeo = new THREE.TorusGeometry(0.76, 0.022, 16, 64);
+        innerRingGeo.rotateX(Math.PI / 2);
+        const innerRingMat = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0.14,
+            depthWrite: false
+        });
+        const innerRing = new THREE.Mesh(innerRingGeo, innerRingMat);
+        headGroup.add(innerRing);
+
+        // ── OUTFITS ACCESSORIES SYSTEM ──────────────────────────────────────
+        const outfitsGroup = new THREE.Group();
+        headGroup.add(outfitsGroup);
+
+        // 1. Neon Halo Ring (Default)
+        const haloGeo = new THREE.TorusGeometry(0.42, 0.045, 20, 64);
+        haloGeo.rotateX(Math.PI / 2);
+        const haloMesh = new THREE.Mesh(haloGeo, glowPurpleMat);
+        haloMesh.position.set(0, 1.05, 0);
+        outfitsGroup.add(haloMesh);
+
+        // 2. Vinyl Studio Headphones
+        const headphonesGroup = new THREE.Group();
+        headphonesGroup.visible = false;
+        const hpBand = new THREE.Mesh(
+            new THREE.TorusGeometry(0.88, 0.05, 16, 48, Math.PI),
+            new THREE.MeshStandardMaterial({ color: 0x222226, roughness: 0.3, metalness: 0.8 })
+        );
+        hpBand.position.y = 0.25;
+        const cupGeo = new THREE.CylinderGeometry(0.24, 0.24, 0.16, 24);
+        cupGeo.rotateZ(Math.PI / 2);
+        const cupL = new THREE.Mesh(cupGeo, glowPurpleMat);
+        cupL.position.set(-0.85, 0.25, 0);
+        const cupR = new THREE.Mesh(cupGeo, glowPurpleMat);
+        cupR.position.set(0.85, 0.25, 0);
+        headphonesGroup.add(hpBand, cupL, cupR);
+        outfitsGroup.add(headphonesGroup);
+
+        // 3. Sprout Leaf
+        const sproutGroup = new THREE.Group();
+        sproutGroup.visible = false;
+        const leafMat = new THREE.MeshStandardMaterial({ color: 0x4ade80, roughness: 0.5 });
+        const sLeaf1 = new THREE.Mesh(createSquircle(0.18, 0.08, 0.1, 16), leafMat);
+        sLeaf1.position.set(0.12, 0.95, 0);
+        sLeaf1.rotation.z = 0.45;
+        const sLeaf2 = new THREE.Mesh(createSquircle(0.14, 0.07, 0.09, 16), leafMat);
+        sLeaf2.position.set(-0.1, 0.92, 0);
+        sLeaf2.rotation.z = -0.55;
+        sproutGroup.add(sLeaf1, sLeaf2);
+        outfitsGroup.add(sproutGroup);
+
+        // 4. Cool Sunglasses
+        const glassesGroup = new THREE.Group();
+        glassesGroup.visible = false;
+        const glassMat = new THREE.MeshStandardMaterial({ color: 0x111115, roughness: 0.1, metalness: 0.9 });
+        const lensL = new THREE.Mesh(createSquircle(0.32, 0.2, 0.05, 20), glassMat);
+        lensL.position.set(-0.35, 0.12, 0.92);
+        const lensR = new THREE.Mesh(createSquircle(0.32, 0.2, 0.05, 20), glassMat);
+        lensR.position.set(0.35, 0.12, 0.92);
+        const bridge = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.04, 0.04), glassMat);
+        bridge.position.set(0, 0.16, 0.92);
+        glassesGroup.add(lensL, lensR, bridge);
+        outfitsGroup.add(glassesGroup);
+
+        const OUTFIT_LIST = ['halo', 'headphones', 'sprout', 'glasses'];
+        let currentOutfitIndex = 0;
+
+        function cycleOutfit() {
+            currentOutfitIndex = (currentOutfitIndex + 1) % OUTFIT_LIST.length;
+            const current = OUTFIT_LIST[currentOutfitIndex];
+            haloMesh.visible = (current === 'halo');
+            headphonesGroup.visible = (current === 'headphones');
+            sproutGroup.visible = (current === 'sprout');
+            glassesGroup.visible = (current === 'glasses');
+
+            const names = { halo: 'Halo', headphones: 'Beats', sprout: 'Sprout', glasses: 'Shades' };
+            document.getElementById('outfit-label').textContent = `Outfit: ${names[current]}`;
+            playSound('pop');
+            triggerHeadpat('koro');
+        }
+
+        // ====================================================================
+        // 5. COMPANION SIBLINGS (MIKAN & MOMO)
+        // ====================================================================
+        const companionGroup = new THREE.Group();
+        stageGroup.add(companionGroup);
+
+        const mikanMat = new THREE.MeshStandardMaterial({ color: 0xfba94c, roughness: 0.55 });
+        const momoMat = new THREE.MeshStandardMaterial({ color: 0xf490c0, roughness: 0.55 });
+
+        function createCompanion(w, h, d, mat, x, z, botId, name, role) {
+            const root = new THREE.Group();
+            root.position.set(x, -0.78 + h * 0.72, z);
+            root.userData = { botId, name, role };
+
+            const body = new THREE.Mesh(createSquircle(w, h, d, 36), mat);
+            body.castShadow = true;
+            root.add(body);
+
+            const eGeo = createSquircle(w * 0.14, h * 0.24, 0.06, 16);
+            const eL = new THREE.Mesh(eGeo, eyeMat);
+            const eR = new THREE.Mesh(eGeo, eyeMat);
+            const spread = w * 0.26;
+            eL.position.set(-spread, -h * 0.1, d * 0.88);
+            eR.position.set(spread, -h * 0.1, d * 0.88);
+            root.add(eL, eR);
+
+            const sh = new THREE.Mesh(
+                new THREE.PlaneGeometry(w * 2.2, d * 1.6),
+                new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false })
+            );
+            sh.rotation.x = -Math.PI / 2;
+            sh.position.set(x, -0.78, z);
+
+            return {
+                root, body, eL, eR, shadow: sh, id: botId,
+                baseY: -0.78 + h * 0.72,
+                spinY: 0,
+                boopTimer: 0,
+                velY: 0,
+                scaleY: 1
+            };
+        }
+
+        const orangeCompanion = createCompanion(0.76, 0.58, 0.68, mikanMat, 0.72, -0.1, 'mikan', 'MIKAN', 'Sprout Sibling · Click');
+        companionGroup.add(orangeCompanion.root, orangeCompanion.shadow);
+
+        const pinkCompanion = createCompanion(0.60, 0.46, 0.54, momoMat, 1.95, -0.25, 'momo', 'MOMO', 'Mini Kin · Click');
+        companionGroup.add(pinkCompanion.root, pinkCompanion.shadow);
+
+        // ====================================================================
+        // 6. JELLY SPRING PHYSICS & INTERACTIVE DRAG-TO-STRETCH
+        // ====================================================================
+        let currentEmotion = 'happy';
+        let isNotchDocked = false;
+        let trioEnabled = true;
+        let hoveredBotId = null;
+        let boopTimer = 0;
+        let heroSpinY = 0;
+
+        // Second-order spring state
+        const heroSpring = {
+            scaleX: 1, velX: 0,
+            scaleY: 1, velY: 0,
+            scaleZ: 1, velZ: 0,
+            posX: -0.95, velPosX: 0,
+            posY: 0, velPosY: 0
+        };
+
+        function stepSpring(cur, target, vel, k, d, dt) {
+            const f = (target - cur) * k;
+            vel = (vel + f * dt) * Math.exp(-d * dt);
+            cur += vel * dt;
+            return { val: cur, vel };
+        }
+
+        // Direct Drag-to-Squish/Stretch State
+        let isDraggingBot = false;
+        let draggedBot = null;
+        let botDragStart = { x: 0, y: 0 };
+        let botDragOffset = { x: 0, y: 0 };
+
+        function toggleNotchDock() {
+            isNotchDocked = !isNotchDocked;
+            const notch = document.getElementById('macbook-notch');
+            const arrow = document.getElementById('notch-arrow');
+            const led = document.getElementById('camera-led');
+
+            if (isNotchDocked) {
+                notch.classList.add('docked-open');
+                arrow.className = 'ph-bold ph-caret-up';
+                led.style.opacity = '1';
+                playSound('think');
+            } else {
+                notch.classList.remove('docked-open');
+                arrow.className = 'ph-bold ph-caret-down';
+                led.style.opacity = '0.4';
+                playSound('pop');
+            }
+        }
+
+        function toggleSpecsDrawer() {
+            document.getElementById('specs-drawer').classList.toggle('drawer-closed');
+            playSound('pop');
+        }
+
+        function toggleTrio() {
+            trioEnabled = !trioEnabled;
+            document.getElementById('trio-label').textContent = trioEnabled ? 'Trio: ON' : 'Solo Mode';
+            playSound('pop');
+        }
+
+        function triggerGroupJump() {
+            triggerHeadpat('all');
+            heroSpinY += Math.PI * 2;
+            orangeCompanion.spinY += Math.PI * 2;
+            pinkCompanion.spinY += Math.PI * 2;
+        }
+
+        function triggerHeadpat(target = 'all') {
+            playSound('boop');
+            if (target === 'all' || target === 'koro') {
+                boopTimer = 1.4;
+                heroSpring.velX += 3.6;
+                heroSpring.velY -= 3.8;
+                heroSpring.velZ += 3.6;
+                heroSpring.velPosY += 2.8;
+            }
+            if (target === 'all' || target === 'mikan') {
+                orangeCompanion.boopTimer = 1.3;
+                orangeCompanion.velY = 3.2;
+            }
+            if (target === 'all' || target === 'momo') {
+                pinkCompanion.boopTimer = 1.3;
+                pinkCompanion.velY = 3.5;
+            }
+        }
+
+        function setEmotion(em) {
+            currentEmotion = em;
+            playSound(em);
+
+            document.querySelectorAll('.emotion-btn').forEach(b => b.classList.remove('active'));
+            const btn = document.getElementById(`btn-${em}`);
+            if (btn) btn.classList.add('active');
+
+            const pulseEl = document.getElementById('telemetry-pulse');
+            const pulseBar = document.getElementById('telemetry-pulse-bar');
+            if (em === 'think' || em === 'busy') {
+                pulseEl.textContent = 'Active (1.40x dual-wave)';
+                pulseBar.style.width = '100%';
+            } else {
+                pulseEl.textContent = 'Idle (0.12 op)';
+                pulseBar.style.width = '35%';
+            }
+
+            document.getElementById('state-readout').textContent = em.toUpperCase();
+            heroSpring.velY += 1.8;
+        }
+
+        function setRobotTheme(name) {
+            playSound('pop');
+            const palettes = {
+                pearl:  { hero: 0xf8fafc, eye: '#16141a', mikan: 0xfba94c, momo: 0xf490c0 },
+                sakura: { hero: 0xfbcfe8, eye: '#4c0519', mikan: 0xfde047, momo: 0xc4b5fd },
+                cyber:  { hero: 0x1e1b2e, eye: '#38bdf8', mikan: 0x3f3f46, momo: 0x6366f1 },
+                matcha: { hero: 0xa7f3d0, eye: '#064e3b', mikan: 0xfef08a, momo: 0xfdba74 }
+            };
+            const p = palettes[name] || palettes.pearl;
+            bodyMat.color.setHex(p.hero);
+            currentEyeColor = p.eye;
+            eyeMat.color.setHex(parseInt(p.eye.replace('#', '0x')));
+            mikanMat.color.setHex(p.mikan);
+            momoMat.color.setHex(p.momo);
+            triggerHeadpat('all');
+        }
+
+        // ====================================================================
+        // 7. MOUSE ORBIT, DIRECT JELLY GRAB & RAYCASTING
+        // ====================================================================
+        let isOrbiting = false;
+        let prevMouse = { x: 0, y: 0 };
+        let camSpherical = { radius: 7.4, theta: 0, phi: 1.44, targetRadius: 7.4, targetTheta: 0, targetPhi: 1.44 };
+
+        const raycaster = new THREE.Raycaster();
+        const mouseNDC = new THREE.Vector2();
+        const tooltipEl = document.getElementById('bot-tooltip');
+        const tooltipNameEl = document.getElementById('tooltip-name');
+        const tooltipRoleEl = document.getElementById('tooltip-role');
+
+        function getIntersectedBot(e) {
+            const rect = renderer.domElement.getBoundingClientRect();
+            mouseNDC.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            mouseNDC.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+            raycaster.setFromCamera(mouseNDC, camera);
+
+            const list = [headMesh];
+            if (trioEnabled) list.push(orangeCompanion.body, pinkCompanion.body);
+            const hits = raycaster.intersectObjects(list, true);
+            if (hits.length > 0) {
+                let obj = hits[0].object;
+                while (obj && !obj.userData?.botId) obj = obj.parent;
+                return obj ? obj.userData : null;
+            }
+            return null;
+        }
+
+        container.addEventListener('pointerdown', (e) => {
+            const hit = getIntersectedBot(e);
+            if (hit) {
+                isDraggingBot = true;
+                draggedBot = hit.botId;
+                botDragStart.x = e.clientX;
+                botDragStart.y = e.clientY;
+                botDragOffset.x = 0;
+                botDragOffset.y = 0;
+                playSound('stretch');
+            } else {
+                isOrbiting = true;
+                prevMouse.x = e.clientX;
+                prevMouse.y = e.clientY;
+            }
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            pointerLook.x = (e.clientX / window.innerWidth) * 2 - 1;
+            pointerLook.y = (e.clientY / window.innerHeight) * 2 - 1;
+
+            if (isDraggingBot) {
+                botDragOffset.x = (e.clientX - botDragStart.x) * 0.006;
+                botDragOffset.y = -(e.clientY - botDragStart.y) * 0.006;
+                tooltipEl.classList.remove('visible');
+                return;
+            }
+
+            if (isOrbiting) {
+                const dx = e.clientX - prevMouse.x;
+                const dy = e.clientY - prevMouse.y;
+                camSpherical.targetTheta -= dx * 0.007;
+                camSpherical.targetPhi = Math.max(0.7, Math.min(1.8, camSpherical.targetPhi - dy * 0.006));
+                prevMouse.x = e.clientX;
+                prevMouse.y = e.clientY;
+                tooltipEl.classList.remove('visible');
+                return;
+            }
+
+            // Hover Check
+            const hit = getIntersectedBot(e);
+            if (hit) {
+                hoveredBotId = hit.botId;
+                container.style.cursor = 'pointer';
+                tooltipNameEl.textContent = hit.name;
+                tooltipRoleEl.textContent = hit.role;
+                tooltipEl.style.left = `${e.clientX}px`;
+                tooltipEl.style.top = `${e.clientY}px`;
+                tooltipEl.classList.add('visible');
+            } else {
+                hoveredBotId = null;
+                container.style.cursor = 'grab';
+                tooltipEl.classList.remove('visible');
+            }
+        });
+
+        window.addEventListener('pointerup', () => {
+            if (isDraggingBot) {
+                // Snap back with jelly impulse!
+                playSound('pop');
+                if (draggedBot === 'koro') {
+                    heroSpring.velX -= botDragOffset.x * 22;
+                    heroSpring.velY += botDragOffset.y * 22;
+                    heroSpring.velPosY += botDragOffset.y * 4;
+                }
+                isDraggingBot = false;
+                draggedBot = null;
+                botDragOffset = { x: 0, y: 0 };
+            }
+            isOrbiting = false;
+        });
+
+        window.addEventListener('dblclick', (e) => {
+            const hit = getIntersectedBot(e);
+            if (hit) {
+                playSound('happy');
+                if (hit.botId === 'koro') heroSpinY += Math.PI * 2;
+                if (hit.botId === 'mikan') orangeCompanion.spinY += Math.PI * 2;
+                if (hit.botId === 'momo') pinkCompanion.spinY += Math.PI * 2;
+                triggerHeadpat(hit.botId);
+            }
+        });
+
+        window.addEventListener('wheel', (e) => {
+            camSpherical.targetRadius = Math.max(4.5, Math.min(11, camSpherical.targetRadius + e.deltaY * 0.004));
+        }, { passive: true });
+
+        // ====================================================================
+        // 8. RENDER LOOP WITH COMPLETE PHYSICS & LIGHTS
+        // ====================================================================
+        const clock = new THREE.Clock();
+
+        function damp(cur, tar, l, dt) {
+            return THREE.MathUtils.lerp(cur, tar, 1 - Math.exp(-l * dt));
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const dt = Math.min(clock.getDelta(), 0.05);
+            const t = clock.getElapsedTime();
+
+            // 1. Camera Orbit & Glides
+            camSpherical.radius = damp(camSpherical.radius, camSpherical.targetRadius, 8, dt);
+            camSpherical.theta = damp(camSpherical.theta, camSpherical.targetTheta, 8, dt);
+            camSpherical.phi = damp(camSpherical.phi, camSpherical.targetPhi, 8, dt);
+
+            camera.position.x = camSpherical.radius * Math.sin(camSpherical.phi) * Math.sin(camSpherical.theta);
+            camera.position.y = camSpherical.radius * Math.cos(camSpherical.phi) + (isNotchDocked ? 1.2 : 0.1);
+            camera.position.z = camSpherical.radius * Math.sin(camSpherical.phi) * Math.cos(camSpherical.theta);
+            camera.lookAt(0, isNotchDocked ? 1.0 : -0.1, 0);
+
+            // Cursor light glide
+            smoothLook.x = damp(smoothLook.x, pointerLook.x, 10, dt);
+            smoothLook.y = damp(smoothLook.y, pointerLook.y, 10, dt);
+            cursorSpot.position.x = smoothLook.x * 3.4;
+            cursorSpot.position.y = -smoothLook.y * 2.2 + 0.6;
+
+            // 2. Docking into MacBook Notch Transition
+            const targetStageY = isNotchDocked ? 1.2 : -0.12;
+            const targetStageScale = isNotchDocked ? 0.65 : 1.0;
+            stageGroup.position.y = damp(stageGroup.position.y, targetStageY, 6, dt);
+            stageGroup.scale.setScalar(damp(stageGroup.scale.x, targetStageScale, 6, dt));
+
+            // 3. Dual-Wave Purple Pulse Rings Math (NxIsland Parity: 0.85 cycle rate, 1.04-1.40 scale)
+            const isPulseActive = (currentEmotion === 'think' || currentEmotion === 'busy');
+            if (isPulseActive) {
+                const phase1 = (t * 0.85) % 1.0;
+                const phase2 = (t * 0.85 + 0.5) % 1.0;
+
+                pulseRing1.scale.setScalar(1.04 + phase1 * 0.36);
+                pulseRing1.material.opacity = Math.sin(phase1 * Math.PI) * 0.42;
+
+                pulseRing2.scale.setScalar(1.04 + phase2 * 0.36);
+                pulseRing2.material.opacity = Math.sin(phase2 * Math.PI) * 0.42;
+
+                innerRing.material.opacity = 0.22 + Math.sin(t * 3) * 0.08;
+            } else {
+                pulseRing1.material.opacity = damp(pulseRing1.material.opacity, 0, 8, dt);
+                pulseRing2.material.opacity = damp(pulseRing2.material.opacity, 0, 8, dt);
+                innerRing.material.opacity = damp(innerRing.material.opacity, 0.12, 8, dt);
+            }
+
+            // 4. Hero Target Squash & Jelly Spring
+            let targetSquash = { x: 1, y: 1, z: 1 };
+            let targetHeroPosY = Math.sin(t * 2.8) * 0.07;
+            const hoverBoost = (hoveredBotId === 'koro') ? 1.05 : 1.0;
+
+            if (isDraggingBot && draggedBot === 'koro') {
+                targetSquash.x = Math.max(0.6, 1 + botDragOffset.x * 0.8);
+                targetSquash.y = Math.max(0.6, 1 + botDragOffset.y * 0.8);
+                targetSquash.z = Math.max(0.6, 1 - (botDragOffset.x + botDragOffset.y) * 0.3);
+                targetHeroPosY += botDragOffset.y * 0.5;
+            } else {
+                if (currentEmotion === 'happy') {
+                    const b = Math.sin(t * 3.2);
+                    targetHeroPosY = Math.max(0, b) * 0.14;
+                    targetSquash.x = (1 - b * 0.04) * hoverBoost;
+                    targetSquash.y = (1 + b * 0.055) * hoverBoost;
+                } else if (currentEmotion === 'sleep') {
+                    targetHeroPosY = -0.18;
+                    targetSquash.x = 1.18;
+                    targetSquash.y = 0.74;
+                }
+            }
+
+            // Step Springs
+            const sX = stepSpring(heroSpring.scaleX, targetSquash.x, heroSpring.velX, 190, 14, dt);
+            heroSpring.scaleX = sX.val; heroSpring.velX = sX.vel;
+
+            const sY = stepSpring(heroSpring.scaleY, targetSquash.y, heroSpring.velY, 190, 14, dt);
+            heroSpring.scaleY = sY.val; heroSpring.velY = sY.vel;
+
+            const sZ = stepSpring(heroSpring.scaleZ, targetSquash.z, heroSpring.velZ, 190, 14, dt);
+            heroSpring.scaleZ = sZ.val; heroSpring.velZ = sZ.vel;
+
+            const sPosY = stepSpring(heroSpring.posY, targetHeroPosY, heroSpring.velPosY, 160, 13, dt);
+            heroSpring.posY = sPosY.val; heroSpring.velPosY = sPosY.vel;
+
+            headGroup.scale.set(heroSpring.scaleX, heroSpring.scaleY, heroSpring.scaleZ);
+            robotRoot.position.y = heroSpring.posY;
+            robotRoot.rotation.y = damp(robotRoot.rotation.y, heroSpinY, 8, dt);
+
+            // Halo subtle glide
+            haloMesh.position.y = 1.05 + Math.sin(t * 3.2) * 0.04;
+            haloMesh.rotation.y = t * 0.6;
+
+            // 5. Update Companions
+            [orangeCompanion, pinkCompanion].forEach((c, idx) => {
+                const targetScale = trioEnabled ? ((hoveredBotId === c.id) ? 1.08 : 1.0) : 0.001;
+                const phase = t * 3.4 - (idx + 1) * 0.8;
+                let hop = Math.max(0, Math.sin(phase)) * 0.1;
+
+                if (c.boopTimer > 0) {
+                    c.boopTimer -= dt;
+                    hop += Math.abs(Math.sin(t * 16)) * 0.16;
+                }
+
+                c.root.position.y = damp(c.root.position.y, c.baseY + hop, 12, dt);
+                c.root.rotation.y = damp(c.root.rotation.y, c.spinY + smoothLook.x * 0.25, 8, dt);
+                c.root.scale.set(
+                    damp(c.root.scale.x, targetScale, 10, dt),
+                    damp(c.root.scale.y, targetScale * (1 + Math.sin(phase) * 0.05), 10, dt),
+                    damp(c.root.scale.z, targetScale, 10, dt)
+                );
+                c.shadow.scale.setScalar(targetScale * (1 - hop * 0.3));
+
+                // Blink
+                const blink = ((t + idx * 0.5) % 4) < 0.14 ? 0.12 : 1.0;
+                c.eL.scale.y = damp(c.eL.scale.y, blink, 20, dt);
+                c.eR.scale.y = damp(c.eR.scale.y, blink, 20, dt);
+            });
+
+            // 6. Smooth Blinking & Visor Face Canvas
+            const isBlink = (t % 3.6) < 0.14 ? 1.0 : 0.0;
+            smoothBlink = damp(smoothBlink, isBlink, 22, dt);
+            drawFace(currentEmotion, t, smoothBlink, boopTimer > 0);
+
+            renderer.render(scene, camera);
+        }
+
+        // Window Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Initialize Studio
+        window.onload = () => {
+            setEmotion('happy');
+            animate();
+        };
+    </script>
+</body>
+</html>
