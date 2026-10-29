@@ -612,7 +612,7 @@ const CODEX_EVENTS: &[(&str, u64)] = &[
     ("SessionEnd", 3),
 ];
 
-const CODEX_WAITING: &str = "Waiting for your answer in the island (Coucou)";
+const CODEX_WAITING: &str = "Waiting for your answer in the island (NxIsland)";
 
 fn codex_install(root: &Value, command: &str) -> Result<Value, String> {
     let events = CODEX_EVENTS.iter().map(|(event, timeout)| {

@@ -120,7 +120,7 @@ export async function flowSettingsPage(page: HTMLElement, ctx: HubContext) {
   // ── App ──
   page.append(label(t("App")));
   page.append(card(
-    row(t("Open this window when you open Coucou"), t("Not when NxIsland starts with the computer."), toggle(prefs.openAtLaunch, (on) => void ctx.setPrefs((p) => (p.openAtLaunch = on)))),
+    row(t("Open this window when you open NxIsland"), t("Not when NxIsland starts with the computer."), toggle(prefs.openAtLaunch, (on) => void ctx.setPrefs((p) => (p.openAtLaunch = on)))),
   ));
 
   // ── Privacy ──

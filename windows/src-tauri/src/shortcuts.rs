@@ -92,7 +92,7 @@ pub fn description(id: &str) -> &'static str {
         "muteToggle" => n_("Mute or unmute Mochi"),
         "desktopToggle" => n_("Send Mochi to the desktop"),
         "wardrobeToggle" => n_("Open the wardrobe"),
-        _ => "Coucou",
+        _ => "NxIsland",
     }
 }
 

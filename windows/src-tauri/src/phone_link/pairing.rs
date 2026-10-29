@@ -47,7 +47,7 @@ pub fn load_or_create_identity(store: &dyn SecretStore) -> Result<Identity, Stri
     }
     let key_pair = rcgen::KeyPair::generate_for(&rcgen::PKCS_ECDSA_P256_SHA256).map_err(|e| e.to_string())?;
     let mut params = rcgen::CertificateParams::new(Vec::<String>::new()).map_err(|e| e.to_string())?;
-    params.distinguished_name.push(rcgen::DnType::CommonName, "Coucou phone link");
+    params.distinguished_name.push(rcgen::DnType::CommonName, "NxIsland phone link");
     params.not_before = rcgen::date_time_ymd(2024, 1, 1);
     params.not_after = rcgen::date_time_ymd(2124, 1, 1);
     let cert = params.self_signed(&key_pair).map_err(|e| e.to_string())?;
@@ -168,7 +168,7 @@ pub fn computer_name() -> String {
         .filter(|n| !n.trim().is_empty())
         .or_else(|| std::fs::read_to_string("/etc/hostname").ok().map(|n| n.trim().to_string()))
         .filter(|n| !n.is_empty())
-        .unwrap_or_else(|| "Coucou".to_string());
+        .unwrap_or_else(|| "NxIsland".to_string());
     name.chars().take(48).collect()
 }
 

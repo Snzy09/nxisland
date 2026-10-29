@@ -30,7 +30,7 @@ const T = {
   get longestSession() { return t("Longest session"); },
   get approved() { return t("Approved"); },
   get denied() { return t("Denied"); },
-  footer: "Coucou · github.com/Louis-CFM/coucou",
+  footer: "NxIsland · github.com/snzy09/nxisland",
 };
 
 /**
@@ -191,7 +191,7 @@ export function renderShareImage(s: WeeklySummary, hideProjects: boolean): HTMLC
   x.fillStyle = INK;
   x.textAlign = "center";
   font(x, 900, 52);
-  x.fillText("Coucou", cx, y);
+  x.fillText("NxIsland", cx, y);
   y += 62 + 6;
 
   x.fillStyle = DIM;

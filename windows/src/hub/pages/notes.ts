@@ -182,7 +182,7 @@ export async function notesPage(page: HTMLElement, ctx: HubContext) {
       return;
     }
     if (note.status === "processing" || state.working.includes(note.id) && note.lines.length === 0) {
-      detail.append(emptyState(t("Coucou is writing the transcript, person by person…"), "working", "#3B9EFF"));
+      detail.append(emptyState(t("NxIsland is writing the transcript, person by person…"), "working", "#3B9EFF"));
       return;
     }
     if (note.status === "failed") {

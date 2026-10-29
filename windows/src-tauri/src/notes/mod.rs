@@ -288,7 +288,7 @@ fn start_inner(app: &AppHandle, taker: &Arc<NoteTaker>) -> Result<String, String
     .map_err(|err| {
         crate::log::line(format!("notes: microphone: {err}"));
         let _ = std::fs::remove_dir_all(&dir);
-        t("Coucou can't hear you: the microphone is not allowed or not available.")
+        t("NxIsland can't hear you: the microphone is not allowed or not available.")
     })?;
     // Without the computer's sound, the call is noted from the microphone alone.
     let (system, system_channel) = match Channel::new(&dir.join("system.wav")) {
@@ -706,10 +706,10 @@ pub fn notes_export(taker: State<Arc<NoteTaker>>, id: String) -> Result<String, 
         .split_whitespace()
         .collect::<Vec<_>>()
         .join(" ");
-    let mut path = dir.join(format!("{}.md", if safe.is_empty() { "Coucou notes".to_string() } else { safe.clone() }));
+    let mut path = dir.join(format!("{}.md", if safe.is_empty() { "NxIsland notes".to_string() } else { safe.clone() }));
     let mut n = 2;
     while path.exists() {
-        path = dir.join(format!("{} ({n}).md", if safe.is_empty() { "Coucou notes" } else { &safe }));
+        path = dir.join(format!("{} ({n}).md", if safe.is_empty() { "NxIsland notes" } else { &safe }));
         n += 1;
     }
     std::fs::write(&path, markdown(&note)).map_err(|e| e.to_string())?;

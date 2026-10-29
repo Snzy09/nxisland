@@ -2,13 +2,13 @@
 # Coucou for Arch Linux — built from the Tauri app in windows/, which runs on
 # Windows and Linux alike.
 
-pkgname=coucou-git
-_pkgname=coucou
+pkgname=nxisland-git
+_pkgname=nxisland
 pkgver=0.5.3
 pkgrel=1
 pkgdesc="Mochi lives at the top of your screen and keeps an eye on your Claude Code sessions"
 arch=('x86_64' 'aarch64')
-url="https://github.com/Louis-CFM/coucou"
+url="https://github.com/snzy09/nxisland"
 license=("MIT" "LicenseRef-coucou-assets")
 depends=(
   'webkit2gtk-4.1'
@@ -25,15 +25,15 @@ depends=(
 optdepends=(
   'gnome-keyring: store API keys (or any other Secret Service provider)'
   'kwallet: store API keys (or any other Secret Service provider)'
-  'speech-dispatcher: « OK Coucou » answers out loud where the webview has no voice'
-  'espeak-ng: « OK Coucou » answers out loud where the webview has no voice'
+  'speech-dispatcher: « OK NxIsland » answers out loud where the webview has no voice'
+  'espeak-ng: « OK NxIsland » answers out loud where the webview has no voice'
 )
 makedepends=('git' 'cargo' 'nodejs' 'npm')
-provides=("$_pkgname")
-conflicts=("$_pkgname")
+provides=("$_pkgname" "coucou" "coucou-git")
+conflicts=("$_pkgname" "coucou" "coucou-git")
 # makepkg's default LTO and debug flags make the Rust build very slow.
 options=('!lto' '!debug')
-source=("$_pkgname::git+https://github.com/Louis-CFM/coucou.git")
+source=("$_pkgname::git+https://github.com/snzy09/nxisland.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -60,13 +60,16 @@ build() {
 
 package() {
   cd "$_pkgname"
-  install -Dm755 windows/target/release/coucou "$pkgdir/usr/bin/coucou"
-  # Found next to the app, then copied into ~/.local/share/coucou/bin at launch.
-  install -Dm755 windows/target/release/coucou-hook "$pkgdir/usr/bin/coucou-hook"
+  install -Dm755 windows/target/release/nxisland "$pkgdir/usr/bin/nxisland"
+  ln -s nxisland "$pkgdir/usr/bin/coucou"
+  # Found next to the app, then copied into ~/.local/share/nxisland/bin at launch.
+  install -Dm755 windows/target/release/nxisland-hook "$pkgdir/usr/bin/nxisland-hook"
+  ln -s nxisland-hook "$pkgdir/usr/bin/coucou-hook"
+  install -Dm644 linux/arch/nxisland.desktop "$pkgdir/usr/share/applications/nxisland.desktop"
   install -Dm644 linux/arch/coucou.desktop "$pkgdir/usr/share/applications/coucou.desktop"
-  install -Dm644 windows/src-tauri/icons/32x32.png "$pkgdir/usr/share/icons/hicolor/32x32/apps/coucou.png"
-  install -Dm644 windows/src-tauri/icons/128x128.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/coucou.png"
-  install -Dm644 windows/src-tauri/icons/128x128@2x.png "$pkgdir/usr/share/icons/hicolor/256x256/apps/coucou.png"
+  install -Dm644 windows/src-tauri/icons/32x32.png "$pkgdir/usr/share/icons/hicolor/32x32/apps/nxisland.png"
+  install -Dm644 windows/src-tauri/icons/128x128.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/nxisland.png"
+  install -Dm644 windows/src-tauri/icons/128x128@2x.png "$pkgdir/usr/share/icons/hicolor/256x256/apps/nxisland.png"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 LICENSE-ASSETS.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE-ASSETS.md"
 }

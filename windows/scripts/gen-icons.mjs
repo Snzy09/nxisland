@@ -1,22 +1,30 @@
-// Draws Mochi into the PNG/ICO set Tauri needs. No dependencies: the icons are
-// rasterised here and encoded with node:zlib, so the app icon stays "drawn in
-// code" like the character itself.
+// Draws Mochi into the PNG/ICO set across all platforms (Tauri, macOS, iOS, Android, web).
+// Rasterised in pure Node with node:zlib, so the app icon stays "drawn in code"
+// with the new tactile non-flat Mochi design.
 //
 //   node scripts/gen-icons.mjs
 
 import { deflateSync } from "node:zlib";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const OUT = join(dirname(fileURLToPath(import.meta.url)), "..", "src-tauri", "icons");
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+const TAURI_ICONS = join(ROOT, "windows", "src-tauri", "icons");
+const MAC_ICONS = join(ROOT, "NotchBuddy", "Assets.xcassets", "AppIcon.appiconset");
+const IOS_ICONS = join(ROOT, "NotchBuddy", "PhoneAssets.xcassets", "AppIcon.appiconset");
+const ANDROID_ICONS = join(ROOT, "android", "app", "src", "main", "res", "mipmap-xxxhdpi");
+const DOCS_MEDIA = join(ROOT, "docs", "media");
 
 // ── Mochi ─────────────────────────────────────────────────────────────────────
 
-const BASE_TOP = [255, 250, 245]; // #FFFAF5
-const BASE_BOTTOM = [221, 204, 191]; // #DDCCBF
-const INK = [26, 20, 18]; // #1A1412
-const RIM = [0, 0, 0];
+const BASE_TOP = [255, 252, 248]; // #FFFDF8 warm porcelain
+const BASE_BOTTOM = [224, 210, 198]; // #E0D2C6 soft shadow base
+const INK = [24, 20, 20]; // #181414
+const CATCHLIGHT = [255, 255, 255];
+const NOTCH_BG = [14, 17, 23]; // #0E1117 island pill
+const NOTCH_PULSE = [56, 189, 248]; // #38BDF8 cyan active island dot
+const RIM = [15, 12, 10]; // #0F0C0A subtle vinyl edge
 
 const SS = 4; // supersampling factor
 
@@ -37,65 +45,151 @@ function insidePill(x, y, w, h) {
 
 function renderMochi(size) {
   const px = new Uint8Array(size * size * 4);
-  const R = size * 0.34;
-  const rx = R * 1.14;
-  const ry = R * 0.88;
+  const R = size * 0.35;
+  const rx = R * 1.12;
+  const ry = R * 0.90;
   const cx = size / 2;
-  const cy = size / 2 + R * 0.06;
-  const rim = R * 0.055; // dark outline so the tray icon reads on light themes
+  const cy = size / 2 + R * 0.08;
+  const rim = R * 0.045;
 
-  // Eyes — same geometry as BotEngine (yaw ±0.37, pitch −0.12)
-  const eyeYaw = 0.37;
-  const eyePitch = -0.12;
+  // Island notch motif badge at the top
+  const notchW = rx * 0.72;
+  const notchH = ry * 0.22;
+  const notchY = -ry * 0.62;
+
+  // Eyes geometry
+  const eyeYaw = 0.36;
+  const eyePitch = -0.10;
   const cp = Math.cos(eyePitch);
   const ex = Math.sin(eyeYaw) * cp * rx;
   const ey = -Math.sin(eyePitch) * ry;
   const fx = Math.max(0.18, Math.cos(eyeYaw));
   const fy = Math.max(0.18, cp);
-  const ew = R * 0.25 * fx;
-  const eh = R * 0.27 * fy;
+  const ew = R * 0.23 * fx;
+  const eh = R * 0.26 * fy;
 
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       let bodyHits = 0;
       let rimHits = 0;
       let eyeHits = 0;
+      let catchHits = 0;
+      let notchHits = 0;
+      let pulseHits = 0;
+
       for (let sy = 0; sy < SS; sy++) {
         for (let sx = 0; sx < SS; sx++) {
           const px0 = x + (sx + 0.5) / SS - cx;
           const py0 = y + (sy + 0.5) / SS - cy;
+
           if (!insideBody(px0, py0, rx + rim, ry + rim)) continue;
           rimHits++;
+
           if (!insideBody(px0, py0, rx, ry)) continue;
           bodyHits++;
-          if (
-            insidePill(px0 + ex, py0 - ey, ew, eh) ||
-            insidePill(px0 - ex, py0 - ey, ew, eh)
-          ) {
+
+          // Island Notch badge at top
+          if (insidePill(px0, py0 - notchY, notchW, notchH)) {
+            notchHits++;
+            // Active pulse dot
+            if (px0 * px0 + (py0 - notchY) * (py0 - notchY) <= (notchH * 0.28) ** 2) {
+              pulseHits++;
+            }
+          }
+
+          // Eyes and catchlights
+          const inLeftEye = insidePill(px0 + ex, py0 - ey, ew, eh);
+          const inRightEye = insidePill(px0 - ex, py0 - ey, ew, eh);
+          if (inLeftEye || inRightEye) {
             eyeHits++;
+            const eyeCx = inLeftEye ? -ex : ex;
+            const clx = px0 - eyeCx + ew * 0.22;
+            const cly = py0 - ey + eh * 0.22;
+            if (clx * clx + cly * cly <= (ew * 0.32) ** 2) {
+              catchHits++;
+            }
           }
         }
       }
+
       if (rimHits === 0) continue;
 
       const total = SS * SS;
       const rimA = rimHits / total;
       const bodyA = bodyHits / total;
       const eyeA = eyeHits / total;
+      const catchA = catchHits / total;
+      const notchA = notchHits / total;
+      const pulseA = pulseHits / total;
 
-      // Body gradient: top-right → bottom-left, like the Canvas gradient.
-      const t = Math.min(1, Math.max(0, ((x - cx) * -0.6 + (y - cy) * 0.8) / (2 * ry) + 0.5));
-      const body = [0, 1, 2].map((i) => BASE_TOP[i] + (BASE_BOTTOM[i] - BASE_TOP[i]) * t);
+      // Tactile base gradient + radial ambient shading
+      const t = Math.min(1, Math.max(0, ((x - cx) * -0.5 + (y - cy) * 0.8) / (2 * ry) + 0.5));
+      let r = BASE_TOP[0] + (BASE_BOTTOM[0] - BASE_TOP[0]) * t;
+      let g = BASE_TOP[1] + (BASE_BOTTOM[1] - BASE_TOP[1]) * t;
+      let b = BASE_TOP[2] + (BASE_BOTTOM[2] - BASE_TOP[2]) * t;
 
-      // rim under body, body over rim, eyes over body
+      // Radial gloss highlight on upper-left
+      const hlx = (x - cx) + rx * 0.28;
+      const hly = (y - cy) + ry * 0.38;
+      const hlDist = Math.hypot(hlx, hly);
+      const hlRadius = R * 0.48;
+      if (hlDist < hlRadius) {
+        const factor = Math.cos((hlDist / hlRadius) * (Math.PI / 2));
+        const spec = factor * factor * 50;
+        r = Math.min(255, r + spec);
+        g = Math.min(255, g + spec);
+        b = Math.min(255, b + spec);
+      }
+
+      // Soft ambient occlusion at bottom
+      const ao = Math.max(0, (y - cy) / ry) * 22;
+      r = Math.max(0, r - ao);
+      g = Math.max(0, g - ao);
+      b = Math.max(0, b - ao);
+
       let col = RIM.slice();
       let alpha = rimA;
       if (bodyA > 0) {
-        col = col.map((c, i) => c * (1 - bodyA / rimA) + body[i] * (bodyA / rimA));
+        col = [
+          col[0] * (1 - bodyA / rimA) + r * (bodyA / rimA),
+          col[1] * (1 - bodyA / rimA) + g * (bodyA / rimA),
+          col[2] * (1 - bodyA / rimA) + b * (bodyA / rimA),
+        ];
         alpha = rimA;
       }
+
+      // Draw island notch
+      if (notchA > 0) {
+        let nCol = NOTCH_BG;
+        if (pulseA > 0) {
+          nCol = [
+            NOTCH_BG[0] * (1 - pulseA / notchA) + NOTCH_PULSE[0] * (pulseA / notchA),
+            NOTCH_BG[1] * (1 - pulseA / notchA) + NOTCH_PULSE[1] * (pulseA / notchA),
+            NOTCH_BG[2] * (1 - pulseA / notchA) + NOTCH_PULSE[2] * (pulseA / notchA),
+          ];
+        }
+        col = [
+          col[0] * (1 - notchA) + nCol[0] * notchA,
+          col[1] * (1 - notchA) + nCol[1] * notchA,
+          col[2] * (1 - notchA) + nCol[2] * notchA,
+        ];
+      }
+
+      // Draw eyes & catchlight
       if (eyeA > 0) {
-        col = col.map((c, i) => c * (1 - eyeA) + INK[i] * eyeA);
+        let eyeCol = INK;
+        if (catchA > 0) {
+          eyeCol = [
+            INK[0] * (1 - catchA / eyeA) + CATCHLIGHT[0] * (catchA / eyeA),
+            INK[1] * (1 - catchA / eyeA) + CATCHLIGHT[1] * (catchA / eyeA),
+            INK[2] * (1 - catchA / eyeA) + CATCHLIGHT[2] * (catchA / eyeA),
+          ];
+        }
+        col = [
+          col[0] * (1 - eyeA) + eyeCol[0] * eyeA,
+          col[1] * (1 - eyeA) + eyeCol[1] * eyeA,
+          col[2] * (1 - eyeA) + eyeCol[2] * eyeA,
+        ];
       }
 
       const o = (y * size + x) * 4;
@@ -178,23 +272,65 @@ function encodeICO(entries) {
   return Buffer.concat([header, dir, ...entries.map((e) => e.png)]);
 }
 
-// ── Go ────────────────────────────────────────────────────────────────────────
+// ── Cache & Render ────────────────────────────────────────────────────────────
 
-mkdirSync(OUT, { recursive: true });
-
-const png = (size) => encodePNG(size, renderMochi(size));
-
-const files = {
-  "32x32.png": png(32),
-  "128x128.png": png(128),
-  "128x128@2x.png": png(256),
-  "icon.png": png(512),
-};
-for (const [name, data] of Object.entries(files)) {
-  writeFileSync(join(OUT, name), data);
-  console.log(`${name} — ${data.length} bytes`);
+const cache = new Map();
+function png(size) {
+  if (!cache.has(size)) {
+    cache.set(size, encodePNG(size, renderMochi(size)));
+  }
+  return cache.get(size);
 }
 
+// ── Output Targets ────────────────────────────────────────────────────────────
+
+function writeSafe(destDir, filename, data) {
+  if (existsSync(destDir)) {
+    writeFileSync(join(destDir, filename), data);
+    console.log(`  ${filename} (${data.length} bytes) -> ${destDir}`);
+  }
+}
+
+console.log("Rendering NxIsland assets...");
+
+// 1. Tauri Windows/Linux Icons
+mkdirSync(TAURI_ICONS, { recursive: true });
+writeSafe(TAURI_ICONS, "32x32.png", png(32));
+writeSafe(TAURI_ICONS, "128x128.png", png(128));
+writeSafe(TAURI_ICONS, "128x128@2x.png", png(256));
+writeSafe(TAURI_ICONS, "icon.png", png(512));
 const ico = encodeICO([16, 24, 32, 48, 64, 128, 256].map((size) => ({ size, png: png(size) })));
-writeFileSync(join(OUT, "icon.ico"), ico);
-console.log(`icon.ico — ${ico.length} bytes`);
+writeFileSync(join(TAURI_ICONS, "icon.ico"), ico);
+console.log(`  icon.ico (${ico.length} bytes) -> ${TAURI_ICONS}`);
+
+// 2. macOS AppIcon
+if (existsSync(MAC_ICONS)) {
+  writeSafe(MAC_ICONS, "icon_16x16.png", png(16));
+  writeSafe(MAC_ICONS, "icon_16x16@2x.png", png(32));
+  writeSafe(MAC_ICONS, "icon_32x32.png", png(32));
+  writeSafe(MAC_ICONS, "icon_32x32@2x.png", png(64));
+  writeSafe(MAC_ICONS, "icon_128x128.png", png(128));
+  writeSafe(MAC_ICONS, "icon_128x128@2x.png", png(256));
+  writeSafe(MAC_ICONS, "icon_256x256.png", png(256));
+  writeSafe(MAC_ICONS, "icon_256x256@2x.png", png(512));
+  writeSafe(MAC_ICONS, "icon_512x512.png", png(512));
+  writeSafe(MAC_ICONS, "icon_512x512@2x.png", png(1024));
+}
+
+// 3. iOS AppIcon
+if (existsSync(IOS_ICONS)) {
+  writeSafe(IOS_ICONS, "icon-1024.png", png(1024));
+}
+
+// 4. Android Launcher Icon
+if (existsSync(ANDROID_ICONS)) {
+  writeSafe(ANDROID_ICONS, "ic_launcher.png", png(512));
+}
+
+// 5. Documentation & Web Media
+if (existsSync(DOCS_MEDIA)) {
+  writeSafe(DOCS_MEDIA, "icon.png", png(256));
+  writeSafe(DOCS_MEDIA, "nxisland.png", png(512));
+}
+
+console.log("All NxIsland assets generated successfully.");

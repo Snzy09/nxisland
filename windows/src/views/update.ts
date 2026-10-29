@@ -68,7 +68,7 @@ export function buildUpdate(): ViewHost {
       }
 
       if (!r) {
-        title.textContent = t("Coucou is up to date");
+        title.textContent = t("NxIsland is up to date");
         line.textContent = youHave;
         buttons("none", () => [btn(t("OK"), "secondary", () => Updates.dismiss())]);
         return;

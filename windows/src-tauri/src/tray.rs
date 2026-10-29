@@ -52,8 +52,8 @@ pub fn build(app: &AppHandle) -> tauri::Result<()> {
     let update = MenuItem::with_id(app, "update", "", true, None::<&str>)?;
     app.manage(UpdateItem { menu: menu.clone(), item: update, version: Mutex::new(None) });
 
-    let mut builder = TrayIconBuilder::with_id("coucou")
-        .tooltip("Coucou")
+    let mut builder = TrayIconBuilder::with_id("nxisland")
+        .tooltip("NxIsland")
         .menu(&menu)
         .on_menu_event(|app: &AppHandle, event| match event.id.as_ref() {
             "quit" => app.exit(0),
@@ -137,7 +137,7 @@ pub fn tint_blue(rgba: &[u8]) -> Vec<u8> {
 /// Later): blue Mochi in the tray, or the usual one.
 #[tauri::command]
 pub fn tray_update_hint(app: AppHandle, on: bool) {
-    let Some(tray) = app.tray_by_id("coucou") else { return };
+    let Some(tray) = app.tray_by_id("nxisland").or_else(|| app.tray_by_id("coucou")) else { return; };
     let Some(base) = app.default_window_icon() else { return };
     let icon = if on {
         Image::new_owned(tint_blue(base.rgba()), base.width(), base.height())
