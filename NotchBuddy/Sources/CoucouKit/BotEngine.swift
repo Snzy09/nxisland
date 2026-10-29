@@ -1151,11 +1151,11 @@ final class BotEngine: ObservableObject {
         // A warm Mac flushes him (MochiMood.swift).
         drawMoodTint(ctx: &ctx, path: bodyPath, rx: rx, ry: ry)
 
-        // Blush — disabled in new design (NxIsland)
-        // let blushVal = max(blush, tint * 0.5, moodHot * 0.85) * (1 - morph)
-        // if blushVal > 0.01 {
-        //     drawBlush(ctx: &ctx, path: bodyPath, rx: rx, ry: ry, R: R, blush: blushVal)
-        // }
+        // Blush (peach flush on joy or interaction)
+        let blushVal = max(blush, (state == .finished || (isDancing && dancingLevel > 0.15)) ? 0.5 : 0, moodHot * 0.85) * (1 - morph)
+        if blushVal > 0.02 && !isMini {
+            drawBlush(ctx: &ctx, path: bodyPath, rx: rx, ry: ry, R: R, blush: blushVal)
+        }
 
         // Eyes
         drawEyes(ctx: &ctx, path: bodyPath, R: R, rx: rx, ry: ry)
@@ -1511,6 +1511,14 @@ final class BotEngine: ObservableObject {
                 startRadius: 0,
                 endRadius: R*0.42
             ))
+            // Tactile ambient rim contour (smooth vinyl squircle edge)
+            let rim = Gradient(stops: [
+                .init(color: Color.white.opacity(0.32), location: 0),
+                .init(color: Color.white.opacity(0.05), location: 0.5),
+                .init(color: Color.black.opacity(0.18), location: 1)
+            ])
+            ctx.stroke(path, with: .linearGradient(rim, startPoint: CGPoint(x: -rx, y: -ry), endPoint: CGPoint(x: rx, y: ry)),
+                       lineWidth: max(1, R * 0.035))
         }
     }
 
@@ -1600,12 +1608,28 @@ final class BotEngine: ObservableObject {
             p2.addLine(to: CGPoint(x: -s, y: s))
             ctx.stroke(p2, with: .color(ink), style: StrokeStyle(lineWidth: w * 0.24, lineCap: .round))
 
+        case .happy:
+            // Joyful ^ ^ curved eye arc
+            let r = w * 0.44
+            var p = Path()
+            p.addArc(center: CGPoint(x: 0, y: r * 0.25), radius: r,
+                     startAngle: Angle(radians: .pi * 1.15),
+                     endAngle: Angle(radians: .pi * 1.85),
+                     clockwise: false)
+            ctx.stroke(p, with: .color(ink), style: StrokeStyle(lineWidth: w * 0.22, lineCap: .round))
+
         default:
-            // Standard: crisp solid dot (no highlight, no lid)
+            // Standard: crisp solid dot with living micro-specular glint
             var p = Path()
             let r = w * 0.42
             p.addEllipse(in: CGRect(x: -r, y: -r, width: r*2, height: r*2))
             ctx.fill(p, with: .color(ink))
+            if w > 3.5 && !isMini {
+                var spec = Path()
+                let sr = w * 0.12
+                spec.addEllipse(in: CGRect(x: -w * 0.12 - sr, y: -w * 0.12 - sr, width: sr * 2, height: sr * 2))
+                ctx.fill(spec, with: .color(Color.white.opacity(0.72)))
+            }
         }
     }
 
@@ -1650,6 +1674,12 @@ final class BotEngine: ObservableObject {
             coreColor = Color(red: 0.753, green: 0.518, blue: 0.988)
         }
         ctx.fill(p, with: .color(coreColor))
+
+        // Inner specular point
+        var spec = Path()
+        let sr = dotR * 0.35
+        spec.addEllipse(in: CGRect(x: -dotR * 0.25 - sr, y: dotY - dotR * 0.25 - sr, width: sr * 2, height: sr * 2))
+        ctx.fill(spec, with: .color(Color.white.opacity(0.65)))
     }
 
     private func drawBadge(context: GraphicsContext, size: CGSize, badge: BadgeType, R: CGFloat, rx: CGFloat, ry: CGFloat, cx: CGFloat, cy: CGFloat) {

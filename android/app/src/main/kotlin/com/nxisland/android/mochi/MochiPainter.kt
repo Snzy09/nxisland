@@ -91,9 +91,10 @@ object MochiPainter {
             val body = bodyPath(e, rx, ry, r)
             drawBody(c, e, body, r, rx, ry)
 
-            // NxIsland: blush disabled (clean geometric design)
-            // val blushVal = max(e.blush, e.tint * 0.5) * (1 - e.morph)
-            // if (blushVal > 0.01) { ... }
+            val blushVal = max(e.blush, if (e.state == BotState.FINISHED || (e.isDancing && e.dancingLevel > 0.15)) 0.5 else 0.0) * (1 - e.morph)
+            if (blushVal > 0.02 && !e.isMini) {
+                drawBlush(c, e, body, rx, ry, r, blushVal)
+            }
 
             drawEyes(c, e, nowSec, body, r, rx, ry)
 
@@ -188,6 +189,40 @@ object MochiPainter {
             shader = RadialGradientShader(hc, (r * 0.42).toFloat(), listOf(Color(255, 255, 255, 140), Color(255, 255, 255, 0)))
         }
         c.drawPath(body, hl)
+
+        // Non-flat tactile ambient rim contour (smooth vinyl squircle edge)
+        val rimPaint = Paint().apply {
+            isAntiAlias = true
+            style = PaintingStyle.Stroke
+            strokeWidth = max(1.0, r * 0.035).toFloat()
+            shader = LinearGradientShader(
+                Offset(-rx.toFloat(), -ry.toFloat()),
+                Offset(rx.toFloat(), ry.toFloat()),
+                listOf(Color(255, 255, 255, 82), Color(255, 255, 255, 13), Color(0, 0, 0, 46))
+            )
+        }
+        c.drawPath(body, rimPaint)
+    }
+
+    private fun drawBlush(c: Canvas, e: MochiEngine, body: Path, rx: Double, ry: Double, r: Double, blush: Double) {
+        c.save()
+        c.clipPath(body)
+        val yOffset = sin(e.yaw) * rx * 0.8
+        val alpha = (0.35 * blush).toFloat().coerceIn(0f, 1f)
+        val paint = fillPaint(Color(251, 146, 60, (alpha * 255).toInt()))
+
+        val bw = (r * 0.17).toFloat()
+        val bh = (r * 0.1).toFloat()
+        val by = (ry * 0.2).toFloat()
+        for (sd in intArrayOf(-1, 1)) {
+            val bx = (sd * rx * 0.55 + yOffset).toFloat()
+            val rect = Rect(bx - bw, by - bh, bx + bw, by + bh)
+            val p = Path().apply {
+                addOval(rect)
+            }
+            c.drawPath(p, paint)
+        }
+        c.restore()
     }
 
     private fun drawEyes(c: Canvas, e: MochiEngine, nowSec: Double, body: Path, r: Double, rx: Double, ry: Double) {
@@ -278,9 +313,31 @@ object MochiPainter {
                 c.drawLine(Offset(-s, -s), Offset(s, s), sp)
                 c.drawLine(Offset(s, -s), Offset(-s, s), sp)
             }
+            EyeShape.HAPPY -> {
+                // Joyful ^ ^ curved eye arc
+                val ar = (w * 0.44).toFloat()
+                val sp = strokePaint(ink, (w * 0.22).toFloat())
+                val path = Path().apply {
+                    arcTo(
+                        rect = Rect(
+                            center = Offset(0f, ar * 0.25f),
+                            radius = ar
+                        ),
+                        startAngleDegrees = 207f,
+                        sweepAngleDegrees = 126f,
+                        forceMoveTo = true
+                    )
+                }
+                c.drawPath(path, sp)
+            }
             else -> {
-                // Standard: crisp solid dot (no highlight, no lid)
-                c.drawCircle(Offset.Zero, (w * 0.42).toFloat(), fill)
+                // Standard: crisp solid dot with living micro-specular glint
+                val dr = (w * 0.42).toFloat()
+                c.drawCircle(Offset.Zero, dr, fill)
+                if (w > 3.5 && !e.isMini) {
+                    val sr = (w * 0.12).toFloat()
+                    c.drawCircle(Offset((-w * 0.12).toFloat(), (-w * 0.12).toFloat()), sr, fillPaint(Color(255, 255, 255, 184)))
+                }
             }
         }
     }
@@ -315,6 +372,10 @@ object MochiPainter {
             else -> Color(192, 132, 252)
         }
         c.drawCircle(Offset(0f, dotY), dotR, fillPaint(coreColor))
+
+        // Inner specular point
+        val sr = dotR * 0.35f
+        c.drawCircle(Offset(-dotR * 0.25f, dotY - dotR * 0.25f), sr, fillPaint(Color(255, 255, 255, 166)))
     }
 
     /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */

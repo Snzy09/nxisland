@@ -825,7 +825,7 @@ export class BotEngine {
     const body = this.bodyPath(rx, ry, R);
     this.drawBody(x, body, R, rx, ry);
 
-    // NxIsland: blush disabled (clean geometric design)
+    this.drawBlush(x, body, R, rx, ry);
 
     this.drawEyes(x, body, R, rx, ry);
 
@@ -940,6 +940,37 @@ export class BotEngine {
     hl.addColorStop(1, "rgba(255,255,255,0)");
     x.fillStyle = hl;
     x.fill(body);
+
+    // Non-flat tactile ambient rim contour (smooth vinyl squircle edge)
+    const rim = x.createLinearGradient(-rx, -ry, rx, ry);
+    rim.addColorStop(0, "rgba(255,255,255,0.32)");
+    rim.addColorStop(0.5, "rgba(255,255,255,0.05)");
+    rim.addColorStop(1, "rgba(0,0,0,0.18)");
+    x.strokeStyle = rim;
+    x.lineWidth = Math.max(1, R * 0.035);
+    x.stroke(body);
+    x.restore();
+  }
+
+  private drawBlush(x: CanvasRenderingContext2D, body: Path2D, R: number, rx: number, ry: number) {
+    if (this.isMini) return;
+    const isHappy = this.state === "finished" || (this.isDancing && this.dancingLevel > 0.15);
+    const amount = Math.max(this.blush, isHappy ? 0.5 : 0);
+    if (amount <= 0.02) return;
+
+    x.save();
+    x.clip(body);
+    const yOffset = Math.sin(this.yaw) * rx * 0.8;
+    const alpha = 0.35 * amount;
+    x.fillStyle = `rgba(251,146,60,${alpha})`;
+
+    for (const sd of [-1, 1]) {
+      const bx = sd * rx * 0.55 + yOffset;
+      const by = ry * 0.2;
+      x.beginPath();
+      x.ellipse(bx, by, R * 0.17, R * 0.1, 0, 0, Math.PI * 2);
+      x.fill();
+    }
     x.restore();
   }
 
@@ -1015,11 +1046,30 @@ export class BotEngine {
         x.stroke();
         break;
       }
+      case "happy": {
+        // Joyful ^ ^ curved eye arc
+        const r = w * 0.44;
+        x.strokeStyle = _ink;
+        x.lineWidth = w * 0.22;
+        x.lineCap = "round";
+        x.beginPath();
+        x.arc(0, r * 0.25, r, Math.PI * 1.15, Math.PI * 1.85);
+        x.stroke();
+        break;
+      }
       default:
-        // Standard: crisp solid dot (no highlight, no lid)
+        // Standard: crisp solid dot with living micro-specular glint
         x.beginPath();
         x.arc(0, 0, w * 0.42, 0, Math.PI * 2);
         x.fill();
+        if (w > 3.5 && !this.isMini) {
+          x.save();
+          x.fillStyle = "rgba(255,255,255,0.72)";
+          x.beginPath();
+          x.arc(-w * 0.12, -w * 0.12, w * 0.12, 0, Math.PI * 2);
+          x.fill();
+          x.restore();
+        }
         break;
     }
   }
@@ -1060,10 +1110,20 @@ export class BotEngine {
       const c = this.cfg.color;
       color = `rgb(${Math.round(c[0] * 255)},${Math.round(c[1] * 255)},${Math.round(c[2] * 255)})`;
     }
+    x.save();
+    x.shadowColor = color;
+    x.shadowBlur = Math.max(3, R * 0.1);
     x.fillStyle = color;
     x.beginPath();
     x.arc(0, dotY, dotR, 0, Math.PI * 2);
     x.fill();
+
+    // Inner specular point
+    x.fillStyle = "rgba(255,255,255,0.65)";
+    x.beginPath();
+    x.arc(-dotR * 0.25, dotY - dotR * 0.25, dotR * 0.35, 0, Math.PI * 2);
+    x.fill();
+    x.restore();
   }
 
   /** Mailbox slot: dark pill cut into the box face, with rim and lip highlights. */
